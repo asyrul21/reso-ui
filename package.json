@@ -1,5 +1,5 @@
 {
-  "name": "reso-components",
+  "name": "reso-ui",
   "version": "1.0.0",
   "description": "Reusable React components in Typescript",
   "main": "index.js",

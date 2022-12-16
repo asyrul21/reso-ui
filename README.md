@@ -1,4 +1,12 @@
-# Reso Components
+# Reso UI
+
+Home to reusable react components to Reso Applications
+
+# Run
+
+```bash
+npm run dev
+```
 
 # Development Setup
 

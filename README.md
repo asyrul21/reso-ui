@@ -5,7 +5,14 @@ Home to reusable react components to Reso Applications
 # Run
 
 ```bash
+# storybook
 npm run dev
+
+# or
+
+# run a single component imported in src/index.js
+npm start
+
 ```
 
 # Development Setup

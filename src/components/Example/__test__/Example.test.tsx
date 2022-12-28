@@ -4,7 +4,7 @@ import { Example } from "../Example";
 
 describe("Example Component", () => {
   it("should render without crashing", () => {
-    const { debug } = render(<Example />);
+    const { debug } = render(<Example name="John" theme="light" />);
     // debug();
     const component = screen.queryByTestId("example-component-root");
     expect(component).toBeTruthy();

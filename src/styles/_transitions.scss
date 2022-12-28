@@ -1,0 +1,27 @@
+$transition-bg-time: 0.125s;
+$transition-bg-delay: 0s;
+
+.spin {
+  animation: rotate 1.5s linear infinite;
+}
+
+.slideFromLeft {
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.appear {
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

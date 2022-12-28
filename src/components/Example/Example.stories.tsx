@@ -14,13 +14,26 @@ export default {
 } as ComponentMeta<typeof Example>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Example> = (args) => <Example />;
+const Template: ComponentStory<typeof Example> = (args) => (
+  <Example {...args} />
+);
 
-export const Default = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-// Primary.args = {
-//   primary: true,
-//   label: "Example",
-// };
+export const DefaultTheme = Template.bind({});
+DefaultTheme.args = {
+  name: "John",
+  theme: "light",
+};
+
+export const DarkTheme = Template.bind({});
+DarkTheme.args = {
+  name: "Jane",
+  theme: "dark",
+};
+
+export const UnknownTheme = Template.bind({});
+UnknownTheme.args = {
+  name: "Rob",
+  theme: "pizza",
+};
 
 // export const ExampleC = () => <Example />;

@@ -1,0 +1,10 @@
+@import "reso_ui_base";
+
+// define themes here
+.theme_light {
+  @include use_theme($primary-grey-light, "light");
+}
+
+.theme_dark {
+  @include use_theme($primary-grey-dark, "dark");
+}

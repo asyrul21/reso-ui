@@ -53,5 +53,9 @@ module.exports = {
    */
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      reso_ui_base: path.join(__dirname, "src/styles/reso_ui_base"),
+      fonts: path.join(__dirname, "src/styles/fonts"),
+    },
   },
 };

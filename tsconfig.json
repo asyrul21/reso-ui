@@ -8,6 +8,11 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@interfaces/*": ["src/types/*"]
+    }
   }
 }

@@ -1,14 +1,13 @@
 import React from "react";
 
-interface IAppProps {
-  name: String;
-}
+// import sample component here
+import { Example } from "./components/Example";
 
-export const App = ({ name }: IAppProps) => {
-  return (
-    <div>
-      <h1>Reso Components</h1>
-      <p>Hello World, {name}!</p>
-    </div>
-  );
+// import sample scss
+import "./App.scss";
+
+const App = () => {
+  return <Example name="John" theme="light" className="example_app_styles" />;
 };
+
+export default App;

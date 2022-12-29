@@ -1,8 +1,7 @@
 @import "palette";
 @import "variables";
 @import "spacings";
-@import "fonts";
 @import "typography";
 @import "transitions";
-@import "mixins";
-@import "globals";
+@import "mixins/layoutMixins";
+@import "globals/layoutGlobals";

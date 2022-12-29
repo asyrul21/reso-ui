@@ -1,26 +1,35 @@
 import React from "react";
-import classnames from "classnames";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
 
-// import two files
+// styles
 import "./styles/Example.layout.scss";
 import "./styles/Example.theme.scss";
+
+// utils
+import {
+  createComponentStyles,
+  createLayoutStyles,
+  createThemeStyles,
+} from "@utils/styles";
 
 export interface IExampleComponent extends IComponent {
   name: string;
 }
 
 export const Example = ({ theme, name, className }: IExampleComponent) => {
-  const containerStyles = classnames({
-    component_container: true,
-    [`theme_${theme}`]: true,
-    [className]: className && className !== "" ? true : false,
-  });
-
+  const containerStyles = createComponentStyles(
+    createLayoutStyles(
+      {
+        example_component_container: true,
+      },
+      className
+    ),
+    createThemeStyles("exampleComponent_theme_", theme)
+  );
   return (
-    <div data-testid="example-component-root" className={containerStyles}>
+    <div className={containerStyles} data-testid="example-component-root">
       <h1>Hello World!</h1>
       <p>This is just an example component</p>
       <p>Name: {name}</p>

@@ -1,6 +1,14 @@
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.component_layout_default {
+  // layout
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  position: relative;
+
+  // font-smoothing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .component_disabled {
@@ -40,7 +48,6 @@ code {
 }
 
 a {
-  color: $lc-blue;
   text-decoration: none;
 }
 
@@ -49,23 +56,18 @@ ul {
 }
 
 table {
-  font-family: $font-family;
-  color: $fc-dark;
   border-collapse: collapse;
   width: 100%;
 }
 
 td,
 th {
-  border: 1px solid #ddd;
   padding: $padding-xsmall;
 }
 
 th {
   text-align: left;
   font-weight: 500;
-  background-color: $primary-grey-dark;
-  color: $fc-light;
 }
 
 td {

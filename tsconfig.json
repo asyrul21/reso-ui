@@ -12,7 +12,9 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@interfaces/*": ["src/types/*"]
+      "@interfaces/*": ["src/types/*"],
+      "@utils/*": ["src/utils/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

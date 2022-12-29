@@ -83,6 +83,10 @@ module.exports = {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/__mocks__/fileMock.js",
     "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
+    // must specify path aliases here
+    "@components/(.*)": "<rootDir>/src/components/$1",
+    "@interfaces/(.*)": "<rootDir>/src/types/$1",
+    "@utils/(.*)": "<rootDir>/src/utils/$1",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

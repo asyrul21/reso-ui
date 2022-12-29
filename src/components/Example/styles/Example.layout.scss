@@ -1,7 +1,5 @@
-@import "reso_ui_base";
+@import "reso_layout_styles";
 
-.component_container {
-  @include component-layout-base;
-
+.example_component_container {
   width: 100%;
 }

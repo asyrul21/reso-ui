@@ -1,0 +1,27 @@
+.theme_default {
+  @include component-theme-base;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  color: $lc-blue;
+}
+
+table {
+  font-family: $font-family;
+  color: $fc-dark;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: $primary-grey-dark;
+  color: $fc-light;
+}

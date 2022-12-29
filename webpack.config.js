@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src/index.tsx"),
@@ -45,16 +46,16 @@ module.exports = {
       },
     ],
   },
-  /**
-   * Attempt to resolve these extensions in order.
-   * If multiple files share the same name but have different extensions,
-   *  webpack will resolve the one with the extension listed first
-   * in the array and skip the rest.
-   */
   resolve: {
+    plugins: [
+      new TsconfigPathsPlugin({
+        extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
+      }),
+    ],
     extensions: [".tsx", ".ts", ".js"],
     alias: {
-      reso_ui_base: path.join(__dirname, "src/styles/reso_ui_base"),
+      reso_layout_styles: path.join(__dirname, "src/styles/reso_layout_styles"),
+      reso_theme_styles: path.join(__dirname, "src/styles/reso_theme_styles"),
       fonts: path.join(__dirname, "src/styles/fonts"),
     },
   },

@@ -1,4 +1,4 @@
-@import "palette";
+@use "palette" as *;
 
 // global
 $font-family: "Poppins", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",

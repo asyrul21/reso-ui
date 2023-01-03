@@ -33,7 +33,7 @@ export const createThemeStyles = (
   theme?: Theme
 ) => {
   return classnames({
-    theme_default: true,
+    component_theme_default: true,
     [`${componentStylePrefix}${theme}`]: theme ? true : false,
   });
 };

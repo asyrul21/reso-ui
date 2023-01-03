@@ -28,6 +28,7 @@ export const Example = ({ theme, name, className }: IExampleComponent) => {
     ),
     createThemeStyles("exampleComponent_theme_", theme)
   );
+
   return (
     <div className={containerStyles} data-testid="example-component-root">
       <h1>Hello World!</h1>

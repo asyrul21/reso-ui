@@ -9,7 +9,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html"),
+      template: path.join(__dirname, "public", "index.html"),
     }),
   ],
   devtool: "source-map",
@@ -26,7 +26,24 @@ module.exports = {
       /* Styles / CSS and SCSS */
       {
         test: /\.(css|scss)$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          // Creates `style` nodes from JS strings
+          {
+            loader: "style-loader",
+            options: {
+              injectType: "singletonStyleTag",
+            },
+          },
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          {
+            loader: "sass-loader",
+            options: {
+              additionalData: '@use "vars_and_mixins" as *;',
+            },
+          },
+        ],
       },
       /* Images */
       {
@@ -54,8 +71,7 @@ module.exports = {
     ],
     extensions: [".tsx", ".ts", ".js"],
     alias: {
-      reso_layout_styles: path.join(__dirname, "src/styles/reso_layout_styles"),
-      reso_theme_styles: path.join(__dirname, "src/styles/reso_theme_styles"),
+      vars_and_mixins: path.join(__dirname, "src/styles/vars_and_mixins"),
       fonts: path.join(__dirname, "src/styles/fonts"),
     },
   },

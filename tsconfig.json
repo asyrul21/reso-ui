@@ -11,7 +11,7 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/components/*"],
+      "@components": ["src/index.ts"],
       "@interfaces/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"]
     }

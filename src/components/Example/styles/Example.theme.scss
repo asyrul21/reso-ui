@@ -1,5 +1,3 @@
-@import "reso_theme_styles";
-
 // define themes here
 .exampleComponent_theme_light {
   @include use_theme($primary-grey-light, "light");

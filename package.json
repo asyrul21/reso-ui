@@ -2,7 +2,7 @@
   "name": "reso-ui",
   "version": "1.0.0",
   "description": "Reusable React components in Typescript",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",

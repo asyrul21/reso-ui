@@ -1,4 +1,7 @@
 // should be "light" or "dark"
+@use "palette" as *;
+@use "variables" as *;
+
 @mixin theme_nature($theme: "light") {
   @if ($theme == "light") {
     color: $fc-dark;

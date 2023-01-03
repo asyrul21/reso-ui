@@ -1,7 +1,8 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { QuantityCounter } from "./Quantity-Counter";
+// always import from index to include global styles
+import { QuantityCounter } from "@components";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -1,7 +1,7 @@
 import React from "react";
 
 // import sample scss
-import { Example, QuantityCounter } from "@components";
+import { Example, QuantityCounter, AddToCart } from "@components";
 import "./App.scss";
 
 const App = () => {
@@ -21,6 +21,24 @@ const App = () => {
         onChange={(val) => {
           alert(`Counter value updated to: ${val}`);
         }}
+      />
+      {/* with theme */}
+      <AddToCart
+        theme="light"
+        inStock={true}
+        quantityValue={1}
+        currency="RM"
+        price="100.00"
+        subTotal="100.00"
+      />
+      {/* override styles with classname */}
+      <AddToCart
+        className="addToCart_app_styles"
+        inStock={true}
+        quantityValue={1}
+        currency="RM"
+        price="100.00"
+        subTotal="100.00"
       />
     </>
   );

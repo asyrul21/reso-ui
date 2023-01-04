@@ -1,0 +1,9 @@
+// define themes here
+.addToCart_theme_light {
+  @include use_theme($primary-grey-light, "light");
+  border: 1px solid $primary-grey-medium-light;
+}
+
+.addToCart_button_theme_light {
+  @include use_theme($bg-button-primary, "dark");
+}

@@ -10,18 +10,22 @@
   }
 }
 
+/**
+* [background-color] does not work with linea-gradient css prop.
+* Therefore, we are using [backgrounf]
+*/
 @mixin use_theme($background_color, $nature: "light") {
   @if ($background_color) {
-    background-color: $background_color;
+    background: $background_color;
     @include theme_nature($nature);
   } @else {
-    background-color: $primary-grey-light;
+    background: $primary-grey-light;
     @include theme_nature("light");
   }
 }
 
 @mixin component-theme-base {
   font-family: $font-family;
-  background-color: unset;
+  background: unset;
   @include theme_nature("light");
 }

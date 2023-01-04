@@ -6,7 +6,6 @@ interface IStyleClassnames {
 }
 
 interface ILayoutStyleOptions {
-  className: string;
   disabled?: boolean;
   no_select?: boolean;
 }

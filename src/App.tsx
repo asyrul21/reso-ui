@@ -6,6 +6,7 @@ import {
   QuantityCounter,
   AddToCart,
   FlexContainer,
+  CenterContainer,
 } from "@components";
 import "./App.scss";
 
@@ -78,6 +79,9 @@ const App = () => {
           </FlexContainer>
         </>
       </FlexContainer>
+      <CenterContainer styles={{ border: "2px solid green" }}>
+        <div className="app_test_box">Test 1</div>
+      </CenterContainer>
     </>
   );
 };

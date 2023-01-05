@@ -1,7 +1,7 @@
 import { ISpacingsProps } from "@interfaces/ISpacingsProps";
 import Theme from "@interfaces/Theme";
 import classnames from "classnames";
-import { booleanHasValue } from "./validations";
+import { booleanHasValue, hasValue } from "./validations";
 
 interface IStyleClassnames {
   [key: string]: boolean;
@@ -22,47 +22,47 @@ export const withSpacingsProps = (
 
   let spacingClasses: IStyleClassnames = {};
   // margins
-  if (ma) {
+  if (hasValue(ma)) {
     spacingClasses = { ...spacingClasses, [`spacing-ma-${ma}`]: true };
   }
-  if (mv) {
+  if (hasValue(mv)) {
     spacingClasses = { ...spacingClasses, [`spacing-mv-${mv}`]: true };
   }
-  if (mh) {
+  if (hasValue(mh)) {
     spacingClasses = { ...spacingClasses, [`spacing-mh-${mh}`]: true };
   }
-  if (mt) {
+  if (hasValue(mt)) {
     spacingClasses = { ...spacingClasses, [`spacing-mt-${mt}`]: true };
   }
-  if (mb) {
+  if (hasValue(mb)) {
     spacingClasses = { ...spacingClasses, [`spacing-mb-${mb}`]: true };
   }
-  if (mr) {
+  if (hasValue(mr)) {
     spacingClasses = { ...spacingClasses, [`spacing-mr-${mr}`]: true };
   }
-  if (ml) {
+  if (hasValue(ml)) {
     spacingClasses = { ...spacingClasses, [`spacing-ml-${ml}`]: true };
   }
   // paddings
-  if (pa) {
+  if (hasValue(pa)) {
     spacingClasses = { ...spacingClasses, [`spacing-pa-${pa}`]: true };
   }
-  if (pv) {
+  if (hasValue(pv)) {
     spacingClasses = { ...spacingClasses, [`spacing-pv-${pv}`]: true };
   }
-  if (ph) {
+  if (hasValue(ph)) {
     spacingClasses = { ...spacingClasses, [`spacing-ph-${ph}`]: true };
   }
-  if (pt) {
+  if (hasValue(pt)) {
     spacingClasses = { ...spacingClasses, [`spacing-pt-${pt}`]: true };
   }
-  if (pb) {
+  if (hasValue(pb)) {
     spacingClasses = { ...spacingClasses, [`spacing-pb-${pb}`]: true };
   }
-  if (pr) {
+  if (hasValue(pr)) {
     spacingClasses = { ...spacingClasses, [`spacing-pr-${pr}`]: true };
   }
-  if (pl) {
+  if (hasValue(pl)) {
     spacingClasses = { ...spacingClasses, [`spacing-pl-${pl}`]: true };
   }
 

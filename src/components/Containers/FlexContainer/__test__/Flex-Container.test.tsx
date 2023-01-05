@@ -121,6 +121,17 @@ describe("Flex Container Component Unit Tests", () => {
 });
 
 describe("Flex Container Margins Unit Tests", () => {
+  test("should have class [spacing-ma-0] when passed as prop", () => {
+    render(
+      <FlexContainer ma={0}>
+        <SampleComponent />
+      </FlexContainer>
+    );
+
+    const component = screen.queryByTestId("flex-container-root");
+    expect(component).toHaveClass("spacing-ma-0");
+  });
+
   test("should have class [spacing-ma-5] when passed as prop", () => {
     render(
       <FlexContainer ma={5}>
@@ -200,6 +211,17 @@ describe("Flex Container Margins Unit Tests", () => {
 });
 
 describe("Flex Container Paddings Unit Tests", () => {
+  test("should have class [spacing-pa-0] when passed as prop", () => {
+    render(
+      <FlexContainer pa={0}>
+        <SampleComponent />
+      </FlexContainer>
+    );
+
+    const component = screen.queryByTestId("flex-container-root");
+    expect(component).toHaveClass("spacing-pa-0");
+  });
+
   test("should have class [spacing-pa-5] when passed as prop", () => {
     render(
       <FlexContainer pa={5}>

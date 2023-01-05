@@ -68,9 +68,12 @@ ul {
   list-style: none;
 }
 
+/**
+* TODO: Tables should be moved to its own component and styles
+*/
 table {
   font-family: $font-family;
-  color: $fc-dark;
+  // color: $fc-dark;
   border-collapse: collapse;
   width: 100%;
 }
@@ -82,12 +85,12 @@ th {
 }
 
 th {
-  background-color: $primary-grey-dark;
-  color: $fc-light;
-  text-align: left;
+  // background-color: $primary-grey-dark;
+  // color: $fc-light;
+  // text-align: left;
   font-weight: 500;
 }
 
 td {
-  text-align: center;
+  // text-align: center;
 }

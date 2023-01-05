@@ -52,7 +52,6 @@ export const FlexContainer = ({
           [`flex-justify-${justify}`]: true,
           [`flex-align-${align}`]: true,
           [`flex-wrap`]: wrap,
-          full_width: fullWidth,
         },
         spacingsProps
       ),

@@ -61,6 +61,16 @@ module.exports = {
         loader: "url-loader",
         options: { limit: false },
       },
+      /* markdown for storybooks */
+      {
+        test: /\.mdx?$/,
+        use: [
+          {
+            loader: "@mdx-js/loader",
+            options: {},
+          },
+        ],
+      },
     ],
   },
   resolve: {

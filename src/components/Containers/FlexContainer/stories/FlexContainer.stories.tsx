@@ -19,57 +19,42 @@ export default {
   },
 } as ComponentMeta<typeof FlexContainer>;
 
-export const DefaultWithBorder = () => {
-  return (
-    <FlexContainer borderColor="blue">
-      <>
-        <SampleChildComponent />
-        <SampleChildComponent />
-      </>
-    </FlexContainer>
-  );
+const ComponentTemplate: ComponentStory<typeof FlexContainer> = (args) => (
+  <FlexContainer {...args}>
+    <>
+      <SampleChildComponent />
+      <SampleChildComponent />
+    </>
+  </FlexContainer>
+);
+
+export const DefaultWithBorder = ComponentTemplate.bind({});
+DefaultWithBorder.args = {
+  borderColor: "blue",
 };
 
-export const DefaultWithPaddingAll = () => {
-  return (
-    <FlexContainer borderColor="blue" pa={5}>
-      <>
-        <SampleChildComponent />
-        <SampleChildComponent />
-      </>
-    </FlexContainer>
-  );
+export const DefaultWithPaddingAll = ComponentTemplate.bind({});
+DefaultWithPaddingAll.args = {
+  borderColor: "blue",
+  pa: 5,
 };
 
-export const Direction = () => {
-  return (
-    <FlexContainer borderColor="blue" direction="column">
-      <>
-        <SampleChildComponent />
-        <SampleChildComponent />
-      </>
-    </FlexContainer>
-  );
+export const DirectionColumn = ComponentTemplate.bind({});
+DirectionColumn.args = {
+  borderColor: "blue",
+  direction: "column",
 };
 
-export const JustifyStart = () => {
-  return (
-    <FlexContainer borderColor="blue" justify="start">
-      <>
-        <SampleChildComponent />
-        <SampleChildComponent />
-      </>
-    </FlexContainer>
-  );
+export const JustifyStart = ComponentTemplate.bind({});
+JustifyStart.args = {
+  borderColor: "blue",
+  justify: "start",
 };
 
-export const CustomStylesAndAlign = () => {
-  return (
-    <FlexContainer borderColor="blue" styles={{ height: "300px" }} align="end">
-      <>
-        <SampleChildComponent />
-        <SampleChildComponent />
-      </>
-    </FlexContainer>
-  );
+export const CustomStylesAndAlign = ComponentTemplate.bind({});
+CustomStylesAndAlign.args = {
+  borderColor: "blue",
+  justify: "start",
+  styles: { height: "300px" },
+  align: "end",
 };

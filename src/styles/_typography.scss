@@ -3,6 +3,11 @@
 */
 @use "variables" as *;
 
+body {
+  line-height: 18px;
+  font-size: $font-size-default;
+}
+
 h1 {
   font-size: 26px;
   line-height: 34px;
@@ -109,9 +114,4 @@ label {
 
 .bold {
   font-weight: 600;
-}
-
-body {
-  font-size: $font-size-default;
-  line-height: 18px;
 }

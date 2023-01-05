@@ -1,6 +1,6 @@
-$transition-bg-time: 0.125s;
-$transition-bg-delay: 0s;
-
+/*
+* Global CSS Styles should ONLY be imported in [global.scss]
+*/
 .spin {
   animation: rotate 1.5s linear infinite;
 }

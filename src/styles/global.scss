@@ -1,31 +1,18 @@
-@use "styles/fonts" as *;
-@use "styles/palette" as *;
-@use "styles/variables" as *;
-@use "styles/spacings" as *;
-@use "styles/typography" as *;
-@use "styles/transitions" as *;
-@use "styles/mixins" as *;
+/*
+* [global.scss] should only be imported ONCE in index.ts
+*/
+@use "fonts" as *;
+@use "variables" as *;
+// [defaults] must come before [spacings]
+@use "defaults" as *;
+@use "spacings" as *;
+@use "typography" as *;
+@use "transitions" as *;
+@use "mixins" as *;
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.component_theme_default {
-  @include component-theme-base;
-}
-
-.component_layout_default {
-  // layout
-  margin: 0;
-  padding: 0;
-  border: none;
-  box-sizing: border-box;
-  position: relative;
-
-  // font-smoothing
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .component_disabled {
@@ -58,6 +45,14 @@ code {
   background-position: center;
   background-size: cover;
   background-clip: border-box;
+}
+
+.width_full {
+  width: 100%;
+}
+
+.width_fit_content {
+  width: fit-content;
 }
 
 .overflow-y-auto {

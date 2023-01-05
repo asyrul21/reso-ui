@@ -1,82 +1,496 @@
-// font sizes
-$font-size-1: 10px;
-$font-size-2: 12px;
-$font-size-3: 14px;
-$font-size-4: 16px;
-$font-size-5: 18px;
-$font-size-6: 20px;
-$font-size-7: 22px;
-$font-size-7: 24px;
-$font-size-default: $font-size-3;
+/*
+* Global CSS Styles should ONLY be imported in [global.scss]
+*/
+@use "vars/layout" as *;
+/******************************
+*     MARGINS
+*******************************/
+/* margin all */
+.spacing-ma-0 {
+  margin: 0;
+}
+.spacing-ma-auto {
+  margin: auto;
+}
+.spacing-ma-1 {
+  margin: $margin-xxxsmall;
+}
+.spacing-ma-2 {
+  margin: $margin-xxsmall;
+}
+.spacing-ma-3 {
+  margin: $margin-xsmall;
+}
+.spacing-ma-4 {
+  margin: $margin-small;
+}
+.spacing-ma-5 {
+  margin: $margin-medium;
+}
+.spacing-ma-6 {
+  margin: $margin-large;
+}
+.spacing-ma-7 {
+  margin: $margin-xlarge;
+}
+.spacing-ma-8 {
+  margin: $margin-xxlarge;
+}
+.spacing-ma-9 {
+  margin: $margin-xxxlarge;
+}
 
-$border-radius-default: 12px;
-$border-radius-small: 4px;
+/* margin vertical */
+.spacing-mv-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.spacing-mv-center {
+  margin: 0 auto;
+}
+.spacing-mv-1 {
+  margin-top: $margin-xxxsmall;
+  margin-bottom: $margin-xxxsmall;
+}
+.spacing-mv-2 {
+  margin-top: $margin-xxsmall;
+  margin-bottom: $margin-xxsmall;
+}
+.spacing-mv-3 {
+  margin-top: $margin-xsmall;
+  margin-bottom: $margin-xsmall;
+}
+.spacing-mv-4 {
+  margin-top: $margin-small;
+  margin-bottom: $margin-small;
+}
+.spacing-mv-5 {
+  margin-top: $margin-medium;
+  margin-bottom: $margin-medium;
+}
+.spacing-mv-6 {
+  margin-top: $margin-large;
+  margin-bottom: $margin-large;
+}
+.spacing-mv-7 {
+  margin-top: $margin-xlarge;
+  margin-bottom: $margin-xlarge;
+}
+.spacing-mv-8 {
+  margin-top: $margin-xxlarge;
+  margin-bottom: $margin-xxlarge;
+}
+.spacing-mv-9 {
+  margin-top: $margin-xxxlarge;
+  margin-bottom: $margin-xxxlarge;
+}
 
-// paddings
-// general paddings
-$padding-none: 0;
-$padding-xxxsmall: 4px;
-$padding-xxsmall: 8px;
-$padding-xsmall: 12px;
-$padding-small: 16px;
-$padding-medium: 24px;
-$padding-large: 32px;
-$padding-xlarge: 48px;
-$padding-xxlarge: 64px;
+/* margin horizontal */
+.spacing-mh-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+.spacing-mh-1 {
+  margin-right: $margin-xxxsmall;
+  margin-left: $margin-xxxsmall;
+}
+.spacing-mh-2 {
+  margin-right: $margin-xxsmall;
+  margin-left: $margin-xxsmall;
+}
+.spacing-mh-3 {
+  margin-right: $margin-xsmall;
+  margin-left: $margin-xsmall;
+}
+.spacing-mh-4 {
+  margin-right: $margin-small;
+  margin-left: $margin-small;
+}
+.spacing-mh-5 {
+  margin-right: $margin-medium;
+  margin-left: $margin-medium;
+}
+.spacing-mh-6 {
+  margin-right: $margin-large;
+  margin-left: $margin-large;
+}
+.spacing-mh-7 {
+  margin-right: $margin-xlarge;
+  margin-left: $margin-xlarge;
+}
+.spacing-mh-8 {
+  margin-right: $margin-xxlarge;
+  margin-left: $margin-xxlarge;
+}
+.spacing-mh-9 {
+  margin-right: $margin-xxxlarge;
+  margin-left: $margin-xxxlarge;
+}
 
-// margins
-// general margins
-$margin-none: 0;
-$margin-center: 0 auto;
-$margin-xxxsmall: 4px;
-$margin-xxsmall: 8px;
-$margin-xsmall: 12px;
-$margin-small: 16px;
-$margin-medium: 24px;
-$margin-large: 32px;
-$margin-xlarge: 48px;
-$margin-xxlarge: 64px;
-$margin-xxxlarge: 96px;
-// text margins
-$text-margin-bottom-xsmall: 5px;
-$text-margin-bottom-small: 10px;
-$text-margin-bottom-medium: 15px;
-$text-margin-bottom-large: 20px;
-// input
-$input-group-margin-bottom: $margin-medium;
+/* margin top */
+.spacing-mt-0 {
+  margin-top: 0;
+}
+.spacing-mt-1 {
+  margin-top: $margin-xxxsmall;
+}
+.spacing-mt-2 {
+  margin-top: $margin-xxsmall;
+}
+.spacing-mt-3 {
+  margin-top: $margin-xsmall;
+}
+.spacing-mt-4 {
+  margin-top: $margin-small;
+}
+.spacing-mt-5 {
+  margin-top: $margin-medium;
+}
+.spacing-mt-6 {
+  margin-top: $margin-large;
+}
+.spacing-mt-7 {
+  margin-top: $margin-xlarge;
+}
+.spacing-mt-8 {
+  margin-top: $margin-xxlarge;
+}
+.spacing-mt-9 {
+  margin-top: $margin-xxxlarge;
+}
+/* margin right */
+.spacing-mr-0 {
+  margin-right: 0;
+}
+.spacing-mr-1 {
+  margin-right: $margin-xxxsmall;
+}
+.spacing-mr-2 {
+  margin-right: $margin-xxsmall;
+}
+.spacing-mr-3 {
+  margin-right: $margin-xsmall;
+}
+.spacing-mr-4 {
+  margin-right: $margin-small;
+}
+.spacing-mr-5 {
+  margin-right: $margin-medium;
+}
+.spacing-mr-6 {
+  margin-right: $margin-large;
+}
+.spacing-mr-7 {
+  margin-right: $margin-xlarge;
+}
+.spacing-mr-8 {
+  margin-right: $margin-xxlarge;
+}
+.spacing-mr-9 {
+  margin-right: $margin-xxxlarge;
+}
+/* margin left */
+.spacing-ml-0 {
+  margin-left: 0;
+}
+.spacing-ml-1 {
+  margin-left: $margin-xxxsmall;
+}
+.spacing-ml-2 {
+  margin-left: $margin-xxsmall;
+}
+.spacing-ml-3 {
+  margin-left: $margin-xsmall;
+}
+.spacing-ml-4 {
+  margin-left: $margin-small;
+}
+.spacing-ml-5 {
+  margin-left: $margin-medium;
+}
+.spacing-ml-6 {
+  margin-left: $margin-large;
+}
+.spacing-ml-7 {
+  margin-left: $margin-xlarge;
+}
+.spacing-ml-8 {
+  margin-left: $margin-xxlarge;
+}
+.spacing-ml-9 {
+  margin-left: $margin-xxxlarge;
+}
+/* margin bottom */
+.spacing-mb-0 {
+  margin-bottom: 0;
+}
+.spacing-mb-1 {
+  margin-bottom: $margin-xxxsmall;
+}
+.spacing-mb-2 {
+  margin-bottom: $margin-xxsmall;
+}
+.spacing-mb-3 {
+  margin-bottom: $margin-xsmall;
+}
+.spacing-mb-4 {
+  margin-bottom: $margin-small;
+}
+.spacing-mb-5 {
+  margin-bottom: $margin-medium;
+}
+.spacing-mb-6 {
+  margin-bottom: $margin-large;
+}
+.spacing-mb-7 {
+  margin-bottom: $margin-xlarge;
+}
+.spacing-mb-8 {
+  margin-bottom: $margin-xxlarge;
+}
+.spacing-mb-9 {
+  margin-bottom: $margin-xxxlarge;
+}
 
-$sidebar-link-icon-margin-right: $margin-xsmall;
+/******************************
+  *     PADDINGS
+  *******************************/
+/* padding all */
+.spacing-pa-0 {
+  padding: 0;
+}
+.spacing-pa-1 {
+  padding: $padding-xxxsmall;
+}
+.spacing-pa-2 {
+  padding: $padding-xxsmall;
+}
+.spacing-pa-3 {
+  padding: $padding-xsmall;
+}
+.spacing-pa-4 {
+  padding: $padding-small;
+}
+.spacing-pa-5 {
+  padding: $padding-medium;
+}
+.spacing-pa-6 {
+  padding: $padding-large;
+}
+.spacing-pa-7 {
+  padding: $padding-xlarge;
+}
+.spacing-pa-8 {
+  padding: $padding-xxlarge;
+}
+.spacing-pa-9 {
+  padding: $padding-xxxlarge;
+}
+/* padding vertical */
+.spacing-pv-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.spacing-pv-1 {
+  padding-top: $padding-xxxsmall;
+  padding-bottom: $padding-xxxsmall;
+}
+.spacing-pv-2 {
+  padding-top: $padding-xxsmall;
+  padding-bottom: $padding-xxsmall;
+}
+.spacing-pv-3 {
+  padding-top: $padding-xsmall;
+  padding-bottom: $padding-xsmall;
+}
+.spacing-pv-4 {
+  padding-top: $padding-small;
+  padding-bottom: $padding-small;
+}
+.spacing-pv-5 {
+  padding-top: $padding-medium;
+  padding-bottom: $padding-medium;
+}
+.spacing-pv-6 {
+  padding-top: $padding-large;
+  padding-bottom: $padding-large;
+}
+.spacing-pv-7 {
+  padding-top: $padding-xlarge;
+  padding-bottom: $padding-xlarge;
+}
+.spacing-pv-8 {
+  padding-top: $padding-xxlarge;
+  padding-bottom: $padding-xxlarge;
+}
+.spacing-pv-9 {
+  padding-top: $padding-xxxlarge;
+  padding-bottom: $padding-xxxlarge;
+}
 
-// heights
-$alert-banner-height: 40px;
-$input-text-height: 40px;
-$upload-button-height: $input-text-height;
-$navbar-height: 72px;
-$main-height: 100vh;
-$footer-height: 90px;
-$sidebar-li-height: 60px;
-$sidebar-li-line-height: $sidebar-li-height;
+/* padding horizontal */
+.spacing-ph-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+.spacing-ph-1 {
+  padding-right: $padding-xxxsmall;
+  padding-left: $padding-xxxsmall;
+}
+.spacing-ph-2 {
+  padding-right: $padding-xxsmall;
+  padding-left: $padding-xxsmall;
+}
+.spacing-ph-3 {
+  padding-right: $padding-xsmall;
+  padding-left: $padding-xsmall;
+}
+.spacing-ph-4 {
+  padding-right: $padding-small;
+  padding-left: $padding-small;
+}
+.spacing-ph-5 {
+  padding-right: $padding-medium;
+  padding-left: $padding-medium;
+}
+.spacing-ph-6 {
+  padding-right: $padding-large;
+  padding-left: $padding-large;
+}
+.spacing-ph-7 {
+  padding-right: $padding-xlarge;
+  padding-left: $padding-xlarge;
+}
+.spacing-ph-8 {
+  padding-right: $padding-xxlarge;
+  padding-left: $padding-xxlarge;
+}
+.spacing-ph-9 {
+  padding-right: $padding-xxxlarge;
+  padding-left: $padding-xxxlarge;
+}
 
-// widths
-$max-width-screen-lg: 1280px;
-
-$sidebar-width: 185px;
-$content-container-min-width: 552px;
-$auth-form-width: 552px;
-$input-select-width: 192px;
-$settings-container-width: 1128px;
-$footer-width: $sidebar-width;
-
-// main container
-$main-padding-top: $navbar-height;
-$main-padding-left: $sidebar-width;
-$main-padding-right: 0;
-// sidebar
-$sidebar-padding-top: $navbar-height;
-$sidebar-padding-left: $padding-none;
-$sidebar-link-padding-left: $padding-medium;
-$sidebar-nav-header-padding-left: $padding-small;
-$collapse-banner-padding-left: $sidebar-width;
-
-// footer
-$footer-padding-left: $sidebar-padding-left;
+/* padding top */
+.spacing-pt-0 {
+  padding-top: 0;
+}
+.spacing-pt-1 {
+  padding-top: $padding-xxxsmall;
+}
+.spacing-pt-2 {
+  padding-top: $padding-xxsmall;
+}
+.spacing-pt-3 {
+  padding-top: $padding-xsmall;
+}
+.spacing-pt-4 {
+  padding-top: $padding-small;
+}
+.spacing-pt-5 {
+  padding-top: $padding-medium;
+}
+.spacing-pt-6 {
+  padding-top: $padding-large;
+}
+.spacing-pt-7 {
+  padding-top: $padding-xlarge;
+}
+.spacing-pt-8 {
+  padding-top: $padding-xxlarge;
+}
+.spacing-pt-9 {
+  padding-top: $padding-xxxlarge;
+}
+/* padding right */
+.spacing-pr-0 {
+  padding-right: 0;
+}
+.spacing-pr-1 {
+  padding-right: $padding-xxxsmall;
+}
+.spacing-pr-2 {
+  padding-right: $padding-xxsmall;
+}
+.spacing-pr-3 {
+  padding-right: $padding-xsmall;
+}
+.spacing-pr-4 {
+  padding-right: $padding-small;
+}
+.spacing-pr-5 {
+  padding-right: $padding-medium;
+}
+.spacing-pr-6 {
+  padding-right: $padding-large;
+}
+.spacing-pr-7 {
+  padding-right: $padding-xlarge;
+}
+.spacing-pr-8 {
+  padding-right: $padding-xxlarge;
+}
+.spacing-pr-9 {
+  padding-right: $padding-xxxlarge;
+}
+/* padding left */
+.spacing-pl-0 {
+  padding-left: 0;
+}
+.spacing-pl-1 {
+  padding-left: $padding-xxxsmall;
+}
+.spacing-pl-2 {
+  padding-left: $padding-xxsmall;
+}
+.spacing-pl-3 {
+  padding-left: $padding-xsmall;
+}
+.spacing-pl-4 {
+  padding-left: $padding-small;
+}
+.spacing-pl-5 {
+  padding-left: $padding-medium;
+}
+.spacing-pl-6 {
+  padding-left: $padding-large;
+}
+.spacing-pl-7 {
+  padding-left: $padding-xlarge;
+}
+.spacing-pl-8 {
+  padding-left: $padding-xxlarge;
+}
+.spacing-pl-9 {
+  padding-left: $padding-xxxlarge;
+}
+/* padding bottom */
+.spacing-pb-0 {
+  padding-bottom: 0;
+}
+.spacing-pb-1 {
+  padding-bottom: $padding-xxxsmall;
+}
+.spacing-pb-2 {
+  padding-bottom: $padding-xxsmall;
+}
+.spacing-pb-3 {
+  padding-bottom: $padding-xsmall;
+}
+.spacing-pb-4 {
+  padding-bottom: $padding-small;
+}
+.spacing-pb-5 {
+  padding-bottom: $padding-medium;
+}
+.spacing-pb-6 {
+  padding-bottom: $padding-large;
+}
+.spacing-pb-7 {
+  padding-bottom: $padding-xlarge;
+}
+.spacing-pb-8 {
+  padding-bottom: $padding-xxlarge;
+}
+.spacing-pb-9 {
+  padding-bottom: $padding-xxxlarge;
+}

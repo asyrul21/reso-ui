@@ -1,0 +1,49 @@
+@use "palette" as *;
+
+// global
+$font-family: "Poppins", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "Helvetica Neue", sans-serif;
+
+// font colors
+$fc-light: $white;
+$fc-dark: $primary-grey-dark;
+$fc-sidebar-link-default: $primary-grey-dark;
+$fc-sidebar-link-hover: $fc-light;
+$fc-sidebar-link-active: $fc-light;
+$fc-fullscreenloader: $fc-dark;
+$fc-nav-link-header: $primary-grey-medium;
+$fc-footer: $primary-grey-medium;
+
+// link colors
+$lc-blue: $link-blue;
+
+// primary colors
+$blue: $primary-blue;
+$red: $primary-red;
+$yellow: $primary-yellow;
+$yellow-light: $primary-yellow-light;
+$green: $primary-green;
+$grey: $primary-grey-dark;
+
+// background colors
+$bg-theme-light-default: $primary-grey-light;
+$bg-navbar: $primary-grey-dark;
+$bg-sidebar: $primary-grey-light;
+$bg-footer: $bg-sidebar;
+$bg-sidebar-link: $bg-sidebar;
+$bg-sidebar-link-hover: $primary-grey-medium;
+$bg-sidebar-link-active: $primary-grey-medium;
+$bg-fullscreenloader: rgba(255, 255, 255, 0.8);
+$bg-sidebar-nav-header: $bg-sidebar;
+$bg-alert-banner-success: $success-green;
+$bg-alert-banner-error: $error-red;
+$bg-backdrop: rgba(0, 0, 0, 0.6);
+$bg-cart-counter: $error-red;
+// button colors
+$bg-button-primary: $orange-gradient;
+$bg-button-disabled: $primary-grey-medium;
+
+// border colors
+$bc-sidebar-li: $blue;
+
+$sidebar-li-navlink-color: $black;

@@ -1,6 +1,7 @@
-@use "palette" as *;
+/*
+* Global CSS Styles should ONLY be imported in [global.scss]
+*/
 @use "variables" as *;
-@use "spacings" as *;
 
 h1 {
   font-size: 26px;

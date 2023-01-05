@@ -16,5 +16,6 @@
       "@utils/*": ["src/utils/*"]
     }
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["./jest-dom-setup.ts"]
 }

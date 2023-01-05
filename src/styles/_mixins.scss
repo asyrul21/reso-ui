@@ -1,7 +1,9 @@
-// should be "light" or "dark"
-@use "palette" as *;
-@use "variables" as *;
+/*
+* Global CSS Styles should ONLY be imported in [global.scss]
+*/
+@use "vars/colors" as *;
 
+// should be "light" or "dark"
 @mixin theme_nature($theme: "light") {
   @if ($theme == "light") {
     color: $fc-dark;
@@ -19,7 +21,7 @@
     background: $background_color;
     @include theme_nature($nature);
   } @else {
-    background: $primary-grey-light;
+    background: $bg-theme-light-default;
     @include theme_nature("light");
   }
 }

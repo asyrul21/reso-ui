@@ -1,5 +1,7 @@
+import { ISpacingsProps } from "@interfaces/ISpacingsProps";
 import Theme from "@interfaces/Theme";
 import classnames from "classnames";
+import { booleanHasValue } from "./validations";
 
 interface IStyleClassnames {
   [key: string]: boolean;
@@ -8,20 +10,87 @@ interface IStyleClassnames {
 interface ILayoutStyleOptions {
   disabled?: boolean;
   no_select?: boolean;
+  width_full?: boolean;
+  width_fit_content?: boolean;
 }
+
+export const withSpacingsProps = (
+  containerStyles: IStyleClassnames,
+  props: ISpacingsProps
+) => {
+  const { ma, mv, mh, mt, mb, mr, ml, pa, pv, ph, pt, pr, pl, pb } = props;
+
+  let spacingClasses: IStyleClassnames = {};
+  // margins
+  if (ma) {
+    spacingClasses = { ...spacingClasses, [`spacing-ma-${ma}`]: true };
+  }
+  if (mv) {
+    spacingClasses = { ...spacingClasses, [`spacing-mv-${mv}`]: true };
+  }
+  if (mh) {
+    spacingClasses = { ...spacingClasses, [`spacing-mh-${mh}`]: true };
+  }
+  if (mt) {
+    spacingClasses = { ...spacingClasses, [`spacing-mt-${mt}`]: true };
+  }
+  if (mb) {
+    spacingClasses = { ...spacingClasses, [`spacing-mb-${mb}`]: true };
+  }
+  if (mr) {
+    spacingClasses = { ...spacingClasses, [`spacing-mr-${mr}`]: true };
+  }
+  if (ml) {
+    spacingClasses = { ...spacingClasses, [`spacing-ml-${ml}`]: true };
+  }
+  // paddings
+  if (pa) {
+    spacingClasses = { ...spacingClasses, [`spacing-pa-${pa}`]: true };
+  }
+  if (pv) {
+    spacingClasses = { ...spacingClasses, [`spacing-pv-${pv}`]: true };
+  }
+  if (ph) {
+    spacingClasses = { ...spacingClasses, [`spacing-ph-${ph}`]: true };
+  }
+  if (pt) {
+    spacingClasses = { ...spacingClasses, [`spacing-pt-${pt}`]: true };
+  }
+  if (pb) {
+    spacingClasses = { ...spacingClasses, [`spacing-pb-${pb}`]: true };
+  }
+  if (pr) {
+    spacingClasses = { ...spacingClasses, [`spacing-pr-${pr}`]: true };
+  }
+  if (pl) {
+    spacingClasses = { ...spacingClasses, [`spacing-pl-${pl}`]: true };
+  }
+
+  return {
+    ...containerStyles,
+    ...spacingClasses,
+  };
+};
 
 export const createLayoutStyles = (
   containerStyles: IStyleClassnames,
   className?: string,
   options?: ILayoutStyleOptions
 ) => {
-  const { disabled, no_select } = options
+  const { disabled, no_select, width_full, width_fit_content } = options
     ? options
-    : { disabled: false, no_select: false };
+    : {
+        disabled: false,
+        no_select: false,
+        width_full: false,
+        width_fit_content: false,
+      };
   return classnames({
     component_layout_default: true,
     component_disabled: disabled && disabled === true,
     no_select: no_select && no_select === true,
+    width_full: width_full && width_full === true,
+    width_fit_content: width_fit_content && width_fit_content === true,
     ...containerStyles,
     [className]: className && className !== "" ? true : false,
   });
@@ -39,7 +108,7 @@ export const createThemeStyles = (
 
 export const createComponentStyles = (
   layoutStyles: string,
-  themeStyles: string
+  themeStyles?: string
 ) => {
   return classnames(layoutStyles, themeStyles);
 };

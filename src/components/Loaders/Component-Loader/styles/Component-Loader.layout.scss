@@ -1,0 +1,32 @@
+.componentLoader_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4; // below navbar
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.componentLoader_icon_container {
+  line-height: 55px;
+  text-align: center;
+}
+
+.componentLoader_icon_size_small {
+  width: 35px;
+  height: 35px;
+}
+
+.componentLoader_icon_size_medium {
+  width: 45px;
+  height: 45px;
+}
+
+.componentLoader_icon_size_large {
+  width: 55px;
+  height: 55px;
+}

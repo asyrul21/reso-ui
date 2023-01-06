@@ -7,6 +7,7 @@ import {
   AddToCart,
   FlexContainer,
   CenterContainer,
+  ComponentLoader,
 } from "@components";
 import "./App.scss";
 
@@ -82,6 +83,9 @@ const App = () => {
       <CenterContainer styles={{ border: "2px solid green" }}>
         <div className="app_test_box">Test 1</div>
       </CenterContainer>
+      <div className="app_test_box" style={{ position: "relative" }}>
+        <ComponentLoader />
+      </div>
     </>
   );
 };

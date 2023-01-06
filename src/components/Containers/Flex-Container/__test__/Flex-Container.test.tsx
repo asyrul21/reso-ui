@@ -1,6 +1,6 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
-import { FlexContainer } from "@components";
+import { render, screen } from "@testing-library/react";
+import { FlexContainer } from "@components/Containers/Flex-Container";
 
 const SampleComponent = () => {
   return (

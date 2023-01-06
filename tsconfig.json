@@ -11,9 +11,10 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@components": ["src/index.ts"],
+      "@components/*": ["src/components/*"],
       "@interfaces/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
   "exclude": ["node_modules"],

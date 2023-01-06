@@ -12,6 +12,7 @@ interface ILayoutStyleOptions {
   no_select?: boolean;
   width_full?: boolean;
   width_fit_content?: boolean;
+  position_relative?: boolean;
 }
 
 export const withSpacingsProps = (
@@ -77,13 +78,20 @@ export const createLayoutStyles = (
   className?: string,
   options?: ILayoutStyleOptions
 ) => {
-  const { disabled, no_select, width_full, width_fit_content } = options
+  const {
+    disabled,
+    no_select,
+    width_full,
+    width_fit_content,
+    position_relative,
+  } = options
     ? options
     : {
         disabled: false,
         no_select: false,
         width_full: false,
         width_fit_content: false,
+        position_relative: false,
       };
   return classnames({
     component_layout_default: true,
@@ -91,6 +99,7 @@ export const createLayoutStyles = (
     no_select: no_select && no_select === true,
     width_full: width_full && width_full === true,
     width_fit_content: width_fit_content && width_fit_content === true,
+    position_relative: position_relative && position_relative === true,
     ...containerStyles,
     [className]: className && className !== "" ? true : false,
   });

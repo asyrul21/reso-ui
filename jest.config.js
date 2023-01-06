@@ -84,9 +84,10 @@ module.exports = {
       "<rootDir>/__mocks__/fileMock.js",
     "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
     // must specify path aliases here
-    "@components": "<rootDir>/src/index.ts",
+    "@components/(.*)": "<rootDir>/src/components/$1",
     "@interfaces/(.*)": "<rootDir>/src/types/$1",
     "@utils/(.*)": "<rootDir>/src/utils/$1",
+    "@styles/(.*)": "<rootDir>/src/styles/$1",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

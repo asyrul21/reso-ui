@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Example } from "@components";
+import { Example } from "@components/Example";
 import "./storiesStyle.scss";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

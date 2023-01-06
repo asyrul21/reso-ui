@@ -1,14 +1,15 @@
 import React from "react";
 
+import { Example } from "@components/Example";
+import { QuantityCounter } from "@components/Quantity-Counter";
+import { AddToCart } from "@components/Add-To-Cart";
+import { FlexContainer } from "@components/Containers/Flex-Container";
+import { CenterContainer } from "@components/Containers/Center-Container";
+import { ImageContainer } from "@components/Containers/Image-Container";
+import { ComponentLoader } from "@components/Loaders/Component-Loader";
+
 // import sample scss
-import {
-  Example,
-  QuantityCounter,
-  AddToCart,
-  FlexContainer,
-  CenterContainer,
-  ComponentLoader,
-} from "@components";
+// IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
 
 const App = () => {
@@ -86,6 +87,16 @@ const App = () => {
       <div className="app_test_box" style={{ position: "relative" }}>
         <ComponentLoader />
       </div>
+      {/* with border and margin */}
+      <ImageContainer styles={{ border: "2px solid red" }} ma={5}>
+        <img
+          src="image-example.jpg"
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
+        />
+      </ImageContainer>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { QuantityCounter } from "@components";
+import { QuantityCounter } from "@components/Quantity-Counter";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
@@ -78,6 +78,7 @@ export const AddToCart = ({
         <span>{`Subtotal (${currency})`}:</span>
         <span>{subTotal}</span>
       </div>
+      {/* TODO: Use our own Button component for below */}
       <button
         className={addToCartButtonStyles}
         data-testid="component-addToCart-button"

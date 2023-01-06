@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { FlexContainer } from "@components";
+import { FlexContainer } from "@components/Flex-Container";
 import "./storiesStyle.scss";
 
 const SampleChildComponent = () => {

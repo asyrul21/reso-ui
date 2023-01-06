@@ -3,8 +3,7 @@ type spacingsRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 type marginAllRange = spacingsRange | "auto";
 type marginVerticalRange = spacingsRange | "center";
 
-export interface ISpacingsProps {
-  /* margins */
+export interface IMarginProps {
   ma?: marginAllRange;
   mv?: marginVerticalRange;
   mh?: spacingsRange;
@@ -12,7 +11,9 @@ export interface ISpacingsProps {
   mb?: spacingsRange;
   mr?: spacingsRange;
   ml?: spacingsRange;
-  /* paddings */
+}
+
+export interface IPaddingProps {
   pa?: spacingsRange;
   pv?: spacingsRange;
   ph?: spacingsRange;
@@ -21,3 +22,7 @@ export interface ISpacingsProps {
   pr?: spacingsRange;
   pl?: spacingsRange;
 }
+
+export type ISpacingsProps = IMarginProps & IPaddingProps;
+
+export default ISpacingsProps;

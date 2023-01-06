@@ -6,7 +6,7 @@ import { QuantityCounter } from "@components";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Reso Components/Quantity Counter",
+  title: "Components/Quantity Counter",
   component: QuantityCounter,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

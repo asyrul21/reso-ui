@@ -7,7 +7,7 @@ import "./storiesStyle.scss";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Reso Components/Example",
+  title: "Components/Example",
   component: Example,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

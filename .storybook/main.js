@@ -15,7 +15,25 @@ module.exports = {
   webpackFinal: async (config) => {
     return {
       ...config,
-      module: { ...config.module, rules: webpackConfig.module.rules },
+      module: {
+        ...config.module,
+        rules: [
+          ...webpackConfig.module.rules,
+          {
+            test: /\.mdx?$/,
+            use: [
+              {
+                loader: "@mdx-js/loader",
+                options: {},
+              },
+            ],
+          },
+          {
+            test: /(.*\.)?stories\.tsx$/,
+            loader: "@storybook/source-loader",
+          },
+        ],
+      },
       resolve: {
         plugins: [...webpackConfig.resolve.plugins],
         extensions: [

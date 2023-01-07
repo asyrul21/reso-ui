@@ -5,6 +5,8 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { FlexContainer } from "@components/Containers/Flex-Container";
 import "./storiesStyle.scss";
 
+import dedent from "ts-dedent";
+
 const SampleChildComponent = () => {
   return <div className="story_test_box">Test Child</div>;
 };
@@ -16,6 +18,17 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
+    parameters: {
+      docs: {
+        description: {
+          component: dedent`
+              A container component with Display Flex features enabled.
+  
+              It supports both Margin and Padding props.
+          `,
+        },
+      },
+    },
   },
 } as ComponentMeta<typeof FlexContainer>;
 

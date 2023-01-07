@@ -11,6 +11,7 @@ module.exports = {
   core: {
     builder: "@storybook/builder-webpack5",
   },
+  staticDirs: ["../public"],
   // https://storybook.js.org/docs/react/builders/webpack#using-your-existing-config
   webpackFinal: async (config) => {
     return {

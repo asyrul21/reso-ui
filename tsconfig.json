@@ -18,5 +18,5 @@
     }
   },
   "exclude": ["node_modules"],
-  "include": ["./jest-dom-setup.ts"]
+  "include": ["./jest-dom-setup.ts", "./**/*.ts", "./**/*.tsx"]
 }

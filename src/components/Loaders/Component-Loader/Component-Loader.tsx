@@ -67,5 +67,3 @@ export const ComponentLoader = ({
     </div>
   );
 };
-
-export default ComponentLoader;

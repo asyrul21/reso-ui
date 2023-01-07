@@ -72,7 +72,7 @@ export const ImageContainer = ({
             child,
             {
               ...child.props,
-              loaded,
+              loaded: loaded || undefined,
               onLoad: () => {
                 setLoaded(true);
               },
@@ -83,5 +83,3 @@ export const ImageContainer = ({
     </div>
   );
 };
-
-export default ImageContainer;

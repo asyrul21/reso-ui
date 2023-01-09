@@ -18,8 +18,6 @@ import {
 } from "@utils/styles";
 
 export interface IImageProps extends IComponent, IMarginProps {
-  width?: string;
-  height?: string;
   onClick?: () => void;
   clickable?: "zoomIn" | "zoomOut" | "pointer";
   src: string;
@@ -31,8 +29,6 @@ export interface IImageProps extends IComponent, IMarginProps {
 }
 
 export const Image = ({
-  width = "456px",
-  height = "364px",
   onClick = () => {},
   clickable,
   src,
@@ -84,9 +80,6 @@ export const Image = ({
     <div
       className={containerStyles}
       style={{
-        width,
-        height,
-        minWidth: width,
         ...styles,
       }}
       onClick={onClick}

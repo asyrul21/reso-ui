@@ -3,6 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  // default dimensions
+  width: 456px;
+  min-width: 456px;
+  height: 364px;
 }
 
 .image_container_clickable_zoomIn {

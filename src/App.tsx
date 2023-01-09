@@ -5,7 +5,7 @@ import { QuantityCounter } from "@components/Quantity-Counter";
 import { AddToCart } from "@components/Add-To-Cart";
 import { FlexContainer } from "@components/Containers/Flex-Container";
 import { CenterContainer } from "@components/Containers/Center-Container";
-import { ImageContainer } from "@components/Containers/Image-Container";
+import { Image } from "@components/Image";
 import { ComponentLoader } from "@components/Loaders/Component-Loader";
 
 // import sample scss
@@ -88,15 +88,11 @@ const App = () => {
         <ComponentLoader />
       </div>
       {/* with border and margin */}
-      <ImageContainer styles={{ border: "2px solid red" }} ma={5}>
-        <img
-          src="image-example.jpg"
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
-      </ImageContainer>
+      <Image
+        src="image-example.jpg"
+        styles={{ border: "2px solid red" }}
+        ma={5}
+      />
     </>
   );
 };

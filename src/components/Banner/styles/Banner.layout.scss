@@ -1,0 +1,8 @@
+.banner_container {
+  width: unset;
+  max-width: $max-width-screen-lg;
+  min-height: 320px;
+  // min-height is required to enable
+  // ComponentLoader to show correctly
+  max-height: 410px;
+}

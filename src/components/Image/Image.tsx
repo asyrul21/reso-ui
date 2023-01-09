@@ -23,7 +23,7 @@ export interface IImageProps extends IComponent, IMarginProps {
   src: string;
   imgClassName?: string;
   imgStyles?: React.CSSProperties;
-  objectFit?: "cover" | "contain";
+  objectFit?: "cover" | "contain" | "fill";
   alt?: string;
   fallbacks?: string[];
 }
@@ -34,7 +34,7 @@ export const Image = ({
   src,
   alt = "RESO Image",
   imgClassName,
-  objectFit = "cover",
+  objectFit = "fill",
   className,
   fallbacks = [],
   styles = {},

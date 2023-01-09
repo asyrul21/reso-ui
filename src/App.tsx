@@ -6,6 +6,7 @@ import { AddToCart } from "@components/Add-To-Cart";
 import { FlexContainer } from "@components/Containers/Flex-Container";
 import { CenterContainer } from "@components/Containers/Center-Container";
 import { Image } from "@components/Image";
+import { Banner } from "@components/Banner";
 import { ComponentLoader } from "@components/Loaders/Component-Loader";
 
 // import sample scss
@@ -93,6 +94,7 @@ const App = () => {
         styles={{ border: "2px solid red" }}
         ma={5}
       />
+      <Banner src="banner-example.jpg" styles={{ border: "2px solid red" }} />
     </>
   );
 };

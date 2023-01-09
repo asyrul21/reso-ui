@@ -1,0 +1,36 @@
+.image_container {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_container_clickable_zoomIn {
+  cursor: zoom-in;
+}
+
+.image_container_clickable_zoomOut {
+  cursor: zoom-out;
+}
+
+.image_container_clickable_pointer {
+  cursor: pointer;
+}
+
+.image_img {
+  object-position: center;
+  // border: 2px solid green;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  width: 100%;
+  height: auto;
+  // https://www.w3schools.com/css/css3_images.asp
+}
+
+.image_img_fit-cover {
+  object-fit: cover;
+}
+.image_img_fit-contain {
+  object-fit: contain;
+}

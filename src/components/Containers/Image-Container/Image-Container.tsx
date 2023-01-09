@@ -34,7 +34,7 @@ export const ImageContainer = ({
   styles,
   ...spacingsProps
 }: IImageContainerProps) => {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState<Boolean>(false);
 
   const containerStyles = createComponentStyles(
     createLayoutStyles(
@@ -64,7 +64,7 @@ export const ImageContainer = ({
       onClick={onClick}
       data-testid="image-container-root"
     >
-      {!loaded && <ComponentLoader data-testid="image-container-loader" />}
+      {!loaded && <ComponentLoader />}
       {/* {true && <ComponentLoader />} */}
       {children &&
         React.Children.map(children, (child) => {

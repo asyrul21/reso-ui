@@ -8,6 +8,7 @@ import { CenterContainer } from "@components/Containers/Center-Container";
 import { Image } from "@components/Image";
 import { Banner } from "@components/Banner";
 import { ComponentLoader } from "@components/Loaders/Component-Loader";
+import { ComponentError } from "@components/Errors/Component-Error";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -95,6 +96,15 @@ const App = () => {
         ma={5}
       />
       <Banner src="banner-example.jpg" styles={{ border: "2px solid red" }} />
+      {/* No text */}
+      <div className="app_test_box" style={{ position: "relative" }}>
+        <ComponentError />
+      </div>
+
+      {/* With text */}
+      <div className="app_test_box" style={{ position: "relative" }}>
+        <ComponentError text="Something went wrong" />
+      </div>
     </>
   );
 };

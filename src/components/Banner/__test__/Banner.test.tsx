@@ -5,7 +5,7 @@ import { Banner } from "@components/Banner";
 // import from index does not work for jest.spyOn
 import * as ImageModule from "@components/Image/Image";
 
-describe("Image Component Unit Tests", () => {
+describe("Banner Component Unit Tests", () => {
   beforeEach(() => {
     jest.spyOn(ImageModule, "Image").mockImplementation((props) => {
       const { src, alt, className, imgClassName, styles, imgStyles } = props;

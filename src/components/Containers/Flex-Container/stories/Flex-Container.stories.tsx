@@ -18,15 +18,15 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
-    parameters: {
-      docs: {
-        description: {
-          component: dedent`
-              A container component with Display Flex features enabled.
-  
-              It supports both Margin and Padding props.
-          `,
-        },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: dedent`
+            A container component with Display Flex features enabled.
+
+            It supports both Margin and Padding props.
+        `,
       },
     },
   },

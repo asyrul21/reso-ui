@@ -106,12 +106,13 @@ export const createLayoutStyles = (
 };
 
 export const createThemeStyles = (
-  componentStylePrefix: string,
+  componentStylePrefix?: string,
   theme?: Theme
 ) => {
   return classnames({
     component_theme_default: true,
-    [`${componentStylePrefix}${theme}`]: theme ? true : false,
+    [`${componentStylePrefix}${theme}`]:
+      componentStylePrefix && theme ? true : false,
   });
 };
 

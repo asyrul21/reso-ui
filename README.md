@@ -15,6 +15,16 @@ npm start
 
 ```
 
+# Changes from Original
+
+1. ImageContainer and Image are now combined to form 1 component: Image
+
+2. BannerImageContainer were removed, replaced with Banner
+
+3. Flex Container now have Margins and Padding props
+
+4. All components now have an optional prop _theme_
+
 # Development Setup
 
 [Reference for Typescript and Webpack](https://dev.to/shivampawar/setup-react-application-using-typescript-and-webpack-2kn6)

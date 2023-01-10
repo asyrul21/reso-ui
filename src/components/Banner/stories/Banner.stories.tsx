@@ -19,6 +19,9 @@ export default {
       description: {
         component: dedent`
             A Banner image component, basically a styled \`Image\` component.
+
+            By default, it has a max-width of 1280px. If you wish to extend it to full width of browser,
+            you can use the *fullWidth* prop.
         `,
       },
     },
@@ -38,4 +41,10 @@ export const CustomContainerClass = ComponentTemplate.bind({});
 CustomContainerClass.args = {
   src: "/banner-example.jpg",
   className: "banner_custom_story",
+};
+
+export const FullWidth = ComponentTemplate.bind({});
+FullWidth.args = {
+  src: "/banner-example.jpg",
+  fullWidth: true,
 };

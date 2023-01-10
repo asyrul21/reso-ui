@@ -18,6 +18,7 @@ import {
 export interface IBannerProps extends IComponent {
   src: string;
   alt?: string;
+  fullWidth?: boolean;
   imgClassName?: string;
   imgStyles?: React.CSSProperties;
 }
@@ -25,6 +26,7 @@ export interface IBannerProps extends IComponent {
 export const Banner = ({
   src,
   alt = "RESO Banner",
+  fullWidth,
   className,
   imgClassName,
   styles = {},
@@ -34,10 +36,12 @@ export const Banner = ({
     createLayoutStyles(
       {
         banner_container: true,
+        banner_container_fullWidth: fullWidth,
       },
       className,
       {
         position_relative: true,
+        // width_full does not work here because both [Image] and [Banner] styles overrides the global [width] style
       }
     ),
     createThemeStyles("")
@@ -51,7 +55,7 @@ export const Banner = ({
       alt={alt}
       imgClassName={imgClassName}
       imgStyles={imgStyles}
-      mv="center"
+      mv={fullWidth ? 0 : "center"}
     />
   );
 };

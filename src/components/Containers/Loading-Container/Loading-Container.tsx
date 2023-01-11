@@ -15,7 +15,7 @@ import { createComponentStyles, createLayoutStyles } from "@utils/styles";
 
 export interface ILoadingContainerProps extends IComponent, IThemeProps {
   type: "layer" | "conditional";
-  loading: boolean;
+  loading?: boolean;
   children: JSX.Element;
   error?: string;
   minHeight?: string;
@@ -27,7 +27,7 @@ export interface ILoadingContainerProps extends IComponent, IThemeProps {
 
 export const LoadingContainer = ({
   type,
-  loading,
+  loading = false,
   children,
   error,
   minHeight = "fit-content",

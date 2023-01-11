@@ -1,5 +1,5 @@
 import { ISpacingsProps } from "@interfaces/ISpacingsProps";
-import Theme from "@interfaces/Theme";
+import { Theme } from "@interfaces/Theme";
 import classnames from "classnames";
 import { booleanHasValue, hasValue } from "./validations";
 
@@ -120,5 +120,6 @@ export const createComponentStyles = (
   layoutStyles: string,
   themeStyles?: string
 ) => {
-  return classnames(layoutStyles, themeStyles);
+  const themeClasses = themeStyles ? themeStyles : createThemeStyles();
+  return classnames(layoutStyles, themeClasses);
 };

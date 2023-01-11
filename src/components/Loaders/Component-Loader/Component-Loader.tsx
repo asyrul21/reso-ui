@@ -2,6 +2,7 @@ import React from "react";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
+import IThemeProps from "@interfaces/Theme";
 
 // styles
 import "./styles/Component-Loader.layout.scss";
@@ -14,7 +15,7 @@ import {
   createThemeStyles,
 } from "@utils/styles";
 
-export interface IComponentLoaderProps extends IComponent {
+export interface IComponentLoaderProps extends IComponent, IThemeProps {
   size?: "small" | "medium" | "large";
   iconContainerClassName?: string;
   iconContainerStyles?: React.CSSProperties;
@@ -27,9 +28,9 @@ export const ComponentLoader = ({
   size = "small",
   className,
   iconContainerClassName,
-  theme = "light",
   styles,
   iconContainerStyles,
+  theme = "light",
 }: IComponentLoaderProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(

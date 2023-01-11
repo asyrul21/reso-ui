@@ -2,9 +2,11 @@ import React from "react";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
+import IThemeProps from "@interfaces/Theme";
 
 // styles
 import "./styles/Component-Error.layout.scss";
+import "./styles/Component-Error.theme.scss";
 
 // utils
 import {
@@ -13,7 +15,7 @@ import {
   createThemeStyles,
 } from "@utils/styles";
 
-export interface IComponentErrorProps extends IComponent {
+export interface IComponentErrorProps extends IComponent, IThemeProps {
   text?: string;
   iconClassName?: string;
   iconStyles?: React.CSSProperties;
@@ -29,6 +31,7 @@ export const ComponentError = ({
   iconStyles = {},
   textClassName,
   textStyles = {},
+  theme = "light",
 }: IComponentErrorProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
@@ -37,7 +40,7 @@ export const ComponentError = ({
       },
       className
     ),
-    createThemeStyles()
+    createThemeStyles("componentError_container_theme_", theme)
   );
 
   const iconClasses = createComponentStyles(
@@ -48,7 +51,7 @@ export const ComponentError = ({
       },
       iconClassName
     ),
-    createThemeStyles()
+    createThemeStyles("componentError_icon_theme_", theme)
   );
 
   const textClasses = createComponentStyles(
@@ -59,7 +62,7 @@ export const ComponentError = ({
       },
       textClassName
     ),
-    createThemeStyles()
+    createThemeStyles("componentError_text_theme_", theme)
   );
   return (
     <div

@@ -13,7 +13,6 @@ import "./styles/Image.layout.scss";
 import {
   createComponentStyles,
   createLayoutStyles,
-  createThemeStyles,
   withSpacingsProps,
 } from "@utils/styles";
 
@@ -58,8 +57,7 @@ export const Image = ({
       {
         position_relative: true,
       }
-    ),
-    createThemeStyles("")
+    )
   );
 
   const imgClasses = createComponentStyles(

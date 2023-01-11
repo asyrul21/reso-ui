@@ -3,6 +3,7 @@ import { QuantityCounter } from "@components/Quantity-Counter";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
+import IThemeProps from "@interfaces/Theme";
 
 // styles
 import "./styles/Add-To-Cart.layout.scss";
@@ -15,7 +16,7 @@ import {
   createThemeStyles,
 } from "@utils/styles";
 
-export interface IAddToCartProps extends IComponent {
+export interface IAddToCartProps extends IComponent, IThemeProps {
   inStock: boolean;
   quantityValue: number;
   currency: string;

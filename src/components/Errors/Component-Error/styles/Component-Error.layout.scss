@@ -1,6 +1,4 @@
 .componentError_container {
-  border: 1px solid $primary-grey-medium-light;
-  background-color: $bg-fullscreenloader;
   opacity: 0.9;
   position: absolute;
   top: 0;
@@ -19,12 +17,9 @@
   height: 55px;
   line-height: 55px;
   text-align: center;
-  border: 2px solid $red;
-  background-color: $bg-alert-banner-error;
   font-size: $font-size-8;
   font-weight: bold;
   border-radius: 100px;
-  color: $white;
 }
 
 .componentError_icon_margin {

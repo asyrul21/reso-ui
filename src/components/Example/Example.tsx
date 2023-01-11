@@ -2,6 +2,7 @@ import React from "react";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
+import IThemeProps from "@interfaces/Theme";
 
 // styles
 import "./styles/Example.layout.scss";
@@ -14,7 +15,7 @@ import {
   createThemeStyles,
 } from "@utils/styles";
 
-export interface IExampleComponent extends IComponent {
+export interface IExampleComponent extends IComponent, IThemeProps {
   name: string;
 }
 

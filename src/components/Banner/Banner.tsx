@@ -9,11 +9,7 @@ import IComponent from "@interfaces/IComponent";
 import "./styles/Banner.layout.scss";
 
 // utils
-import {
-  createComponentStyles,
-  createLayoutStyles,
-  createThemeStyles,
-} from "@utils/styles";
+import { createComponentStyles, createLayoutStyles } from "@utils/styles";
 
 export interface IBannerProps extends IComponent {
   src: string;
@@ -43,8 +39,7 @@ export const Banner = ({
         position_relative: true,
         // width_full does not work here because both [Image] and [Banner] styles overrides the global [width] style
       }
-    ),
-    createThemeStyles("")
+    )
   );
 
   return (

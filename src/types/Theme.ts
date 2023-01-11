@@ -1,4 +1,8 @@
 // define theme literals here
-type Theme = "light" | "dark";
+export type Theme = "light" | "dark";
 
-export default Theme;
+export interface IThemeProps {
+  theme?: Theme;
+}
+
+export default IThemeProps;

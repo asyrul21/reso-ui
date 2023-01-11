@@ -3,6 +3,7 @@ import classnames from "classnames";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
+import IThemeProps from "@interfaces/Theme";
 
 // utils
 import {
@@ -14,7 +15,7 @@ import {
 import "./styles/Quantity-Counter.layout.scss";
 import "./styles/Quantity-Counter.theme.scss";
 
-export interface IQuantityCounter extends IComponent {
+export interface IQuantityCounter extends IComponent, IThemeProps {
   value: number;
   onChange: (val: number) => void;
 }

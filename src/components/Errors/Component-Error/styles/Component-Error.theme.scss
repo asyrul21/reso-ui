@@ -1,0 +1,12 @@
+.componentError_container_theme_light {
+  border: 1px solid $primary-grey-medium-light;
+  background-color: $bg-fullscreenloader;
+}
+.componentError_icon_theme_light {
+  border: 2px solid $red;
+  background-color: $bg-alert-banner-error;
+  color: $white;
+}
+.componentError_text_theme_light {
+  @include theme_nature("light");
+}

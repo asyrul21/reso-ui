@@ -9,6 +9,7 @@ import { Image } from "@components/Image";
 import { Banner } from "@components/Banner";
 import { ComponentLoader } from "@components/Loaders/Component-Loader";
 import { ComponentError } from "@components/Errors/Component-Error";
+import { LoadingContainer } from "@components/Containers/Loading-Container";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -104,6 +105,20 @@ const App = () => {
       {/* With text */}
       <div className="app_test_box" style={{ position: "relative" }}>
         <ComponentError text="Something went wrong" />
+      </div>
+
+      {/* layer */}
+      <h1>Layer</h1>
+      <LoadingContainer type="layer" loading={true}>
+        <div className="app_test_data_table">Sample Data Table Component</div>
+      </LoadingContainer>
+
+      {/* conditional */}
+      <h1>Conditional</h1>
+      <div style={{ width: "100%", minHeight: "320px" }}>
+        <LoadingContainer type="conditional" loading={true}>
+          <div className="app_test_data_table">Sample Data Table Component</div>
+        </LoadingContainer>
       </div>
     </>
   );

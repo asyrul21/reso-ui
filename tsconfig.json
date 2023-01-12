@@ -14,6 +14,7 @@
       "@components/*": ["src/components/*"],
       "@interfaces/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@styles/*": ["src/styles/*"]
     }
   },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Example } from "@components/Example";
 import { QuantityCounter } from "@components/Quantity-Counter";
@@ -11,117 +11,136 @@ import { ComponentLoader } from "@components/Loaders/Component-Loader";
 import { ComponentError } from "@components/Errors/Component-Error";
 import { LoadingContainer } from "@components/Containers/Loading-Container";
 import { View } from "@components/Containers/View";
+import { Modal } from "@components/Containers/Modal";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
 
 const App = () => {
+  const [showModal, setShowModal] = useState<boolean>(false);
+
   return (
-    <View styles={{ border: "2px solid blue" }} pa={5}>
-      {/* no theme */}
-      <FlexContainer borderColor="green" mb={5}>
-        <Example name="john" />
-      </FlexContainer>
-      {/* with theme */}
-      <FlexContainer mb={5}>
-        <Example theme="light" name="john" />
-      </FlexContainer>
-      <FlexContainer mb={5}>
-        <Example theme="dark" name="john" />
-      </FlexContainer>
-      {/* no theme, with className */}
-      <FlexContainer mb={5}>
-        <Example name="john" className="example_app_styles" />
-      </FlexContainer>
-      {/* with theme, with className */}
-      <FlexContainer mb={5}>
-        <Example theme="light" name="john" className="example_app_styles" />
-      </FlexContainer>
-      <FlexContainer pa={5}>
-        <QuantityCounter
-          value={5}
-          onChange={(val) => {
-            alert(`Counter value updated to: ${val}`);
+    <>
+      <View styles={{ border: "2px solid blue" }} pa={5}>
+        {showModal && (
+          <Modal
+            title="Example Modal"
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            modalStyles={{ border: "2px solid red" }}
+            pa={5}
+          >
+            <p>Sample</p>
+          </Modal>
+        )}
+        {/* no theme */}
+        <FlexContainer borderColor="green" mb={5}>
+          <Example name="john" />
+        </FlexContainer>
+        {/* with theme */}
+        <FlexContainer mb={5}>
+          <Example theme="light" name="john" />
+        </FlexContainer>
+        <FlexContainer mb={5}>
+          <Example theme="dark" name="john" />
+        </FlexContainer>
+        {/* no theme, with className */}
+        <FlexContainer mb={5}>
+          <Example name="john" className="example_app_styles" />
+        </FlexContainer>
+        {/* with theme, with className */}
+        <FlexContainer mb={5}>
+          <Example theme="light" name="john" className="example_app_styles" />
+        </FlexContainer>
+        <FlexContainer pa={5}>
+          <QuantityCounter
+            value={5}
+            onChange={(val) => {
+              alert(`Counter value updated to: ${val}`);
+            }}
+          />
+        </FlexContainer>
+        {/* with theme */}
+        <FlexContainer
+          mb={5}
+          ma={"auto"}
+          borderColor="blue"
+          styles={{
+            width: "fit-content",
           }}
+        >
+          <AddToCart
+            theme="light"
+            inStock={true}
+            quantityValue={1}
+            currency="RM"
+            price="100.00"
+            subTotal="100.00"
+          />
+        </FlexContainer>
+        {/* override styles with classname */}
+        <FlexContainer mb={5}>
+          <AddToCart
+            className="addToCart_app_styles"
+            inStock={true}
+            quantityValue={1}
+            currency="RM"
+            price="100.00"
+            subTotal="100.00"
+          />
+        </FlexContainer>
+        <FlexContainer justify="start" borderColor="blue">
+          <>
+            <FlexContainer mr={5}>
+              <div className="app_test_box">Test 1</div>
+            </FlexContainer>
+            <FlexContainer>
+              <div className="app_test_box">Test 2</div>
+            </FlexContainer>
+          </>
+        </FlexContainer>
+        <CenterContainer styles={{ border: "2px solid green" }}>
+          <div className="app_test_box">Test 1</div>
+        </CenterContainer>
+        <div className="app_test_box" style={{ position: "relative" }}>
+          <ComponentLoader />
+        </div>
+        {/* with border and margin */}
+        <Image
+          src="image-example.jpg"
+          styles={{ border: "2px solid red" }}
+          ma={5}
         />
-      </FlexContainer>
-      {/* with theme */}
-      <FlexContainer
-        mb={5}
-        ma={"auto"}
-        borderColor="blue"
-        styles={{
-          width: "fit-content",
-        }}
-      >
-        <AddToCart
-          theme="light"
-          inStock={true}
-          quantityValue={1}
-          currency="RM"
-          price="100.00"
-          subTotal="100.00"
-        />
-      </FlexContainer>
-      {/* override styles with classname */}
-      <FlexContainer mb={5}>
-        <AddToCart
-          className="addToCart_app_styles"
-          inStock={true}
-          quantityValue={1}
-          currency="RM"
-          price="100.00"
-          subTotal="100.00"
-        />
-      </FlexContainer>
-      <FlexContainer justify="start" borderColor="blue">
-        <>
-          <FlexContainer mr={5}>
-            <div className="app_test_box">Test 1</div>
-          </FlexContainer>
-          <FlexContainer>
-            <div className="app_test_box">Test 2</div>
-          </FlexContainer>
-        </>
-      </FlexContainer>
-      <CenterContainer styles={{ border: "2px solid green" }}>
-        <div className="app_test_box">Test 1</div>
-      </CenterContainer>
-      <div className="app_test_box" style={{ position: "relative" }}>
-        <ComponentLoader />
-      </div>
-      {/* with border and margin */}
-      <Image
-        src="image-example.jpg"
-        styles={{ border: "2px solid red" }}
-        ma={5}
-      />
-      <Banner src="banner-example.jpg" styles={{ border: "2px solid red" }} />
-      {/* No text */}
-      <div className="app_test_box" style={{ position: "relative" }}>
-        <ComponentError />
-      </div>
+        <Banner src="banner-example.jpg" styles={{ border: "2px solid red" }} />
+        {/* No text */}
+        <div className="app_test_box" style={{ position: "relative" }}>
+          <ComponentError />
+        </div>
 
-      {/* With text */}
-      <div className="app_test_box" style={{ position: "relative" }}>
-        <ComponentError text="Something went wrong" />
-      </div>
+        {/* With text */}
+        <div className="app_test_box" style={{ position: "relative" }}>
+          <ComponentError text="Something went wrong" />
+        </div>
 
-      {/* layer */}
-      <h1>Layer</h1>
-      <LoadingContainer type="layer" loading={true}>
-        <div className="app_test_data_table">Sample Data Table Component</div>
-      </LoadingContainer>
-
-      {/* conditional */}
-      <h1>Conditional</h1>
-      <div style={{ width: "100%", minHeight: "320px" }}>
-        <LoadingContainer type="conditional" loading={true}>
+        {/* layer */}
+        <h1>Layer</h1>
+        <LoadingContainer type="layer" loading={true}>
           <div className="app_test_data_table">Sample Data Table Component</div>
         </LoadingContainer>
-      </div>
-    </View>
+
+        {/* conditional */}
+        <h1>Conditional</h1>
+        <div style={{ width: "100%", minHeight: "320px" }}>
+          <LoadingContainer type="conditional" loading={true}>
+            <div className="app_test_data_table">
+              Sample Data Table Component
+            </div>
+          </LoadingContainer>
+        </div>
+        <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
+      </View>
+    </>
   );
 };
 

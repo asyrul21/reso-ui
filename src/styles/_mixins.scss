@@ -14,7 +14,7 @@
 
 /**
 * [background-color] does not work with linea-gradient css prop.
-* Therefore, we are using [backgrounf]
+* Therefore, we are using [background]
 */
 @mixin use_theme($background_color, $nature: "light") {
   @if ($background_color) {

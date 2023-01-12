@@ -25,7 +25,9 @@ npm start
 
 4. Loading-Component and Loading-Container has been combined to form 1 component: Loading-Container, with a _type_ prop. For Layer type (previously Component Loader), with width has been made `fit-content`. May need to change widths of table containers accordingly.
 
-5. All components now have an optional prop _theme_
+5. Popup-container renamed to Modal
+
+6. All components now have an optional prop _theme_
 
 # Development Setup
 

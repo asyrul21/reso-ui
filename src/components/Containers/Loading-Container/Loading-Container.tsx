@@ -16,7 +16,7 @@ import { createComponentStyles, createLayoutStyles } from "@utils/styles";
 export interface ILoadingContainerProps extends IComponent, IThemeProps {
   type: "layer" | "conditional";
   loading?: boolean;
-  children: JSX.Element;
+  children: React.ReactNode;
   error?: string;
   minHeight?: string;
   componentLoaderClassName?: string;

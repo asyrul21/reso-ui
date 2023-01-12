@@ -10,7 +10,7 @@ import "./styles/Center-Container.layout.scss";
 import { createLayoutStyles } from "@utils/styles";
 
 export interface ICenterContainerProps extends IComponent {
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 
 // width and height will follow children

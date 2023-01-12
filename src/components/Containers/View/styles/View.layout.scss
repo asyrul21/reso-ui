@@ -1,0 +1,6 @@
+.viewContainer_container {
+  // min-height: 100vh;
+  min-height: inherit;
+  overflow-x: auto; // just in case
+  overflow-y: hidden;
+}

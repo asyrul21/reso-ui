@@ -10,6 +10,7 @@ import { Banner } from "@components/Banner";
 import { ComponentLoader } from "@components/Loaders/Component-Loader";
 import { ComponentError } from "@components/Errors/Component-Error";
 import { LoadingContainer } from "@components/Containers/Loading-Container";
+import { View } from "@components/Containers/View";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -17,7 +18,7 @@ import "./App.scss";
 
 const App = () => {
   return (
-    <>
+    <View styles={{ border: "2px solid blue" }} pa={5}>
       {/* no theme */}
       <FlexContainer borderColor="green" mb={5}>
         <Example name="john" />
@@ -120,7 +121,7 @@ const App = () => {
           <div className="app_test_data_table">Sample Data Table Component</div>
         </LoadingContainer>
       </div>
-    </>
+    </View>
   );
 };
 

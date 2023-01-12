@@ -19,7 +19,7 @@ export interface IFlexContainerProps extends IComponent, ISpacingsProps {
   direction?: "row" | "column";
   justify?: "space-between" | "start" | "end" | "space-around" | "center";
   align?: "center" | "start" | "end";
-  children: JSX.Element;
+  children: React.ReactNode;
   fullWidth?: boolean;
   widthFitContent?: boolean;
   wrap?: boolean;

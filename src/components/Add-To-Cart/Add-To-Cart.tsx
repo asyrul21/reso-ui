@@ -25,7 +25,7 @@ export interface IAddToCartProps extends IComponent, IThemeProps {
   onChangeQuantity?: (val: number) => void;
   onButtonClick?: () => void;
   buttonDisabled?: boolean;
-  children?: JSX.Element;
+  children?: React.ReactNode;
 }
 
 export const AddToCart = ({

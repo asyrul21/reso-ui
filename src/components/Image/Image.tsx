@@ -5,6 +5,7 @@ import { ComponentLoader } from "@components/Loaders/Component-Loader";
 // import base interface
 import IComponent from "@interfaces/IComponent";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
+import ImageClickableTypes from "@interfaces/ImageClickables";
 
 // styles
 import "./styles/Image.layout.scss";
@@ -18,7 +19,7 @@ import {
 
 export interface IImageProps extends IComponent, IMarginProps {
   onClick?: () => void;
-  clickable?: "zoomIn" | "zoomOut" | "pointer";
+  clickable?: ImageClickableTypes;
   src: string;
   imgClassName?: string;
   imgStyles?: React.CSSProperties;

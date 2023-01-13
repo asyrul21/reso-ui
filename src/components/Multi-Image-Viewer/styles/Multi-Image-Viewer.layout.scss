@@ -1,0 +1,33 @@
+.multiImageViewer_container {
+}
+
+.multiImageViewer_mainImage {
+  border-radius: $border-radius-small;
+  width: 364px;
+  height: 320px;
+}
+
+.multiImageViewer_mainImage_multi {
+  border-bottom: none;
+}
+
+.multiImageViewer_scrollbox {
+  // border: 2px solid $primary-grey-medium;
+  // border-radius: 0 0 $border-radius-small $border-radius-small;
+  padding: $padding-xxsmall 0;
+  height: auto;
+  width: inherit;
+  display: flex;
+  overflow-x: auto;
+}
+
+.multiImageViewer_miniImage {
+  width: 104px;
+  height: 92px;
+}
+
+.multiImageViewer_miniImage_selected {
+  border-style: solid;
+  border-width: 3px;
+  cursor: default;
+}

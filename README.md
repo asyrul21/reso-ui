@@ -27,7 +27,9 @@ npm start
 
 5. Popup-container renamed to Modal
 
-6. All components now have an optional prop _theme_
+6. multi-image-container renamed to Multi-Image-Viewer. setViewedIndex prop renamed to setExternallyViewedIndex
+
+7. All components now have an optional prop _theme_
 
 # Development Setup
 

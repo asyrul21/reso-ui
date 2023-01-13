@@ -12,6 +12,7 @@ import { ComponentError } from "@components/Errors/Component-Error";
 import { LoadingContainer } from "@components/Containers/Loading-Container";
 import { View } from "@components/Containers/View";
 import { Modal } from "@components/Containers/Modal";
+import { MultiImageViewer } from "@components/Multi-Image-Viewer";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -103,42 +104,92 @@ const App = () => {
         <CenterContainer styles={{ border: "2px solid green" }}>
           <div className="app_test_box">Test 1</div>
         </CenterContainer>
-        <div className="app_test_box" style={{ position: "relative" }}>
-          <ComponentLoader />
-        </div>
+        <FlexContainer mb={5}>
+          <div className="app_test_box" style={{ position: "relative" }}>
+            <ComponentLoader />
+          </div>
+        </FlexContainer>
         {/* with border and margin */}
-        <Image
-          src="image-example.jpg"
-          styles={{ border: "2px solid red" }}
-          ma={5}
-        />
-        <Banner src="banner-example.jpg" styles={{ border: "2px solid red" }} />
-        {/* No text */}
-        <div className="app_test_box" style={{ position: "relative" }}>
-          <ComponentError />
-        </div>
-
-        {/* With text */}
-        <div className="app_test_box" style={{ position: "relative" }}>
-          <ComponentError text="Something went wrong" />
-        </div>
-
-        {/* layer */}
+        <FlexContainer mb={5}>
+          <Image
+            src="image-example.jpg"
+            styles={{ border: "2px solid red" }}
+            ma={5}
+          />
+        </FlexContainer>
+        <FlexContainer mb={5}>
+          <Banner
+            src="banner-example.jpg"
+            styles={{ border: "2px solid red" }}
+          />
+        </FlexContainer>
+        <FlexContainer mb={5}>
+          {/* No text */}
+          <div className="app_test_box" style={{ position: "relative" }}>
+            <ComponentError />
+          </div>
+        </FlexContainer>
+        <FlexContainer mb={5}>
+          {/* With text */}
+          <div className="app_test_box" style={{ position: "relative" }}>
+            <ComponentError text="Something went wrong" />
+          </div>
+        </FlexContainer>
         <h1>Layer</h1>
-        <LoadingContainer type="layer" loading={true}>
-          <div className="app_test_data_table">Sample Data Table Component</div>
-        </LoadingContainer>
-
-        {/* conditional */}
-        <h1>Conditional</h1>
-        <div style={{ width: "100%", minHeight: "320px" }}>
-          <LoadingContainer type="conditional" loading={true}>
+        <FlexContainer mb={5}>
+          {/* layer */}
+          <LoadingContainer type="layer" loading={true}>
             <div className="app_test_data_table">
               Sample Data Table Component
             </div>
           </LoadingContainer>
-        </div>
-        <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
+        </FlexContainer>
+
+        {/* conditional */}
+        <h1>Conditional</h1>
+        <FlexContainer mb={5}>
+          <div style={{ width: "100%", minHeight: "320px" }}>
+            <LoadingContainer type="conditional" loading={true}>
+              <div className="app_test_data_table">
+                Sample Data Table Component
+              </div>
+            </LoadingContainer>
+          </div>
+        </FlexContainer>
+        <h1>Modal</h1>
+        <FlexContainer mb={5}>
+          <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
+        </FlexContainer>
+        <h1>Single Image</h1>
+        <FlexContainer mb={5}>
+          <MultiImageViewer
+            imageObjects={[
+              {
+                path: "image-example.jpg",
+              },
+            ]}
+            defaultImagePath="fallback-image-example.jpg"
+          />
+        </FlexContainer>
+        <h1>Multiple Images</h1>
+        <MultiImageViewer
+          mb={5}
+          imageObjects={[
+            {
+              path: "image-example.jpg",
+            },
+            {
+              path: "image-example-2.jpg",
+            },
+            {
+              path: "image-example-3.jpg",
+            },
+            {
+              path: "image-example.jpg",
+            },
+          ]}
+          defaultImagePath="fallback-image-example.jpg"
+        />
       </View>
     </>
   );

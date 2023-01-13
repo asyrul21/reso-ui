@@ -4,13 +4,13 @@ import { Image } from "@components/Image";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
-import { IImageObjects, ImageType } from "@interfaces/IImageObjects";
-import ImageClickableTypes from "@interfaces/ImageClickables";
+import { IImageObject } from "@interfaces/IImageObject";
+import ImageClickable from "@interfaces/ImageClickable";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
 
 // styles
-import "./styles/Image.layout.scss";
-import "./styles/Image.theme.scss";
+import "./styles/Multi-Image-Viewer.layout.scss";
+import "./styles/Multi-Image-Viewer.theme.scss";
 
 // utils
 import {
@@ -30,14 +30,14 @@ export interface IMultiImageViewerProps
   extends IComponent,
     IMarginProps,
     IThemeProps {
-  imageObjects: IImageObjects[];
+  imageObjects: IImageObject[];
   defaultImagePath: string;
-  clickable: ImageClickableTypes;
-  getMiniImagePath?: (path: string, type: ImageType) => string;
+  clickable?: ImageClickable;
+  getMiniImagePath?: (imageObj: IImageObject) => string;
   onClickImage?: () => void;
-  // externallyViewedIndex controls images being shown from external components, such as Enlarged Image Modal Viewer
-  setExternallyViewedIndex?: (idx: number) => void;
   indexOverride?: number;
+  // setIndexOverride controls images being shown from external components via indexOverride
+  setIndexOverride?: (idx: number) => void;
   initialSelectedIndex?: 0;
   mainImageClassName?: string;
   mainImageStyles?: React.CSSProperties;
@@ -45,16 +45,16 @@ export interface IMultiImageViewerProps
   miniImageStyles?: React.CSSProperties;
 }
 
-const MultiImageContainer = ({
+export const MultiImageViewer = ({
   imageObjects,
   defaultImagePath,
   clickable,
   className,
   styles = {},
   getMiniImagePath,
-  setExternallyViewedIndex,
   onClickImage = () => {},
   indexOverride,
+  setIndexOverride,
   initialSelectedIndex = 0,
   mainImageClassName,
   mainImageStyles = {},
@@ -69,8 +69,8 @@ const MultiImageContainer = ({
   // on mount / unmount
   useEffect(() => {
     setShownImageIndex(initialSelectedIndex);
-    if (methodHasValue(setExternallyViewedIndex)) {
-      setExternallyViewedIndex(initialSelectedIndex);
+    if (methodHasValue(setIndexOverride)) {
+      setIndexOverride(initialSelectedIndex);
     }
   }, []);
 
@@ -112,6 +112,7 @@ const MultiImageContainer = ({
       data-testid="multi-image-viewer-root"
     >
       <Image
+        inheritWidth
         clickable={clickable}
         className={mainImageClasses}
         styles={mainImageStyles}
@@ -124,7 +125,7 @@ const MultiImageContainer = ({
         alt={
           imageObjects && imageObjects[shownImageIndex]
             ? imageObjects[shownImageIndex].alt
-            : ""
+            : "RESO Image"
         }
       />
       {imageObjects && imageObjects.length > 1 && (
@@ -147,17 +148,19 @@ const MultiImageContainer = ({
                 className={miniImageClasses}
                 key={idx}
                 onClick={() => {
-                  if (methodHasValue(setExternallyViewedIndex)) {
-                    setExternallyViewedIndex(idx);
+                  if (methodHasValue(setIndexOverride)) {
+                    setIndexOverride(idx);
                   }
                   setShownImageIndex(idx);
                 }}
                 src={
                   methodHasValue(getMiniImagePath)
-                    ? getMiniImagePath(imageObj.path, imageObj.type)
+                    ? getMiniImagePath(imageObj)
                     : imageObj.path
                 }
-                alt={imageObj.alt}
+                alt={
+                  imageObj && imageObj.alt ? imageObj.alt : "RESO Image Mini"
+                }
                 fallbacks={[imageObj.path, defaultImagePath]}
               />
             );
@@ -167,5 +170,3 @@ const MultiImageContainer = ({
     </div>
   );
 };
-
-export default MultiImageContainer;

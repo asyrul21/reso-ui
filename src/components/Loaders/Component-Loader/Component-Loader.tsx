@@ -15,8 +15,10 @@ import {
   createThemeStyles,
 } from "@utils/styles";
 
+export type LoaderSize = "small" | "medium" | "large";
+
 export interface IComponentLoaderProps extends IComponent, IThemeProps {
-  size?: "small" | "medium" | "large";
+  size?: LoaderSize;
   iconContainerClassName?: string;
   iconContainerStyles?: React.CSSProperties;
 }

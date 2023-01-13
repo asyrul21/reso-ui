@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
-import { ComponentLoader } from "@components/Loaders/Component-Loader";
+import {
+  ComponentLoader,
+  LoaderSize,
+} from "@components/Loaders/Component-Loader";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
-import ImageClickableTypes from "@interfaces/ImageClickables";
+import ImageClickable from "@interfaces/ImageClickable";
 
 // styles
 import "./styles/Image.layout.scss";
@@ -19,10 +22,12 @@ import {
 
 export interface IImageProps extends IComponent, IMarginProps {
   onClick?: () => void;
-  clickable?: ImageClickableTypes;
+  clickable?: ImageClickable;
+  loaderSize?: LoaderSize;
   src: string;
   imgClassName?: string;
   imgStyles?: React.CSSProperties;
+  inheritWidth?: boolean;
   objectFit?: "cover" | "contain" | "fill";
   alt?: string;
   fallbacks?: string[];
@@ -31,6 +36,7 @@ export interface IImageProps extends IComponent, IMarginProps {
 export const Image = ({
   onClick = () => {},
   clickable,
+  loaderSize = "small",
   src,
   alt = "RESO Image",
   imgClassName,
@@ -39,6 +45,7 @@ export const Image = ({
   fallbacks = [],
   styles = {},
   imgStyles = {},
+  inheritWidth = false,
   ...spacingsProps
 }: IImageProps) => {
   const [fallbackIndex, setFallbackIndex] = useState(-1);
@@ -50,6 +57,7 @@ export const Image = ({
       withSpacingsProps(
         {
           image_container: true,
+          image_container_inheritWidth: inheritWidth,
           [`image_container_clickable_${clickable}`]: !!clickable,
         },
         spacingsProps
@@ -88,7 +96,7 @@ export const Image = ({
         <p data-testid="image-component-error">{`Unable to load ${alt}`}</p>
       ) : (
         <>
-          {!loaded && <ComponentLoader />}
+          {!loaded && <ComponentLoader size={loaderSize} />}
           {
             <img
               data-testid="image-component-img"

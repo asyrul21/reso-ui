@@ -5,8 +5,12 @@
   align-items: center;
   // default dimensions
   width: 456px;
-  min-width: 456px;
   height: 364px;
+}
+
+.image_container_inheritWidth {
+  width: 100%;
+  min-width: inherit;
 }
 
 .image_container_clickable_zoomIn {

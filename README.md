@@ -27,7 +27,7 @@ npm start
 
 5. Popup-container renamed to Modal
 
-6. multi-image-container renamed to Multi-Image-Viewer. setViewedIndex prop renamed to setExternallyViewedIndex
+6. multi-image-container renamed to Multi-Image-Viewer. [setViewedIndex] renamed to [setIndexOverride]. [getMiniImagePath] hook only passes the imageObj as argument. Any processing related to image types etc. is done by client.
 
 7. All components now have an optional prop _theme_
 

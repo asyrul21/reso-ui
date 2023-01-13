@@ -95,6 +95,7 @@ export const Modal = ({
       style={{
         zIndex: computedZIndex,
       }}
+      data-testid="modal-backdrop"
     >
       <div
         className={containerStyles}
@@ -102,14 +103,26 @@ export const Modal = ({
           zIndex: computedZIndex + 1,
           ...styles,
         }}
+        data-testid="modal-container"
       >
         <div className={headingStyles}>
-          <span className="sub_heading no_select">{title}</span>
-          <div className={closeButtonClasses} onClick={onClose} role="button">
+          <span className="sub_heading no_select" data-testid="modal-title">
+            {title}
+          </span>
+          <div
+            className={closeButtonClasses}
+            onClick={onClose}
+            role="button"
+            data-testid="modal-close-button"
+          >
             Close
           </div>
         </div>
-        <div className={modalClasses} style={modalStyles}>
+        <div
+          className={modalClasses}
+          style={modalStyles}
+          data-testid="modal-inner"
+        >
           {children}
         </div>
       </div>

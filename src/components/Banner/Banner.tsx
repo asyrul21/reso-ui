@@ -23,9 +23,9 @@ export const Banner = ({
   src,
   alt = "RESO Banner",
   fullWidth,
-  className,
+  rootClassName,
   imgClassName,
-  styles = {},
+  rootStyles = {},
   imgStyles = {},
 }: IBannerProps) => {
   const containerStyles = createComponentStyles(
@@ -34,7 +34,7 @@ export const Banner = ({
         banner_container: true,
         banner_container_fullWidth: fullWidth,
       },
-      className,
+      rootClassName,
       {
         position_relative: true,
         // width_full does not work here because both [Image] and [Banner] styles overrides the global [width] style
@@ -44,8 +44,8 @@ export const Banner = ({
 
   return (
     <Image
-      className={containerStyles}
-      styles={styles}
+      rootClassName={containerStyles}
+      rootStyles={rootStyles}
       src={src}
       alt={alt}
       imgClassName={imgClassName}

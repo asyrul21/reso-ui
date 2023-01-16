@@ -17,12 +17,12 @@ describe("Loading Container Component Unit Tests", () => {
     jest
       .spyOn(ComponentLoaderModule, "ComponentLoader")
       .mockImplementation((props) => {
-        const { className, styles } = props;
+        const { rootClassName, rootStyles } = props;
         return (
           <div
             data-testid="loading-container-loader-mock"
-            className={className}
-            style={styles}
+            className={rootClassName}
+            style={rootStyles}
           >
             Loader Mock
           </div>
@@ -32,12 +32,12 @@ describe("Loading Container Component Unit Tests", () => {
     jest
       .spyOn(ComponentErrorModule, "ComponentError")
       .mockImplementation((props) => {
-        const { className, styles, text } = props;
+        const { rootClassName, rootStyles, text } = props;
         return (
           <div
             data-testid="loading-container-error-mock"
-            className={className}
-            style={styles}
+            className={rootClassName}
+            style={rootStyles}
           >
             {text && text}
           </div>
@@ -55,7 +55,7 @@ describe("Loading Container Component Unit Tests", () => {
         <LoadingContainer
           type="layer"
           loading={true}
-          className="sample_class_name"
+          rootClassName="sample_class_name"
         >
           <SampleChildComponent />
         </LoadingContainer>
@@ -71,7 +71,7 @@ describe("Loading Container Component Unit Tests", () => {
         <LoadingContainer
           type="layer"
           loading={true}
-          styles={{ border: "2px solid red" }}
+          rootStyles={{ border: "2px solid red" }}
         >
           <SampleChildComponent />
         </LoadingContainer>

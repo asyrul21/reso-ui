@@ -28,7 +28,7 @@ DefaultNoTheme.args = {
 export const NoThemeWithClassname = ComponentTemplate.bind({});
 NoThemeWithClassname.args = {
   name: "John",
-  className: "exampleComponent_story",
+  rootClassName: "exampleComponent_story",
 };
 
 export const LightTheme = ComponentTemplate.bind({});
@@ -44,5 +44,5 @@ export const OverrideThemeWithClassname = ComponentTemplate.bind({});
 OverrideThemeWithClassname.args = {
   name: "Rob",
   theme: "dark",
-  className: "exampleComponent_story",
+  rootClassName: "exampleComponent_story",
 };

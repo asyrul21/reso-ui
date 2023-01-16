@@ -31,7 +31,7 @@ export interface IMultiImageViewerProps
     IMarginProps,
     IThemeProps {
   imageObjects: IImageObject[];
-  defaultImagePath: string;
+  defaultImagePath?: string;
   clickable?: ImageClickable;
   getMiniImagePath?: (imageObj: IImageObject) => string;
   onClickImage?: () => void;
@@ -43,14 +43,16 @@ export interface IMultiImageViewerProps
   mainImageStyles?: React.CSSProperties;
   miniImageClassname?: string;
   miniImageStyles?: React.CSSProperties;
+  miniImageSelectedClassName?: string;
+  miniImageSelectedStyles?: React.CSSProperties;
 }
 
 export const MultiImageViewer = ({
   imageObjects,
-  defaultImagePath,
+  defaultImagePath = "",
   clickable,
-  className,
-  styles = {},
+  rootClassName,
+  rootStyles = {},
   getMiniImagePath,
   onClickImage = () => {},
   indexOverride,
@@ -60,6 +62,8 @@ export const MultiImageViewer = ({
   mainImageStyles = {},
   miniImageClassname,
   miniImageStyles = {},
+  miniImageSelectedClassName,
+  miniImageSelectedStyles = {},
   theme = "light",
   ...marginProps
 }: IMultiImageViewerProps) => {
@@ -91,7 +95,7 @@ export const MultiImageViewer = ({
         },
         marginProps
       ),
-      className
+      rootClassName
     )
   );
 
@@ -108,14 +112,14 @@ export const MultiImageViewer = ({
   return (
     <div
       className={containerStyles}
-      style={styles}
+      style={rootStyles}
       data-testid="multi-image-viewer-root"
     >
       <Image
         inheritWidth
         clickable={clickable}
-        className={mainImageClasses}
-        styles={mainImageStyles}
+        rootClassName={mainImageClasses}
+        rootStyles={mainImageStyles}
         onClick={onClickImage}
         src={
           imageObjects && imageObjects[shownImageIndex]
@@ -129,23 +133,43 @@ export const MultiImageViewer = ({
         }
       />
       {imageObjects && imageObjects.length > 1 && (
-        <div className="multiImageViewer_scrollbox">
+        <div
+          className="multiImageViewer_scrollbox"
+          data-testid="multi-image-viewer-scrollbox"
+        >
           {imageObjects.map((imageObj, idx) => {
-            const miniImageClasses = createComponentStyles(
-              createLayoutStyles(
-                {
-                  multiImageViewer_miniImage: true,
-                  multiImageViewer_miniImage_selected: shownImageIndex === idx,
-                },
-                miniImageClassname
-              ),
-              createThemeStyles("multiImageViewer_miniImage_selected_", theme)
+            const miniImageLayoutClasses = createLayoutStyles(
+              {
+                multiImageViewer_miniImage: true,
+                multiImageViewer_miniImage_selected: shownImageIndex === idx,
+                [miniImageSelectedClassName]:
+                  miniImageSelectedClassName && shownImageIndex === idx,
+              },
+              miniImageClassname
             );
+            const miniImageThemeClasses =
+              shownImageIndex === idx
+                ? createThemeStyles(
+                    "multiImageViewer_miniImage_selected_theme_",
+                    theme
+                  )
+                : null;
             return (
               <Image
                 mh={1}
                 clickable="pointer"
-                className={miniImageClasses}
+                rootClassName={createComponentStyles(
+                  miniImageLayoutClasses,
+                  miniImageThemeClasses
+                )}
+                rootStyles={
+                  shownImageIndex === idx
+                    ? {
+                        ...miniImageStyles,
+                        ...miniImageSelectedStyles,
+                      }
+                    : miniImageStyles
+                }
                 key={idx}
                 onClick={() => {
                   if (methodHasValue(setIndexOverride)) {

@@ -37,7 +37,8 @@ export const AddToCart = ({
   onChangeQuantity = (val: number) => {},
   onButtonClick = () => {},
   buttonDisabled = false,
-  className,
+  rootClassName,
+  rootStyles = {},
   theme,
   children,
 }: IAddToCartProps) => {
@@ -46,7 +47,7 @@ export const AddToCart = ({
       {
         component_addToCart_container: true,
       },
-      className,
+      rootClassName,
       { no_select: true }
     ),
     createThemeStyles("addToCart_theme_", theme)
@@ -59,7 +60,11 @@ export const AddToCart = ({
     createThemeStyles("addToCart_button_theme_", theme)
   );
   return (
-    <div className={containerStyles} data-testid="component-addToCart-root">
+    <div
+      className={containerStyles}
+      data-testid="component-addToCart-root"
+      style={rootStyles}
+    >
       <div className="component_addToCartContainer_row">
         <span>Status</span>{" "}
         <span data-test="component_addToCart_stock">

@@ -19,19 +19,28 @@ export interface IExampleComponent extends IComponent, IThemeProps {
   name: string;
 }
 
-export const Example = ({ theme, name, className }: IExampleComponent) => {
+export const Example = ({
+  theme,
+  name,
+  rootClassName,
+  rootStyles = {},
+}: IExampleComponent) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
       {
         example_component_container: true,
       },
-      className
+      rootClassName
     ),
     createThemeStyles("exampleComponent_theme_", theme)
   );
 
   return (
-    <div className={containerStyles} data-testid="example-component-root">
+    <div
+      className={containerStyles}
+      data-testid="example-component-root"
+      style={rootStyles}
+    >
       <h1>Hello World!</h1>
       <p>This is just an example component</p>
       <p>Name: {name}</p>

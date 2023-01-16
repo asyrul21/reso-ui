@@ -41,13 +41,13 @@ Default.args = {
 export const CustomContainerClass = ComponentTemplate.bind({});
 CustomContainerClass.args = {
   src: "/image-example.jpg",
-  className: "image_custom_story",
+  rootClassName: "image_custom_story",
 };
 
 export const WithoutFallbacks = ComponentTemplate.bind({});
 WithoutFallbacks.args = {
   src: "/a-broken-link",
-  styles: {
+  rootStyles: {
     border: "2px solid blue",
   },
 };
@@ -64,7 +64,7 @@ export const UsingFallbacks = ComponentTemplate.bind({});
 UsingFallbacks.args = {
   src: "/a-broken-link",
   fallbacks: ["/fallback-image-example.jpg"],
-  styles: {
+  rootStyles: {
     border: "2px solid blue",
   },
 };
@@ -80,7 +80,7 @@ UsingFallbacks.parameters = {
 export const ClickableAndOnClick = ComponentTemplate.bind({});
 ClickableAndOnClick.args = {
   src: "/image-example.jpg",
-  styles: {
+  rootStyles: {
     border: "2px solid blue",
   },
   clickable: "pointer",

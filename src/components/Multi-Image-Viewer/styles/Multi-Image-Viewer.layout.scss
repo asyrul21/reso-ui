@@ -1,5 +1,7 @@
 .multiImageViewer_container {
   //   border: 2px solid red;
+  overflow: hidden;
+  padding: $padding-xxxsmall;
   width: 364px;
 }
 
@@ -16,7 +18,7 @@
 .multiImageViewer_scrollbox {
   //   border: 2px solid $primary-grey-medium;
   //   border-radius: 0 0 $border-radius-small $border-radius-small;
-  width: 98%;
+  width: 100%;
   overflow-x: auto;
   padding: $padding-xxsmall 0;
   margin: 0 auto;

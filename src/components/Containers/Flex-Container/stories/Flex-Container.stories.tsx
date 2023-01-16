@@ -68,6 +68,6 @@ export const CustomStylesAndAlign = ComponentTemplate.bind({});
 CustomStylesAndAlign.args = {
   borderColor: "blue",
   justify: "start",
-  styles: { height: "300px" },
+  rootStyles: { height: "300px" },
   align: "end",
 };

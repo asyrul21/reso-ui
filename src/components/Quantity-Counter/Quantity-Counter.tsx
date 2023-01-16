@@ -23,7 +23,8 @@ export interface IQuantityCounter extends IComponent, IThemeProps {
 export const QuantityCounter = ({
   value = 1,
   onChange,
-  className,
+  rootClassName,
+  rootStyles = {},
   theme,
 }: IQuantityCounter) => {
   const containerStyles = createComponentStyles(
@@ -31,12 +32,16 @@ export const QuantityCounter = ({
       {
         quantityCounter_container: true,
       },
-      className
+      rootClassName
     ),
     createThemeStyles("quantityCounter_theme_", theme)
   );
   return (
-    <div className={containerStyles} data-testid="quantity-counter-root">
+    <div
+      className={containerStyles}
+      data-testid="quantity-counter-root"
+      style={rootStyles}
+    >
       <div
         className="quantityCounter_counterBox"
         onClick={() => {

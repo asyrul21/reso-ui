@@ -63,7 +63,7 @@ export const WithContainerStyles = () => {
           title="Modal Story Example"
           isOpen={showModal}
           onClose={() => setShowModal(false)}
-          styles={{
+          rootStyles={{
             border: "2px solid green",
           }}
         >

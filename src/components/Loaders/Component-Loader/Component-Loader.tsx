@@ -28,9 +28,9 @@ export interface IComponentLoaderProps extends IComponent, IThemeProps {
  */
 export const ComponentLoader = ({
   size = "small",
-  className,
+  rootClassName,
   iconContainerClassName,
-  styles,
+  rootStyles = {},
   iconContainerStyles,
   theme = "light",
 }: IComponentLoaderProps) => {
@@ -39,7 +39,7 @@ export const ComponentLoader = ({
       {
         componentLoader_container: true,
       },
-      className
+      rootClassName
     ),
     createThemeStyles("componentLoader_container_theme_", theme)
   );
@@ -59,7 +59,7 @@ export const ComponentLoader = ({
   return (
     <div
       className={containerStyles}
-      style={styles}
+      style={rootStyles}
       data-testid="component-loader-root"
     >
       <div

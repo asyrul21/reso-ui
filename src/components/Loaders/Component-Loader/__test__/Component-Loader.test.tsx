@@ -25,10 +25,10 @@ describe("Component Loader Unit Tests", () => {
     expect(parent).toBeTruthy();
   });
 
-  test("should have custom container classname when passed as props", () => {
+  test("should have custom container rootClassName when passed as props", () => {
     render(
       <div style={{ width: "200px", height: "200px", position: "relative" }}>
-        <ComponentLoader className="custom_loader_class_test" />
+        <ComponentLoader rootClassName="custom_loader_class_test" />
         <p>This is a sample component</p>
       </div>
     );

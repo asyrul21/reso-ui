@@ -16,20 +16,20 @@ export interface ICenterContainerProps extends IComponent {
 // width and height will follow children
 export const CenterContainer = ({
   children,
-  className,
-  styles = {},
+  rootClassName,
+  rootStyles = {},
 }: ICenterContainerProps) => {
   const containerStyles = createLayoutStyles(
     {
       component_center_container: true,
     },
-    className
+    rootClassName
   );
   return (
     <div
       className={containerStyles}
       data-testid="center-container-root"
-      style={styles}
+      style={rootStyles}
     >
       {children}
     </div>

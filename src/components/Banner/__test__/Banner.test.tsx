@@ -8,12 +8,13 @@ import * as ImageModule from "@components/Image/Image";
 describe("Banner Component Unit Tests", () => {
   beforeEach(() => {
     jest.spyOn(ImageModule, "Image").mockImplementation((props) => {
-      const { src, alt, className, imgClassName, styles, imgStyles } = props;
+      const { src, alt, rootClassName, imgClassName, rootStyles, imgStyles } =
+        props;
       return (
         <div
           data-testid="banner-component-container-mock"
-          className={className}
-          style={styles}
+          className={rootClassName}
+          style={rootStyles}
         >
           <img
             data-testid="banner-component-img-mock"
@@ -45,7 +46,7 @@ describe("Banner Component Unit Tests", () => {
   test("should apply container class when provided as prop", () => {
     const testProps = {
       ...defaultProps,
-      className: "banner_sample_className",
+      rootClassName: "banner_sample_className",
     };
     const { debug } = render(<Banner {...testProps} />);
     // debug();
@@ -56,7 +57,7 @@ describe("Banner Component Unit Tests", () => {
   test("should apply container styles when provided as prop", () => {
     const testProps = {
       ...defaultProps,
-      styles: { border: "2px solid red" },
+      rootStyles: { border: "2px solid red" },
     };
     const { debug } = render(<Banner {...testProps} />);
     // debug();

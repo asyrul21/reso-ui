@@ -110,7 +110,7 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should have custom className when passed as prop", () => {
     render(
-      <FlexContainer className="test_custom_className">
+      <FlexContainer rootClassName="test_custom_className">
         <SampleComponent />
       </FlexContainer>
     );

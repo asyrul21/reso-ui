@@ -40,7 +40,7 @@ Default.args = {
 export const CustomContainerClass = ComponentTemplate.bind({});
 CustomContainerClass.args = {
   src: "/banner-example.jpg",
-  className: "banner_custom_story",
+  rootClassName: "banner_custom_story",
 };
 
 export const FullWidth = ComponentTemplate.bind({});

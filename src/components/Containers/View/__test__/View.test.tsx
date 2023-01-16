@@ -26,9 +26,9 @@ describe("View Container Component Unit Tests", () => {
     expect(child).toBeTruthy();
   });
 
-  test("should have custom className when passed as prop", () => {
+  test("should have custom rootClassName when passed as prop", () => {
     render(
-      <View className="test_custom_className">
+      <View rootClassName="test_custom_className">
         <SampleComponent />
       </View>
     );
@@ -37,9 +37,9 @@ describe("View Container Component Unit Tests", () => {
     expect(component).toHaveClass("test_custom_className");
   });
 
-  test("should have custom styles when passed as prop", () => {
+  test("should have custom rootStyles when passed as prop", () => {
     render(
-      <View styles={{ border: "2px solid red" }}>
+      <View rootStyles={{ border: "2px solid red" }}>
         <SampleComponent />
       </View>
     );

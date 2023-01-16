@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <>
-      <View styles={{ border: "2px solid blue" }} pa={5}>
+      <View rootStyles={{ border: "2px solid blue" }} pa={5}>
         {showModal && (
           <Modal
             title="Example Modal"
@@ -48,11 +48,15 @@ const App = () => {
         </FlexContainer>
         {/* no theme, with className */}
         <FlexContainer mb={5}>
-          <Example name="john" className="example_app_styles" />
+          <Example name="john" rootClassName="example_app_styles" />
         </FlexContainer>
         {/* with theme, with className */}
         <FlexContainer mb={5}>
-          <Example theme="light" name="john" className="example_app_styles" />
+          <Example
+            theme="light"
+            name="john"
+            rootClassName="example_app_styles"
+          />
         </FlexContainer>
         <FlexContainer pa={5}>
           <QuantityCounter
@@ -67,7 +71,7 @@ const App = () => {
           mb={5}
           ma={"auto"}
           borderColor="blue"
-          styles={{
+          rootStyles={{
             width: "fit-content",
           }}
         >
@@ -83,7 +87,7 @@ const App = () => {
         {/* override styles with classname */}
         <FlexContainer mb={5}>
           <AddToCart
-            className="addToCart_app_styles"
+            rootClassName="addToCart_app_styles"
             inStock={true}
             quantityValue={1}
             currency="RM"
@@ -101,7 +105,7 @@ const App = () => {
             </FlexContainer>
           </>
         </FlexContainer>
-        <CenterContainer styles={{ border: "2px solid green" }}>
+        <CenterContainer rootStyles={{ border: "2px solid green" }}>
           <div className="app_test_box">Test 1</div>
         </CenterContainer>
         <FlexContainer mb={5}>
@@ -113,14 +117,14 @@ const App = () => {
         <FlexContainer mb={5}>
           <Image
             src="image-example.jpg"
-            styles={{ border: "2px solid red" }}
+            rootStyles={{ border: "2px solid red" }}
             ma={5}
           />
         </FlexContainer>
         <FlexContainer mb={5}>
           <Banner
             src="banner-example.jpg"
-            styles={{ border: "2px solid red" }}
+            rootStyles={{ border: "2px solid red" }}
           />
         </FlexContainer>
         <FlexContainer mb={5}>

@@ -31,8 +31,8 @@ export const LoadingContainer = ({
   children,
   error,
   minHeight = "fit-content",
-  className,
-  styles = {},
+  rootClassName,
+  rootStyles = {},
   componentLoaderClassName,
   componentLoaderStyles = {},
   componentErrorClassName,
@@ -44,7 +44,7 @@ export const LoadingContainer = ({
       {
         [`loadingContainer_container_${type}`]: true,
       },
-      className,
+      rootClassName,
       { position_relative: true }
     )
   );
@@ -53,7 +53,7 @@ export const LoadingContainer = ({
   return (
     <div
       className={containerStyles}
-      style={{ ...styles, minHeight: containerMinHeight }}
+      style={{ ...rootStyles, minHeight: containerMinHeight }}
       data-testid="loading-container-root"
     >
       {type === "layer" ? (
@@ -61,15 +61,15 @@ export const LoadingContainer = ({
           {loading ? (
             <ComponentLoader
               theme={theme}
-              className={componentLoaderClassName}
-              styles={componentLoaderStyles}
+              rootClassName={componentLoaderClassName}
+              rootStyles={componentLoaderStyles}
             />
           ) : error ? (
             <ComponentError
               theme={theme}
               text={error}
-              className={componentErrorClassName}
-              styles={componentErrorStyles}
+              rootClassName={componentErrorClassName}
+              rootStyles={componentErrorStyles}
             />
           ) : null}
           {children}
@@ -80,14 +80,14 @@ export const LoadingContainer = ({
             <ComponentError
               theme={theme}
               text={error}
-              className={componentErrorClassName}
-              styles={componentErrorStyles}
+              rootClassName={componentErrorClassName}
+              rootStyles={componentErrorStyles}
             />
           ) : loading ? (
             <ComponentLoader
               theme={theme}
-              className={componentLoaderClassName}
-              styles={componentLoaderStyles}
+              rootClassName={componentLoaderClassName}
+              rootStyles={componentLoaderStyles}
             />
           ) : (
             children

@@ -22,9 +22,9 @@ export interface IViewProps extends IComponent, IPaddingProps, IThemeProps {
 }
 
 export const View = ({
-  className,
+  rootClassName,
   children,
-  styles = {},
+  rootStyles = {},
   theme = "light",
   ...paddingProps
 }: IViewProps) => {
@@ -36,7 +36,7 @@ export const View = ({
         },
         paddingProps
       ),
-      className,
+      rootClassName,
       {
         position_relative: true,
         width_full: true,
@@ -47,7 +47,7 @@ export const View = ({
   return (
     <div
       className={containerStyles}
-      style={styles}
+      style={rootStyles}
       data-testid="view-container-root"
     >
       {children}

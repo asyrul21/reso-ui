@@ -81,7 +81,7 @@ describe("Image Component Unit Tests", () => {
     expect(component).toHaveClass("spacing-ma-5");
   });
 
-  test("should apply custom container class when provided as prop", () => {
+  test("should apply custom container rootClassName when provided as prop", () => {
     jest
       .spyOn(ComponentLoaderModule, "ComponentLoader")
       .mockImplementation(() => {
@@ -90,7 +90,7 @@ describe("Image Component Unit Tests", () => {
 
     const testProps = {
       ...defaultProps,
-      className: "image_test_sample_class",
+      rootClassName: "image_test_sample_class",
     };
 
     render(<Image {...testProps} ma={5} />);

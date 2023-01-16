@@ -51,9 +51,9 @@ LightTheme.args = {
   },
 };
 
-export const CustomStylesWithClassNameProp = ComponentTemplate.bind({});
-CustomStylesWithClassNameProp.args = {
-  className: "addToCart_stories_styles",
+export const UsingRootClassNameProp = ComponentTemplate.bind({});
+UsingRootClassNameProp.args = {
+  rootClassName: "addToCart_stories_styles",
   inStock: true,
   quantityValue: 2,
   currency: "RM",

@@ -25,8 +25,8 @@ export interface IComponentErrorProps extends IComponent, IThemeProps {
 
 export const ComponentError = ({
   text,
-  className,
-  styles = {},
+  rootClassName,
+  rootStyles = {},
   iconClassName,
   iconStyles = {},
   textClassName,
@@ -38,7 +38,7 @@ export const ComponentError = ({
       {
         componentError_container: true,
       },
-      className
+      rootClassName
     ),
     createThemeStyles("componentError_container_theme_", theme)
   );
@@ -67,7 +67,7 @@ export const ComponentError = ({
   return (
     <div
       className={containerStyles}
-      style={styles}
+      style={rootStyles}
       data-testid="component-error-root"
     >
       <div

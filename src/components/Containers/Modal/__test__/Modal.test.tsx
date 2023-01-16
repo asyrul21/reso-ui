@@ -26,13 +26,13 @@ describe("Modal Container Unit Tests", () => {
     expect(child).toBeInTheDocument();
   });
 
-  test("should apply correct container className when provided as prop", () => {
+  test("should apply correct container rootClassName when provided as prop", () => {
     const { debug } = render(
       <Modal
         title="test modal"
         onClose={jest.fn()}
         isOpen={true}
-        className="sample_class"
+        rootClassName="sample_class"
       >
         <SampleComponent />
       </Modal>

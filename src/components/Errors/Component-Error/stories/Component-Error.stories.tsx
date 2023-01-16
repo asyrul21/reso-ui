@@ -34,7 +34,6 @@ const ComponentTemplate: ComponentStory<typeof ComponentError> = (args) => (
       height: "300px",
       width: "300px",
       border: "1px solid black",
-      backgroundColor: "yellow",
       position: "relative",
     }}
   >
@@ -52,5 +51,5 @@ WithText.args = {
 
 export const CustomContainerClassname = ComponentTemplate.bind({});
 CustomContainerClassname.args = {
-  className: "component_error_story_sample",
+  rootClassName: "component_error_story_sample",
 };

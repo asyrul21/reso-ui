@@ -26,9 +26,9 @@ describe("Center Container Component Unit Tests", () => {
     expect(child).toBeTruthy();
   });
 
-  test("should have custom className when passed as prop", () => {
+  test("should have custom rootClassName when passed as prop", () => {
     render(
-      <CenterContainer className="test_custom_className">
+      <CenterContainer rootClassName="test_custom_className">
         <SampleComponent />
       </CenterContainer>
     );

@@ -41,9 +41,9 @@ export const Image = ({
   alt = "RESO Image",
   imgClassName,
   objectFit = "fill",
-  className,
+  rootClassName,
+  rootStyles = {},
   fallbacks = [],
-  styles = {},
   imgStyles = {},
   inheritWidth = false,
   ...spacingsProps
@@ -62,7 +62,7 @@ export const Image = ({
         },
         spacingsProps
       ),
-      className,
+      rootClassName,
       {
         position_relative: true,
       }
@@ -86,9 +86,7 @@ export const Image = ({
   return (
     <div
       className={containerStyles}
-      style={{
-        ...styles,
-      }}
+      style={rootStyles}
       onClick={onClick}
       data-testid="image-component-root"
     >

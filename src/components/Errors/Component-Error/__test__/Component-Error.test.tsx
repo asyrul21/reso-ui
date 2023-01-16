@@ -28,9 +28,9 @@ describe("Component Error Unit Tests", () => {
     expect(component).toBeTruthy();
   });
 
-  test("should apply container class when provided as prop", () => {
+  test("should apply container rootClassName when provided as prop", () => {
     const testProps = {
-      className: "component_error_sample_className",
+      rootClassName: "component_error_sample_className",
     };
     const { debug } = render(<ComponentError {...testProps} />);
     // debug();
@@ -38,9 +38,9 @@ describe("Component Error Unit Tests", () => {
     expect(component).toHaveClass("component_error_sample_className");
   });
 
-  test("should apply container styles when provided as prop", () => {
+  test("should apply container rootStyles when provided as prop", () => {
     const testProps = {
-      styles: { border: "2px solid red" },
+      rootStyles: { border: "2px solid red" },
     };
     const { debug } = render(<ComponentError {...testProps} />);
     // debug();

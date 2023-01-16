@@ -39,9 +39,9 @@ export const FlexContainer = ({
   widthFitContent = false,
   wrap = false,
   children,
-  className,
+  rootClassName,
   borderColor = null,
-  styles = {},
+  rootStyles = {},
   ...spacingsProps
 }: IFlexContainerProps) => {
   const containerStyles = createComponentStyles(
@@ -56,7 +56,7 @@ export const FlexContainer = ({
         },
         spacingsProps
       ),
-      className,
+      rootClassName,
       {
         width_full: fullWidth,
         width_fit_content: widthFitContent,
@@ -69,7 +69,7 @@ export const FlexContainer = ({
       data-testid="flex-container-root"
       style={{
         border: borderColor ? `2px solid ${borderColor}` : null,
-        ...styles,
+        ...rootStyles,
       }}
       className={containerStyles}
     >

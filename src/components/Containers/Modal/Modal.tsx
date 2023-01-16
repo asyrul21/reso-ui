@@ -34,9 +34,9 @@ export const Modal = ({
   isOpen = false,
   layer = 1,
   title = "Modal",
-  className,
+  rootClassName,
   modalClassName,
-  styles = {},
+  rootStyles = {},
   modalStyles = {},
   theme = "light",
   ...paddingProps
@@ -48,18 +48,15 @@ export const Modal = ({
       {
         modal_container: true,
       },
-      className
+      rootClassName
     ),
     createThemeStyles("modal_container_theme_", theme)
   );
 
   const headingStyles = createComponentStyles(
-    createLayoutStyles(
-      {
-        modal_heading: true,
-      },
-      className
-    ),
+    createLayoutStyles({
+      modal_heading: true,
+    }),
     createThemeStyles("modal_heading_theme_", theme)
   );
 
@@ -101,7 +98,7 @@ export const Modal = ({
         className={containerStyles}
         style={{
           zIndex: computedZIndex + 1,
-          ...styles,
+          ...rootStyles,
         }}
         data-testid="modal-container"
       >

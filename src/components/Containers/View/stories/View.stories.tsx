@@ -39,22 +39,22 @@ const ComponentTemplate: ComponentStory<typeof View> = (args) => (
 
 export const DefaultWithBorder = ComponentTemplate.bind({});
 DefaultWithBorder.args = {
-  styles: { border: "2px solid blue" },
+  rootStyles: { border: "2px solid blue" },
 };
 
 export const WithCustomClassName = ComponentTemplate.bind({});
 WithCustomClassName.args = {
-  className: "view_story_example",
+  rootClassName: "view_story_example",
 };
 
 export const WithPadding = ComponentTemplate.bind({});
 WithPadding.args = {
   pa: 5,
-  styles: { border: "2px solid blue" },
+  rootStyles: { border: "2px solid blue" },
 };
 
 export const WithTheme = ComponentTemplate.bind({});
 WithTheme.args = {
-  styles: { border: "2px solid blue" },
+  rootStyles: { border: "2px solid blue" },
   theme: "dark",
 };

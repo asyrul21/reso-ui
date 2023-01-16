@@ -40,7 +40,7 @@ Default.args = {};
 
 export const CustomContainerClass = ComponentTemplate.bind({});
 CustomContainerClass.args = {
-  className: "componentLoader_container_story",
+  rootClassName: "componentLoader_container_story",
 };
 
 export const CustomIconContainerClass = ComponentTemplate.bind({});

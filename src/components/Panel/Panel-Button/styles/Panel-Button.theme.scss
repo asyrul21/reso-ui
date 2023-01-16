@@ -1,0 +1,8 @@
+.panel_button_theme_light {
+  @include use_theme($primary-grey-light, "light");
+  border-color: $primary-grey-medium;
+  &:hover {
+    background-color: $primary-grey-dark;
+    color: $fc-light;
+  }
+}

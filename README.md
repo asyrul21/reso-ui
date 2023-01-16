@@ -29,7 +29,7 @@ npm start
 
 6. multi-image-container renamed to Multi-Image-Viewer. [setViewedIndex] renamed to [setIndexOverride]. [getMiniImagePath] hook only passes the imageObj as argument. Any processing related to image types etc. is done by client.
 
-7. Admin-Product-Panel - sales count logic is taken out from component, removed dependency on Product all together. rename onToggleArchive to onArchive.
+7. Admin-Product-Panel - sales count logic is taken out from component, removed dependency on Product all together. rename onToggleArchive to onArchive. Admin-Product-Panel has been decomposed into several Panel primitive components. Clients need to rewrite Admin-Product-Panel and Admin-User-Panel using the library.
 
 8. All components now have an optional prop _theme_
 

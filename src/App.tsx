@@ -14,6 +14,10 @@ import { View } from "@components/Containers/View";
 import { Modal } from "@components/Containers/Modal";
 import { MultiImageViewer } from "@components/Multi-Image-Viewer";
 import { AdminProductPanel } from "@components/Admin-Product-Panel";
+import { PanelContainer } from "@components/Containers/Panel-Container";
+import { PanelTitle } from "@components/Panel/Panel-Title";
+import { PanelRow } from "@components/Panel/Panel-Row";
+import { PanelButton } from "@components/Panel/Panel-Button";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -201,6 +205,28 @@ const App = () => {
         <FlexContainer mb={5}>
           <AdminProductPanel countInStock={5} isLowStock />
         </FlexContainer>
+        <PanelContainer>
+          <PanelTitle text="Admin Panel" />
+          <PanelRow
+            keyStr="Qty in Stock:"
+            value={5}
+            valueStyles={{ fontWeight: "bold", color: "#a43030" }}
+          />
+          <PanelRow keyStr="Sales this month:" value={5} />
+          <PanelRow keyStr="Total sales" value={2} />
+          <PanelButton
+            text="Edit"
+            onClick={() => {
+              alert("Panel button clicked!");
+            }}
+          />
+          <PanelButton
+            text="Archive"
+            onClick={() => {
+              alert("Panel button clicked!");
+            }}
+          />
+        </PanelContainer>
       </View>
     </>
   );

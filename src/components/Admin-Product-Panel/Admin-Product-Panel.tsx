@@ -2,7 +2,6 @@ import React from "react";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
-import IProduct from "@interfaces/IProduct";
 import IThemeProps from "@interfaces/Theme";
 
 // styles

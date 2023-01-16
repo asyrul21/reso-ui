@@ -13,6 +13,7 @@ import { LoadingContainer } from "@components/Containers/Loading-Container";
 import { View } from "@components/Containers/View";
 import { Modal } from "@components/Containers/Modal";
 import { MultiImageViewer } from "@components/Multi-Image-Viewer";
+import { AdminProductPanel } from "@components/Admin-Product-Panel";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -194,6 +195,12 @@ const App = () => {
           ]}
           defaultImagePath="fallback-image-example.jpg"
         />
+        <FlexContainer mb={5}>
+          <AdminProductPanel countInStock={5} />
+        </FlexContainer>
+        <FlexContainer mb={5}>
+          <AdminProductPanel countInStock={5} isLowStock />
+        </FlexContainer>
       </View>
     </>
   );

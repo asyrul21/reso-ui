@@ -31,3 +31,7 @@
   background: unset;
   @include theme_nature("light");
 }
+
+@mixin box_shadow_default {
+  box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+}

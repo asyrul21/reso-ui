@@ -36,13 +36,16 @@ describe("Flex Container Component Unit Tests", () => {
     );
 
     const component = screen.queryByTestId("flex-container-root");
-    expect(component).toHaveClass("flex-row");
-    expect(component).toHaveClass("flex-justify-space-between");
-    expect(component).toHaveClass("flex-align-center");
-    expect(component).not.toHaveClass("flex-wrap");
+    expect(component).toHaveClass("flex_container");
+    expect(component).toHaveClass("flex_row");
+    expect(component).toHaveClass("flex_justify_space-between");
+    expect(component).toHaveClass("flex_align_center");
+    expect(component).toHaveClass("flex_shrink");
+    expect(component).not.toHaveClass("flex_wrap");
+    expect(component).not.toHaveClass("flex_grow");
   });
 
-  test("should set class [flex-column] when passed as prop", () => {
+  test("should set class [flex_column] when passed as prop", () => {
     render(
       <Flex direction="column">
         <SampleComponent />
@@ -50,10 +53,10 @@ describe("Flex Container Component Unit Tests", () => {
     );
 
     const component = screen.queryByTestId("flex-container-root");
-    expect(component).toHaveClass("flex-column");
+    expect(component).toHaveClass("flex_column");
   });
 
-  test("should set class [flex-justify-start] when passed as prop", () => {
+  test("should set class [flex_justify_start] when passed as prop", () => {
     render(
       <Flex justify="start">
         <SampleComponent />
@@ -61,10 +64,10 @@ describe("Flex Container Component Unit Tests", () => {
     );
 
     const component = screen.queryByTestId("flex-container-root");
-    expect(component).toHaveClass("flex-justify-start");
+    expect(component).toHaveClass("flex_justify_start");
   });
 
-  test("should set class [flex-align-end] when passed as prop", () => {
+  test("should set class [flex_align_end] when passed as prop", () => {
     render(
       <Flex align="end">
         <SampleComponent />
@@ -72,10 +75,10 @@ describe("Flex Container Component Unit Tests", () => {
     );
 
     const component = screen.queryByTestId("flex-container-root");
-    expect(component).toHaveClass("flex-align-end");
+    expect(component).toHaveClass("flex_align_end");
   });
 
-  test("should have class [flex-wrap] when passed as prop", () => {
+  test("should have class [flex_wrap] when passed as prop", () => {
     render(
       <Flex wrap>
         <SampleComponent />
@@ -83,7 +86,29 @@ describe("Flex Container Component Unit Tests", () => {
     );
 
     const component = screen.queryByTestId("flex-container-root");
-    expect(component).toHaveClass("flex-wrap");
+    expect(component).toHaveClass("flex_wrap");
+  });
+
+  test("should set class [flex_no_shrink] when passed as prop", () => {
+    render(
+      <Flex shrink={false}>
+        <SampleComponent />
+      </Flex>
+    );
+
+    const component = screen.queryByTestId("flex-container-root");
+    expect(component).toHaveClass("flex_no_shrink");
+  });
+
+  test("should set class [flex_grow] when passed as prop", () => {
+    render(
+      <Flex grow={true}>
+        <SampleComponent />
+      </Flex>
+    );
+
+    const component = screen.queryByTestId("flex-container-root");
+    expect(component).toHaveClass("flex_grow");
   });
 
   test("should have class [width_full] when passed as prop", () => {
@@ -117,6 +142,39 @@ describe("Flex Container Component Unit Tests", () => {
 
     const component = screen.queryByTestId("flex-container-root");
     expect(component).toHaveClass("test_custom_className");
+  });
+
+  test("should set styles [flex-basis] when passed auto as prop", () => {
+    render(
+      <Flex basis={"auto"}>
+        <SampleComponent />
+      </Flex>
+    );
+
+    const component = screen.queryByTestId("flex-container-root");
+    expect(component).toHaveStyle("flex-basis: auto");
+  });
+
+  test("should set styles [flex-basis] when passed string value as prop", () => {
+    render(
+      <Flex basis={"200px"}>
+        <SampleComponent />
+      </Flex>
+    );
+
+    const component = screen.queryByTestId("flex-container-root");
+    expect(component).toHaveStyle("flex-basis: 200px");
+  });
+
+  test("should set styles [flex-basis] when passed falsy value as prop", () => {
+    render(
+      <Flex basis={false}>
+        <SampleComponent />
+      </Flex>
+    );
+
+    const component = screen.queryByTestId("flex-container-root");
+    expect(component).toHaveStyle("flex-basis: 0");
   });
 });
 

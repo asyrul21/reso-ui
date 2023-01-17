@@ -55,14 +55,14 @@ export const Flex = ({
     createLayoutStyles(
       withSpacingsProps(
         {
-          component_flex_container: true,
-          [`flex-${direction}`]: true,
-          [`flex-justify-${justify}`]: true,
-          [`flex-align-${align}`]: true,
-          [`flex-grow`]: grow,
-          [`flex-shrink`]: shrink,
-          [`flex-no-shrink`]: !shrink,
-          [`flex-wrap`]: wrap,
+          flex_container: true,
+          [`flex_${direction}`]: true,
+          [`flex_justify_${justify}`]: true,
+          [`flex_align_${align}`]: true,
+          [`flex_grow`]: grow,
+          [`flex_shrink`]: shrink,
+          [`flex_no_shrink`]: !shrink,
+          [`flex_wrap`]: wrap,
         },
         spacingsProps
       ),

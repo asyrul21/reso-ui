@@ -21,7 +21,9 @@ export default {
         component: dedent`
             A container component that enables horizontal arrangements of children, scrollable when overflown.
 
-            The children to this component must have \`flex-shrink\` set to 0. Ideally, you can use HorizontalScrollItem to wrap children component instead.
+            The children to this component must have \`display: inline-block\`. Alternatively, you can use the HorizontalScrollItem to wrap your children component.
+            
+            If you wish to have children with \`display: flex\`, you can wrap that component with the HorizontalScrollItem.
 
             It supports both Margin and Padding props.
         `,

@@ -17,7 +17,7 @@
 
 .multiImageViewer_miniImage {
   //   border: 1px solid green;
-  flex-shrink: 0;
+  display: inline-block;
   width: 104px;
   height: 92px;
 }

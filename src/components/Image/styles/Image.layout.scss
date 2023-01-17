@@ -1,8 +1,7 @@
 .image_container {
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  position: relative;
   // default dimensions
   width: 456px;
   height: 364px;
@@ -26,15 +25,16 @@
 }
 
 .image_img {
-  box-sizing: content-box;
-  object-position: center;
   // border: 2px solid green;
-  // position: absolute;
-  // top: 0;
-  // left: 0;
+  object-position: center;
   width: 100%;
   height: auto;
-  // https://www.w3schools.com/css/css3_images.asp
+
+  // center
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .image_img_fit-cover {

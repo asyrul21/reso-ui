@@ -224,6 +224,7 @@ const App = () => {
         </Panel>
         <HorizontalScrollContainer
           mh={"center"}
+          mb={5}
           rootStyles={{ border: "2px solid blue" }}
         >
           <HorizontalScrollItem mh={2}>
@@ -240,6 +241,27 @@ const App = () => {
           </HorizontalScrollItem>
           <HorizontalScrollItem mh={2}>
             <div className="app_test_box">Test 5</div>
+          </HorizontalScrollItem>
+        </HorizontalScrollContainer>
+
+        <HorizontalScrollContainer
+          mh={"center"}
+          rootStyles={{ border: "2px solid blue" }}
+        >
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box_flex">Test 1</div>
+          </HorizontalScrollItem>
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box_flex">Test 2</div>
+          </HorizontalScrollItem>
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box_flex">Test 3</div>
+          </HorizontalScrollItem>
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box_flex">Test 4</div>
+          </HorizontalScrollItem>
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box_flex">Test 5</div>
           </HorizontalScrollItem>
         </HorizontalScrollContainer>
       </View>

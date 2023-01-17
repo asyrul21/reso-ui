@@ -19,7 +19,9 @@ export default {
     docs: {
       description: {
         component: dedent`
-            A component to view multiple images.
+            A component to view multiple images. 
+            
+            It utilizes the Image and HorizontalScrollContainer components, but with local state management features.
 
             It supports Margin props.
         `,

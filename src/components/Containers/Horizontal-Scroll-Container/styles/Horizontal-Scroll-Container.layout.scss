@@ -1,10 +1,9 @@
 .hsc_container {
-  //   border: 2px solid $primary-grey-medium;
+  // border: 2px solid $primary-grey-medium;
   //   border-radius: 0 0 $border-radius-small $border-radius-small;
   width: 540px;
   overflow-x: auto;
-  display: flex;
-  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .hsc_container_inheritWidth {

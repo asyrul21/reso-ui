@@ -5,8 +5,8 @@ import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 
 // styles
-import "./styles/Panel-Container.layout.scss";
-import "./styles/Panel-Container.theme.scss";
+import "./styles/Panel.layout.scss";
+import "./styles/Panel.theme.scss";
 
 // utils
 import {

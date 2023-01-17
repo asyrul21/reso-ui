@@ -59,14 +59,8 @@ export const PanelRow = ({
     )
   );
 
-  console.log(keyStr);
-
   return (
-    <div
-      className={rowClasses}
-      style={rootStyles}
-      data-teestid="panel-row-root"
-    >
+    <div className={rowClasses} style={rootStyles} data-testid="panel-row-root">
       <span
         className={keyClasses}
         style={keyStyles}

@@ -4,7 +4,7 @@ import React from "react";
 import IComponent from "@interfaces/IComponent";
 
 // styles
-import "./styles/Flex-Container.layout.scss";
+import "./styles/Flex.layout.scss";
 
 // utils
 import {

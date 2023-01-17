@@ -1,0 +1,7 @@
+.panel_button_custom_class {
+  font-weight: bold;
+  background-color: orange;
+  &:hover {
+    background-color: green;
+  }
+}

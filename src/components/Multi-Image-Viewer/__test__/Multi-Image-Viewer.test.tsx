@@ -4,6 +4,7 @@ import { MultiImageViewer } from "@components/Multi-Image-Viewer";
 
 // import from index does not work for jest.spyOn
 import * as ImageModule from "@components/Image/Image";
+import * as HSC from "@components/Containers/Horizontal-Scroll-Container/Horizontal-Scroll-Container";
 
 const sampleImageObjects = [
   {
@@ -28,6 +29,20 @@ describe("Image Component Unit Tests", () => {
         return (
           <div className={rootClassName} style={rootStyles} onClick={onClick}>
             <img src={src} />
+          </div>
+        );
+      });
+
+    jest
+      .spyOn(HSC, "HorizontalScrollContainer")
+      .mockImplementation(({ rootClassName, rootStyles, children }) => {
+        return (
+          <div
+            className={rootClassName}
+            style={rootStyles}
+            data-testid="multi-image-viewer-scrollbox"
+          >
+            {children}
           </div>
         );
       });

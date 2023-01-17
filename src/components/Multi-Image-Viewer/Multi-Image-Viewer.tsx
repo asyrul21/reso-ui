@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Image } from "@components/Image";
+import { HorizontalScrollContainer } from "@components/Containers/Horizontal-Scroll-Container";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
@@ -133,10 +134,7 @@ export const MultiImageViewer = ({
         }
       />
       {imageObjects && imageObjects.length > 1 && (
-        <div
-          className="multiImageViewer_scrollbox"
-          data-testid="multi-image-viewer-scrollbox"
-        >
+        <HorizontalScrollContainer inheritWidth pa={1}>
           {imageObjects.map((imageObj, idx) => {
             const miniImageLayoutClasses = createLayoutStyles(
               {
@@ -189,7 +187,7 @@ export const MultiImageViewer = ({
               />
             );
           })}
-        </div>
+        </HorizontalScrollContainer>
       )}
     </div>
   );

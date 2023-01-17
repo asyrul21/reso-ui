@@ -50,7 +50,7 @@ export const Banner = ({
       alt={alt}
       imgClassName={imgClassName}
       imgStyles={imgStyles}
-      mv={fullWidth ? 0 : "center"}
+      mh={fullWidth ? 0 : "center"}
     />
   );
 };

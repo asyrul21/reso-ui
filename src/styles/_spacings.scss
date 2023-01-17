@@ -45,9 +45,6 @@
   margin-top: 0;
   margin-bottom: 0;
 }
-.spacing-mv-center {
-  margin: 0 auto;
-}
 .spacing-mv-1 {
   margin-top: $margin-xxxsmall;
   margin-bottom: $margin-xxxsmall;
@@ -86,6 +83,10 @@
 }
 
 /* margin horizontal */
+.spacing-mh-center {
+  margin-left: auto;
+  margin-right: auto;
+}
 .spacing-mh-0 {
   margin-left: 0;
   margin-right: 0;

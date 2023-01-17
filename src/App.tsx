@@ -10,6 +10,8 @@ import { Banner } from "@components/Banner";
 import { ComponentLoader } from "@components/Loaders/Component-Loader";
 import { ComponentError } from "@components/Errors/Component-Error";
 import { LoadingContainer } from "@components/Containers/Loading-Container";
+import { HorizontalScrollContainer } from "@components/Containers/Horizontal-Scroll-Container";
+import { HorizontalScrollItem } from "@components/Containers/Horizontal-Scroll-Item";
 import { View } from "@components/Containers/View";
 import { Modal } from "@components/Containers/Modal";
 import { MultiImageViewer } from "@components/Multi-Image-Viewer";
@@ -220,6 +222,26 @@ const App = () => {
             }}
           />
         </Panel>
+        <HorizontalScrollContainer
+          mh={"center"}
+          rootStyles={{ border: "2px solid blue" }}
+        >
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box">Test 1</div>
+          </HorizontalScrollItem>
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box">Test 2</div>
+          </HorizontalScrollItem>
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box">Test 3</div>
+          </HorizontalScrollItem>
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box">Test 4</div>
+          </HorizontalScrollItem>
+          <HorizontalScrollItem mh={2}>
+            <div className="app_test_box">Test 5</div>
+          </HorizontalScrollItem>
+        </HorizontalScrollContainer>
       </View>
     </>
   );

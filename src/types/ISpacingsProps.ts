@@ -1,12 +1,12 @@
 type spacingsRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
-type marginAllRange = spacingsRange | "auto";
-type marginVerticalRange = spacingsRange | "center";
+type spacingsRangeWithAuto = spacingsRange | "auto";
+type spacingsRangeWithCenter = spacingsRange | "center";
 
 export interface IMarginProps {
-  ma?: marginAllRange;
-  mv?: marginVerticalRange;
-  mh?: spacingsRange;
+  ma?: spacingsRangeWithAuto;
+  mv?: spacingsRange;
+  mh?: spacingsRangeWithCenter;
   mt?: spacingsRange;
   mb?: spacingsRange;
   mr?: spacingsRange;

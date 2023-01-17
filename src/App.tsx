@@ -13,7 +13,6 @@ import { LoadingContainer } from "@components/Containers/Loading-Container";
 import { View } from "@components/Containers/View";
 import { Modal } from "@components/Containers/Modal";
 import { MultiImageViewer } from "@components/Multi-Image-Viewer";
-import { AdminProductPanel } from "@components/Admin-Product-Panel";
 import { Panel } from "@components/Containers/Panel";
 import { PanelTitle } from "@components/Panel/Panel-Title";
 import { PanelRow } from "@components/Panel/Panel-Row";
@@ -199,12 +198,6 @@ const App = () => {
           ]}
           defaultImagePath="fallback-image-example.jpg"
         />
-        <Flex mb={5}>
-          <AdminProductPanel countInStock={5} />
-        </Flex>
-        <Flex mb={5}>
-          <AdminProductPanel countInStock={5} isLowStock />
-        </Flex>
         <Panel>
           <PanelTitle text="Admin Panel" />
           <PanelRow

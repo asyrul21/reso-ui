@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Example } from "@components/Example";
 import { QuantityCounter } from "@components/Quantity-Counter";
 import { AddToCart } from "@components/Add-To-Cart";
-import { FlexContainer } from "@components/Containers/Flex-Container";
+import { Flex } from "@components/Containers/Flex";
 import { CenterContainer } from "@components/Containers/Center-Container";
 import { Image } from "@components/Image";
 import { Banner } from "@components/Banner";
@@ -41,38 +41,38 @@ const App = () => {
           </Modal>
         )}
         {/* no theme */}
-        <FlexContainer borderColor="green" mb={5}>
+        <Flex borderColor="green" mb={5}>
           <Example name="john" />
-        </FlexContainer>
+        </Flex>
         {/* with theme */}
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <Example theme="light" name="john" />
-        </FlexContainer>
-        <FlexContainer mb={5}>
+        </Flex>
+        <Flex mb={5}>
           <Example theme="dark" name="john" />
-        </FlexContainer>
+        </Flex>
         {/* no theme, with className */}
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <Example name="john" rootClassName="example_app_styles" />
-        </FlexContainer>
+        </Flex>
         {/* with theme, with className */}
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <Example
             theme="light"
             name="john"
             rootClassName="example_app_styles"
           />
-        </FlexContainer>
-        <FlexContainer pa={5}>
+        </Flex>
+        <Flex pa={5}>
           <QuantityCounter
             value={5}
             onChange={(val) => {
               alert(`Counter value updated to: ${val}`);
             }}
           />
-        </FlexContainer>
+        </Flex>
         {/* with theme */}
-        <FlexContainer
+        <Flex
           mb={5}
           ma={"auto"}
           borderColor="blue"
@@ -88,9 +88,9 @@ const App = () => {
             price="100.00"
             subTotal="100.00"
           />
-        </FlexContainer>
+        </Flex>
         {/* override styles with classname */}
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <AddToCart
             rootClassName="addToCart_app_styles"
             inStock={true}
@@ -99,64 +99,64 @@ const App = () => {
             price="100.00"
             subTotal="100.00"
           />
-        </FlexContainer>
-        <FlexContainer justify="start" borderColor="blue">
+        </Flex>
+        <Flex justify="start" borderColor="blue">
           <>
-            <FlexContainer mr={5}>
+            <Flex mr={5}>
               <div className="app_test_box">Test 1</div>
-            </FlexContainer>
-            <FlexContainer>
+            </Flex>
+            <Flex>
               <div className="app_test_box">Test 2</div>
-            </FlexContainer>
+            </Flex>
           </>
-        </FlexContainer>
+        </Flex>
         <CenterContainer rootStyles={{ border: "2px solid green" }}>
           <div className="app_test_box">Test 1</div>
         </CenterContainer>
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <div className="app_test_box" style={{ position: "relative" }}>
             <ComponentLoader />
           </div>
-        </FlexContainer>
+        </Flex>
         {/* with border and margin */}
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <Image
             src="image-example.jpg"
             rootStyles={{ border: "2px solid red" }}
             ma={5}
           />
-        </FlexContainer>
-        <FlexContainer mb={5}>
+        </Flex>
+        <Flex mb={5}>
           <Banner
             src="banner-example.jpg"
             rootStyles={{ border: "2px solid red" }}
           />
-        </FlexContainer>
-        <FlexContainer mb={5}>
+        </Flex>
+        <Flex mb={5}>
           {/* No text */}
           <div className="app_test_box" style={{ position: "relative" }}>
             <ComponentError />
           </div>
-        </FlexContainer>
-        <FlexContainer mb={5}>
+        </Flex>
+        <Flex mb={5}>
           {/* With text */}
           <div className="app_test_box" style={{ position: "relative" }}>
             <ComponentError text="Something went wrong" />
           </div>
-        </FlexContainer>
+        </Flex>
         <h1>Layer</h1>
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           {/* layer */}
           <LoadingContainer type="layer" loading={true}>
             <div className="app_test_data_table">
               Sample Data Table Component
             </div>
           </LoadingContainer>
-        </FlexContainer>
+        </Flex>
 
         {/* conditional */}
         <h1>Conditional</h1>
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <div style={{ width: "100%", minHeight: "320px" }}>
             <LoadingContainer type="conditional" loading={true}>
               <div className="app_test_data_table">
@@ -164,13 +164,13 @@ const App = () => {
               </div>
             </LoadingContainer>
           </div>
-        </FlexContainer>
+        </Flex>
         <h1>Modal</h1>
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <button onClick={() => setShowModal(!showModal)}>Show Modal</button>
-        </FlexContainer>
+        </Flex>
         <h1>Single Image</h1>
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <MultiImageViewer
             imageObjects={[
               {
@@ -179,7 +179,7 @@ const App = () => {
             ]}
             defaultImagePath="fallback-image-example.jpg"
           />
-        </FlexContainer>
+        </Flex>
         <h1>Multiple Images</h1>
         <MultiImageViewer
           mb={5}
@@ -199,12 +199,12 @@ const App = () => {
           ]}
           defaultImagePath="fallback-image-example.jpg"
         />
-        <FlexContainer mb={5}>
+        <Flex mb={5}>
           <AdminProductPanel countInStock={5} />
-        </FlexContainer>
-        <FlexContainer mb={5}>
+        </Flex>
+        <Flex mb={5}>
           <AdminProductPanel countInStock={5} isLowStock />
-        </FlexContainer>
+        </Flex>
         <Panel>
           <PanelTitle text="Admin Panel" />
           <PanelRow

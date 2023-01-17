@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { FlexContainer } from "@components/Containers/Flex-Container";
+import { Flex } from "@components/Containers/Flex";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
@@ -13,8 +13,8 @@ const SampleChildComponent = () => {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Containers/Flex Container",
-  component: FlexContainer,
+  title: "Containers/Flex",
+  component: Flex,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
@@ -30,15 +30,15 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof FlexContainer>;
+} as ComponentMeta<typeof Flex>;
 
-const ComponentTemplate: ComponentStory<typeof FlexContainer> = (args) => (
-  <FlexContainer {...args}>
+const ComponentTemplate: ComponentStory<typeof Flex> = (args) => (
+  <Flex {...args}>
     <>
       <SampleChildComponent />
       <SampleChildComponent />
     </>
-  </FlexContainer>
+  </Flex>
 );
 
 export const DefaultWithBorder = ComponentTemplate.bind({});

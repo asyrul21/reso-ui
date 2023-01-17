@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { FlexContainer } from "@components/Containers/Flex-Container";
+import { Flex } from "@components/Containers/Flex";
 
 const SampleComponent = () => {
   return (
@@ -15,9 +15,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should render itself and children without error", () => {
     const { debug } = render(
-      <FlexContainer>
+      <Flex>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     // debug();
@@ -30,9 +30,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should have class default classes when no props are passed", () => {
     render(
-      <FlexContainer>
+      <Flex>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -44,9 +44,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should set class [flex-column] when passed as prop", () => {
     render(
-      <FlexContainer direction="column">
+      <Flex direction="column">
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -55,9 +55,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should set class [flex-justify-start] when passed as prop", () => {
     render(
-      <FlexContainer justify="start">
+      <Flex justify="start">
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -66,9 +66,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should set class [flex-align-end] when passed as prop", () => {
     render(
-      <FlexContainer align="end">
+      <Flex align="end">
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -77,9 +77,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should have class [flex-wrap] when passed as prop", () => {
     render(
-      <FlexContainer wrap>
+      <Flex wrap>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -88,9 +88,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should have class [width_full] when passed as prop", () => {
     render(
-      <FlexContainer fullWidth>
+      <Flex fullWidth>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -99,9 +99,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should have class [width_fit_content] when passed as prop", () => {
     render(
-      <FlexContainer widthFitContent>
+      <Flex widthFitContent>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -110,9 +110,9 @@ describe("Flex Container Component Unit Tests", () => {
 
   test("should have custom className when passed as prop", () => {
     render(
-      <FlexContainer rootClassName="test_custom_className">
+      <Flex rootClassName="test_custom_className">
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -123,9 +123,9 @@ describe("Flex Container Component Unit Tests", () => {
 describe("Flex Container Margins Unit Tests", () => {
   test("should have class [spacing-ma-0] when passed as prop", () => {
     render(
-      <FlexContainer ma={0}>
+      <Flex ma={0}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -134,9 +134,9 @@ describe("Flex Container Margins Unit Tests", () => {
 
   test("should have class [spacing-ma-5] when passed as prop", () => {
     render(
-      <FlexContainer ma={5}>
+      <Flex ma={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -145,9 +145,9 @@ describe("Flex Container Margins Unit Tests", () => {
 
   test("should have class [spacing-mv-5] when passed as prop", () => {
     render(
-      <FlexContainer mv={5}>
+      <Flex mv={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -156,9 +156,9 @@ describe("Flex Container Margins Unit Tests", () => {
 
   test("should have class [spacing-mh-5] when passed as prop", () => {
     render(
-      <FlexContainer mh={5}>
+      <Flex mh={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -167,9 +167,9 @@ describe("Flex Container Margins Unit Tests", () => {
 
   test("should have class [spacing-mt-5] when passed as prop", () => {
     render(
-      <FlexContainer mt={5}>
+      <Flex mt={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -178,9 +178,9 @@ describe("Flex Container Margins Unit Tests", () => {
 
   test("should have class [spacing-mb-5] when passed as prop", () => {
     render(
-      <FlexContainer mb={5}>
+      <Flex mb={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -189,9 +189,9 @@ describe("Flex Container Margins Unit Tests", () => {
 
   test("should have class [spacing-mr-5] when passed as prop", () => {
     render(
-      <FlexContainer mr={5}>
+      <Flex mr={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -200,9 +200,9 @@ describe("Flex Container Margins Unit Tests", () => {
 
   test("should have class [spacing-ml-5] when passed as prop", () => {
     render(
-      <FlexContainer ml={5}>
+      <Flex ml={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -213,9 +213,9 @@ describe("Flex Container Margins Unit Tests", () => {
 describe("Flex Container Paddings Unit Tests", () => {
   test("should have class [spacing-pa-0] when passed as prop", () => {
     render(
-      <FlexContainer pa={0}>
+      <Flex pa={0}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -224,9 +224,9 @@ describe("Flex Container Paddings Unit Tests", () => {
 
   test("should have class [spacing-pa-5] when passed as prop", () => {
     render(
-      <FlexContainer pa={5}>
+      <Flex pa={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -235,9 +235,9 @@ describe("Flex Container Paddings Unit Tests", () => {
 
   test("should have class [spacing-pv-5] when passed as prop", () => {
     render(
-      <FlexContainer pv={5}>
+      <Flex pv={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -246,9 +246,9 @@ describe("Flex Container Paddings Unit Tests", () => {
 
   test("should have class [spacing-ph-5] when passed as prop", () => {
     render(
-      <FlexContainer ph={5}>
+      <Flex ph={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -257,9 +257,9 @@ describe("Flex Container Paddings Unit Tests", () => {
 
   test("should have class [spacing-pt-5] when passed as prop", () => {
     render(
-      <FlexContainer pt={5}>
+      <Flex pt={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -268,9 +268,9 @@ describe("Flex Container Paddings Unit Tests", () => {
 
   test("should have class [spacing-pb-5] when passed as prop", () => {
     render(
-      <FlexContainer pb={5}>
+      <Flex pb={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -279,9 +279,9 @@ describe("Flex Container Paddings Unit Tests", () => {
 
   test("should have class [spacing-pr-5] when passed as prop", () => {
     render(
-      <FlexContainer pr={5}>
+      <Flex pr={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");
@@ -290,9 +290,9 @@ describe("Flex Container Paddings Unit Tests", () => {
 
   test("should have class [spacing-pl-5] when passed as prop", () => {
     render(
-      <FlexContainer pl={5}>
+      <Flex pl={5}>
         <SampleComponent />
-      </FlexContainer>
+      </Flex>
     );
 
     const component = screen.queryByTestId("flex-container-root");

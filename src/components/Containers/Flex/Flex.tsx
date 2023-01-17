@@ -14,15 +14,19 @@ import {
 } from "@utils/styles";
 
 import { ISpacingsProps } from "@interfaces/ISpacingsProps";
+import { hasValue } from "@utils/validations";
 
-export interface IFlexContainerProps extends IComponent, ISpacingsProps {
+export interface IFlexProps extends IComponent, ISpacingsProps {
   direction?: "row" | "column";
   justify?: "space-between" | "start" | "end" | "space-around" | "center";
   align?: "center" | "start" | "end";
+  grow?: boolean;
+  shrink?: boolean;
+  basis?: "auto" | boolean | string;
+  wrap?: boolean;
   children: React.ReactNode;
   fullWidth?: boolean;
   widthFitContent?: boolean;
-  wrap?: boolean;
   className?: string;
   borderColor?: string;
 }
@@ -31,19 +35,22 @@ export interface IFlexContainerProps extends IComponent, ISpacingsProps {
 // when using this component you need to set specific height
 // 100% height would not work with flex
 
-export const FlexContainer = ({
+export const Flex = ({
   direction = "row",
   justify = "space-between",
   align = "center",
+  grow = false,
+  shrink = true,
+  basis = "auto",
+  wrap = false,
   fullWidth = false,
   widthFitContent = false,
-  wrap = false,
   children,
   rootClassName,
   borderColor = null,
   rootStyles = {},
   ...spacingsProps
-}: IFlexContainerProps) => {
+}: IFlexProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
       withSpacingsProps(
@@ -52,6 +59,9 @@ export const FlexContainer = ({
           [`flex-${direction}`]: true,
           [`flex-justify-${justify}`]: true,
           [`flex-align-${align}`]: true,
+          [`flex-grow`]: grow,
+          [`flex-shrink`]: shrink,
+          [`flex-no-shrink`]: !shrink,
           [`flex-wrap`]: wrap,
         },
         spacingsProps
@@ -64,11 +74,14 @@ export const FlexContainer = ({
     )
   );
 
+  const flexBasis =
+    basis && basis === "auto" ? "auto" : typeof basis === "string" ? basis : 0;
   return (
     <div
       data-testid="flex-container-root"
       style={{
         border: borderColor ? `2px solid ${borderColor}` : null,
+        flexBasis,
         ...rootStyles,
       }}
       className={containerStyles}
@@ -77,5 +90,3 @@ export const FlexContainer = ({
     </div>
   );
 };
-
-export default FlexContainer;

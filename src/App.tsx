@@ -14,7 +14,7 @@ import { View } from "@components/Containers/View";
 import { Modal } from "@components/Containers/Modal";
 import { MultiImageViewer } from "@components/Multi-Image-Viewer";
 import { AdminProductPanel } from "@components/Admin-Product-Panel";
-import { PanelContainer } from "@components/Containers/Panel-Container";
+import { Panel } from "@components/Containers/Panel";
 import { PanelTitle } from "@components/Panel/Panel-Title";
 import { PanelRow } from "@components/Panel/Panel-Row";
 import { PanelButton } from "@components/Panel/Panel-Button";
@@ -205,7 +205,7 @@ const App = () => {
         <FlexContainer mb={5}>
           <AdminProductPanel countInStock={5} isLowStock />
         </FlexContainer>
-        <PanelContainer>
+        <Panel>
           <PanelTitle text="Admin Panel" />
           <PanelRow
             keyStr="Qty in Stock:"
@@ -226,7 +226,7 @@ const App = () => {
               alert("Panel button clicked!");
             }}
           />
-        </PanelContainer>
+        </Panel>
       </View>
     </>
   );

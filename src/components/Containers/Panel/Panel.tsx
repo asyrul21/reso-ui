@@ -15,16 +15,16 @@ import {
   createThemeStyles,
 } from "@utils/styles";
 
-export interface IPanelContainerProps extends IComponent, IThemeProps {
+export interface IPanelProps extends IComponent, IThemeProps {
   children: React.ReactNode;
 }
 
-export const PanelContainer = ({
+export const Panel = ({
   children,
   rootClassName,
   rootStyles = {},
   theme = "light",
-}: IPanelContainerProps) => {
+}: IPanelProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
       {

@@ -1,0 +1,34 @@
+///////////////////////////////
+// for type Plain
+///////////////////////////////
+.button_plain_theme_light {
+  @include use_theme($primary-grey-light, "light");
+  border-color: $primary-grey-medium;
+  &:hover {
+    background-color: $primary-grey-dark;
+    color: $fc-light;
+  }
+}
+
+.button_plain_theme_dark {
+  @include use_theme($primary-grey-dark, "dark");
+  border-color: $primary-grey-medium;
+  &:hover {
+    background-color: $primary-grey-medium-light;
+    color: $fc-dark;
+  }
+}
+
+///////////////////////////////
+// for type Primary
+///////////////////////////////
+.button_primary_theme_light {
+  @include use_theme($bg-button-primary, "dark");
+  border: none;
+  opacity: 0.9;
+  &:hover {
+    // background-color: $bg-button-primary;
+    // color: $fc-light;
+    opacity: 1;
+  }
+}

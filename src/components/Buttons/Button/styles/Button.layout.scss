@@ -1,0 +1,16 @@
+.button_container {
+  display: block;
+  font-size: $font-size-default;
+  width: 120px;
+  height: 48px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $border-radius-default;
+  transition: background-color ease 0.1s;
+  cursor: pointer;
+}
+
+.button_container_inheritWidth {
+  width: 100%;
+  min-width: inherit;
+}

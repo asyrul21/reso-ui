@@ -19,6 +19,7 @@ import { Panel } from "@components/Containers/Panel";
 import { PanelTitle } from "@components/Panel/Panel-Title";
 import { PanelRow } from "@components/Panel/Panel-Row";
 import { PanelButton } from "@components/Panel/Panel-Button";
+import { Button } from "@components/Buttons/Button";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -209,17 +210,21 @@ const App = () => {
           />
           <PanelRow keyStr="Sales this month:" value={5} />
           <PanelRow keyStr="Total sales" value={2} />
-          <PanelButton
+          <Button
+            inheritWidth
             text="Edit"
             onClick={() => {
               alert("Panel button clicked!");
             }}
+            mb={3}
           />
-          <PanelButton
+          <Button
+            inheritWidth
             text="Archive"
             onClick={() => {
               alert("Panel button clicked!");
             }}
+            mb={3}
           />
         </Panel>
         <HorizontalScrollContainer
@@ -264,6 +269,11 @@ const App = () => {
             <div className="app_test_box_flex">Test 5</div>
           </HorizontalScrollItem>
         </HorizontalScrollContainer>
+
+        <Button text="Click" mv={2} />
+        <Button text="Click" mv={2} theme={"dark"} />
+        <Button text="Click" mv={2} disabled />
+        <Button type="primary" text="Click" mv={2} />
       </View>
     </>
   );

@@ -31,7 +31,19 @@ npm start
 
 7. Admin-Product-Panel - sales count logic is taken out from component, removed dependency on Product all together. rename onToggleArchive to onArchive. Admin-Product-Panel has been decomposed into several Panel primitive components. Clients _need to rewrite Admin-Product-Panel and Admin-User-Panel in reso-client using the library_.
 
-8. All components now have an optional prop _theme_
+8. Generic-Button renamed to Button. [fullWidth] prop renamed to [inheritWidth]
+
+9. All components now have an optional prop _theme_
+
+# To Be Reconstructed in Client
+
+1. Admin-Product-Panel
+
+2. Admin-User-Panel
+
+3. Update Order Status Buttons
+
+4. Analysis Title
 
 # Development Setup
 

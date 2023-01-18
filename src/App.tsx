@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { Example } from "@components/Example";
 import { QuantityCounter } from "@components/Quantity-Counter";
-import { AddToCart } from "@components/Add-To-Cart";
 import { Flex } from "@components/Containers/Flex";
 import { CenterContainer } from "@components/Containers/Center-Container";
 import { Image } from "@components/Image";
@@ -73,35 +72,6 @@ const App = () => {
             }}
           />
         </Flex>
-        {/* with theme */}
-        <Flex
-          mb={5}
-          ma={"auto"}
-          borderColor="blue"
-          rootStyles={{
-            width: "fit-content",
-          }}
-        >
-          <AddToCart
-            theme="light"
-            inStock={true}
-            quantityValue={1}
-            currency="RM"
-            price="100.00"
-            subTotal="100.00"
-          />
-        </Flex>
-        {/* override styles with classname */}
-        <Flex mb={5}>
-          <AddToCart
-            rootClassName="addToCart_app_styles"
-            inStock={true}
-            quantityValue={1}
-            currency="RM"
-            price="100.00"
-            subTotal="100.00"
-          />
-        </Flex>
         <Flex justify="start" borderColor="blue">
           <>
             <Flex mr={5}>
@@ -128,12 +98,11 @@ const App = () => {
             ma={5}
           />
         </Flex>
-        <Flex mb={5}>
-          <Banner
-            src="banner-example.jpg"
-            rootStyles={{ border: "2px solid red" }}
-          />
-        </Flex>
+        <Banner
+          src="banner-example.jpg"
+          rootStyles={{ border: "2px solid red" }}
+          mb={5}
+        />
         <Flex mb={5}>
           {/* No text */}
           <div className="app_test_box" style={{ position: "relative" }}>

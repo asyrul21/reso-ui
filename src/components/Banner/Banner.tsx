@@ -4,6 +4,7 @@ import { Image } from "@components/Image";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
+import { IMarginProps } from "@interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Banner.layout.scss";
@@ -11,7 +12,7 @@ import "./styles/Banner.layout.scss";
 // utils
 import { createComponentStyles, createLayoutStyles } from "@utils/styles";
 
-export interface IBannerProps extends IComponent {
+export interface IBannerProps extends IComponent, IMarginProps {
   src: string;
   alt?: string;
   fullWidth?: boolean;
@@ -22,11 +23,12 @@ export interface IBannerProps extends IComponent {
 export const Banner = ({
   src,
   alt = "RESO Banner",
-  fullWidth,
+  fullWidth = false,
   rootClassName,
   imgClassName,
   rootStyles = {},
   imgStyles = {},
+  ...spacingsProps
 }: IBannerProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
@@ -51,6 +53,7 @@ export const Banner = ({
       imgClassName={imgClassName}
       imgStyles={imgStyles}
       mh={fullWidth ? 0 : "center"}
+      {...spacingsProps}
     />
   );
 };

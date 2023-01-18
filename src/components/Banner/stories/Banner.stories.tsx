@@ -22,6 +22,8 @@ export default {
 
             By default, it has a max-width of 1280px. If you wish to extend it to full width of browser,
             you can use the *fullWidth* prop.
+
+            The parent of this component must have \`display: block\`, and NOT \`display: flex\`
         `,
       },
     },

@@ -1,4 +1,4 @@
-.banner_container {
+.hero_container {
   width: unset;
   max-width: $max-width-screen-lg;
   min-height: 320px;
@@ -7,7 +7,7 @@
   max-height: 410px;
 }
 
-.banner_container_fullWidth {
+.hero_container_fullWidth {
   max-width: none;
   width: 100%;
 }

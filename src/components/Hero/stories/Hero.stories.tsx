@@ -2,14 +2,14 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Banner } from "@components/Banner";
+import { Hero } from "@components/Hero";
 import "./storyStyles.scss";
 
 import dedent from "ts-dedent";
 
 export default {
-  title: "Components/Banner",
-  component: Banner,
+  title: "Components/Hero",
+  component: Hero,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
@@ -18,7 +18,7 @@ export default {
     docs: {
       description: {
         component: dedent`
-            A Banner image component, basically a styled \`Image\` component.
+            A Hero image component, basically a styled \`Image\` component.
 
             By default, it has a max-width of 1280px. If you wish to extend it to full width of browser,
             you can use the *fullWidth* prop.
@@ -28,25 +28,25 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Banner>;
+} as ComponentMeta<typeof Hero>;
 
-const ComponentTemplate: ComponentStory<typeof Banner> = (args) => (
-  <Banner {...args} />
+const ComponentTemplate: ComponentStory<typeof Hero> = (args) => (
+  <Hero {...args} />
 );
 
 export const Default = ComponentTemplate.bind({});
 Default.args = {
-  src: "/banner-example.jpg",
+  src: "/hero-example.jpg",
 };
 
-export const CustomContainerClass = ComponentTemplate.bind({});
-CustomContainerClass.args = {
-  src: "/banner-example.jpg",
-  rootClassName: "banner_custom_story",
+export const WithContainerClass = ComponentTemplate.bind({});
+WithContainerClass.args = {
+  src: "/hero-example.jpg",
+  rootClassName: "hero_custom_story",
 };
 
 export const FullWidth = ComponentTemplate.bind({});
 FullWidth.args = {
-  src: "/banner-example.jpg",
+  src: "/hero-example.jpg",
   fullWidth: true,
 };

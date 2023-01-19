@@ -19,7 +19,7 @@ npm start
 
 1. ImageContainer and Image are now combined to form 1 component: Image
 
-2. BannerImageContainer were removed, replaced with Banner
+2. BannerImageContainer were removed, replaced with Hero
 
 3. Flex Container now have Margins and Padding props
 
@@ -37,7 +37,9 @@ npm start
 
 10. Link-Button added as a variant of Button.
 
-11. All components now have an optional prop _theme_
+11. Multiselect Button to utilize library's Button component with custom width and height.
+
+12. All components now have an optional prop _theme_
 
 # To Be Reconstructed using library in Client
 

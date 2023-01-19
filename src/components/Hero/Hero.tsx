@@ -7,12 +7,12 @@ import IComponent from "@interfaces/IComponent";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
 
 // styles
-import "./styles/Banner.layout.scss";
+import "./styles/Hero.layout.scss";
 
 // utils
 import { createComponentStyles, createLayoutStyles } from "@utils/styles";
 
-export interface IBannerProps extends IComponent, IMarginProps {
+export interface IHeroProps extends IComponent, IMarginProps {
   src: string;
   alt?: string;
   fullWidth?: boolean;
@@ -20,26 +20,26 @@ export interface IBannerProps extends IComponent, IMarginProps {
   imgStyles?: React.CSSProperties;
 }
 
-export const Banner = ({
+export const Hero = ({
   src,
-  alt = "RESO Banner",
+  alt = "RESO Hero Image",
   fullWidth = false,
   rootClassName,
   imgClassName,
   rootStyles = {},
   imgStyles = {},
   ...spacingsProps
-}: IBannerProps) => {
+}: IHeroProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
       {
-        banner_container: true,
-        banner_container_fullWidth: fullWidth,
+        hero_container: true,
+        hero_container_fullWidth: fullWidth,
       },
       rootClassName,
       {
         position_relative: true,
-        // width_full does not work here because both [Image] and [Banner] styles overrides the global [width] style
+        // width_full does not work here because both [Image] and [Hero] styles overrides the global [width] style
       }
     )
   );

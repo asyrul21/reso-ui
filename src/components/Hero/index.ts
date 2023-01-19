@@ -1,2 +1,2 @@
 import "@styles/global.scss";
-export * from "./Banner";
+export * from "./Hero";

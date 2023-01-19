@@ -77,8 +77,8 @@ WithContainerStyles.args = {
   },
 };
 
-export const CustomWidthViaStyles = ComponentTemplate.bind({});
-CustomWidthViaStyles.args = {
+export const UsingCustomWidthViaStyles = ComponentTemplate.bind({});
+UsingCustomWidthViaStyles.args = {
   rootStyles: {
     border: "2px solid grey",
     borderRadius: "14px",

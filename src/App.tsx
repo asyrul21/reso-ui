@@ -5,7 +5,7 @@ import { QuantityCounter } from "@components/Quantity-Counter";
 import { Flex } from "@components/Containers/Flex";
 import { CenterContainer } from "@components/Containers/Center-Container";
 import { Image } from "@components/Image";
-import { Banner } from "@components/Banner";
+import { Hero } from "@components/Hero";
 import { ComponentLoader } from "@components/Loaders/Component-Loader";
 import { ComponentError } from "@components/Errors/Component-Error";
 import { LoadingContainer } from "@components/Containers/Loading-Container";
@@ -97,8 +97,8 @@ const App = () => {
             ma={5}
           />
         </Flex>
-        <Banner
-          src="banner-example.jpg"
+        <Hero
+          src="hero-example.jpg"
           rootStyles={{ border: "2px solid red" }}
           mb={5}
         />

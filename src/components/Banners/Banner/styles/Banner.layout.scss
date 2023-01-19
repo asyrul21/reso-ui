@@ -1,0 +1,47 @@
+// padding-right must be the same with the width of close button
+.banner_container {
+  //   border: 2px solid red;
+  width: 100%;
+  height: auto;
+  max-height: 140px;
+  overflow-y: auto;
+  padding: $padding-small;
+  padding-right: $padding-large;
+  text-align: center;
+  //text
+  font-weight: 600;
+  font-size: $font-size-default;
+}
+
+.banner_close_button {
+  //   border: 2px solid blue;
+  color: inherit;
+  border: none;
+  width: $padding-large;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: unset;
+}
+
+.banner_container_info {
+  background-color: $blue;
+  color: $fc-light;
+}
+
+.banner_container_warning {
+  background-color: $primary-yellow;
+  color: $fc-light;
+}
+
+.banner_container_error {
+  background-color: $bg-alert-banner-error;
+  color: $fc-light;
+}
+
+.banner_container_success {
+  background-color: $bg-alert-banner-success;
+  color: $fc-light;
+}

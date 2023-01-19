@@ -47,6 +47,7 @@ export const Button = ({
           button_container: true,
           button_container_inheritWidth: inheritWidth,
           button_container_link: type === "link",
+          button_text: true,
         },
         spacingsProps
       ),

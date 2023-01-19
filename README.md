@@ -39,7 +39,9 @@ npm start
 
 11. Multiselect Button to utilize library's Button component with custom width and height.
 
-12. All components now have an optional prop _theme_
+12. Collapse-Banner and Info-Banner combined to form 1 Component: Banner.
+
+13. All components now have an optional prop _theme_
 
 # To Be Reconstructed using library in Client
 

@@ -18,6 +18,7 @@ import { Panel } from "@components/Containers/Panel";
 import { PanelTitle } from "@components/Panel/Panel-Title";
 import { PanelRow } from "@components/Panel/Panel-Row";
 import { Button } from "@components/Buttons/Button";
+import { Banner } from "@components/Banners/Banner";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -40,6 +41,14 @@ const App = () => {
             <p>Sample</p>
           </Modal>
         )}
+        <Banner text="Some information" type="success" />
+        <Banner text="Some information" type="error" />
+        <Banner text="Some information" type="info" />
+        <Banner text="Some information" type="warning" />
+        <Banner
+          text="is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, "
+          type="info"
+        />
         {/* no theme */}
         <Flex borderColor="green" mb={5}>
           <Example name="john" />

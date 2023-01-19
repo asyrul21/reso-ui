@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 // import base interface
 import IComponent from "@interfaces/IComponent";
 
+import { Button } from "@components/Buttons/Button";
+
 // styles
 import "./styles/Banner.layout.scss";
 
@@ -56,14 +58,13 @@ export const Banner = ({
         data-testid="banner-root"
       >
         <span>{text}</span>
-        <button
-          className="banner_close_button"
+        <Button
+          text="X"
+          rootClassName="banner_close_button"
           onClick={() => {
             setShow(false);
           }}
-        >
-          X
-        </button>
+        />
       </div>
     )
   );

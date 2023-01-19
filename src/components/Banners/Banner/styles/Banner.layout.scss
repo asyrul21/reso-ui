@@ -15,15 +15,19 @@
 
 .banner_close_button {
   //   border: 2px solid blue;
+  background: unset;
+  border-radius: 0;
   color: inherit;
   border: none;
   width: $padding-large;
   height: 100%;
-  cursor: pointer;
   position: absolute;
   top: 0;
   right: 0;
-  background: unset;
+  &:hover {
+    background-color: $primary-grey-dark-transparent;
+    color: inherit;
+  }
 }
 
 .banner_container_info {

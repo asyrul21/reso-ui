@@ -35,7 +35,9 @@ npm start
 
 9. Generic-Button renamed to Button. [fullWidth] prop renamed to [inheritWidth]
 
-10. All components now have an optional prop _theme_
+10. Link-Button added as a variant of Button.
+
+11. All components now have an optional prop _theme_
 
 # To Be Reconstructed using library in Client
 

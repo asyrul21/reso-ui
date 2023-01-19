@@ -14,3 +14,14 @@
   width: 100%;
   min-width: inherit;
 }
+
+.button_container_link {
+  // border: 2px solid red;
+  border: none;
+  padding: $padding-xxsmall;
+  width: fit-content;
+  height: initial;
+  &:hover {
+    text-decoration: underline;
+  }
+}

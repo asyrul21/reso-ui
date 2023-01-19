@@ -32,3 +32,11 @@
     opacity: 1;
   }
 }
+
+///////////////////////////////
+// for type Link
+///////////////////////////////
+.button_link_theme_light {
+  @include use_theme(unset, "light");
+  color: $lc-blue;
+}

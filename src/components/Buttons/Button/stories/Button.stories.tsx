@@ -45,8 +45,13 @@ export const Default = ComponentTemplate.bind({});
 Default.args = {};
 
 export const DefaultPrimary = ComponentTemplate.bind({});
-Default.args = {
+DefaultPrimary.args = {
   type: "primary",
+};
+
+export const DefaultLink = ComponentTemplate.bind({});
+DefaultLink.args = {
+  type: "link",
 };
 
 export const Disabled = ComponentTemplate.bind({});

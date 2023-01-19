@@ -17,7 +17,6 @@ import { MultiImageViewer } from "@components/Multi-Image-Viewer";
 import { Panel } from "@components/Containers/Panel";
 import { PanelTitle } from "@components/Panel/Panel-Title";
 import { PanelRow } from "@components/Panel/Panel-Row";
-import { PanelButton } from "@components/Panel/Panel-Button";
 import { Button } from "@components/Buttons/Button";
 
 // import sample scss
@@ -243,6 +242,8 @@ const App = () => {
         <Button text="Click" mv={2} theme={"dark"} />
         <Button text="Click" mv={2} disabled />
         <Button type="primary" text="Click" mv={2} />
+        <Button type="link" text="Link" mv={2} />
+        <Button type="link" text="Link" mv={2} disabled />
       </View>
     </>
   );

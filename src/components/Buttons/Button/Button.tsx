@@ -20,7 +20,7 @@ import {
 import { methodHasValue } from "@utils/validations";
 
 export interface IButtonProps extends IComponent, IThemeProps, IMarginProps {
-  type?: "plain" | "primary";
+  type?: "plain" | "primary" | "link";
   id?: string;
   text: string;
   onClick?: () => void;
@@ -46,6 +46,7 @@ export const Button = ({
         {
           button_container: true,
           button_container_inheritWidth: inheritWidth,
+          button_container_link: type === "link",
         },
         spacingsProps
       ),

@@ -2,4 +2,17 @@
   //   border: 2px solid green;
   display: block;
   margin-bottom: $margin-xxlarge;
+  width: 100%;
+}
+
+.banner_wrapper_container_positionAbsolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.banner_wrapper_container_scroll {
+  border-bottom: 1px solid $primary-grey-medium;
+  overflow-y: auto;
 }

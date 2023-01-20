@@ -9,11 +9,7 @@ import { Button } from "@components/Buttons/Button";
 import "./styles/Banner.layout.scss";
 
 // utils
-import {
-  createComponentStyles,
-  createLayoutStyles,
-  withSpacingsProps,
-} from "@utils/styles";
+import { createComponentStyles, createLayoutStyles } from "@utils/styles";
 
 export interface IBannerProps extends IComponent {
   type: "info" | "warning" | "error" | "success";
@@ -40,13 +36,6 @@ export const Banner = ({
       }
     )
   );
-
-  // const messageBannerClasses = classnames({
-  //   alertMessage: true,
-  //   component_collapseBanner_container: true,
-  //   [`message_banner_${type}`]: true,
-  //   message_banner_active: showBanner,
-  // });
 
   return (
     show && (

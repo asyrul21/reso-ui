@@ -55,6 +55,8 @@ npm start
 
 5. Analysis Title
 
+6. Dashboard/Overview
+
 # Development Setup
 
 [Reference for Typescript and Webpack](https://dev.to/shivampawar/setup-react-application-using-typescript-and-webpack-2kn6)

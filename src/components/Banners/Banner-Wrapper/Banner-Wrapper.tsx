@@ -11,10 +11,14 @@ import { createComponentStyles, createLayoutStyles } from "@utils/styles";
 
 export interface IBannerWrapperProps extends IComponent {
   children: React.ReactNode;
+  positionAbsolute?: boolean;
+  hasMaxHeight?: boolean;
 }
 
 export const BannerWrapper = ({
   children,
+  positionAbsolute = false,
+  hasMaxHeight = false,
   rootClassName,
   rootStyles = {},
 }: IBannerWrapperProps) => {
@@ -22,20 +26,20 @@ export const BannerWrapper = ({
     createLayoutStyles(
       {
         banner_wrapper_container: true,
+        banner_wrapper_container_positionAbsolute: positionAbsolute,
+        banner_wrapper_container_scroll: hasMaxHeight,
       },
       rootClassName
     )
   );
 
   return (
-    children && (
-      <div
-        className={containerStyles}
-        style={rootStyles}
-        data-testid="banner-wrapper-root"
-      >
-        {children}
-      </div>
-    )
+    <div
+      className={containerStyles}
+      style={rootStyles}
+      data-testid="banner-wrapper-root"
+    >
+      {children}
+    </div>
   );
 };

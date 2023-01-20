@@ -1,0 +1,8 @@
+.card_container {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $border-radius-default;
+  width: 180px;
+  min-height: 160px;
+  @include box_shadow_default;
+}

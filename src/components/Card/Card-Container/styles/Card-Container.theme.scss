@@ -1,0 +1,9 @@
+.card_container_theme_light {
+  @include use_theme($primary-grey-light, "light");
+  border-color: $primary-grey-dark;
+}
+
+.card_container_theme_dark {
+  @include use_theme($primary-grey-dark, "dark");
+  border-color: $primary-grey-dark;
+}

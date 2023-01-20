@@ -20,6 +20,9 @@ import { PanelRow } from "@components/Panel/Panel-Row";
 import { Button } from "@components/Buttons/Button";
 import { BannerWrapper } from "@components/Banners/Banner-Wrapper";
 import { Banner } from "@components/Banners/Banner";
+import { Card } from "@components/Card";
+import { CardContent } from "@components/Card/Card-Content";
+import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -256,6 +259,92 @@ const App = () => {
         <Button type="primary" text="Click" mv={2} />
         <Button type="link" text="Link" mv={2} />
         <Button type="link" text="Link" mv={2} disabled />
+        <Card
+          rootStyles={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+          mb={5}
+          pa={4}
+        >
+          <CardContent>HeadingHeadingHeadingHeading</CardContent>
+          <CardContent>
+            <CardSummaryValue value={100010001000} />
+          </CardContent>
+        </Card>
+        <Card
+          rootStyles={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+          pa={4}
+        >
+          <CardContent>Heading</CardContent>
+          <CardContent
+            rootStyles={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "flex-end",
+            }}
+          >
+            <CardSummaryValue value={1000} />
+          </CardContent>
+        </Card>
+        <Card
+          mv={5}
+          pa={4}
+          rootStyles={{
+            width: "264px",
+            minHeight: "322px",
+          }}
+        >
+          <Image
+            src="image-example-2.jpg"
+            inheritWidth
+            rootStyles={{
+              border: "1px solid grey",
+              maxHeight: "184px",
+              borderRadius: "14px",
+            }}
+            mb={5}
+          />
+          <CardContent mb={2} ph={2}>
+            Product Name
+          </CardContent>
+          <CardContent mb={3} ph={2}>
+            RM 200
+          </CardContent>
+          <Button type="primary" text="Add to Cart" inheritWidth />
+        </Card>
+        <Card
+          mv={5}
+          pa={4}
+          theme="dark"
+          rootStyles={{
+            width: "264px",
+            minHeight: "322px",
+          }}
+        >
+          <Image
+            src="image-example-2.jpg"
+            inheritWidth
+            rootStyles={{
+              border: "1px solid grey",
+              maxHeight: "184px",
+              borderRadius: "14px",
+            }}
+            mb={5}
+          />
+          <CardContent mb={2} ph={2}>
+            Product Name
+          </CardContent>
+          <CardContent mb={3} ph={2}>
+            RM 200
+          </CardContent>
+          <Button type="primary" text="Add to Cart" inheritWidth />
+        </Card>
       </View>
     </>
   );

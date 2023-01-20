@@ -41,7 +41,9 @@ npm start
 
 12. Collapse-Banner and Info-Banner combined to form 1 Component: Banner.
 
-13. All components now have an optional prop _theme_
+13. Dashboard/Card and Product-Card to be combined into 1 component: Card. Both of these components will need to be rewritten using library components.
+
+14. All components now have an optional prop _theme_
 
 # To Be Reconstructed using library in Client
 
@@ -56,6 +58,10 @@ npm start
 5. Analysis Title
 
 6. Dashboard/Overview
+
+7. Dashboard/Card
+
+8. Product-Card
 
 # Development Setup
 

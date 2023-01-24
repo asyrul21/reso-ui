@@ -1,0 +1,21 @@
+.modal_backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-backdrop;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_container {
+  min-width: 240px;
+  max-width: 540px;
+  min-height: 180px;
+  border-radius: $border-radius-small;
+  overflow-y: overlay;
+  position: relative;
+}

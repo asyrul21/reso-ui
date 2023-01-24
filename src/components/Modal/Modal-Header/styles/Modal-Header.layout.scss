@@ -1,0 +1,15 @@
+.modal_header {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $margin-xsmall;
+  padding-bottom: $padding-xxsmall;
+}
+
+.modal_header_closeButton {
+  width: fit-content;
+  padding: 0 $padding-xxsmall;
+}

@@ -27,41 +27,47 @@ npm start
 
 5. Popup-container renamed to Modal
 
-6. multi-image-container renamed to Multi-Image-Viewer. [setViewedIndex] renamed to [setIndexOverride]. [getMiniImagePath] hook only passes the imageObj as argument. Any processing related to image types etc. is done by client.
+6. Banner-Image-Container renamed to Hero
 
-7. Admin-Product-Panel - sales count logic is taken out from component, removed dependency on Product all together. rename onToggleArchive to onArchive. Admin-Product-Panel has been decomposed into several Panel primitive components. Clients _need to rewrite Admin-Product-Panel and Admin-User-Panel in reso-client using the library_.
+7. multi-image-container renamed to Multi-Image-Viewer. [setViewedIndex] renamed to [setIndexOverride]. [getMiniImagePath] hook only passes the imageObj as argument. Any processing related to image types etc. is done by client.
 
-8. Add to Cart to be rewritted using library components.
+8. Admin-Product-Panel - sales count logic is taken out from component, removed dependency on Product all together. rename onToggleArchive to onArchive. Admin-Product-Panel has been decomposed into several Panel primitive components. Clients _need to rewrite Admin-Product-Panel and Admin-User-Panel in reso-client using the library_.
 
-9. Generic-Button renamed to Button. [fullWidth] prop renamed to [inheritWidth]
+9. Add to Cart to be rewritted using library components.
 
-10. Link-Button added as a variant of Button.
+10. Generic-Button renamed to Button. [fullWidth] prop renamed to [inheritWidth]
 
-11. Multiselect Button to utilize library's Button component with custom width and height.
+11. Link-Button added as a variant of Button.
 
-12. Collapse-Banner and Info-Banner combined to form 1 Component: Banner.
+12. Multiselect Button to utilize library's Button component with custom width and height.
 
-13. Dashboard/Card and Product-Card to be combined into 1 component: Card. Both of these components will need to be rewritten using library components.
+13. Collapse-Banner and Info-Banner combined to form 1 Component: Banner.
 
-14. All components now have an optional prop _theme_
+14. Dashboard/Card and Product-Card to be combined into 1 component: Card. Both of these components will need to be rewritten using library components.
+
+15. Modal has been decomposed to 3 parts - Container, Header, Body
+
+16. All components now have an optional prop _theme_
 
 # To Be Reconstructed using library in Client
 
+1. Generic Modal for Popups that utilise libary components
+
 1. Admin-Product-Panel
 
-2. Admin-User-Panel
+1. Admin-User-Panel
 
-3. Add-To-Cart
+1. Add-To-Cart
 
-4. Update Order Status Buttons
+1. Update Order Status Buttons
 
-5. Analysis Title
+1. Analysis Title
 
-6. Dashboard/Overview
+1. Dashboard/Overview
 
-7. Dashboard/Card
+1. Dashboard/Card
 
-8. Product-Card
+1. Product-Card
 
 # Development Setup
 

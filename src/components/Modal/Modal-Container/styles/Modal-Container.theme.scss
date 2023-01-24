@@ -1,0 +1,3 @@
+.modal_container_theme_light {
+  @include use_theme($primary-grey-light, "light");
+}

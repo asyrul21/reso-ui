@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Modal } from "@components/Containers/Modal";
+import { Modal } from "@components/Modal";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
@@ -17,7 +17,7 @@ const SampleChildComponent = () => {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Containers/Modal",
+  title: "Modal/Container",
   component: Modal,
   parameters: {
     docs: {
@@ -29,7 +29,7 @@ export default {
 
             The child to the component should have \`width\` defined, so it can take the child's width.
 
-            It supports Padding props for the inner modal container.
+            It supports Padding props.
         `,
       },
     },
@@ -41,11 +41,8 @@ export const Default = () => {
   return (
     <>
       {showModal && (
-        <Modal
-          title="Modal Story Example"
-          isOpen={showModal}
-          onClose={() => setShowModal(false)}
-        >
+        <Modal isOpen={showModal} pa={5}>
+          <button onClick={() => setShowModal(false)}>Close</button>
           <SampleChildComponent />
         </Modal>
       )}
@@ -60,35 +57,13 @@ export const WithContainerStyles = () => {
     <>
       {showModal && (
         <Modal
-          title="Modal Story Example"
           isOpen={showModal}
-          onClose={() => setShowModal(false)}
           rootStyles={{
-            border: "2px solid green",
-          }}
-        >
-          <SampleChildComponent />
-        </Modal>
-      )}
-      <button onClick={() => setShowModal(true)}>Show Modal</button>
-    </>
-  );
-};
-
-export const StylingInnerModalContainer = () => {
-  const [showModal, setShowModal] = useState<boolean>(false);
-  return (
-    <>
-      {showModal && (
-        <Modal
-          title="Modal Story Example"
-          isOpen={showModal}
-          onClose={() => setShowModal(false)}
-          modalStyles={{
             border: "2px solid green",
           }}
           pa={5}
         >
+          <button onClick={() => setShowModal(false)}>Close</button>
           <SampleChildComponent />
         </Modal>
       )}

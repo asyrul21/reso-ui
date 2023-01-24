@@ -1,0 +1,4 @@
+.modal_header_theme_light {
+  @include use_theme(unset, "light");
+  border-bottom-color: $primary-grey-medium;
+}

@@ -12,7 +12,9 @@ import { LoadingContainer } from "@components/Containers/Loading-Container";
 import { HorizontalScrollContainer } from "@components/Containers/Horizontal-Scroll-Container";
 import { HorizontalScrollItem } from "@components/Containers/Horizontal-Scroll-Item";
 import { View } from "@components/Containers/View";
-import { Modal } from "@components/Containers/Modal";
+import { Modal } from "@components/Modal";
+import { ModalHeader } from "@components/Modal/Modal-Header";
+import { ModalBody } from "@components/Modal/Modal-Body";
 import { MultiImageViewer } from "@components/Images/Multi-Image-Viewer";
 import { Panel } from "@components/Panel";
 import { PanelTitle } from "@components/Panel/Panel-Title";
@@ -35,14 +37,14 @@ const App = () => {
     <>
       <View rootStyles={{ border: "2px solid blue" }} pa={5}>
         {showModal && (
-          <Modal
-            title="Example Modal"
-            isOpen={showModal}
-            onClose={() => setShowModal(false)}
-            modalStyles={{ border: "2px solid red" }}
-            pa={5}
-          >
-            <p>Sample</p>
+          <Modal isOpen={showModal}>
+            <ModalHeader
+              title="Sample title"
+              onClose={() => {
+                setShowModal(false);
+              }}
+            />
+            <ModalBody pa={5}>Sample</ModalBody>
           </Modal>
         )}
         <BannerWrapper>

@@ -1,2 +1,2 @@
 import "@styles/global.scss";
-export * from "./Modal";
+export * from "./Modal-Body";

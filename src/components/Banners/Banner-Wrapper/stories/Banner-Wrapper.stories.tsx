@@ -9,7 +9,7 @@ import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Containers/Banner Wrapper",
+  title: "Banners/Wrapper",
   component: BannerWrapper,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Panel } from "@components/Containers/Panel";
+import { Panel } from "@components/Panel/";
 import { PanelRow } from "@components/Panel/Panel-Row";
 
 import dedent from "ts-dedent";

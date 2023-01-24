@@ -14,7 +14,7 @@ import { HorizontalScrollItem } from "@components/Containers/Horizontal-Scroll-I
 import { View } from "@components/Containers/View";
 import { Modal } from "@components/Containers/Modal";
 import { MultiImageViewer } from "@components/Multi-Image-Viewer";
-import { Panel } from "@components/Containers/Panel";
+import { Panel } from "@components/Panel/Panel-Container";
 import { PanelTitle } from "@components/Panel/Panel-Title";
 import { PanelRow } from "@components/Panel/Panel-Row";
 import { Button } from "@components/Buttons/Button";

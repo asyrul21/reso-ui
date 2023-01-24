@@ -2,14 +2,14 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Panel } from "@components/Containers/Panel";
+import { Panel } from "@components/Panel/";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Containers/Panel",
+  title: "Panel/Container",
   component: Panel,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

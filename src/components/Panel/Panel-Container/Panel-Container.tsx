@@ -5,8 +5,8 @@ import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 
 // styles
-import "./styles/Panel.layout.scss";
-import "./styles/Panel.theme.scss";
+import "./styles/Panel-Container.layout.scss";
+import "./styles/Panel-Container.theme.scss";
 
 // utils
 import {
@@ -15,7 +15,7 @@ import {
   createThemeStyles,
 } from "@utils/styles";
 
-export interface IPanelProps extends IComponent, IThemeProps {
+export interface IPanelContainerProps extends IComponent, IThemeProps {
   children: React.ReactNode;
 }
 
@@ -24,7 +24,7 @@ export const Panel = ({
   rootClassName,
   rootStyles = {},
   theme = "light",
-}: IPanelProps) => {
+}: IPanelContainerProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
       {

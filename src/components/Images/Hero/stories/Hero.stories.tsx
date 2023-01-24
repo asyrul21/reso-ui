@@ -2,13 +2,13 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Hero } from "@components/Hero";
+import { Hero } from "@components/Images/Hero";
 import "./storyStyles.scss";
 
 import dedent from "ts-dedent";
 
 export default {
-  title: "Components/Hero",
+  title: "Images/Hero",
   component: Hero,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

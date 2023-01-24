@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { Image } from "@components/Image";
+import { Image } from "@components/Images/Image";
 
 // import from index does not work for jest.spyOn
 import * as ComponentLoaderModule from "@components/Loaders/Component-Loader/Component-Loader";

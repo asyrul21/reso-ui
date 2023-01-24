@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Image } from "@components/Image";
+import { Image } from "@components/Images/Image";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";

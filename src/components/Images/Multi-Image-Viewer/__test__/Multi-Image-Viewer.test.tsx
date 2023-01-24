@@ -1,9 +1,9 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { MultiImageViewer } from "@components/Multi-Image-Viewer";
+import { MultiImageViewer } from "@components/Images/Multi-Image-Viewer";
 
 // import from index does not work for jest.spyOn
-import * as ImageModule from "@components/Image/Image";
+import * as ImageModule from "@components/Images/Image/Image";
 import * as HSC from "@components/Containers/Horizontal-Scroll-Container/Horizontal-Scroll-Container";
 
 const sampleImageObjects = [

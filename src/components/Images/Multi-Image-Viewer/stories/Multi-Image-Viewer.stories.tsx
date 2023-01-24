@@ -6,14 +6,14 @@ import { View } from "@components/Containers/View";
 import {
   IMultiImageViewerProps,
   MultiImageViewer,
-} from "@components/Multi-Image-Viewer";
+} from "@components/Images/Multi-Image-Viewer";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Multi Image Viewer",
+  title: "Images/Multi Image Viewer",
   component: MultiImageViewer,
   parameters: {
     docs: {

@@ -2,14 +2,14 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Image } from "@components/Image";
+import { Image } from "@components/Images/Image";
 import "./storyStyles.scss";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Components/Image",
+  title: "Images/Image",
   component: Image,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

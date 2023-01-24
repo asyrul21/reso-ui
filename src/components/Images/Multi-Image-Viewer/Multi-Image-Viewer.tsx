@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Image } from "@components/Image";
+import { Image } from "@components/Images/Image";
 import { HorizontalScrollContainer } from "@components/Containers/Horizontal-Scroll-Container";
 
 // import base interface

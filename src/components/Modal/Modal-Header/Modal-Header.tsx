@@ -47,8 +47,12 @@ export const ModalHeader = ({
   );
 
   return (
-    <div className={containerStyles} style={rootStyles}>
-      <span className="sub_heading no_select" data-testid="modal-title">
+    <div
+      className={containerStyles}
+      style={rootStyles}
+      data-testid="modal-header-root"
+    >
+      <span className="sub_heading no_select" data-testid="modal-header-title">
         {title}
       </span>
       <Button

@@ -19,7 +19,7 @@ describe("Modal Container Unit Tests", () => {
     );
 
     // debug();
-    const component = screen.queryByTestId("modal-container");
+    const component = screen.queryByTestId("modal-container-root");
     expect(component).toBeInTheDocument();
 
     const child = screen.queryByTestId("modal-child-test");
@@ -34,7 +34,7 @@ describe("Modal Container Unit Tests", () => {
     );
 
     // debug();
-    const component = screen.queryByTestId("modal-container");
+    const component = screen.queryByTestId("modal-container-root");
     expect(component).toHaveClass("sample_class");
   });
 
@@ -46,7 +46,7 @@ describe("Modal Container Unit Tests", () => {
     );
 
     // debug();
-    const component = screen.queryByTestId("modal-container");
+    const component = screen.queryByTestId("modal-container-root");
     expect(component).toHaveClass("modal_container_theme_light");
   });
 
@@ -58,39 +58,9 @@ describe("Modal Container Unit Tests", () => {
     );
 
     // debug();
-    const component = screen.queryByTestId("modal-container");
+    const component = screen.queryByTestId("modal-container-root");
     expect(component).toHaveClass("modal_container_theme_dark");
   });
-
-  // test("should render correct title when provided as prop", () => {
-  //   const sampleTitle = "test modal title";
-
-  //   const { debug } = render(
-  //     <Modal title={sampleTitle} isOpen={true}>
-  //       <SampleComponent />
-  //     </Modal>
-  //   );
-
-  //   // debug();
-  //   const title = screen.queryByTestId("modal-title");
-  //   expect(title).toHaveTextContent(sampleTitle);
-  // });
-
-  // test("should execute onClose when provided as prop", () => {
-  //   const onCloseSpy = jest.fn();
-
-  //   const { debug } = render(
-  //     <Modal onClose={onCloseSpy} isOpen={true}>
-  //       <SampleComponent />
-  //     </Modal>
-  //   );
-
-  //   // debug();
-  //   const closeButton = screen.queryByTestId("modal-close-button");
-  //   closeButton.click();
-
-  //   expect(onCloseSpy).toHaveBeenCalled();
-  // });
 
   test("should have correct z-index layer style on backdrop when provided as prop", () => {
     const { debug } = render(
@@ -112,7 +82,7 @@ describe("Modal Container Unit Tests", () => {
     );
 
     // debug();
-    const component = screen.queryByTestId("modal-container");
+    const component = screen.queryByTestId("modal-container-root");
     expect(component).toHaveStyle("z-index: 13");
   });
 });

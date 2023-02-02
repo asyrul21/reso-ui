@@ -40,8 +40,6 @@ export const ModalBody = ({
     )
   );
 
-  console.log(modalClasses);
-
   return (
     <div
       className={modalClasses}

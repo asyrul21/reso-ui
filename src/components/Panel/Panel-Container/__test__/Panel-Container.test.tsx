@@ -20,10 +20,10 @@ describe("Panel Container Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("panel-container-root");
-    expect(component).toBeTruthy();
+    expect(component).toBeInTheDocument();
 
     const child = screen.queryByTestId("panel-container-child-test");
-    expect(child).toBeTruthy();
+    expect(child).toBeInTheDocument();
   });
 
   test("should apply custom className when provided as prop", () => {

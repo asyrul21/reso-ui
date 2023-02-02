@@ -1,0 +1,102 @@
+.component_dateSelector_container {
+  //   border: 2px solid red;
+  width: 280px;
+  //   width: 420px;
+  &:not(:last-child) {
+    margin-right: $margin-medium;
+  }
+}
+
+.component_dateSelector_dateSelector {
+  border: 1px solid $primary-grey-medium;
+  height: 58px;
+  border-radius: $border-radius-default;
+  overflow: visible;
+  position: relative;
+
+  text-align: left;
+  cursor: pointer;
+
+  box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+
+  &:hover {
+    border: 1px solid green;
+  }
+}
+
+.component_dateSelector_disabled_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $primary-grey-medium;
+  opacity: 0.5;
+}
+
+.component_dateSelector_dateSelector_opened {
+  border-bottom: none;
+  border-radius: $border-radius-default $border-radius-default 0 0;
+}
+
+.component_dateSelector_container_disabled {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.component_dateSelector_label {
+  font-weight: 500;
+  color: $fc-dark;
+  margin-bottom: $margin-xsmall;
+}
+
+.component_dateSelector_shownDate {
+  padding-left: $padding-medium;
+  line-height: 58px;
+}
+
+.component_dateSelector_datesGrid_container {
+  border: 1px solid $primary-grey-medium;
+  border-top: none;
+  background-color: $white;
+  width: 100%;
+  min-height: 180px;
+  //   line-height: 32px;
+  padding: $padding-xxsmall;
+  border-radius: 0 0 $border-radius-default $border-radius-default;
+  box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.component_dateSelector_yearSelector,
+.component_dateSelector_monthSelector {
+  //   border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  margin-bottom: $margin-xxsmall;
+}
+
+.component_dateSelector_yearSelector_arrow,
+.component_dateSelector_monthSelector_arrow {
+  border: 1px solid $primary-grey-dark;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  cursor: pointer;
+  font-size: large;
+}
+
+.component_dateSelector_yearSelector_text,
+.component_dateSelector_monthSelector_text {
+  color: $fc-dark;
+  font-size: small;
+}

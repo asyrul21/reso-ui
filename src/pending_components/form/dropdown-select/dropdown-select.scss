@@ -1,0 +1,108 @@
+.dropdownContainer {
+  // this is used by parent container
+  // usually is a flex component
+  height: 42px;
+}
+
+.component_dropdownselect_ul_container {
+  // border: 1px solid $primary-grey-medium;
+  // border-radius: $border-radius-default;
+  // transition: max-height 0.5s ease;
+  color: $fc-dark;
+  min-width: $input-select-width;
+  // height: 100%;
+  position: relative;
+}
+
+.component_dropdownselect_li_header {
+  border: 1px solid $primary-grey-medium;
+  border-radius: $border-radius-default;
+  background-color: $white;
+  width: 100%;
+  height: $input-text-height;
+  line-height: $input-text-height;
+  padding: 0 $padding-small;
+  padding-right: $input-text-height;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+  }
+  &:disabled {
+    background-color: $primary-grey-medium-light;
+  }
+
+  &:hover {
+    color: $fc-dark;
+    background-color: $white;
+  }
+}
+
+.component_dropdownselect_li_header_not_opened {
+  border-radius: $border-radius-default;
+}
+
+.component_dropdownselect_li_header_opened {
+  border-bottom: none;
+  border-radius: $border-radius-default $border-radius-default 0 0;
+}
+
+.component_dropdownselect_li_inactive_container {
+  // border: 1px solid $primary-grey-medium;
+  // box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+  border-radius: 0 0 $border-radius-default $border-radius-default;
+  border: 1px solid $primary-grey-medium;
+  border-top: none;
+  // border-radius: $border-radius-default;
+  background-color: $white;
+  position: relative;
+  z-index: 5;
+  max-height: 240px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-bottom: $margin-medium;
+}
+
+.component_dropdownselect_option {
+  width: 100%;
+  height: $input-text-height;
+  line-height: $input-text-height;
+  padding: 0 $padding-small;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+  }
+  &:disabled {
+    background-color: $primary-grey-medium-light;
+  }
+  &:hover {
+    color: $fc-light;
+    background-color: $primary-grey-medium;
+  }
+}
+
+.component_dropdownselect_option_selected {
+  background-color: $primary-grey-medium-light;
+  &:hover {
+    color: $fc-dark;
+    background-color: $primary-grey-medium-light;
+  }
+}
+
+.component_dropdownselect_arrow {
+  width: $input-text-height;
+  height: $input-text-height;
+  //   border: 1px solid $primary-grey-medium;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

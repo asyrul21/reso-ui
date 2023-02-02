@@ -1,0 +1,39 @@
+.container_externalLinksArrayForm_container {
+  border: 1px solid $primary-grey-medium;
+  border-radius: $border-radius-default;
+  width: 100%;
+  flex: 1;
+  padding: $padding-xsmall;
+}
+
+.container_externalLinksArrayForm_objectContainer {
+  padding: $padding-xsmall;
+  border: 1px solid $primary-grey-medium;
+  border-radius: $border-radius-default;
+  margin-bottom: $margin-xxsmall;
+}
+
+.container_externalLinksArrayForm_objectContainer_selected {
+  border: 2px solid $primary-grey-dark;
+}
+
+.component_externalLinksArrayForm_input_group {
+  margin-bottom: $margin-xxxsmall;
+}
+
+.container_externalLinksArrayForm_buttonsContainer {
+  margin-top: $margin-small;
+}
+
+.component_externalLinksArrayForm_button_left {
+  border-radius: $border-radius-small;
+  height: 32px;
+  line-height: 32px;
+  margin-right: $margin-xxxsmall;
+}
+
+.component_externalLinksArrayForm_button {
+  border-radius: $border-radius-small;
+  height: 32px;
+  line-height: 32px;
+}

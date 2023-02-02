@@ -1,0 +1,18 @@
+.component_radiobutton_radio_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 220px;
+  height: 100%;
+  margin-right: $margin-medium;
+}
+
+.component_radiobutton_text {
+  margin-right: $margin-small;
+}
+
+.component_radiobutton_radio_item {
+  //   border: 1px solid blue;
+  margin-right: $margin-large;
+}

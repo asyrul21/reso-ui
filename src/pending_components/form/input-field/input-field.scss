@@ -1,0 +1,22 @@
+.component_inputfield_label {
+  margin-bottom: $margin-small;
+}
+
+.component_inputfield_input {
+  height: $input-text-height;
+  border: 1px solid $primary-grey-medium;
+  border-radius: $border-radius-default;
+  outline: none;
+  padding: $padding-xsmall $padding-small;
+  font-family: $font-family;
+  // sometimes container is flex, otherwise take width 100%
+  flex: 1;
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+  }
+  &:disabled {
+    background-color: $primary-grey-medium-light;
+  }
+}

@@ -1,0 +1,23 @@
+.component_submitbuttonfixed_button {
+  width: 228px;
+  height: 48px;
+  margin-right: $margin-medium;
+  line-height: 48px;
+  text-align: center;
+  border-radius: $border-radius-default;
+  background: $bg-button-primary;
+  color: $fc-light;
+  font-family: $font-family;
+  opacity: 0.9;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:disabled {
+    background: $bg-button-disabled;
+    cursor: default;
+    opacity: 0.9;
+  }
+}

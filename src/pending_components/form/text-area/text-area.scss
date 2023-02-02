@@ -1,0 +1,16 @@
+.component_textarea_input {
+  width: 100%;
+  flex: 1;
+  border: 1px solid $primary-grey-medium;
+  border-radius: $border-radius-default;
+  outline: none;
+  padding: $padding-xsmall $padding-small;
+  font-family: $font-family;
+  color: $fc-dark;
+  &:focus {
+    box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+  }
+  &:disabled {
+    background-color: $primary-grey-medium-light;
+  }
+}

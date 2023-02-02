@@ -1,0 +1,21 @@
+.component_formgroup_container {
+  border: 1px solid $primary-grey-medium-light;
+  border-radius: $border-radius-default;
+  width: 100%;
+  margin-bottom: $margin-xlarge;
+}
+
+.component_formgroup_header {
+  background-color: $primary-grey-medium-light;
+  border-radius: $border-radius-default $border-radius-default 0 0;
+  padding: 0 $padding-medium;
+  height: 48px;
+  line-height: 48px;
+  text-align: left;
+  color: $primary-grey-dark;
+}
+
+.component_formgroup_content {
+  //   border: solid 2px blue;
+  padding: $padding-large;
+}

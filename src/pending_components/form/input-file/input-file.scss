@@ -1,0 +1,76 @@
+input[type="file"] {
+  display: none;
+}
+
+.component_inputfile_container {
+  // border: 2px solid blue;
+  // sometimes container is flex, otherwise take width 100%
+  flex: 1;
+  width: 100%;
+}
+
+.component_inputfile_rowGroup {
+  // border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.component_inputfile_errorContainer {
+  padding: $padding-xxxsmall $padding-small;
+  padding-bottom: 0;
+}
+
+.component_inputfile_inputfield {
+  margin-right: $margin-xxxsmall;
+  height: $input-text-height;
+  border: 1px solid $primary-grey-medium;
+  border-radius: $border-radius-default;
+  outline: none;
+  padding: $padding-xsmall $padding-small;
+  font-family: $font-family;
+  // sometimes container is flex, otherwise take width 100%
+  flex: 1;
+  width: 100%;
+  &:focus {
+    box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+  }
+  &:disabled {
+    background-color: $primary-grey-medium-light;
+  }
+}
+
+.component_inputfile_inputfield_error {
+  border: 2px solid $error-red;
+}
+
+.component_inputfile_button {
+  border: 1px solid $primary-grey-medium;
+  border-radius: $border-radius-default;
+  height: $upload-button-height;
+  line-height: $upload-button-height;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  background-color: $primary-grey-light;
+  color: $fc-dark;
+  &:hover {
+    background-color: $primary-grey-medium;
+    color: $fc-light;
+  }
+}
+
+.component_inputfile_resetButton {
+  color: $fc-light;
+  background-color: $primary-grey-dark;
+  margin-left: $margin-xxxsmall;
+  &:hover {
+    background-color: $primary-grey-medium;
+  }
+}
+
+.component_inputfile_error {
+  font-weight: 600;
+  color: $error-red;
+}

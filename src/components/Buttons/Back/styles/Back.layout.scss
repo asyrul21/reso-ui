@@ -1,0 +1,12 @@
+.back_container {
+  width: fit-content;
+  padding: $padding-xxsmall;
+  //   border: 2px solid red;
+  cursor: pointer;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+  font-weight: 600;
+  font-size: $font-size-default;
+}

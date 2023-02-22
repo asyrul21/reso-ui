@@ -25,6 +25,7 @@ import { Banner } from "@components/Banners/Banner";
 import { Card } from "@components/Card";
 import { CardContent } from "@components/Card/Card-Content";
 import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
+import { Back } from "@components/Buttons/Back";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -347,6 +348,7 @@ const App = () => {
           </CardContent>
           <Button type="primary" text="Add to Cart" inheritWidth />
         </Card>
+        <Back to="/" />
       </View>
     </>
   );

@@ -1,0 +1,11 @@
+.back-stories-sample {
+  background-color: yellow;
+  color: white;
+}
+
+.back-stories-sample-link {
+  color: blue;
+  &:hover {
+    color: green;
+  }
+}

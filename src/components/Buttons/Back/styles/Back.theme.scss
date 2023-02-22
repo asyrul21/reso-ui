@@ -1,0 +1,7 @@
+.back_theme_light {
+  @include use_theme(none, "light");
+}
+
+.back_link_theme_light {
+  color: $fc-dark;
+}

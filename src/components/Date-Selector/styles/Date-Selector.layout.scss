@@ -1,0 +1,26 @@
+.date_selector_container {
+  // border: 2px solid red;
+  width: 280px;
+  //   width: 420px;
+  &:not(:last-child) {
+    margin-right: $margin-medium;
+  }
+}
+
+.date_selector_grid_container {
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  width: 100%;
+  min-height: 180px;
+  //   line-height: 32px;
+  padding: $padding-xxsmall;
+  border-radius: 0 0 $border-radius-default $border-radius-default;
+  box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}

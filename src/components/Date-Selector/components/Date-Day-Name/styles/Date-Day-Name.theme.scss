@@ -1,0 +1,4 @@
+.date_day_name_theme_light {
+  @include use_theme(unset, "light");
+  border-color: $primary-grey-medium;
+}

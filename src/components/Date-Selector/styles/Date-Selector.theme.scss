@@ -1,0 +1,4 @@
+.date_selector_grid_theme_light {
+  @include use_theme($white, "light");
+  border-color: $primary-grey-medium;
+}

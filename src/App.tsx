@@ -26,6 +26,7 @@ import { Card } from "@components/Card";
 import { CardContent } from "@components/Card/Card-Content";
 import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
 import { Back } from "@components/Buttons/Back";
+import { DateSelector } from "@components/Date-Selector/";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
@@ -33,6 +34,7 @@ import "./App.scss";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   return (
     <>
@@ -349,6 +351,20 @@ const App = () => {
           <Button type="primary" text="Add to Cart" inheritWidth />
         </Card>
         <Back to="/" />
+        <h1>Date Selector</h1>
+        <div style={{ height: "500px" }}>
+          <p>Date:</p>
+          <DateSelector
+            value={selectedDate}
+            onChange={(d) => {
+              setSelectedDate(d);
+            }}
+            // getDisplayMonth={(m) => `Johny`}
+            // getDisplayYear={(y) => `year ${y}`}
+            // getDisplayDayNumber={(d) => 2}
+          />
+        </div>
+        {/* <DateSelector disabled /> */}
       </View>
     </>
   );

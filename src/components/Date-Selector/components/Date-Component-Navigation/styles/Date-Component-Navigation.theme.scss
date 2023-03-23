@@ -1,0 +1,12 @@
+.date_component_navigation_container_theme_light {
+  @include use_theme(unset, "light");
+}
+
+.date_component_navigation_button_theme_light {
+  @include use_theme(unset, "light");
+  border-color: $primary-grey-dark;
+}
+
+.date_component_navigation_text_theme_light {
+  @include use_theme(unset, "light");
+}

@@ -1,0 +1,15 @@
+.date_day_number_theme_light {
+  @include use_theme(unset, "light");
+  border-color: $primary-grey-medium;
+  &:hover {
+    background-color: $primary-grey-medium-light;
+  }
+}
+
+.date_day_number_selected_theme_light {
+  @include use_theme(unset, "dark");
+}
+
+.date_day_number_today_theme_light {
+  @include use_theme(unset, "dark");
+}

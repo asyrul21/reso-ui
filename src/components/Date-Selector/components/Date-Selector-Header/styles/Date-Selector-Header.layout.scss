@@ -1,0 +1,25 @@
+.date_selector_header {
+  font-size: $font-size-3;
+  border-width: 1px;
+  border-style: solid;
+  height: 58px;
+  width: 100%;
+  padding: 0 $padding-medium;
+  border-radius: $border-radius-default;
+  //   overflow: visible;
+  //   position: relative;
+
+  text-align: left;
+  cursor: pointer;
+
+  box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+
+  &:hover {
+    border: 1px solid green;
+  }
+}
+
+.date_selector_header_opened {
+  border-bottom: none;
+  border-radius: $border-radius-default $border-radius-default 0 0;
+}

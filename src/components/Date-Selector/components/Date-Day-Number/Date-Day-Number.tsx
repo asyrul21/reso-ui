@@ -26,6 +26,8 @@ export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
   isSelected?: boolean;
   disabled?: boolean;
   onClick?: (d: DateDayNumber) => void;
+  //   selectedClassName?: string;
+  //   todayClassName?: string;
 }
 
 export const DateDayNumberComponent = ({
@@ -34,6 +36,8 @@ export const DateDayNumberComponent = ({
   isSelected = false,
   disabled = false,
   onClick = () => {},
+  //   selectedClassName,
+  //   todayClassName,
   rootClassName,
   rootStyles = {},
   theme = "light",

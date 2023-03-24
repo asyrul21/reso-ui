@@ -1,10 +1,6 @@
 .date_selector_container {
   // border: 2px solid red;
   width: 280px;
-  //   width: 420px;
-  &:not(:last-child) {
-    margin-right: $margin-medium;
-  }
 }
 
 .date_selector_grid_container {

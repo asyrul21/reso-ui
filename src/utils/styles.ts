@@ -1,5 +1,5 @@
 import { ISpacingsProps } from "@interfaces/ISpacingsProps";
-import { Theme } from "@interfaces/Theme";
+import { DefaultTheme, Theme } from "@interfaces/Theme";
 import classnames from "classnames";
 import { booleanHasValue, hasValue } from "./validations";
 
@@ -110,7 +110,8 @@ export const createThemeStyles = (
   theme?: Theme
 ) => {
   return classnames({
-    component_theme_default: true,
+    component_theme_base: true,
+    [`${componentStylePrefix}${DefaultTheme}`]: true,
     [`${componentStylePrefix}${theme}`]:
       componentStylePrefix && theme ? true : false,
   });

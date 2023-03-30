@@ -5,4 +5,6 @@ export interface IThemeProps {
   theme?: Theme;
 }
 
+export const DefaultTheme: Theme = "light";
+
 export default IThemeProps;

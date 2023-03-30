@@ -150,4 +150,8 @@ npm install --save-dev @testing-library/react @testing-library/jest-dom
 
 1. Light theme should be default. If no dark theme style is provided, it fallbacks to Light theme
 
+   ->
+
 2. provided rootClassName should override theme classNames
+
+   -> Works, but Component imports must happen BEFORE style imports

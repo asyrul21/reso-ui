@@ -172,6 +172,7 @@ export const DateSelector = ({
                   ? getDisplayYear(dateYear)
                   : String(dateYear)
               }
+              theme={theme}
             />
             <DateComponentNavigation
               value={
@@ -179,6 +180,7 @@ export const DateSelector = ({
                   ? getDisplayMonth(dateMonth)
                   : getMonthDisplayNameDefault(dateMonth)
               }
+              theme={theme}
             />
             <DateDaysGrid
               monthStartDay={getMonthStartDay()}
@@ -196,6 +198,7 @@ export const DateSelector = ({
               }}
               getDisplayDayNumber={getDisplayDayNumber}
               getDisplayDayName={getDisplayDayName}
+              theme={theme}
             />
           </div>
         )}

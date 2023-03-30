@@ -50,6 +50,7 @@ export const DateSelectorHeader = ({
 
   return (
     <button
+      data-testid="date-selector-header-root"
       className={containerStyles}
       onClick={() => {
         if (!disabled && methodHasValue(onClick)) {

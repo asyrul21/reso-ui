@@ -111,16 +111,21 @@ export const DateComponentNavigation = ({
     ? customPreviousComponent
     : () => "<<";
   const renderNextComponent: () => React.ReactNode = methodHasValue(
-    customPreviousComponent
+    customNextComponent
   )
     ? customNextComponent
     : () => ">>";
   return (
-    <div className={containerStyles} style={rootStyles}>
+    <div
+      data-testid="date-selector-nav-root"
+      className={containerStyles}
+      style={rootStyles}
+    >
       <button
+        data-testid="date-selector-nav-btn-prev"
         className={previousContainerStyles}
         onClick={() => {
-          if (methodHasValue(onClickPrevious)) {
+          if (!disablePrevious && methodHasValue(onClickPrevious)) {
             onClickPrevious();
           }
         }}
@@ -128,13 +133,18 @@ export const DateComponentNavigation = ({
       >
         {renderPreviousComponent()}
       </button>
-      <span className={valueClasses} style={textStyles}>
+      <span
+        data-testid="date-selector-nav-text"
+        className={valueClasses}
+        style={textStyles}
+      >
         {value}
       </span>
       <button
+        data-testid="date-selector-nav-btn-next"
         className={nextContainerStyles}
         onClick={() => {
-          if (methodHasValue(onClickNext)) {
+          if (!disableNext && methodHasValue(onClickNext)) {
             onClickNext();
           }
         }}

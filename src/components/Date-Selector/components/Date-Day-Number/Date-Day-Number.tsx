@@ -26,8 +26,8 @@ export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
   isSelected?: boolean;
   disabled?: boolean;
   onClick?: (d: DateDayNumber) => void;
-  //   selectedClassName?: string;
-  //   todayClassName?: string;
+  selectedClassName?: string;
+  todayClassName?: string;
 }
 
 export const DateDayNumberComponent = ({
@@ -36,8 +36,8 @@ export const DateDayNumberComponent = ({
   isSelected = false,
   disabled = false,
   onClick = () => {},
-  //   selectedClassName,
-  //   todayClassName,
+  selectedClassName,
+  todayClassName,
   rootClassName,
   rootStyles = {},
   theme = "light",
@@ -47,7 +47,6 @@ export const DateDayNumberComponent = ({
       {
         date_selector_grid_unit: true,
         date_day_number_container: true,
-        date_day_number_disabled: disabled,
       },
       rootClassName,
       {
@@ -58,24 +57,24 @@ export const DateDayNumberComponent = ({
     createThemeStyles(`date_day_number_theme_`, theme)
   );
 
-  const containerStyleToday = createComponentStyles(
-    createLayoutStyles({
-      date_day_number_today: isToday,
-    }),
-    createThemeStyles(`date_day_number_today_theme_`, theme)
+  const containerStyleSelected = createComponentStyles(
+    createLayoutStyles({}, selectedClassName),
+    createThemeStyles(`date_day_number_selected_theme_`, theme)
   );
 
-  const containerStyleSelected = createComponentStyles(
-    createLayoutStyles({
-      date_day_number_selected: !disabled ? isSelected : false,
-    }),
-    createThemeStyles(`date_day_number_selected_theme_`, theme)
+  const todayMarkerStyles = createComponentStyles(
+    createLayoutStyles(
+      {
+        date_day_number_today_marker: true,
+      },
+      todayClassName
+    ),
+    createThemeStyles(`date_day_number_today_theme_`, theme)
   );
 
   const containerClasses = classnames(
     containerStyleDefault,
-    !disabled && isSelected ? containerStyleSelected : {},
-    isToday ? containerStyleToday : {}
+    !disabled && isSelected ? containerStyleSelected : {}
   );
   return (
     <div
@@ -88,11 +87,13 @@ export const DateDayNumberComponent = ({
       }}
       style={rootStyles}
     >
-      {!disabled && isSelected && (
-        <div className="date_day_number_selected_overlay" />
+      {isToday ? (
+        <div data-testid="date-day-number-today" className={todayMarkerStyles}>
+          {dayNumber}
+        </div>
+      ) : (
+        dayNumber
       )}
-      {isToday && <div className="date_day_number_today_circle" />}
-      {dayNumber}
     </div>
   );
 };

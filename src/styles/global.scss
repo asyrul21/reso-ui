@@ -29,6 +29,10 @@ code {
     background-color: $primary-grey-medium;
     opacity: 0.5;
   }
+  &:hover {
+    background-color: unset;
+    cursor: default;
+  }
 }
 
 .no_select {

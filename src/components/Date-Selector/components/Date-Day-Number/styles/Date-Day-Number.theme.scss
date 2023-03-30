@@ -7,9 +7,9 @@
 }
 
 .date_day_number_selected_theme_light {
-  @include use_theme(unset, "dark");
+  @include use_theme($primary-blue, "dark");
 }
 
 .date_day_number_today_theme_light {
-  @include use_theme(unset, "dark");
+  @include use_theme($primary-red, "dark");
 }

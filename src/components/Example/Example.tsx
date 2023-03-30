@@ -4,6 +4,8 @@ import React from "react";
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 
+// !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
+
 // styles
 import "./styles/Example.layout.scss";
 import "./styles/Example.theme.scss";

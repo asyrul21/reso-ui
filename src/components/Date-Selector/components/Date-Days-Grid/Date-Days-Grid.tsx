@@ -4,6 +4,14 @@ import React from "react";
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 
+// !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
+import { DateDayName } from "../Date-Day-Name/Date-Day-Name";
+import { DateDayNumberComponent } from "../Date-Day-Number/Date-Day-Number";
+import {
+  DateDayNameIndex,
+  DateDayNumber,
+} from "@components/Date-Selector/types";
+
 // styles
 import "./styles/Date-Days-Grid.layout.scss";
 import "./styles/Date-Days-Grid.theme.scss";
@@ -14,21 +22,12 @@ import {
   createLayoutStyles,
   createThemeStyles,
 } from "@utils/styles";
-
 import { methodHasValue } from "@utils/validations";
-
 import {
   destructureDateComponents,
   getDayDisplayNamesDefault,
 } from "@components/Date-Selector/utils";
-
 import { getArrayFor } from "@utils/arrays";
-import { DateDayName } from "../Date-Day-Name/Date-Day-Name";
-import { DateDayNumberComponent } from "../Date-Day-Number/Date-Day-Number";
-import {
-  DateDayNameIndex,
-  DateDayNumber,
-} from "@components/Date-Selector/types";
 
 export interface IDateDaysGridProps extends IComponent, IThemeProps {
   monthStartDay: number;
@@ -142,6 +141,8 @@ export const DateDaysGrid = ({
           onClickDay(new Date(selectedYear, selectedMonth, d));
         }}
         isSelected={isSelected(dayNumber)}
+        // selectedClassName="custom_selected_className"
+        // todayClassName="custom_today_className"
       />
     );
   };

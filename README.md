@@ -53,21 +53,21 @@ npm start
 
 1. Generic Modal for Popups that utilise libary components
 
-1. Admin-Product-Panel
+2. Admin-Product-Panel
 
-1. Admin-User-Panel
+3. Admin-User-Panel
 
-1. Add-To-Cart
+4. Add-To-Cart
 
-1. Update Order Status Buttons
+5. Update Order Status Buttons
 
-1. Analysis Title
+6. Analysis Title
 
-1. Dashboard/Overview
+7. Dashboard/Overview
 
-1. Dashboard/Card
+8. Dashboard/Card
 
-1. Product-Card
+9. Product-Card
 
 # Development Setup
 
@@ -145,3 +145,9 @@ jest --init
 ```bash
 npm install --save-dev @testing-library/react @testing-library/jest-dom
 ```
+
+# Notes
+
+1. Light theme should be default. If no dark theme style is provided, it fallbacks to Light theme
+
+2. provided rootClassName should override theme classNames

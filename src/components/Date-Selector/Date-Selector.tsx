@@ -4,6 +4,12 @@ import React, { useEffect, useRef, useState } from "react";
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
+import { DateDayNameIndex, DateDayNumber, DateMonthIndex } from "./types";
+
+// !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
+import { DateSelectorHeader } from "./components/Date-Selector-Header/Date-Selector-Header";
+import { DateComponentNavigation } from "./components/Date-Component-Navigation/Date-Component-Navigation";
+import { DateDaysGrid } from "./components/Date-Days-Grid/Date-Days-Grid";
 
 // styles
 import "./styles/Date-Selector.layout.scss";
@@ -16,13 +22,9 @@ import {
   createThemeStyles,
   withSpacingsProps,
 } from "@utils/styles";
-import { DateSelectorHeader } from "./components/Date-Selector-Header/Date-Selector-Header";
-import { DateComponentNavigation } from "./components/Date-Component-Navigation/Date-Component-Navigation";
-import { DateDayNameIndex, DateDayNumber, DateMonthIndex } from "./types";
 import { methodHasValue, hasValue } from "@utils/validations";
 import { useClickOutside } from "@hooks/useClickOutside";
 import { getMonthDisplayNameDefault, getRemappedDayIndex } from "./utils";
-import { DateDaysGrid } from "./components/Date-Days-Grid/Date-Days-Grid";
 
 export interface IDateSelectorProps
   extends IComponent,
@@ -95,7 +97,7 @@ export const DateSelector = ({
     return getRemappedDayIndex(startDay as DateDayNameIndex);
   };
 
-  const getMonthDays = (month) => {
+  const getMonthDays = (month: DateMonthIndex) => {
     const offsetDate = 40;
     const monthDaysOffset = new Date(dateYear, month, offsetDate).getDate();
     return Number(offsetDate) - Number(monthDaysOffset);
@@ -185,7 +187,7 @@ export const DateSelector = ({
             <DateDaysGrid
               monthStartDay={getMonthStartDay()}
               monthNumberOfDays={getMonthDays(dateMonth)}
-              prevMonthDays={getMonthDays(dateMonth - 1)}
+              prevMonthDays={getMonthDays((dateMonth - 1) as DateMonthIndex)}
               today={dateNow}
               selectedYear={dateYear} // the year user navigated to
               selectedMonth={dateMonth} // the month user navigated to

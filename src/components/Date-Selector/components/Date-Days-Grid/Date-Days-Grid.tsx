@@ -130,6 +130,7 @@ export const DateDaysGrid = ({
   const renderNormalDay = (key: any, dayNumber: DateDayNumber) => {
     return (
       <DateDayNumberComponent
+        theme={theme}
         key={key}
         dayNumber={
           methodHasValue(getDisplayDayNumber)
@@ -141,6 +142,7 @@ export const DateDaysGrid = ({
           onClickDay(new Date(selectedYear, selectedMonth, d));
         }}
         isSelected={isSelected(dayNumber)}
+        // for future refence :
         // selectedClassName="custom_selected_className"
         // todayClassName="custom_today_className"
       />
@@ -154,6 +156,7 @@ export const DateDaysGrid = ({
   ) => {
     return (
       <DateDayNumberComponent
+        theme={theme}
         key={key}
         dayNumber={
           methodHasValue(getDisplayDayNumber)
@@ -206,7 +209,7 @@ export const DateDaysGrid = ({
     >
       {getDayDisplayNamesDefault().map((day, key) => {
         return (
-          <DateDayName key={key}>
+          <DateDayName key={key} theme={theme}>
             {methodHasValue(getDisplayDayName)
               ? getDisplayDayName(key as DateDayNameIndex)
               : day}

@@ -17,7 +17,7 @@ import "./styles/Date-Day-Number.layout.scss";
 import "./styles/Date-Day-Number.theme.scss";
 import "../../styles/Date-Selector.shared.scss";
 
-import { methodHasValue } from "@utils/validations";
+import { methodHasValue, objectHasValue } from "@utils/validations";
 import { DateDayNumber } from "@components/Date-Selector/types";
 
 export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
@@ -27,7 +27,9 @@ export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
   disabled?: boolean;
   onClick?: (d: DateDayNumber) => void;
   selectedClassName?: string;
-  todayClassName?: string;
+  selectedStyles?: React.CSSProperties;
+  markerClassName?: string;
+  markerStyles?: React.CSSProperties;
 }
 
 export const DateDayNumberComponent = ({
@@ -37,7 +39,9 @@ export const DateDayNumberComponent = ({
   disabled = false,
   onClick = () => {},
   selectedClassName,
-  todayClassName,
+  selectedStyles = {},
+  markerClassName,
+  markerStyles = {},
   rootClassName,
   rootStyles = {},
   theme = "light",
@@ -67,7 +71,7 @@ export const DateDayNumberComponent = ({
       {
         date_day_number_today_marker: true,
       },
-      todayClassName
+      markerClassName
     ),
     createThemeStyles(`date_day_number_today_theme_`, theme)
   );
@@ -76,6 +80,12 @@ export const DateDayNumberComponent = ({
     containerStyleDefault,
     !disabled && isSelected ? containerStyleSelected : {}
   );
+  const containerStyle = {
+    ...rootStyles,
+    ...(!disabled && isSelected && objectHasValue(selectedStyles)
+      ? selectedStyles
+      : {}),
+  };
   return (
     <div
       data-testid="date-day-number-root"
@@ -85,10 +95,14 @@ export const DateDayNumberComponent = ({
           onClick(dayNumber);
         }
       }}
-      style={rootStyles}
+      style={containerStyle}
     >
       {isToday ? (
-        <div data-testid="date-day-number-today" className={todayMarkerStyles}>
+        <div
+          data-testid="date-day-number-today"
+          className={todayMarkerStyles}
+          style={markerStyles}
+        >
           {dayNumber}
         </div>
       ) : (

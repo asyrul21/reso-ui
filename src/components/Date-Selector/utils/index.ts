@@ -9,7 +9,7 @@ import {
 
 /*    this variable is needed because by default javascript date gives value of 0-6
  *    from sunday (0) to saturday (6).
- *    However, we want it to be from mon-sun
+ *    However, we remap it to be from mon [0] to sun [6]
  */
 const REMAPPED_DAYS: DaysMappingMap = {
   0: 6, // sunday to last day
@@ -21,7 +21,7 @@ const REMAPPED_DAYS: DaysMappingMap = {
   6: 5,
 };
 
-const DAY_NAMES_DEFAULT: DayNamesMap = {
+export const DAY_NAMES_DEFAULT: DayNamesMap = {
   0: "Mon",
   1: "Tue",
   2: "Wed",
@@ -31,7 +31,7 @@ const DAY_NAMES_DEFAULT: DayNamesMap = {
   6: "Sun",
 };
 
-const MONTHS_NAMES_DEFAULT: MonthsNamesMap = {
+export const MONTHS_NAMES_DEFAULT: MonthsNamesMap = {
   0: "January",
   1: "February",
   2: "March",

@@ -2,6 +2,10 @@ export const hasValue = (val: any) => {
   return val !== null && val !== undefined;
 };
 
+export const stringHasValue = (val: any) => {
+  return hasValue(val) && typeof val === "string";
+};
+
 export const objectHasValue = (val: any) => {
   return hasValue(val) && Object.keys(val).length > 0;
 };

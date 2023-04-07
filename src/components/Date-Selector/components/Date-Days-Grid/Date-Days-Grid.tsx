@@ -3,14 +3,14 @@ import React from "react";
 // import base interface
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
-
-// !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
-import { DateDayName } from "../Date-Day-Name/Date-Day-Name";
-import { DateDayNumberComponent } from "../Date-Day-Number/Date-Day-Number";
 import {
   DateDayNameIndex,
   DateDayNumber,
 } from "@components/Date-Selector/types";
+
+// !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
+import { DateDayName } from "../Date-Day-Name/Date-Day-Name";
+import { DateDayNumberComponent } from "../Date-Day-Number/Date-Day-Number";
 
 // styles
 import "./styles/Date-Days-Grid.layout.scss";
@@ -40,7 +40,7 @@ export interface IDateDaysGridProps extends IComponent, IThemeProps {
   minimumDate?: Date;
   maximumDate?: Date;
   onClickDay?: (newDateObj: Date) => void;
-  getDisplayDayNumber?: (day: DateDayNumber) => DateDayNumber;
+  getDisplayDayNumber?: (day: DateDayNumber) => DateDayNumber | string;
   getDisplayDayName?: (day: DateDayNameIndex) => string; // 0 is monday, 6 is sunday
 }
 
@@ -132,7 +132,8 @@ export const DateDaysGrid = ({
       <DateDayNumberComponent
         theme={theme}
         key={key}
-        dayNumber={
+        dayNumber={dayNumber}
+        dayNumberDisplay={
           methodHasValue(getDisplayDayNumber)
             ? getDisplayDayNumber(dayNumber)
             : dayNumber
@@ -158,7 +159,8 @@ export const DateDaysGrid = ({
       <DateDayNumberComponent
         theme={theme}
         key={key}
-        dayNumber={
+        dayNumber={dayNumber}
+        dayNumberDisplay={
           methodHasValue(getDisplayDayNumber)
             ? getDisplayDayNumber(dayNumber)
             : dayNumber
@@ -206,6 +208,7 @@ export const DateDaysGrid = ({
         gridTemplateColumns,
         ...rootStyles,
       }}
+      data-testid="date-selector-grid-root"
     >
       {getDayDisplayNamesDefault().map((day, key) => {
         return (

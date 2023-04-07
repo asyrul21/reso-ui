@@ -12,6 +12,17 @@ describe("Date Selector Day Number Component Unit Tests", () => {
     expect(component).toHaveTextContent("1");
   });
 
+  test("should render itself with custom dayNumberDisplay if provided as prop", () => {
+    const { debug } = render(
+      <DateDayNumberComponent dayNumber={1} dayNumberDisplay={"One"} />
+    );
+
+    // debug();
+    const component = screen.queryByTestId("date-day-number-root");
+    expect(component).toBeInTheDocument();
+    expect(component).toHaveTextContent("One");
+  });
+
   test("should apply default root classNames", () => {
     const { debug } = render(<DateDayNumberComponent dayNumber={1} />);
 

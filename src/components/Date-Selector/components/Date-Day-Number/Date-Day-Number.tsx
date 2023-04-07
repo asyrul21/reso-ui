@@ -17,11 +17,12 @@ import "./styles/Date-Day-Number.layout.scss";
 import "./styles/Date-Day-Number.theme.scss";
 import "../../styles/Date-Selector.shared.scss";
 
-import { methodHasValue, objectHasValue } from "@utils/validations";
+import { hasValue, methodHasValue, objectHasValue } from "@utils/validations";
 import { DateDayNumber } from "@components/Date-Selector/types";
 
 export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
   dayNumber: DateDayNumber;
+  dayNumberDisplay?: DateDayNumber | string;
   isToday?: boolean;
   isSelected?: boolean;
   disabled?: boolean;
@@ -34,6 +35,7 @@ export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
 
 export const DateDayNumberComponent = ({
   dayNumber,
+  dayNumberDisplay,
   isToday = false,
   isSelected = false,
   disabled = false,
@@ -86,6 +88,9 @@ export const DateDayNumberComponent = ({
       ? selectedStyles
       : {}),
   };
+  const dayNumberText = hasValue(dayNumberDisplay)
+    ? dayNumberDisplay
+    : dayNumber;
   return (
     <div
       data-testid="date-day-number-root"
@@ -103,10 +108,10 @@ export const DateDayNumberComponent = ({
           className={todayMarkerStyles}
           style={markerStyles}
         >
-          {dayNumber}
+          {dayNumberText}
         </div>
       ) : (
-        dayNumber
+        dayNumberText
       )}
     </div>
   );

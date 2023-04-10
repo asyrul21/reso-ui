@@ -348,10 +348,10 @@ describe("Date Selector Header Component Unit Tests", () => {
       const todayMock = new Date(2020, 5, 1); // Mon June 01 2020
       const { debug } = render(<DateSelector value={todayMock} />);
 
-      debug();
       const header = screen.queryByTestId("date-selector-header-mock");
       header.click();
 
+      //   debug();
       const component = screen.queryByTestId("date-selector-grid-root");
       expect(component).toBeInTheDocument();
     });
@@ -426,7 +426,7 @@ describe("Date Selector Header Component Unit Tests", () => {
       const header = screen.queryByTestId("date-selector-header-mock");
       header.click();
 
-      debug();
+      //   debug();
       const dayNumberComponents = screen.queryAllByText("X");
       expect(dayNumberComponents.length).toEqual(42); // 6 rows x 7 columns
     });

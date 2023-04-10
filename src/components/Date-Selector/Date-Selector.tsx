@@ -38,7 +38,7 @@ export interface IDateSelectorProps
   gridContainerClassName?: string;
   gridContainerStyles?: React.CSSProperties;
   format?: (date: Date) => string;
-  getDisplayDayNumber?: (day: DateDayNumber) => DateDayNumber;
+  getDisplayDayNumber?: (day: DateDayNumber) => string | DateDayNumber;
   getDisplayDayName?: (day: DateDayNameIndex) => string; // 0 is monday, 6 is sunday
   getDisplayMonth?: (month: DateMonthIndex) => string;
   getDisplayYear?: (year: number) => string;
@@ -153,7 +153,12 @@ export const DateSelector = ({
   );
 
   return (
-    <div className={containerStyles} ref={dateSelectorNodeRef}>
+    <div
+      data-testid="date-selector-root"
+      className={containerStyles}
+      style={rootStyles}
+      ref={dateSelectorNodeRef}
+    >
       <DateSelectorHeader
         text={getHeaderText()}
         disabled={disabled}
@@ -167,21 +172,47 @@ export const DateSelector = ({
       />
       <div style={{ position: "relative" }}>
         {isOpen && (
-          <div className={gridContainerClasses} style={gridContainerStyles}>
+          <div
+            data-testid="date-selector-expanded"
+            className={gridContainerClasses}
+            style={gridContainerStyles}
+          >
+            {/*  year selector */}
             <DateComponentNavigation
               value={
                 methodHasValue(getDisplayYear)
                   ? getDisplayYear(dateYear)
                   : String(dateYear)
               }
+              onClickPrevious={() => {
+                setDateYear(dateYear - 1);
+              }}
+              onClickNext={() => {
+                setDateYear(dateYear + 1);
+              }}
               theme={theme}
             />
+            {/* month selector */}
             <DateComponentNavigation
               value={
                 methodHasValue(getDisplayMonth)
                   ? getDisplayMonth(dateMonth)
                   : getMonthDisplayNameDefault(dateMonth)
               }
+              onClickPrevious={() => {
+                if (dateMonth - 1 < 0) {
+                  setDateMonth(11);
+                } else {
+                  setDateMonth((dateMonth - 1) as DateMonthIndex);
+                }
+              }}
+              onClickNext={() => {
+                if (dateMonth + 1 > 11) {
+                  setDateMonth(0);
+                } else {
+                  setDateMonth((dateMonth + 1) as DateMonthIndex);
+                }
+              }}
               theme={theme}
             />
             <DateDaysGrid

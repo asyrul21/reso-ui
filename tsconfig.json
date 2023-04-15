@@ -12,6 +12,7 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@icons": ["src/icons/"],
       "@interfaces/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],
@@ -19,5 +20,5 @@
     }
   },
   "exclude": ["node_modules"],
-  "include": ["./jest-dom-setup.ts", "./**/*.ts", "./**/*.tsx"]
+  "include": ["./jest-dom-setup.ts", "./**/*.ts", "./**/*.tsx", "./custom.d.ts"]
 }

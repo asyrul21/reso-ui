@@ -28,6 +28,11 @@ import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
 import { Back } from "@components/Buttons/Back";
 import { DateSelector } from "@components/Date-Selector/";
 
+// sample icon
+// import { HomeIcon } from "@icons/index";
+import { HomeIcon } from "@icons";
+import { Icon } from "@components/Icon";
+
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
@@ -365,6 +370,8 @@ const App = () => {
           />
         </div>
         {/* <DateSelector disabled /> */}
+        <h2>Icon:</h2>
+        <Icon SvgIcon={HomeIcon} rootStyles={{ border: "2px solid red" }} />
       </View>
     </>
   );

@@ -47,7 +47,7 @@ module.exports = {
       },
       /* Images */
       {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
+        test: /\.(png|jp(e*)g|gif)$/,
         use: ["file-loader"],
       },
       /* SVG's */
@@ -57,7 +57,7 @@ module.exports = {
       },
       /* Images and fonts */
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/, // to import images and fonts
+        test: /\.(png|woff|woff2|eot|ttf)$/, // to import images and fonts
         loader: "url-loader",
         options: { limit: false },
       },

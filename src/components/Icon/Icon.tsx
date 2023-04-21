@@ -24,13 +24,17 @@ export interface IIconProps extends IComponent, IThemeProps, IMarginProps {
   width?: number | string;
   height?: number | string;
   fill?: string;
+  stroke?: string;
+  inline?: boolean;
 }
 
 export const Icon = ({
   SvgIcon,
   width = 32,
   height = 32,
+  inline = false,
   fill = "#434B59",
+  stroke = "current",
   rootClassName,
   rootStyles = {},
   theme = "light",
@@ -41,6 +45,7 @@ export const Icon = ({
       withSpacingsProps(
         {
           icon_container: true,
+          icon_container_inline: inline,
         },
         spacingsProps
       ),
@@ -59,6 +64,7 @@ export const Icon = ({
         width={width}
         height={height}
         fill={fill}
+        stroke={stroke}
       />
     </div>
   );

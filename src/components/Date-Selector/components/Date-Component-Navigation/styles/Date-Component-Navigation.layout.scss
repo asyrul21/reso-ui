@@ -9,13 +9,13 @@
 }
 
 .date_component_navigation_button {
-  //   padding: 10px;
   border-width: 1px;
   border-style: solid;
   border-radius: 100%;
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
+  max-width: 42px;
+  min-width: 32px;
+  max-height: 42px;
+  min-height: 32px;
   text-align: center;
   cursor: pointer;
   font-size: $font-size-3;

@@ -7,8 +7,12 @@ import { IMarginProps } from "@interfaces/ISpacingsProps";
 import { DateDayNameIndex, DateDayNumber, DateMonthIndex } from "./types";
 
 // !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
+import { Icon } from "@components/Icon";
 import { DateSelectorHeader } from "./components/Date-Selector-Header/Date-Selector-Header";
-import { DateComponentNavigation } from "./components/Date-Component-Navigation/Date-Component-Navigation";
+import {
+  DateComponentNavigation,
+  ICON_SIZE,
+} from "./components/Date-Component-Navigation/Date-Component-Navigation";
 import { DateDaysGrid } from "./components/Date-Days-Grid/Date-Days-Grid";
 
 // styles
@@ -25,6 +29,9 @@ import {
 import { methodHasValue, hasValue } from "@utils/validations";
 import { useClickOutside } from "@hooks/useClickOutside";
 import { getMonthDisplayNameDefault, getRemappedDayIndex } from "./utils";
+
+// icons
+import { ChevronDoubleLeft, ChevronDoubleRight } from "@icons";
 
 export interface IDateSelectorProps
   extends IComponent,
@@ -190,6 +197,20 @@ export const DateSelector = ({
               onClickNext={() => {
                 setDateYear(dateYear + 1);
               }}
+              customPreviousComponent={() => (
+                <Icon
+                  SvgIcon={ChevronDoubleLeft}
+                  width={ICON_SIZE}
+                  height={ICON_SIZE}
+                />
+              )}
+              customNextComponent={() => (
+                <Icon
+                  SvgIcon={ChevronDoubleRight}
+                  width={ICON_SIZE}
+                  height={ICON_SIZE}
+                />
+              )}
               theme={theme}
             />
             {/* month selector */}

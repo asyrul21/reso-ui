@@ -1,4 +1,8 @@
 import AboutIcon from "./svg/about.svg";
+import ChevronSingleLeft from "./svg/ChevronSingleLeft.svg";
+import ChevronSingleRight from "./svg/ChevronSingleRight.svg";
+import ChevronDoubleLeft from "./svg/ChevronDoubleLeft.svg";
+import ChevronDoubleRight from "./svg/ChevronDoubleRight.svg";
 import DashboardIcon from "./svg/dashboard.svg";
 import HomeIcon from "./svg/home.svg";
 import LogoutIcon from "./svg/logout.svg";
@@ -21,6 +25,10 @@ import CartIcon from "./svg/cart.svg";
 export {
   HomeIcon,
   AboutIcon,
+  ChevronSingleLeft,
+  ChevronSingleRight,
+  ChevronDoubleLeft,
+  ChevronDoubleRight,
   DashboardIcon,
   LogoutIcon,
   ProductsIcon,

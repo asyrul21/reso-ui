@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // always import from index to include global styles
 import { Icon } from "@components/Icon";
 import { HomeIcon } from "@icons";
+import { Flex } from "@components/Containers/Flex";
 // import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
@@ -70,4 +71,28 @@ WithCustomStyle.args = {
 export const PassingSvgIcon = () => {
   // import { HomeIcon } from "src/icons/your path";
   return <Icon SvgIcon={HomeIcon} />;
+};
+
+export const InlineIcon = () => {
+  // container
+  // import { Flex } from "@components/Containers/Flex";
+
+  // Icon
+  // import { Icon } from "@components/Icon";
+  // import { HomeIcon } from "@icons";
+  return (
+    <Flex
+      justify="start"
+      ph={2}
+      rootStyles={{
+        width: "200px",
+        height: "42px",
+        border: "2px solid grey",
+        borderRadius: "5px",
+      }}
+    >
+      <Icon SvgIcon={HomeIcon} inline mr={2} />
+      Example
+    </Flex>
+  );
 };

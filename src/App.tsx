@@ -357,7 +357,7 @@ const App = () => {
         </Card>
         <Back to="/" />
         <h1>Date Selector</h1>
-        <div style={{ height: "500px" }}>
+        <div style={{ height: "400px" }}>
           <p>Date:</p>
           <DateSelector
             value={selectedDate}
@@ -370,7 +370,13 @@ const App = () => {
           />
         </div>
         {/* <DateSelector disabled /> */}
-        <h2>Icon:</h2>
+        <h2>Icon (inline):</h2>
+        <Icon
+          SvgIcon={HomeIcon}
+          rootStyles={{ border: "2px solid red" }}
+          inline
+        />
+        <h2>Icon (block / default):</h2>
         <Icon SvgIcon={HomeIcon} rootStyles={{ border: "2px solid red" }} />
       </View>
     </>

@@ -4,6 +4,10 @@ import React from "react";
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 
+// !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
+import { ChevronSingleLeft, ChevronSingleRight } from "@icons";
+import { Icon } from "@components/Icon";
+
 // styles
 import "./styles/Date-Component-Navigation.layout.scss";
 import "./styles/Date-Component-Navigation.theme.scss";
@@ -16,6 +20,8 @@ import {
 } from "@utils/styles";
 
 import { methodHasValue } from "@utils/validations";
+
+// #8B93A2
 
 export interface IDateComponentNavigation extends IComponent, IThemeProps {
   value: string;
@@ -32,6 +38,8 @@ export interface IDateComponentNavigation extends IComponent, IThemeProps {
   nextBtnClassName?: string;
   nextBtnStyles?: React.CSSProperties;
 }
+
+export const ICON_SIZE = 24;
 
 export const DateComponentNavigation = ({
   value,
@@ -109,12 +117,24 @@ export const DateComponentNavigation = ({
     customPreviousComponent
   )
     ? customPreviousComponent
-    : () => "<<";
+    : () => (
+        <Icon
+          SvgIcon={ChevronSingleLeft}
+          width={ICON_SIZE}
+          height={ICON_SIZE}
+        />
+      );
   const renderNextComponent: () => React.ReactNode = methodHasValue(
     customNextComponent
   )
     ? customNextComponent
-    : () => ">>";
+    : () => (
+        <Icon
+          SvgIcon={ChevronSingleRight}
+          width={ICON_SIZE}
+          height={ICON_SIZE}
+        />
+      );
   return (
     <div
       data-testid="date-selector-nav-root"

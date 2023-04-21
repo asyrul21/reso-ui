@@ -1,10 +1,11 @@
 .date_selector_header {
+  // layout should follow Form Input
+  height: $input-text-height;
   font-size: $font-size-3;
   border-width: 1px;
   border-style: solid;
-  height: 58px;
   width: 100%;
-  padding: 0 $padding-medium;
+  padding: 0 $padding-small;
   border-radius: $border-radius-default;
   //   overflow: visible;
   //   position: relative;

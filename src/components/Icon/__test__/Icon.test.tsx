@@ -46,4 +46,11 @@ describe("Icon Container Component Unit Tests", () => {
     const component = screen.queryByTestId("icon-root");
     expect(component).toHaveClass("spacing-ma-5");
   });
+
+  test("should apply inline classes when provided as prop", () => {
+    const { debug } = render(<Icon SvgIcon={HomeIcon} inline />);
+
+    const component = screen.queryByTestId("icon-root");
+    expect(component).toHaveClass("icon_container_inline");
+  });
 });

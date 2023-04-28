@@ -41,6 +41,9 @@ const ComponentTemplate: ComponentStory<typeof DateSelector> = (args) => {
 export const Default = ComponentTemplate.bind({});
 Default.args = {};
 
+export const DefaultDisabled = ComponentTemplate.bind({});
+DefaultDisabled.args = { disabled: true };
+
 export const WithCustomRootClassName = ComponentTemplate.bind({});
 WithCustomRootClassName.args = {
   rootClassName: "date-selector-stories-sample",

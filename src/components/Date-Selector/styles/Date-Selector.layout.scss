@@ -22,7 +22,7 @@
   left: 0;
   z-index: 5;
 
-  transition: opacity 0.1s ease, height 0.1s ease;
+  transition: opacity 0.1s ease, height 0.1s ease, padding 0.1s linear;
   animation-direction: forwards;
   padding: 0;
   opacity: 0;

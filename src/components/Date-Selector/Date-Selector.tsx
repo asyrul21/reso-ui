@@ -84,20 +84,18 @@ export const DateSelector = ({
   });
 
   useEffect(() => {
-    if (!disabled) {
-      if (value) {
-        setDateDate(value.getDate() as DateDayNumber);
-        setDateYear(value.getFullYear());
-        setDateMonth(value.getMonth() as DateMonthIndex);
-      } else {
-        const today = new Date();
-        setDateYear(today.getFullYear());
-        setDateMonth(today.getMonth() as DateMonthIndex);
-      }
+    if (value) {
+      setDateDate(value.getDate() as DateDayNumber);
+      setDateYear(value.getFullYear());
+      setDateMonth(value.getMonth() as DateMonthIndex);
+    } else {
+      const today = new Date();
+      setDateYear(today.getFullYear());
+      setDateMonth(today.getMonth() as DateMonthIndex);
     }
 
     return () => {};
-  }, [value, min, max, disabled]);
+  }, [value, min, max]);
 
   const getMonthStartDay = () => {
     const startDay = new Date(dateYear, dateMonth).getDay();

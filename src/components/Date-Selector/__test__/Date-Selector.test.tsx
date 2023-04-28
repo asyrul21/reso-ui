@@ -6,7 +6,7 @@ import * as DateSelectorHeaderModule from "@components/Date-Selector/components/
 import * as DateComponentNavigationModule from "@components/Date-Selector/components/Date-Component-Navigation/Date-Component-Navigation";
 // import * as DateDaysGridModule from "@components/Date-Selector/components/Date-Days-Grid/Date-Days-Grid";
 
-describe("Date Selector Header Component Unit Tests", () => {
+describe("Date Selector Overall Component Unit Tests", () => {
   beforeEach(() => {
     jest
       .spyOn(DateSelectorHeaderModule, "DateSelectorHeader")
@@ -149,7 +149,7 @@ describe("Date Selector Header Component Unit Tests", () => {
 
       //   debug();
       const component = screen.queryByTestId("date-selector-expanded");
-      expect(component).not.toBeInTheDocument();
+      expect(component).not.toHaveClass("date_selector_grid_container_opened");
     });
 
     test("should show expanded portion when clicked", () => {
@@ -161,7 +161,7 @@ describe("Date Selector Header Component Unit Tests", () => {
       header.click();
 
       const component = screen.queryByTestId("date-selector-expanded");
-      expect(component).toBeInTheDocument();
+      expect(component).toHaveClass("date_selector_grid_container_opened");
     });
 
     test("should not show expanded portion when clicked but disabled", () => {
@@ -173,7 +173,7 @@ describe("Date Selector Header Component Unit Tests", () => {
       header.click();
 
       const component = screen.queryByTestId("date-selector-expanded");
-      expect(component).not.toBeInTheDocument();
+      expect(component).not.toHaveClass("date_selector_grid_container_opened");
     });
   });
 

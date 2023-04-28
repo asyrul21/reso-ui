@@ -1,3 +1,4 @@
 .date_selector_header_theme_light {
-  @include use_theme(unset, "light");
+  @include use_theme(unset, "inherit");
+  border-color: $primary-grey-medium;
 }

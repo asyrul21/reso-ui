@@ -135,6 +135,7 @@ export const DateSelector = ({
       withSpacingsProps(
         {
           date_selector_container: true,
+          date_selector_container_opened: isOpen,
         },
         spacingsProps
       ),
@@ -150,6 +151,7 @@ export const DateSelector = ({
     createLayoutStyles(
       {
         date_selector_grid_container: true,
+        date_selector_grid_container_opened: isOpen,
       },
       gridContainerClassName,
       {
@@ -178,84 +180,82 @@ export const DateSelector = ({
         }}
       />
       <div style={{ position: "relative" }}>
-        {isOpen && (
-          <div
-            data-testid="date-selector-expanded"
-            className={gridContainerClasses}
-            style={gridContainerStyles}
-          >
-            {/*  year selector */}
-            <DateComponentNavigation
-              value={
-                methodHasValue(getDisplayYear)
-                  ? getDisplayYear(dateYear)
-                  : String(dateYear)
+        <div
+          data-testid="date-selector-expanded"
+          className={gridContainerClasses}
+          style={gridContainerStyles}
+        >
+          {/*  year selector */}
+          <DateComponentNavigation
+            value={
+              methodHasValue(getDisplayYear)
+                ? getDisplayYear(dateYear)
+                : String(dateYear)
+            }
+            onClickPrevious={() => {
+              setDateYear(dateYear - 1);
+            }}
+            onClickNext={() => {
+              setDateYear(dateYear + 1);
+            }}
+            customPreviousComponent={() => (
+              <Icon
+                SvgIcon={ChevronDoubleLeft}
+                width={ICON_SIZE}
+                height={ICON_SIZE}
+              />
+            )}
+            customNextComponent={() => (
+              <Icon
+                SvgIcon={ChevronDoubleRight}
+                width={ICON_SIZE}
+                height={ICON_SIZE}
+              />
+            )}
+            theme={theme}
+          />
+          {/* month selector */}
+          <DateComponentNavigation
+            value={
+              methodHasValue(getDisplayMonth)
+                ? getDisplayMonth(dateMonth)
+                : getMonthDisplayNameDefault(dateMonth)
+            }
+            onClickPrevious={() => {
+              if (dateMonth - 1 < 0) {
+                setDateMonth(11);
+              } else {
+                setDateMonth((dateMonth - 1) as DateMonthIndex);
               }
-              onClickPrevious={() => {
-                setDateYear(dateYear - 1);
-              }}
-              onClickNext={() => {
-                setDateYear(dateYear + 1);
-              }}
-              customPreviousComponent={() => (
-                <Icon
-                  SvgIcon={ChevronDoubleLeft}
-                  width={ICON_SIZE}
-                  height={ICON_SIZE}
-                />
-              )}
-              customNextComponent={() => (
-                <Icon
-                  SvgIcon={ChevronDoubleRight}
-                  width={ICON_SIZE}
-                  height={ICON_SIZE}
-                />
-              )}
-              theme={theme}
-            />
-            {/* month selector */}
-            <DateComponentNavigation
-              value={
-                methodHasValue(getDisplayMonth)
-                  ? getDisplayMonth(dateMonth)
-                  : getMonthDisplayNameDefault(dateMonth)
+            }}
+            onClickNext={() => {
+              if (dateMonth + 1 > 11) {
+                setDateMonth(0);
+              } else {
+                setDateMonth((dateMonth + 1) as DateMonthIndex);
               }
-              onClickPrevious={() => {
-                if (dateMonth - 1 < 0) {
-                  setDateMonth(11);
-                } else {
-                  setDateMonth((dateMonth - 1) as DateMonthIndex);
-                }
-              }}
-              onClickNext={() => {
-                if (dateMonth + 1 > 11) {
-                  setDateMonth(0);
-                } else {
-                  setDateMonth((dateMonth + 1) as DateMonthIndex);
-                }
-              }}
-              theme={theme}
-            />
-            <DateDaysGrid
-              monthStartDay={getMonthStartDay()}
-              monthNumberOfDays={getMonthDays(dateMonth)}
-              prevMonthDays={getMonthDays((dateMonth - 1) as DateMonthIndex)}
-              today={dateNow}
-              selectedYear={dateYear} // the year user navigated to
-              selectedMonth={dateMonth} // the month user navigated to
-              value={value ? value : null} // value that binds to parent's component date state
-              minimumDate={min}
-              maximumDate={max}
-              onClickDay={(newDateObj) => {
-                onChange(newDateObj);
-                setIsOpen(false);
-              }}
-              getDisplayDayNumber={getDisplayDayNumber}
-              getDisplayDayName={getDisplayDayName}
-              theme={theme}
-            />
-          </div>
-        )}
+            }}
+            theme={theme}
+          />
+          <DateDaysGrid
+            monthStartDay={getMonthStartDay()}
+            monthNumberOfDays={getMonthDays(dateMonth)}
+            prevMonthDays={getMonthDays((dateMonth - 1) as DateMonthIndex)}
+            today={dateNow}
+            selectedYear={dateYear} // the year user navigated to
+            selectedMonth={dateMonth} // the month user navigated to
+            value={value ? value : null} // value that binds to parent's component date state
+            minimumDate={min}
+            maximumDate={max}
+            onClickDay={(newDateObj) => {
+              onChange(newDateObj);
+              setIsOpen(false);
+            }}
+            getDisplayDayNumber={getDisplayDayNumber}
+            getDisplayDayName={getDisplayDayName}
+            theme={theme}
+          />
+        </div>
       </div>
     </div>
   );

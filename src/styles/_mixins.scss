@@ -7,8 +7,10 @@
 @mixin theme_nature($theme: "light") {
   @if ($theme == "light") {
     color: $fc-dark;
-  } @else {
+  } @else if ($theme == "dark") {
     color: $fc-light;
+  } @else {
+    color: inherit;
   }
 }
 

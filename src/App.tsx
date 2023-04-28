@@ -36,9 +36,11 @@ import { Icon } from "@components/Icon";
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
+import { Dialog } from "@components/Dialog";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showDialog, setShowDialog] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   return (
@@ -54,6 +56,17 @@ const App = () => {
             />
             <ModalBody pa={5}>Sample</ModalBody>
           </Modal>
+        )}
+        {showDialog && (
+          <Dialog
+            type="yesNo"
+            isOpen={showDialog}
+            onClose={() => setShowDialog(false)}
+            onClickOk={() => setShowDialog(false)}
+            onClickYes={() => setShowDialog(false)}
+            onClickNo={() => setShowDialog(false)}
+            description="Once confirmed, this process cannot be undone. Proceed?"
+          />
         )}
         <BannerWrapper>
           <Banner text="Some information" type="success" />
@@ -378,6 +391,12 @@ const App = () => {
         />
         <h2>Icon (block / default):</h2>
         <Icon SvgIcon={HomeIcon} rootStyles={{ border: "2px solid red" }} />
+        <h1>Dialog</h1>
+        <Flex mb={5}>
+          <button onClick={() => setShowDialog(!showDialog)}>
+            Show Dialog
+          </button>
+        </Flex>
       </View>
     </>
   );

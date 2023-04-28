@@ -1,0 +1,21 @@
+.dialog_button_yes_light {
+  @include use_theme($primary-grey-dark, "dark");
+  &:hover {
+    background-color: $primary-grey-medium;
+  }
+}
+
+.dialog_button_no_light {
+  @include use_theme(unset, "light");
+  border-color: $primary-grey-dark;
+  &:hover {
+    background-color: $primary-grey-medium;
+  }
+}
+
+.dialog_button_ok_light {
+  @include use_theme($primary-grey-dark, "dark");
+  &:hover {
+    background-color: $primary-grey-medium;
+  }
+}

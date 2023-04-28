@@ -19,6 +19,13 @@ describe("Generic Button Component Unit Tests", () => {
     expect(component).toHaveClass("button_container_inheritWidth");
   });
 
+  test("should apply inline className when provided as prop", () => {
+    render(<Button text="test" inline />);
+
+    const component = screen.queryByTestId("button-root");
+    expect(component).toHaveClass("button_container_inline");
+  });
+
   test("should apply link className when type is link", () => {
     render(<Button text="test" type="link" />);
 

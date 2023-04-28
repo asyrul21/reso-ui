@@ -27,6 +27,9 @@ export interface IModalContainerProps
   layer?: number;
 }
 
+export interface IModalChildrenProps
+  extends Omit<IModalContainerProps, "children"> {}
+
 export const Modal = ({
   children,
   isOpen = false,

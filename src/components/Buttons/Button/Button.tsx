@@ -26,6 +26,7 @@ export interface IButtonProps extends IComponent, IThemeProps, IMarginProps {
   onClick?: () => void;
   disabled?: boolean;
   inheritWidth?: boolean;
+  inline?: boolean;
 }
 
 export const Button = ({
@@ -35,6 +36,7 @@ export const Button = ({
   onClick,
   disabled = false,
   inheritWidth = false,
+  inline = false,
   rootClassName,
   rootStyles = {},
   theme = "light",
@@ -46,6 +48,7 @@ export const Button = ({
         {
           button_container: true,
           button_container_inheritWidth: inheritWidth,
+          button_container_inline: inline,
           button_container_link: type === "link",
           button_text: true,
         },

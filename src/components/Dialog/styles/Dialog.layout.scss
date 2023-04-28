@@ -1,0 +1,25 @@
+.dialog_container {
+  //   border: 2px solid red;
+  text-align: center;
+}
+
+.dialog_header {
+  font-size: $font-size-7;
+  font-weight: bold;
+  margin: $margin-medium auto;
+}
+
+.dialog_description {
+  margin-bottom: $margin-large;
+}
+
+.dialog_button_no {
+  border-width: 1px;
+  border-style: solid;
+  margin-right: $margin-medium;
+}
+
+.dialog_button_yes,
+.dialog_button_ok {
+  border: none;
+}

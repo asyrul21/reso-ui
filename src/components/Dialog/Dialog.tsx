@@ -27,13 +27,12 @@ import {
 
 import { methodHasValue, hasValue } from "@utils/validations";
 import { Button } from "@components/Buttons/Button";
-import { Flex } from "@components/Containers/Flex";
 
 export type DialogType = "ok" | "yesNo";
 
 export interface IDialog extends IModalChildrenProps, IComponent, IThemeProps {
   title?: string;
-  question?: string;
+  header?: string;
   description?: string;
   type?: DialogType;
   yesText?: string;
@@ -53,10 +52,10 @@ export interface IDialog extends IModalChildrenProps, IComponent, IThemeProps {
 
 export const Dialog = ({
   isOpen = false,
-  type = "ok",
+  type = "yesNo",
   layer = 1,
   title = "Confirm",
-  question = "Are you sure?",
+  header = "Are you sure?",
   description = "",
   yesText = "Yes",
   noText = "No",
@@ -89,7 +88,7 @@ export const Dialog = ({
   const buttonsContainerClasses = createLayoutStyles(
     {
       dialog_buttons_container: true,
-      [`dialog_buttons_container_${type}`]: true,
+      dialog_buttons_container_yesNo: type === "yesNo",
     },
     null,
     {
@@ -100,7 +99,6 @@ export const Dialog = ({
   const yesButtonClasses = createComponentStyles(
     createLayoutStyles(
       {
-        dialog_buttons: true,
         dialog_button_yes: true,
       },
       yesButtonClassName,
@@ -114,7 +112,6 @@ export const Dialog = ({
   const noButtonClasses = createComponentStyles(
     createLayoutStyles(
       {
-        dialog_buttons: true,
         dialog_button_no: true,
       },
       noButtonClassName,
@@ -128,7 +125,6 @@ export const Dialog = ({
   const okButtonClasses = createComponentStyles(
     createLayoutStyles(
       {
-        dialog_buttons: true,
         dialog_button_ok: true,
       },
       okButtonClassName,
@@ -157,11 +153,23 @@ export const Dialog = ({
         theme={theme}
       />
       <ModalBody>
-        <p className="dialog_header">{question}</p>
-        {description && <p className="dialog_description">{description}</p>}
-        <div className={buttonsContainerClasses}>
+        <p data-testid="dialog-header-text" className="dialog_header">
+          {header}
+        </p>
+        {description && (
+          <p
+            data-testid="dialog-description-text"
+            className="dialog_description"
+          >
+            {description}
+          </p>
+        )}
+        <div
+          data-testid="dialog-buttons-container"
+          className={buttonsContainerClasses}
+        >
           {type === "yesNo" ? (
-            <Flex>
+            <>
               <Button
                 rootClassName={noButtonClasses}
                 rootStyles={noButtonStyles}
@@ -182,7 +190,7 @@ export const Dialog = ({
                 }}
                 text={yesText}
               />
-            </Flex>
+            </>
           ) : (
             <Button
               rootClassName={okButtonClasses}

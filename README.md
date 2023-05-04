@@ -49,6 +49,8 @@ npm start
 
 16. All components now have an optional prop _theme_
 
+17. Confirmation Dialog now has `type` prop to either ask yes/no questions or just an 'OK' button. Prop `question` replaced with `header`
+
 # To Be Reconstructed using library in Client
 
 1. Generic Modal for Popups that utilise libary components

@@ -59,7 +59,7 @@ const App = () => {
         )}
         {showDialog && (
           <Dialog
-            type="yesNo"
+            type="ok"
             isOpen={showDialog}
             onClose={() => setShowDialog(false)}
             onClickOk={() => setShowDialog(false)}

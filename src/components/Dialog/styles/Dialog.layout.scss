@@ -13,6 +13,19 @@
   margin-bottom: $margin-large;
 }
 
+.dialog_buttons_container {
+  //   border: 2px solid red;
+  display: block;
+  width: 100%;
+}
+
+.dialog_buttons_container_yesNo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .dialog_button_no {
   border-width: 1px;
   border-style: solid;

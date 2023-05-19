@@ -27,6 +27,7 @@ import { CardContent } from "@components/Card/Card-Content";
 import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
 import { Back } from "@components/Buttons/Back";
 import { DateSelector } from "@components/Date-Selector/";
+import { FullScreenError } from "@components/Errors/Full-Screen-Error/Full-Screen-Error";
 
 // sample icon
 // import { HomeIcon } from "@icons/index";
@@ -40,12 +41,15 @@ import { Dialog } from "@components/Dialog";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showFullScreenError, setShowFullScreenError] =
+    useState<boolean>(false);
   const [showDialog, setShowDialog] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
   return (
     <>
       <View rootStyles={{ border: "2px solid blue" }} pa={5}>
+        {showFullScreenError && <FullScreenError />}
         {showModal && (
           <Modal isOpen={showModal}>
             <ModalHeader
@@ -395,6 +399,12 @@ const App = () => {
         <Flex mb={5}>
           <button onClick={() => setShowDialog(!showDialog)}>
             Show Dialog
+          </button>
+        </Flex>
+        <h1>Full Screen Error</h1>
+        <Flex mb={5}>
+          <button onClick={() => setShowFullScreenError(!showFullScreenError)}>
+            Show Full Screen Error
           </button>
         </Flex>
       </View>

@@ -1,0 +1,26 @@
+.fullScreenError_container {
+  //   border: 2px solid green;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullScreenError_icon {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  border-width: 2px;
+  border-style: solid;
+  margin-bottom: 40px;
+  font-size: $font-size-8;
+  font-weight: bold;
+  border-radius: 100px;
+}

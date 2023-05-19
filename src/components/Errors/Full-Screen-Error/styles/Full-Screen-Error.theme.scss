@@ -1,0 +1,7 @@
+.fullScreenError_container_theme_light {
+  @include use_theme($bg-fullscreenloader, "dark");
+}
+.fullScreenError_icon_theme_light {
+  border-color: $red;
+  @include use_theme($bg-alert-banner-error, "dark");
+}

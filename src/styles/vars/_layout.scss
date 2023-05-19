@@ -43,7 +43,6 @@ $input-text-height: 40px;
 $upload-button-height: $input-text-height;
 $navbar-height: 72px;
 $main-height: 100vh;
-$footer-height: 90px;
 $sidebar-li-height: 60px;
 $sidebar-li-line-height: $sidebar-li-height;
 
@@ -55,7 +54,6 @@ $content-container-min-width: 552px;
 $auth-form-width: 552px;
 $input-select-width: 192px;
 $settings-container-width: 1128px;
-$footer-width: $sidebar-width;
 
 // main container
 $main-padding-top: $navbar-height;
@@ -67,6 +65,3 @@ $sidebar-padding-left: $padding-none;
 $sidebar-link-padding-left: $padding-medium;
 $sidebar-nav-header-padding-left: $padding-small;
 $collapse-banner-padding-left: $sidebar-width;
-
-// footer
-$footer-padding-left: $sidebar-padding-left;

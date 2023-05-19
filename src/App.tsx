@@ -28,6 +28,7 @@ import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
 import { Back } from "@components/Buttons/Back";
 import { DateSelector } from "@components/Date-Selector/";
 import { FullScreenError } from "@components/Errors/Full-Screen-Error/Full-Screen-Error";
+import { Footer } from "@components/Footer/Footer";
 
 // sample icon
 // import { HomeIcon } from "@icons/index";
@@ -407,6 +408,10 @@ const App = () => {
             Show Full Screen Error
           </button>
         </Flex>
+        <h1>Footer</h1>
+        <Footer pa={5}>
+          Powered by <a href="#">RESO</a>
+        </Footer>
       </View>
     </>
   );

@@ -51,6 +51,8 @@ npm start
 
 17. Confirmation Dialog now has `type` prop to either ask yes/no questions or just an 'OK' button. Prop `question` replaced with `header`
 
+18. Footer is now made more generic, in which you can pass children to render whatever you want.
+
 # To Be Reconstructed using library in Client
 
 1. Generic Modal for Popups that utilise libary components
@@ -70,6 +72,8 @@ npm start
 8. Dashboard/Card
 
 9. Product-Card
+
+10. Reso Footer
 
 # Development Setup
 

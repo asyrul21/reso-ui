@@ -1,0 +1,13 @@
+.footer_container {
+  text-align: center;
+  width: 100%;
+  font-size: $font-size-1;
+}
+
+.footer_container_positionFixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 10;
+}

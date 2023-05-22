@@ -29,6 +29,7 @@ import { Back } from "@components/Buttons/Back";
 import { DateSelector } from "@components/Date-Selector/";
 import { FullScreenError } from "@components/Errors/Full-Screen-Error/Full-Screen-Error";
 import { Footer } from "@components/Footer/Footer";
+import { ExternalLinks } from "@components/External-Links/External-Links";
 
 // sample icon
 // import { HomeIcon } from "@icons/index";
@@ -412,6 +413,14 @@ const App = () => {
         <Footer pa={5}>
           Powered by <a href="#">RESO</a>
         </Footer>
+        <h1>External Links</h1>
+        <ExternalLinks
+          links={[
+            { link: "#", text: "test 1" },
+            { link: "#", text: "test 2" },
+            { link: "#", text: "test 3" },
+          ]}
+        />
       </View>
     </>
   );

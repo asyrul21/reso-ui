@@ -1,0 +1,14 @@
+.externalLinks_container {
+  padding: 0 $padding-xxsmall;
+  list-style: none;
+}
+
+.externalLinks_linkContainer {
+  //   border: 2px solid blue;
+  margin: $margin-xxsmall 0;
+}
+
+.externalLinks_link {
+  font-style: italic;
+  font-size: $font-size-default;
+}

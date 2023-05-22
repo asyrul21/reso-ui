@@ -76,6 +76,9 @@ svg {
 a {
   text-decoration: none;
   color: $lc-blue;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 ul {

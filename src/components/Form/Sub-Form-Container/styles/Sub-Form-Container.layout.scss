@@ -1,0 +1,7 @@
+.subForm_container_theme_light {
+  border-color: $primary-grey-medium-light;
+}
+
+.subForm_header_theme_light {
+  @include use_theme($primary-grey-medium-light, "light");
+}

@@ -1,0 +1,6 @@
+.submit_button_theme_light {
+  @include use_theme($bg-button-primary, "dark");
+  &:hover {
+    background: $bg-button-primary;
+  }
+}

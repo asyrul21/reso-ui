@@ -30,6 +30,13 @@ import { DateSelector } from "@components/Date-Selector/";
 import { FullScreenError } from "@components/Errors/Full-Screen-Error/Full-Screen-Error";
 import { Footer } from "@components/Footer/Footer";
 import { ExternalLinks } from "@components/External-Links/External-Links";
+import { Form } from "@components/Form/";
+import { TextInput } from "@components/Form/Inputs/Text-Input";
+import { Dialog } from "@components/Dialog";
+import { SubmitButton } from "@components/Form/Inputs/Submit-Button";
+import { SubForm } from "@components/Form/Sub-Form-Container";
+import { InputLabel } from "@components/Form/Inputs/Input-Label";
+import { FormInputContainer } from "@components/Form/Form-Input-Container/Form-Input-Container";
 
 // sample icon
 // import { HomeIcon } from "@icons/index";
@@ -39,7 +46,6 @@ import { Icon } from "@components/Icon";
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
-import { Dialog } from "@components/Dialog";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -47,6 +53,8 @@ const App = () => {
     useState<boolean>(false);
   const [showDialog, setShowDialog] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+  const [textInputText1, setTextInputText1] = useState("");
+  const [textInputText2, setTextInputText2] = useState("");
 
   return (
     <>
@@ -421,6 +429,48 @@ const App = () => {
             { link: "#", text: "test 3" },
           ]}
         />
+        <h1>Form</h1>
+        <Form
+          onSubmit={() => alert("submitted form!")}
+          // rootStyles={{ border: "2px solid red" }}
+          pa={3}
+        >
+          <FormInputContainer mb={7}>
+            <InputLabel
+              htmlFor="sampleTextInput1"
+              label="First Name"
+              description={"Your first name"}
+              required
+              mr={7}
+              rootStyles={{ width: "128px" }}
+            />
+            <TextInput
+              id="sampleTextInput1"
+              value={textInputText1}
+              onChange={(e) => setTextInputText1(e.target.value)}
+            />
+          </FormInputContainer>
+          <SubForm title="Sub Form Container">
+            <FormInputContainer>
+              <InputLabel
+                htmlFor="sampleTextInput2"
+                label="Last Name"
+                description={
+                  "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters"
+                }
+                required
+                mr={7}
+              />
+              <TextInput
+                id="sampleTextInput2"
+                value={textInputText2}
+                onChange={(e) => setTextInputText2(e.target.value)}
+              />
+            </FormInputContainer>
+          </SubForm>
+          <SubmitButton mb={4} />
+          <SubmitButton disabled />
+        </Form>
       </View>
     </>
   );

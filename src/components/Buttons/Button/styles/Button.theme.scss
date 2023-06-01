@@ -5,7 +5,7 @@
   @include use_theme($primary-grey-light, "light");
   border-color: $primary-grey-medium;
   &:hover {
-    background-color: $primary-grey-dark;
+    background: $primary-grey-dark;
     color: $fc-light;
   }
 }
@@ -14,7 +14,7 @@
   @include use_theme($primary-grey-dark, "dark");
   border-color: $primary-grey-medium;
   &:hover {
-    background-color: $primary-grey-medium-light;
+    background: $primary-grey-medium-light;
     color: $fc-dark;
   }
 }
@@ -27,7 +27,7 @@
   border: none;
   opacity: 0.9;
   &:hover {
-    // background-color: $bg-button-primary;
+    // background: $bg-button-primary;
     // color: $fc-light;
     opacity: 1;
   }

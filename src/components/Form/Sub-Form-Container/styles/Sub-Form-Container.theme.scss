@@ -1,0 +1,19 @@
+.subForm_container {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $border-radius-default;
+  width: 100%;
+}
+
+.subForm_header {
+  border-radius: $border-radius-default $border-radius-default 0 0;
+  padding: 0 $padding-medium;
+  height: 48px;
+  line-height: 48px;
+  text-align: left;
+}
+
+.subForm_content {
+  //   border: solid 2px blue;
+  padding: $padding-large;
+}

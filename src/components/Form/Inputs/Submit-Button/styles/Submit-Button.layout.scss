@@ -1,0 +1,11 @@
+.submit_button {
+  width: 100%;
+  border: none;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+  &:disabled {
+    background: $bg-button-disabled;
+  }
+}

@@ -21,6 +21,7 @@ import { methodHasValue } from "@utils/validations";
 
 export interface IButtonProps extends IComponent, IThemeProps, IMarginProps {
   type?: "plain" | "primary" | "link";
+  role?: "button" | "submit";
   id?: string;
   text: string;
   onClick?: () => void;
@@ -32,6 +33,7 @@ export interface IButtonProps extends IComponent, IThemeProps, IMarginProps {
 export const Button = ({
   id = null,
   type = "plain",
+  role = "button",
   text,
   onClick,
   disabled = false,
@@ -69,7 +71,7 @@ export const Button = ({
       data-testid="button-root"
       className={containerStyles}
       style={rootStyles}
-      type="button"
+      type={role}
       onClick={() => {
         if (methodHasValue(onClick)) {
           onClick();

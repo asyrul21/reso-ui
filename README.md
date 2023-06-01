@@ -53,6 +53,10 @@ npm start
 
 18. Footer is now made more generic, in which you can pass children to render whatever you want.
 
+19. FormGroup component is now replaced with SubForm. The `heading` prop is replaced with `title`
+
+20. InputLabel [value] prop is replaced with [descriptionSelectedKey]
+
 # To Be Reconstructed using library in Client
 
 1. Generic Modal for Popups that utilise libary components

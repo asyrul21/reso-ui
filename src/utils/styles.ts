@@ -18,7 +18,7 @@ interface ILayoutStyleOptions {
 export const withSpacingsProps = (
   containerStyles: IStyleClassnames,
   props: ISpacingsProps
-) => {
+): IStyleClassnames => {
   const { ma, mv, mh, mt, mb, mr, ml, pa, pv, ph, pt, pr, pl, pb } = props;
 
   let spacingClasses: IStyleClassnames = {};
@@ -118,7 +118,7 @@ export const createThemeStyles = (
 };
 
 export const createComponentStyles = (
-  layoutStyles: string,
+  layoutStyles: string | IStyleClassnames,
   themeStyles?: string
 ) => {
   const themeClasses = themeStyles ? themeStyles : createThemeStyles();

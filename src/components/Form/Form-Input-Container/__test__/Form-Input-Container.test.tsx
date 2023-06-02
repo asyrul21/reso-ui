@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import * as FlexModule from "@components/Containers/Flex/Flex";
 import { FormInputContainer } from "@components/Form/Form-Input-Container";
+import { createComponentStyles, withSpacingsProps } from "@utils/styles";
 
 const SampleChildComponent = () => {
   return (
@@ -15,11 +16,19 @@ const SampleChildComponent = () => {
 describe("Form Input Container Unit Tests", () => {
   beforeEach(() => {
     jest.spyOn(FlexModule, "Flex").mockImplementation((props) => {
-      const { rootClassName, rootStyles, children } = props;
+      const { rootClassName, rootStyles, children, mb } = props;
+      const flexMockClasses = createComponentStyles(
+        withSpacingsProps(
+          {
+            [rootClassName]: true,
+          },
+          { mb }
+        )
+      );
       return (
         <div
           data-testid="form-input-container-root"
-          className={rootClassName}
+          className={flexMockClasses}
           style={rootStyles}
         >
           {children}
@@ -73,30 +82,15 @@ describe("Form Input Container Unit Tests", () => {
     expect(component).toHaveStyle("border: 2px solid red");
   });
 
-  //   test("should apply margin bottom spacings prop by default", () => {
-  //     const { debug } = render(
-  //       <FormInputContainer>
-  //         <SampleChildComponent />
-  //       </FormInputContainer>
-  //     );
+  test("should apply margin bottom spacings prop by default", () => {
+    const { debug } = render(
+      <FormInputContainer>
+        <SampleChildComponent />
+      </FormInputContainer>
+    );
 
-  //     debug();
-  //     const component = screen.queryByTestId("form-input-container-root");
-  //     expect(component).toHaveClass("spacing-mb-8");
-  //   });
-
-  //   test("should execute onSubmit when provided as prop", () => {
-  //     const onSubmitMock = jest.fn();
-  //     const { debug } = render(
-  //       <FormInputContainer onSubmit={onSubmitMock}>
-  //         <SampleChildComponent />
-  //       </FormInputContainer>
-  //     );
-
-  //     // debug();
-  //     const button = screen.queryByTestId("form-submit-button");
-  //     button.click();
-
-  //     expect(onSubmitMock).toHaveBeenCalledTimes(1);
-  //   });
+    // debug();
+    const component = screen.queryByTestId("form-input-container-root");
+    expect(component).toHaveClass("spacing-mb-4");
+  });
 });

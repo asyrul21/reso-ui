@@ -70,7 +70,11 @@ export const SubForm = ({
       className={containerClasses}
       style={rootStyles}
     >
-      <div data-testid="subForm-header" className={headerClasses}>
+      <div
+        data-testid="subForm-header"
+        className={headerClasses}
+        style={headerStyles}
+      >
         {title}
       </div>
       <div className="subForm_content">{children}</div>

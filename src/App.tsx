@@ -450,7 +450,7 @@ const App = () => {
               onChange={(e) => setTextInputText1(e.target.value)}
             />
           </FormInputContainer>
-          <SubForm title="Sub Form Container">
+          <SubForm title="Sub Form Container" mb={4}>
             <FormInputContainer>
               <InputLabel
                 htmlFor="sampleTextInput2"

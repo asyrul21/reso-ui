@@ -10,7 +10,7 @@ import { Flex } from "@components/Containers/Flex";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Form Controls/Date Selector",
+  title: "Form/Controls/Date Selector",
   component: DateSelector,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

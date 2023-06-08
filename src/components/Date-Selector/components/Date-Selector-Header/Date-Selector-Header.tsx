@@ -41,7 +41,7 @@ export const DateSelectorHeader = ({
       },
       rootClassName,
       {
-        disabled: disabled,
+        disabled,
         no_select: true,
       }
     ),

@@ -10,6 +10,7 @@ describe("Hero Component Unit Tests", () => {
     jest.spyOn(ImageModule, "Image").mockImplementation((props) => {
       const { src, alt, rootClassName, imgClassName, rootStyles, imgStyles } =
         props;
+
       return (
         <div
           data-testid="hero-component-container-mock"

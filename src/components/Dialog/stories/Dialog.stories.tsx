@@ -28,6 +28,7 @@ export default {
 
 export const DefaultYesNo = () => {
   const [showDialog, setShowDialog] = useState<boolean>(false);
+
   return (
     <>
       {showDialog && (
@@ -53,6 +54,7 @@ export const DefaultYesNo = () => {
 
 export const DefaultYesNoWithCustomStyles = () => {
   const [showDialog, setShowDialog] = useState<boolean>(false);
+
   return (
     <>
       {showDialog && (
@@ -79,6 +81,7 @@ export const DefaultYesNoWithCustomStyles = () => {
 
 export const OKDialog = () => {
   const [showDialog, setShowDialog] = useState<boolean>(false);
+
   return (
     <>
       {showDialog && (

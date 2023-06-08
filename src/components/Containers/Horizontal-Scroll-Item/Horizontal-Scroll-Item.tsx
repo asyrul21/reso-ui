@@ -35,6 +35,7 @@ export const HorizontalScrollItem = ({
       rootClassName
     )
   );
+
   return (
     <div
       className={ItemStyles}

@@ -12,6 +12,7 @@ describe("Date Selector Overall Component Unit Tests", () => {
       .spyOn(DateSelectorHeaderModule, "DateSelectorHeader")
       .mockImplementation((props) => {
         const { rootClassName, rootStyles, text, onClick } = props;
+
         return (
           <button
             data-testid="date-selector-header-mock"

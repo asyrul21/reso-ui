@@ -74,7 +74,7 @@ export const DateSelector = ({
   const dateNow = new Date();
   //   states
   const [isOpen, setIsOpen] = useState(false);
-  //initialize
+  // initialize
   const [dateDate, setDateDate] = useState<DateDayNumber>(1);
   const [dateYear, setDateYear] = useState<number>(null);
   const [dateMonth, setDateMonth] = useState<DateMonthIndex>(null);
@@ -94,17 +94,20 @@ export const DateSelector = ({
       setDateMonth(today.getMonth() as DateMonthIndex);
     }
 
+    // tslint:disable-next-line: no-empty
     return () => {};
   }, [value, min, max]);
 
   const getMonthStartDay = () => {
     const startDay = new Date(dateYear, dateMonth).getDay();
+
     return getRemappedDayIndex(startDay as DateDayNameIndex);
   };
 
   const getMonthDays = (month: DateMonthIndex) => {
     const offsetDate = 40;
     const monthDaysOffset = new Date(dateYear, month, offsetDate).getDate();
+
     return Number(offsetDate) - Number(monthDaysOffset);
   };
 
@@ -122,10 +125,11 @@ export const DateSelector = ({
       const dateYearStr = methodHasValue(getDisplayYear)
         ? getDisplayYear(dateYear)
         : dateYear;
+
       return `${dateNumberStr} ${dateMonthStr} ${dateYearStr}`;
-    } else {
-      return "All-time";
     }
+
+    return "All-time";
   };
 
   const containerStyles = createComponentStyles(

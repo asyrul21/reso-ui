@@ -58,7 +58,7 @@ export const Button = ({
       ),
       rootClassName,
       {
-        disabled: disabled,
+        disabled,
         no_select: true,
       }
     ),

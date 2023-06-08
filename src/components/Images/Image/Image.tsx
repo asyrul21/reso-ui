@@ -19,6 +19,7 @@ import {
   createLayoutStyles,
   withSpacingsProps,
 } from "@utils/styles";
+import { methodHasValue } from "@utils/validations";
 
 export interface IImageProps extends IComponent, IMarginProps {
   onClick?: () => void;
@@ -34,7 +35,7 @@ export interface IImageProps extends IComponent, IMarginProps {
 }
 
 export const Image = ({
-  onClick = () => {},
+  onClick,
   clickable,
   loaderSize = "small",
   src,
@@ -49,8 +50,8 @@ export const Image = ({
   ...spacingsProps
 }: IImageProps) => {
   const [fallbackIndex, setFallbackIndex] = useState(-1);
-  const [loaded, setLoaded] = useState<Boolean>(false);
-  const [error, setError] = useState<Boolean>(false);
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
 
   const containerStyles = createComponentStyles(
     createLayoutStyles(
@@ -83,11 +84,16 @@ export const Image = ({
   const hasFallbacks = fallbacks && fallbacks.length > 0;
   const imgSource =
     hasFallbacks && fallbackIndex > -1 ? fallbacks[fallbackIndex] : src;
+
   return (
     <div
       className={containerStyles}
       style={rootStyles}
-      onClick={onClick}
+      onClick={() => {
+        if (onClick && methodHasValue(onClick)) {
+          onClick();
+        }
+      }}
       data-testid="image-component-root"
     >
       {error ? (

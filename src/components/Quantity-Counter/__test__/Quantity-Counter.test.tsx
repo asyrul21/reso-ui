@@ -5,6 +5,7 @@ import { QuantityCounter } from "../Quantity-Counter";
 describe("Quantity Counter", () => {
   const defaultProps = {
     value: 5,
+    // tslint:disable-next-line: no-empty
     onChange: () => {},
   };
 

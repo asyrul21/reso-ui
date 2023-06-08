@@ -12,6 +12,7 @@ describe("Dialog Modal Component Unit Tests", () => {
   beforeEach(() => {
     jest.spyOn(ModalModule, "Modal").mockImplementation((props) => {
       const { rootClassName, rootStyles, children } = props;
+
       return (
         <div
           data-testid="dialog-modal-container-mock"
@@ -25,6 +26,7 @@ describe("Dialog Modal Component Unit Tests", () => {
 
     jest.spyOn(ModalHeaderModule, "ModalHeader").mockImplementation((props) => {
       const { rootClassName, rootStyles, title } = props;
+
       return (
         <div
           data-testid="dialog-modal-header-mock"
@@ -38,6 +40,7 @@ describe("Dialog Modal Component Unit Tests", () => {
 
     jest.spyOn(ModalBodyModule, "ModalBody").mockImplementation((props) => {
       const { rootClassName, rootStyles, children } = props;
+
       return (
         <div
           data-testid="dialog-modal-body-mock"
@@ -51,6 +54,7 @@ describe("Dialog Modal Component Unit Tests", () => {
 
     jest.spyOn(ButtonModule, "Button").mockImplementation((props) => {
       const { rootClassName, rootStyles, onClick, text } = props;
+
       return (
         <button
           data-testid="dialog-button-mock"

@@ -25,6 +25,7 @@ export const CenterContainer = ({
     },
     rootClassName
   );
+
   return (
     <div
       className={containerStyles}

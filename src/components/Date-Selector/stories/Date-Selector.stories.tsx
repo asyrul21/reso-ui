@@ -70,6 +70,7 @@ WithCustomGridStyles.args = {
 
 export const BindingToParentState = () => {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+
   return (
     <Flex direction="column" align="start">
       <p>Selected Date: {`${selectedDate}`}</p>
@@ -84,6 +85,7 @@ export const BindingToParentState = () => {
 
 export const CustomDateNumbers = () => {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+
   return (
     <Flex direction="column" align="start">
       <p>Selected Date: {`${selectedDate}`}</p>
@@ -99,6 +101,7 @@ export const CustomDateNumbers = () => {
 
 export const CustomFormatting = () => {
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+
   return (
     <Flex direction="column" align="start">
       <p>Selected Date: {`${selectedDate}`}</p>

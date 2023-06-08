@@ -55,6 +55,7 @@ export const Modal = ({
   );
 
   const computedZIndex = layer + 10;
+
   return (
     <div
       className="modal_backdrop"

@@ -18,6 +18,7 @@ describe("Loading Container Component Unit Tests", () => {
       .spyOn(ComponentLoaderModule, "ComponentLoader")
       .mockImplementation((props) => {
         const { rootClassName, rootStyles } = props;
+
         return (
           <div
             data-testid="loading-container-loader-mock"
@@ -33,6 +34,7 @@ describe("Loading Container Component Unit Tests", () => {
       .spyOn(ComponentErrorModule, "ComponentError")
       .mockImplementation((props) => {
         const { rootClassName, rootStyles, text } = props;
+
         return (
           <div
             data-testid="loading-container-error-mock"

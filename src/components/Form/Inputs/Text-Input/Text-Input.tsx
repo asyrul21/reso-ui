@@ -57,7 +57,8 @@ export const TextInput = ({
   };
 
   const handleInputError = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log("input error");
+    // console.log("input error");
+    // console.log(e);
   };
 
   const inputClasses = createComponentStyles(
@@ -71,7 +72,7 @@ export const TextInput = ({
       ),
       rootClassName,
       {
-        disabled: disabled,
+        disabled,
         no_select: true,
       }
     ),

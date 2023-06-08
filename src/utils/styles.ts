@@ -93,6 +93,7 @@ export const createLayoutStyles = (
         width_fit_content: false,
         position_relative: false,
       };
+
   return classnames({
     component_layout_default: true,
     component_disabled: disabled && disabled === true,
@@ -122,5 +123,6 @@ export const createComponentStyles = (
   themeStyles?: string
 ) => {
   const themeClasses = themeStyles ? themeStyles : createThemeStyles();
+
   return classnames(layoutStyles, themeClasses);
 };

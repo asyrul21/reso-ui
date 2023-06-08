@@ -134,6 +134,7 @@ export const Dialog = ({
     ),
     createThemeStyles("dialog_button_ok_", theme)
   );
+
   return (
     <Modal
       isOpen={isOpen}

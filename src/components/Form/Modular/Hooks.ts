@@ -3,6 +3,7 @@ import formContextsRepo from "./Form-Contexts-Repository";
 
 export const useFormData = () => {
   const [formData, setFormData] = useState({});
+
   return {
     formData,
     setFormData: (key: string, value?: string | null | undefined) => {
@@ -19,6 +20,7 @@ export const useModularFormContext = (formName: string) => {
   if (!formDataContext || typeof formDataContext === "undefined") {
     throw Error("Invalid form name.");
   }
+
   return useContext(formDataContext);
 };
 
@@ -28,6 +30,7 @@ export const useModularSubForm = (
 ) => {
   const { formData: parentDataState, setFormData: setParentDataState } =
     useModularFormContext(parentFormName);
+
   return {
     subFormData: { ...parentDataState[subFormDataKey] },
     setSubFormData: (key: string, value: string) => {

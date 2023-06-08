@@ -16,6 +16,7 @@ const SampleFormChildComponent = () => {
 describe("Form Container Unit Tests", () => {
   test("should render itself and children without error", () => {
     const { debug } = render(
+      // tslint:disable-next-line: no-empty
       <Form onSubmit={() => {}}>
         <SampleFormChildComponent />
       </Form>
@@ -34,6 +35,7 @@ describe("Form Container Unit Tests", () => {
 
   test("should apply custom className when provided as prop", () => {
     const { debug } = render(
+      // tslint:disable-next-line: no-empty
       <Form onSubmit={() => {}} rootClassName="sample_class">
         <SampleFormChildComponent />
       </Form>
@@ -46,6 +48,7 @@ describe("Form Container Unit Tests", () => {
 
   test("should apply custom styles when provided as prop", () => {
     render(
+      // tslint:disable-next-line: no-empty
       <Form onSubmit={() => {}} rootStyles={{ border: "2px solid red" }}>
         <SampleFormChildComponent />
       </Form>

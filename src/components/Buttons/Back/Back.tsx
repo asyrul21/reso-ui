@@ -47,7 +47,7 @@ export const Back = ({
       ),
       rootClassName,
       {
-        disabled: disabled,
+        disabled,
         no_select: true,
       }
     ),
@@ -58,6 +58,7 @@ export const Back = ({
     createLayoutStyles({}, linkClassName),
     createThemeStyles("back_link_theme", theme)
   );
+
   return (
     <div
       data-testid="back-root"

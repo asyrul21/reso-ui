@@ -12,6 +12,7 @@ describe("Date Selector Days Grid Component Unit Tests", () => {
   beforeEach(() => {
     jest.spyOn(DateDayNameModule, "DateDayName").mockImplementation((props) => {
       const { rootClassName, rootStyles, children } = props;
+
       return (
         <div
           data-testid="date-selector-day-name-mock"
@@ -47,6 +48,7 @@ describe("Date Selector Days Grid Component Unit Tests", () => {
         const dayNumberText = stringHasValue(dayNumberDisplay)
           ? dayNumberDisplay
           : dayNumber;
+
         return (
           <div
             data-testid="date-selector-day-number-mock"
@@ -252,6 +254,7 @@ describe("Date Selector Days Grid Component Unit Tests", () => {
           if (customDayNumbers[day]) {
             return customDayNumbers[day];
           }
+
           return day;
         }}
       />

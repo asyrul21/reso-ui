@@ -5,14 +5,16 @@ type FormDataContextRepository = {
   [key: string]: Context<IFormDataContext>;
 };
 
-export default (function () {
-  let _repo: FormDataContextRepository = {};
+export default (() => {
+  const _repo: FormDataContextRepository = {};
+
   return {
     registerFormContext: (
       formName: string,
       formDataContext: Context<IFormDataContext>
     ): Context<IFormDataContext> => {
       _repo[formName] = formDataContext;
+
       return formDataContext;
     },
     getFormContext: (

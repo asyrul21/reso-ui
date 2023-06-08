@@ -36,6 +36,7 @@ export const QuantityCounter = ({
     ),
     createThemeStyles("quantityCounter_theme_", theme)
   );
+
   return (
     <div
       className={containerStyles}

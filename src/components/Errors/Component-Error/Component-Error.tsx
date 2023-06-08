@@ -64,6 +64,7 @@ export const ComponentError = ({
     ),
     createThemeStyles("componentError_text_theme_", theme)
   );
+
   return (
     <div
       className={containerStyles}

@@ -5,7 +5,7 @@ import {
   DateDayNameIndex,
   DateMonthIndex,
   MonthsNamesMap,
-} from "../types";
+} from "@components/Date-Selector/types";
 
 /*    this variable is needed because by default javascript date gives value of 0-6
  *    from sunday (0) to saturday (6).

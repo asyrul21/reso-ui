@@ -7,7 +7,7 @@ describe("Modal Header Component Unit Tests", () => {
   beforeEach(() => {
     jest.spyOn(ButtonModule, "Button").mockImplementation((props) => {
       const { text, onClick } = props;
-      props;
+
       return (
         <button onClick={onClick} data-testid="modal-header-button-mock">
           {text}
@@ -22,6 +22,7 @@ describe("Modal Header Component Unit Tests", () => {
 
   test("should render itself without error", () => {
     const { debug } = render(
+      // tslint:disable-next-line: no-empty
       <ModalHeader onClose={() => {}} title="sample title" />
     );
 
@@ -36,6 +37,7 @@ describe("Modal Header Component Unit Tests", () => {
   test("should apply custom className when provided as prop", () => {
     render(
       <ModalHeader
+        // tslint:disable-next-line: no-empty
         onClose={() => {}}
         title="sample title"
         rootClassName="sample_class"
@@ -49,6 +51,7 @@ describe("Modal Header Component Unit Tests", () => {
   test("should apply custom styles when provided as prop", () => {
     render(
       <ModalHeader
+        // tslint:disable-next-line: no-empty
         onClose={() => {}}
         title="sample title"
         rootStyles={{ border: "2px solid red" }}

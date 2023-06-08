@@ -4,11 +4,12 @@ import {
   getRemappedDayIndex,
   destructureDateComponents,
   MONTHS_NAMES_DEFAULT,
-} from "@components/Date-Selector/utils";
+} from "@components/Date-Selector/utils/index";
+
 import {
   DateDayNameIndex,
   DateMonthIndex,
-} from "@components/Date-Selector/types";
+} from "@components/Date-Selector/types/index";
 
 describe("Date Selector Utility Methods Unit Tests", () => {
   describe("getDayDisplayNamesDefault", () => {
@@ -51,7 +52,7 @@ describe("Date Selector Utility Methods Unit Tests", () => {
   describe("getRemappedDayIndex", () => {
     // javascript date gives value of 0-6 from sunday (0) to saturday (6).
     test.each([0, 1, 2, 3, 4, 5, 6])("should retrieve day index", (idx) => {
-      //we remap it to be from mon [0] to sun [6]
+      // we remap it to be from mon [0] to sun [6]
       const expectedRemappedDays = [6, 0, 1, 2, 3, 4, 5];
 
       const result = getRemappedDayIndex(idx as DateDayNameIndex);

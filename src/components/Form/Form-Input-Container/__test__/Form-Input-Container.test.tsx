@@ -25,6 +25,7 @@ describe("Form Input Container Unit Tests", () => {
           { mb }
         )
       );
+
       return (
         <div
           data-testid="form-input-container-root"

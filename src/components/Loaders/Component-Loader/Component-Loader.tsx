@@ -66,7 +66,7 @@ export const ComponentLoader = ({
         className={loaderStyles}
         style={iconContainerStyles}
         data-testid="component-loader-icon-container"
-      ></div>
+      />
     </div>
   );
 };

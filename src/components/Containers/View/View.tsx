@@ -44,6 +44,7 @@ export const View = ({
     ),
     createThemeStyles("viewContainer_theme_", theme)
   );
+
   return (
     <div
       className={containerStyles}

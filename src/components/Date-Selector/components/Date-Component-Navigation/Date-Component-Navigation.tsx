@@ -135,6 +135,7 @@ export const DateComponentNavigation = ({
           height={ICON_SIZE}
         />
       );
+
   return (
     <div
       data-testid="date-selector-nav-root"

@@ -76,6 +76,7 @@ export const Flex = ({
 
   const flexBasis =
     basis && basis === "auto" ? "auto" : typeof basis === "string" ? basis : 0;
+
   return (
     <div
       data-testid="flex-container-root"

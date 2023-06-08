@@ -39,7 +39,7 @@ export const DateDayNumberComponent = ({
   isToday = false,
   isSelected = false,
   disabled = false,
-  onClick = () => {},
+  onClick,
   selectedClassName,
   selectedStyles = {},
   markerClassName,
@@ -56,7 +56,7 @@ export const DateDayNumberComponent = ({
       },
       rootClassName,
       {
-        disabled: disabled,
+        disabled,
         no_select: true,
       }
     ),
@@ -91,6 +91,7 @@ export const DateDayNumberComponent = ({
   const dayNumberText = hasValue(dayNumberDisplay)
     ? dayNumberDisplay
     : dayNumber;
+
   return (
     <div
       data-testid="date-day-number-root"

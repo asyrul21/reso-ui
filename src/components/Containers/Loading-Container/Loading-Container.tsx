@@ -50,6 +50,7 @@ export const LoadingContainer = ({
   );
 
   const containerMinHeight = type === "layer" ? minHeight : "inherit";
+
   return (
     <div
       className={containerStyles}

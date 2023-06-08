@@ -10,7 +10,7 @@
     "dev": "npm run storybook",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "lint": "tslint",
+    "lint": "tslint -p . -c tslint.json --exclude '**/*.stories.tsx'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

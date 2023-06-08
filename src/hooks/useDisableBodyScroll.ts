@@ -5,6 +5,7 @@ const useDisableBodyScroll = (isOpen: boolean) => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     }
+
     return () => {
       document.body.style.overflow = "unset";
     };

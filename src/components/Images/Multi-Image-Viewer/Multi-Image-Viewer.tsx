@@ -55,7 +55,7 @@ export const MultiImageViewer = ({
   rootClassName,
   rootStyles = {},
   getMiniImagePath,
-  onClickImage = () => {},
+  onClickImage,
   indexOverride,
   setIndexOverride,
   initialSelectedIndex = 0,
@@ -121,7 +121,11 @@ export const MultiImageViewer = ({
         clickable={clickable}
         rootClassName={mainImageClasses}
         rootStyles={mainImageStyles}
-        onClick={onClickImage}
+        onClick={() => {
+          if (onClickImage && methodHasValue(onClickImage)) {
+            onClickImage();
+          }
+        }}
         src={
           imageObjects && imageObjects[shownImageIndex]
             ? imageObjects[shownImageIndex].path
@@ -152,6 +156,7 @@ export const MultiImageViewer = ({
                     theme
                   )
                 : null;
+
             return (
               <Image
                 mh={1}

@@ -65,6 +65,7 @@ export const FullScreenError = ({
     ),
     createThemeStyles("fullScreenError_text_theme_", theme)
   );
+
   return (
     <div
       className={containerStyles}

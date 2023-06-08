@@ -38,6 +38,7 @@ export const HorizontalScrollContainer = ({
       rootClassName
     )
   );
+
   return (
     <div
       className={containerStyles}

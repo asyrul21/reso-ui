@@ -35,6 +35,7 @@ export default {
 
 export const Default = () => {
   const [textInputValue, setTextInputValue] = useState("");
+
   return (
     <Form onSubmit={() => alert("Form data submitted!")}>
       <h2>Sample Form</h2>

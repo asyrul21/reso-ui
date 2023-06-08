@@ -38,7 +38,7 @@ export const SubmitButton = ({
       },
       rootClassName,
       {
-        disabled: disabled,
+        disabled,
         no_select: true,
       }
     ),

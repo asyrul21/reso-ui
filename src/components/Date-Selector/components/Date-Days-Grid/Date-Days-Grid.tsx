@@ -65,7 +65,7 @@ export const DateDaysGrid = ({
   const ROWS = 6;
   const gridTemplateColumns = `repeat(${String(COLUMNS)}, 1fr)`;
 
-  const isToday = (): Number | null => {
+  const isToday = (): number | null => {
     const {
       year: todayYear,
       month: todayMonth,
@@ -74,6 +74,7 @@ export const DateDaysGrid = ({
     if (todayYear === selectedYear && todayMonth === selectedMonth) {
       return todayDate;
     }
+
     return null;
   };
 
@@ -86,6 +87,7 @@ export const DateDaysGrid = ({
       month: valueMonth,
       date: valueDate,
     } = destructureDateComponents(value);
+
     return (
       valueYear === selectedYear &&
       valueMonth === selectedMonth &&
@@ -105,6 +107,7 @@ export const DateDaysGrid = ({
     if (selectedYear < minYear || selectedMonth < minMonth) {
       return true;
     }
+
     return (
       selectedYear === minYear && selectedMonth === minMonth && d < minDate
     );
@@ -122,6 +125,7 @@ export const DateDaysGrid = ({
     if (selectedYear > maxYear || selectedMonth > maxMonth) {
       return true;
     }
+
     return (
       selectedYear === maxYear && selectedMonth === maxMonth && d > maxDate
     );
@@ -199,8 +203,9 @@ export const DateDaysGrid = ({
   let dayCount = 0;
   let nextMonthDayCount = 0;
   // because monthStartDay is inclusive, so dont need to deduct 1
-  let firstRowDays = COLUMNS - monthStartDay + 1;
+  const firstRowDays = COLUMNS - monthStartDay + 1;
   let prevMonthPadding = COLUMNS - firstRowDays;
+
   return (
     <div
       className={containerStyles}
@@ -220,7 +225,7 @@ export const DateDaysGrid = ({
         );
       })}
       {getArrayFor(ROWS).map((dayRow, rowKey) => {
-        let result = [];
+        const result = [];
         getArrayFor(COLUMNS).forEach((dayCol, colKey) => {
           if (isFirstRow(rowKey)) {
             if (columnIsBeforeMonthStartDay(colKey)) {
@@ -287,6 +292,7 @@ export const DateDaysGrid = ({
             }
           }
         });
+
         return result;
       })}
     </div>

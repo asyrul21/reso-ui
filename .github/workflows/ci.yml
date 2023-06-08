@@ -35,6 +35,10 @@ jobs:
         run: |
           npm run test
 
-      - name: Build
+      - name: Build Webpack
         run: |
           npx webpack --mode production
+
+      - name: Build Storybook
+        run: |
+          npm run build-storybook

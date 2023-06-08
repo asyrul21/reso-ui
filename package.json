@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "jest",
+    "test-coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "both": "concurrently \"npm run dev\" \"npm run start\"",
     "dev": "npm run storybook",

@@ -2,6 +2,7 @@ node_modules
 node_modules/
 
 # development
+coverage
 local
 local/
 
@@ -12,6 +13,9 @@ local/
 /build
 /src/build
 /src/dist
+
+# storybook
+storybook-static
 
 .nyc_output/
 

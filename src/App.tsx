@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React, { useState } from "react";
 
 import { Example } from "@components/Example";

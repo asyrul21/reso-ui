@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import AboutIcon from "./svg/about.svg";
 import ChevronSingleLeft from "./svg/ChevronSingleLeft.svg";
 import ChevronSingleRight from "./svg/ChevronSingleRight.svg";

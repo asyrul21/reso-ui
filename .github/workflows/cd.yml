@@ -56,4 +56,4 @@ jobs:
       #     aws_bucket: ${{ secrets.AWS_BUCKET }}
       #     source_dir: "dirname"
 
-      - name: Deploy to NPM
+      # - name: Deploy to NPM

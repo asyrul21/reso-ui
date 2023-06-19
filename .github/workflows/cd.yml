@@ -1,29 +1,59 @@
-# name: Deploy
+name: Deploy
 
-# on:
-#   workflow_run:
-#     workflows: ["Build with Webpack"]
-#     branches: ["main"]
-#     types:
-#       - completed
+on:
+  workflow_run:
+    workflows: ["Build with Webpack"]
+    branches: ["main"]
+    types:
+      - completed
 
-#   jobs:
-#     setup:
-#       uses: ./.github/workflows/ci.yml
+  jobs:
+    build:
+      runs-on: ubuntu-latest
 
-#     build:
-#       runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
 
-#       steps:
-#         - name: Checkout
-#           uses: actions/checkout@v3
+        - name: Use Node.js 18
+          uses: actions/setup-node@v3
+          with:
+            node-version: 18.x
 
-#         - name: Deploy to S3
-#           uses: shallwefootball/s3-upload-action@master
-#           with:
-#             aws_key_id: ${{ secrets.AWS_KEY_ID }}
-#             aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-#             aws_bucket: ${{ secrets.AWS_BUCKET }}
-#             source_dir: "dirname"
+        - name: npm install
+          run: |
+            npm install
 
-#         - name: Deploy to NPM
+        - name: Lint
+          run: |
+            npm run lint
+
+        - name: Unit Tests
+          run: |
+            npm run test
+
+        - name: Build Webpack
+          run: |
+            npx webpack --mode production
+
+        - name: Build Storybook
+          run: |
+            npm run build-storybook
+
+    deploy:
+      runs-on: ubuntu-latest
+      needs: build
+      steps:
+        - name: Info
+          run: |
+            pwd
+            ls -l
+        # - name: Deploy to S3
+        #   uses: shallwefootball/s3-upload-action@master
+        #   with:
+        #     aws_key_id: ${{ secrets.AWS_KEY_ID }}
+        #     aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+        #     aws_bucket: ${{ secrets.AWS_BUCKET }}
+        #     source_dir: "dirname"
+
+        - name: Deploy to NPM

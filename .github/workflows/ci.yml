@@ -43,7 +43,7 @@ jobs:
       - name: Upload Test Coverage Results to Github
         uses: actions/upload-artifact@v3
         with:
-          name: Test Coverage Results
+          name: Test Coverage Results for Node ${{ matrix.node-version }}
           path: coverage
 
       - name: Build Webpack

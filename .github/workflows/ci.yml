@@ -35,7 +35,7 @@ jobs:
         run: |
           npm run test-coverage
 
-      - name: Current Path
+      - name: Current Path and Files
         run: |
           pwd
           ls -l
@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Test Coverage Results
-          path: ./coverage
+          path: coverage
 
       - name: Build Webpack
         run: |

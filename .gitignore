@@ -13,6 +13,7 @@ local/
 /build
 /src/build
 /src/dist
+dist
 
 # storybook
 storybook-static

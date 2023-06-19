@@ -2,7 +2,7 @@
   "name": "reso-ui",
   "version": "1.0.0",
   "description": "Reusable React components in Typescript",
-  "main": "index.ts",
+  "main": "dist/main.js",
   "scripts": {
     "test": "jest",
     "test-coverage": "jest --coverage",

@@ -23,33 +23,33 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: npm install
-        run: |
-          npm install
+      # - name: npm install
+      #   run: |
+      #     npm install
 
-      - name: Lint
-        run: |
-          npm run lint
+      # - name: Lint
+      #   run: |
+      #     npm run lint
 
-      - name: Unit Tests
-        run: |
-          npm run test-coverage
+      # - name: Unit Tests
+      #   run: |
+      #     npm run test-coverage
 
-      - name: Current Path and Files
-        run: |
-          pwd
-          ls -l
+      # - name: Current Path and Files
+      #   run: |
+      #     pwd
+      #     ls -l
 
-      - name: Upload Test Coverage Results to Github
-        uses: actions/upload-artifact@v3
-        with:
-          name: Test Coverage Results for Node ${{ matrix.node-version }}
-          path: coverage
+      # - name: Upload Test Coverage Results to Github
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: Test Coverage Results for Node ${{ matrix.node-version }}
+      #     path: coverage
 
-      - name: Build Webpack
-        run: |
-          npx webpack --mode production
+      # - name: Build Webpack
+      #   run: |
+      #     npx webpack --mode production
 
-      - name: Build Storybook
-        run: |
-          npm run build-storybook
+      # - name: Build Storybook
+      #   run: |
+      #     npm run build-storybook

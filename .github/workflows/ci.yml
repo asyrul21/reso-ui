@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: Build with Webpack
 
 on:
   push:
@@ -34,6 +34,12 @@ jobs:
       - name: Unit Tests
         run: |
           npm run test
+
+      - name: Upload Test Coverage Results to Github
+          uses: actions/upload-artifact@v3
+          with:
+            name: Test Coverage Results
+            path: coverage
 
       - name: Build Webpack
         run: |

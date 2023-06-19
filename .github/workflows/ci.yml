@@ -33,7 +33,7 @@ jobs:
 
       - name: Unit Tests
         run: |
-          npm run test
+          npm run test-coverage
 
       - name: Current Path
         run: |

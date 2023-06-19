@@ -8,7 +8,7 @@ on:
       - completed
 
 jobs:
-  deploy storybook to S3:
+  deploy_storybook_to_S3:
     runs-on: ubuntu-latest
 
     steps:
@@ -41,7 +41,7 @@ jobs:
       #     aws_bucket: ${{ secrets.AWS_BUCKET }}
       #     source_dir: "dirname"
 
-  deploy to npm:
+  deploy_to_npm:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

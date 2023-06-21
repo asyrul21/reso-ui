@@ -48,7 +48,7 @@ jobs:
 
       # - name: Build Webpack
       #   run: |
-      #     npx webpack --mode production
+      #     npm run build
 
       # - name: Build Storybook
       #   run: |

@@ -4,6 +4,8 @@
   "description": "Reusable React components in Typescript",
   "main": "dist/main.js",
   "scripts": {
+    "setup-commitlint": "husky install && npx husky add .husky/commit-msg \"npx --no-install commitlint --edit \"$1\"\"",
+    "disable-commitlint": "rm -f .husky/commit-msg",
     "test": "jest",
     "test-coverage": "jest --coverage",
     "test:watch": "jest --watch",
@@ -24,6 +26,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
     "@mdx-js/loader": "^2.2.1",
     "@storybook/addon-actions": "^6.5.14",
     "@storybook/addon-essentials": "^6.5.14",
@@ -44,6 +48,7 @@
     "concurrently": "^7.6.0",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.3",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "npm": "^9.2.0",

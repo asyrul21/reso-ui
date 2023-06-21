@@ -19,7 +19,7 @@ jobs:
         run: git --help
 
       - name: Update Package Changelog
-        run: # command
+        run: pwd
 
       # - name: Push Version and Changelog Changes
       #   run: |

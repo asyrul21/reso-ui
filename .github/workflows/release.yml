@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  workflow_run:
+    workflows: ["Deploy"]
+    branches: ["main"]
+    types:
+      - completed
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Update Package.json Version
+        run: git --help
+
+      - name: Update Package Changelog
+        run: # command
+
+      # - name: Push Version and Changelog Changes
+      #   run: |
+      #     git add .
+      #     git commit -m "chore: Version bump and Changelog update [ci-skip]"
+      #     git push origin main
+
+  release:
+    runs-on: ubuntu-latest
+    needs: version
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Publish to NPM
+        run: |
+          npm --version
+          # command

@@ -8,78 +8,51 @@ on:
       - completed
 
 jobs:
-  deploy_storybook_to_S3:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      # - name: Checkout
+      #   uses: actions/checkout@v3
 
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
+      # - name: Use Node.js 18
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18.x
 
-      - name: npm install
-        run: |
-          npm install
+      # - name: npm install
+      #   run: |
+      #     npm install
 
-      - name: Build Storybook
-        run: |
-          npm run build-storybook
+      # - name: Build Storybook
+      #   run: |
+      #     npm run build-storybook
 
       - name: Info
         run: |
           pwd
           ls -l
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_S3_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_S3_ACCESS_KEY_SECRET }}
-          aws-region: ${{ secrets.AWS_S3_REGION }}
-
-      - name: Deploy
-        run: aws s3 sync ./storybook-static s3://${{ secrets.AWS_S3_BUCKET_NAME }}
-      # - name: Deploy to S3
-      #   uses: shallwefootball/s3-upload-action@master
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v2
       #   with:
-      #     aws_key_id: ${{ secrets.AWS_KEY_ID }}
-      #     aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-      #     aws_bucket: ${{ secrets.AWS_BUCKET }}
-      #     source_dir: "dirname"
+      #     aws-access-key-id: ${{ secrets.AWS_S3_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_S3_ACCESS_KEY_SECRET }}
+      #     aws-region: ${{ secrets.AWS_S3_REGION }}
 
-  deploy_to_npm:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      # - name: Deploy
+      #   run: aws s3 sync ./storybook-static s3://${{ secrets.AWS_S3_BUCKET_NAME }}
 
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
+# References
+# https://faun.pub/deploying-website-to-aws-s3-w-github-actions-279998db5dae
+# https://github.com/aws-actions/configure-aws-credentials
+# https://github.com/marketplace/actions/upload-s3
+# https://medium.com/tradeling/how-to-upload-files-on-amazon-s3-using-githubactions-ffe1243331ed
 
-      - name: npm install
-        run: |
-          npm install
-
-      - name: Build Webpack
-        run: |
-          npx webpack --mode production
-
-      - name: Info
-        run: |
-          pwd
-          ls -l
-
-      # - name: Deploy to S3
-      #   uses: shallwefootball/s3-upload-action@master
-      #   with:
-      #     aws_key_id: ${{ secrets.AWS_KEY_ID }}
-      #     aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-      #     aws_bucket: ${{ secrets.AWS_BUCKET }}
-      #     source_dir: "dirname"
-
-      # - name: Deploy to NPM
+# - name: Deploy to S3
+#   uses: shallwefootball/s3-upload-action@master
+#   with:
+#     aws_key_id: ${{ secrets.AWS_KEY_ID }}
+#     aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+#     aws_bucket: ${{ secrets.AWS_BUCKET }}
+#     source_dir: "dirname"

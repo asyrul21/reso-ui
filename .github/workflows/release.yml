@@ -24,6 +24,10 @@ jobs:
         run: |
           npm clean-install
 
+      - name: Install semantic-release git plugin
+        run: |
+          npm install --save-dev @semantic-release/git
+
       - name: Build
         run: |
           npm run build

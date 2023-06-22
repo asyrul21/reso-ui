@@ -24,6 +24,8 @@ export default {
             It supports Margin props.
 
             You can customize hover behaviour via rootClassName.
+
+            Import statement: \`import { Button } from 'reso-ui/Button'\`
         `,
       },
     },

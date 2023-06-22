@@ -20,6 +20,8 @@ export default {
       description: {
         component: dedent`
             A generic Banner component with various types.
+
+            Import statement: \`import { Banner } from 'reso-ui/Banner'\`
         `,
       },
     },

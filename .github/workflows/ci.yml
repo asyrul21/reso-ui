@@ -2,9 +2,9 @@ name: Build and Test
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "beta"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "beta"]
 
 jobs:
   build:
@@ -15,41 +15,41 @@ jobs:
         node-version: [14.x, 15.x, 16.x, 17.x, 18.x]
 
     steps:
-      # - name: Checkout
-      #   uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      # - name: Use Node.js ${{ matrix.node-version }}
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-      # - name: npm install
-      #   run: |
-      #     npm install
+      - name: npm install
+        run: |
+          npm install
 
-      # - name: Lint
-      #   run: |
-      #     npm run lint
+      - name: Lint
+        run: |
+          npm run lint
 
-      # - name: Unit Tests
-      #   run: |
-      #     npm run test-coverage
+      - name: Unit Tests
+        run: |
+          npm run test-coverage
 
       - name: Current Path and Files
         run: |
           pwd
           ls -l
 
-      # - name: Upload Test Coverage Results to Github
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: Test Coverage Results for Node ${{ matrix.node-version }}
-      #     path: coverage
+      - name: Upload Test Coverage Results to Github
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test Coverage Results for Node ${{ matrix.node-version }}
+          path: coverage
 
-      # - name: Build Webpack
-      #   run: |
-      #     npm run build
+      - name: Build Webpack
+        run: |
+          npm run build
 
-      # - name: Build Storybook
-      #   run: |
-      #     npm run build-storybook
+      - name: Build Storybook
+        run: |
+          npm run build-storybook

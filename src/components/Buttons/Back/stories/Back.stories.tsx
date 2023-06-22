@@ -24,6 +24,8 @@ export default {
             It supports Margin props.
 
             You can customize hover and behaviour via linkClassName.
+
+            Import statement: \`import { Back } from 'reso-ui/Back'\`
         `,
       },
     },

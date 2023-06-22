@@ -1,4 +1,3 @@
 /* istanbul ignore file */
+import "@styles/global.scss";
 export * from "./Modal-Container";
-export * from "./Modal-Body";
-export * from "./Modal-Header";

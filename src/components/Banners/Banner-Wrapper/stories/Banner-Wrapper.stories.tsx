@@ -27,6 +27,8 @@ export default {
             You can set *hasMaxHeight* to true to enable scrolling, if you wish to set the Banner Wrapper a maximum height.
 
             Only conditionally render this component, to prevent empty Divs (when all the Banners are closed) on your rendered dom.
+
+            Import statement: \`import { Banner Wrapper } from 'reso-ui/Banner-Wrapper'\`
         `,
       },
     },

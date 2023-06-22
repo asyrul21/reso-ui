@@ -12,7 +12,7 @@
     "both": "concurrently \"npm run dev\" \"npm run start\"",
     "dev": "npm run storybook",
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.prod.js --mode production",
     "lint": "tslint -p . -c tslint.json --exclude '**/*.stories.tsx'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -29,6 +29,8 @@
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@mdx-js/loader": "^2.2.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@storybook/addon-actions": "^6.5.14",
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/addon-interactions": "^6.5.14",

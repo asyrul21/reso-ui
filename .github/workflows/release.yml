@@ -3,7 +3,7 @@ name: Release
 on:
   workflow_run:
     workflows: ["Deploy"]
-    branches: ["main"]
+    branches: ["main", "beta"]
     types:
       - completed
 
@@ -36,3 +36,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
+# References
+# https://dev.to/kouts/automated-versioning-and-package-publishing-using-github-actions-and-semantic-release-1kce
+# https://stackoverflow.com/questions/58311847/github-action-for-updating-package-json

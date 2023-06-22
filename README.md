@@ -1,8 +1,48 @@
-# Reso UI
+# Reso UI (Beta/Pre-release)
 
-Home to reusable react components to Reso Applications
+PLEASE NOTE THAT THIS LIBRARY IS STILL UNDER DEVELOPMENT AND MAY STILL HAVE MISSING CRUCIAL INFORMATION
 
-# Run
+Home to reusable react components to Reso Applications.
+
+For more information, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/).
+
+## Install
+
+```bash
+npm install reso-ui
+```
+
+## Import Components
+
+You can import our ExampleComponent as below:
+
+```javascript
+import { Example } from "reso-ui";
+```
+
+For other components, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/) for information on import statements and component properties.
+
+## Using the Component
+
+You can then use our ExampleComponent as below:
+
+```jsx
+import { Example } from "reso-ui";
+
+export const SampleApp = () => {
+  return (
+    <Example theme="light" name="john" rootClassName="example_app_styles" />
+  );
+};
+```
+
+For other components, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/) for information on components' usage.
+
+# Authors' Notes
+
+If you are not insterested in contributing, please ignore this section.
+
+## Run
 
 ```bash
 # storybook
@@ -10,12 +50,12 @@ npm run dev
 
 # or
 
-# run a single component imported in src/index.js
+# run a single component imported in src/index.tsx
 npm start
 
 ```
 
-# Changes from Original
+## Changes from Original
 
 1. ImageContainer and Image are now combined to form 1 component: Image
 
@@ -57,7 +97,7 @@ npm start
 
 20. InputLabel [value] prop is replaced with [descriptionSelectedKey]
 
-# To Be Reconstructed using library in Client
+## To Be Reconstructed using library in Client
 
 1. Generic Modal for Popups that utilise libary components
 
@@ -79,7 +119,7 @@ npm start
 
 10. Reso Footer
 
-# Development Setup
+## Development Setup
 
 [Reference for Typescript and Webpack](https://dev.to/shivampawar/setup-react-application-using-typescript-and-webpack-2kn6)
 

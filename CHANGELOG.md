@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/asyrul21/reso-ui/compare/v1.0.0...v1.1.0) (2023-06-22)
+
+
+### Features
+
+* **rename:** replace component loader component with Loader and add fullscreen and text props ([33e4d26](https://github.com/asyrul21/reso-ui/commit/33e4d26d278d3f4a12e3bdbb941a6605ef289996))
+
 # 1.0.0 (2023-06-22)
 
 

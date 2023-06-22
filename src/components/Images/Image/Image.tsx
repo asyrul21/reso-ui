@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
-import {
-  ComponentLoader,
-  LoaderSize,
-} from "@components/Loaders/Component-Loader";
+import { Loader, LoaderSize } from "@components/Loaders/Loader";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
@@ -100,7 +97,7 @@ export const Image = ({
         <p data-testid="image-component-error">{`Unable to load ${alt}`}</p>
       ) : (
         <>
-          {!loaded && <ComponentLoader size={loaderSize} />}
+          {!loaded && <Loader size={loaderSize} />}
           {
             <img
               data-testid="image-component-img"

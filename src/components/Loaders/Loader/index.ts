@@ -1,3 +1,3 @@
 /* istanbul ignore file */
 import "@styles/global.scss";
-export * from "./Component-Loader";
+export * from "./Loader";

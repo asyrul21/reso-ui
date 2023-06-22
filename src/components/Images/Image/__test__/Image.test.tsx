@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { Image } from "@components/Images/Image";
 
 // import from index does not work for jest.spyOn
-import * as ComponentLoaderModule from "@components/Loaders/Component-Loader/Component-Loader";
+import * as ComponentLoaderModule from "@components/Loaders/Loader/Loader";
 
 describe("Image Component Unit Tests", () => {
   afterEach(() => {
@@ -15,11 +15,9 @@ describe("Image Component Unit Tests", () => {
   };
 
   test("should show loader when image is not yet loaded", () => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation(() => {
-        return <div data-testid="image-component-mock-loader">Mock Loader</div>;
-      });
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation(() => {
+      return <div data-testid="image-component-mock-loader">Mock Loader</div>;
+    });
 
     const { debug } = render(<Image src="" />);
 
@@ -32,11 +30,9 @@ describe("Image Component Unit Tests", () => {
   });
 
   test("should render with img element without error, and loader not shown", () => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation(() => {
-        return <div data-testid="image-component-mock-loader">Mock Loader</div>;
-      });
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation(() => {
+      return <div data-testid="image-component-mock-loader">Mock Loader</div>;
+    });
 
     const { debug } = render(<Image {...defaultProps} />);
 
@@ -52,11 +48,9 @@ describe("Image Component Unit Tests", () => {
   });
 
   test("should run onClick when provided as prop", () => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation(() => {
-        return <div data-testid="image-component-mock-loader">Mock Loader</div>;
-      });
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation(() => {
+      return <div data-testid="image-component-mock-loader">Mock Loader</div>;
+    });
 
     const onClickMock = jest.fn();
 
@@ -69,11 +63,9 @@ describe("Image Component Unit Tests", () => {
   });
 
   test("should support Margin props", () => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation(() => {
-        return <div data-testid="image-component-mock-loader">Mock Loader</div>;
-      });
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation(() => {
+      return <div data-testid="image-component-mock-loader">Mock Loader</div>;
+    });
 
     render(<Image {...defaultProps} ma={5} />);
 
@@ -82,11 +74,9 @@ describe("Image Component Unit Tests", () => {
   });
 
   test("should apply custom container rootClassName when provided as prop", () => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation(() => {
-        return <div data-testid="image-component-mock-loader">Mock Loader</div>;
-      });
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation(() => {
+      return <div data-testid="image-component-mock-loader">Mock Loader</div>;
+    });
 
     const testProps = {
       ...defaultProps,
@@ -100,11 +90,9 @@ describe("Image Component Unit Tests", () => {
   });
 
   test("should apply custom img class when provided as prop", () => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation(() => {
-        return <div data-testid="image-component-mock-loader">Mock Loader</div>;
-      });
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation(() => {
+      return <div data-testid="image-component-mock-loader">Mock Loader</div>;
+    });
 
     const testProps = {
       ...defaultProps,
@@ -118,11 +106,9 @@ describe("Image Component Unit Tests", () => {
   });
 
   test("should not render img element and show error message when image fails to load", () => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation(() => {
-        return <div data-testid="image-component-mock-loader">Mock Loader</div>;
-      });
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation(() => {
+      return <div data-testid="image-component-mock-loader">Mock Loader</div>;
+    });
 
     const { debug } = render(<Image src="a-broken-link" />);
 
@@ -138,11 +124,9 @@ describe("Image Component Unit Tests", () => {
   });
 
   test("should render image correctly when image from main src fails to load but one of fallbacks works", () => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation(() => {
-        return <div data-testid="image-component-mock-loader">Mock Loader</div>;
-      });
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation(() => {
+      return <div data-testid="image-component-mock-loader">Mock Loader</div>;
+    });
 
     const { debug } = render(
       <Image src="a-broken-link" fallbacks={["image-example.jpg"]} />

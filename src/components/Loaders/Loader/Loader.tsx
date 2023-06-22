@@ -17,27 +17,29 @@ import {
 
 export type LoaderSize = "small" | "medium" | "large";
 
-export interface IComponentLoaderProps extends IComponent, IThemeProps {
+export interface ILoaderProps extends IComponent, IThemeProps {
+  type?: "default" | "fullscreen";
+  text?: string;
   size?: LoaderSize;
   iconContainerClassName?: string;
   iconContainerStyles?: React.CSSProperties;
 }
 
-/*
- * Parent of this component MUST have position:relative
- */
-export const ComponentLoader = ({
+export const Loader = ({
+  type = "default",
+  text,
   size = "small",
   rootClassName,
   iconContainerClassName,
   rootStyles = {},
   iconContainerStyles,
   theme = "light",
-}: IComponentLoaderProps) => {
+}: ILoaderProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
       {
         componentLoader_container: true,
+        componentLoader_container_fullscreen: type === "fullscreen",
       },
       rootClassName
     ),
@@ -48,6 +50,8 @@ export const ComponentLoader = ({
     createLayoutStyles(
       {
         componentLoader_icon_container: true,
+        componentLoader_icon_container_mb:
+          typeof text === "string" && text !== "",
         spin: true,
         [`componentLoader_icon_size_${size}`]: true,
       },
@@ -67,6 +71,7 @@ export const ComponentLoader = ({
         style={iconContainerStyles}
         data-testid="component-loader-icon-container"
       />
+      {text && <p>{text}</p>}
     </div>
   );
 };

@@ -97,6 +97,8 @@ npm start
 
 20. InputLabel [value] prop is replaced with [descriptionSelectedKey]
 
+21. ComponentLoader is replaced with Loader, and combined with FullScreenLoader
+
 ## To Be Reconstructed using library in Client
 
 1. Generic Modal for Popups that utilise libary components

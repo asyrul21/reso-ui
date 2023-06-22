@@ -1,15 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ComponentLoader } from "@components/Loaders/Component-Loader";
+import { Loader } from "@components/Loaders/Loader";
 
-describe("Component Loader Unit Tests", () => {
+describe("Generic Loader Unit Tests", () => {
   test("should render parent and itself without error", () => {
     const { debug } = render(
       <div
         data-testid="component-loader-parent-test"
         style={{ width: "200px", height: "200px", position: "relative" }}
       >
-        <ComponentLoader />
+        <Loader />
         <p>This is a sample component</p>
       </div>
     );
@@ -28,7 +28,7 @@ describe("Component Loader Unit Tests", () => {
   test("should have custom container rootClassName when passed as props", () => {
     render(
       <div style={{ width: "200px", height: "200px", position: "relative" }}>
-        <ComponentLoader rootClassName="custom_loader_class_test" />
+        <Loader rootClassName="custom_loader_class_test" />
         <p>This is a sample component</p>
       </div>
     );
@@ -40,7 +40,7 @@ describe("Component Loader Unit Tests", () => {
   test("should have custom icon container classname when passed as props", () => {
     render(
       <div style={{ width: "200px", height: "200px", position: "relative" }}>
-        <ComponentLoader iconContainerClassName="custom_icon_container_class_test" />
+        <Loader iconContainerClassName="custom_icon_container_class_test" />
         <p>This is a sample component</p>
       </div>
     );

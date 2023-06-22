@@ -2,15 +2,15 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { ComponentLoader } from "@components/Loaders/Component-Loader";
+import { Loader } from "@components/Loaders/Loader";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Loaders/Component Loader",
-  component: ComponentLoader,
+  title: "Loaders/Generic Loader",
+  component: Loader,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
@@ -26,11 +26,11 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof ComponentLoader>;
+} as ComponentMeta<typeof Loader>;
 
-const ComponentTemplate: ComponentStory<typeof ComponentLoader> = (args) => (
+const ComponentTemplate: ComponentStory<typeof Loader> = (args) => (
   <div style={{ width: "200px", height: "200px", position: "relative" }}>
-    <ComponentLoader {...args} />
+    <Loader {...args} />
     An Example Component
   </div>
 );
@@ -40,10 +40,10 @@ Default.args = {};
 
 export const CustomContainerClass = ComponentTemplate.bind({});
 CustomContainerClass.args = {
-  rootClassName: "componentLoader_container_story",
+  rootClassName: "Loader_container_story",
 };
 
 export const CustomIconContainerClass = ComponentTemplate.bind({});
 CustomIconContainerClass.args = {
-  iconContainerClassName: "componentLoader_icon_container_story",
+  iconContainerClassName: "Loader_icon_container_story",
 };

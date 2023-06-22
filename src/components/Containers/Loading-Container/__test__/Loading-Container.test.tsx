@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { LoadingContainer } from "@components/Containers/Loading-Container";
-import * as ComponentLoaderModule from "@components/Loaders/Component-Loader/Component-Loader";
+import * as ComponentLoaderModule from "@components/Loaders/Loader/Loader";
 import * as ComponentErrorModule from "@components/Errors/Component-Error/Component-Error";
 
 const SampleChildComponent = () => {
@@ -14,21 +14,19 @@ const SampleChildComponent = () => {
 
 describe("Loading Container Component Unit Tests", () => {
   beforeEach(() => {
-    jest
-      .spyOn(ComponentLoaderModule, "ComponentLoader")
-      .mockImplementation((props) => {
-        const { rootClassName, rootStyles } = props;
+    jest.spyOn(ComponentLoaderModule, "Loader").mockImplementation((props) => {
+      const { rootClassName, rootStyles } = props;
 
-        return (
-          <div
-            data-testid="loading-container-loader-mock"
-            className={rootClassName}
-            style={rootStyles}
-          >
-            Loader Mock
-          </div>
-        );
-      });
+      return (
+        <div
+          data-testid="loading-container-loader-mock"
+          className={rootClassName}
+          style={rootStyles}
+        >
+          Loader Mock
+        </div>
+      );
+    });
 
     jest
       .spyOn(ComponentErrorModule, "ComponentError")

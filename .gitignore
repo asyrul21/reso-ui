@@ -5,10 +5,7 @@ node_modules/
 coverage
 local
 local/
-src/App.tsx
-
-/src/emails/ejs/generated/
-/src/test/generated/
+App.tsx
 
 # production
 /build

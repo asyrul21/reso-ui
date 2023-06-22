@@ -12,9 +12,19 @@
   justify-content: center;
 }
 
+.componentLoader_container_fullscreen {
+  background-color: $bg-fullscreenloader;
+  position: fixed;
+  z-index: 100;
+}
+
 .componentLoader_icon_container {
   line-height: 55px;
   text-align: center;
+}
+
+.componentLoader_icon_container_mb {
+  margin-bottom: 40px;
 }
 
 .componentLoader_icon_size_small {

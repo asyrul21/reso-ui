@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ComponentLoader } from "@components/Loaders/Component-Loader";
+import { Loader } from "@components/Loaders/Loader";
 import { ComponentError } from "@components/Errors/Component-Error";
 
 // import base interface
@@ -60,7 +60,7 @@ export const LoadingContainer = ({
       {type === "layer" ? (
         <>
           {loading ? (
-            <ComponentLoader
+            <Loader
               theme={theme}
               rootClassName={componentLoaderClassName}
               rootStyles={componentLoaderStyles}
@@ -85,7 +85,7 @@ export const LoadingContainer = ({
               rootStyles={componentErrorStyles}
             />
           ) : loading ? (
-            <ComponentLoader
+            <Loader
               theme={theme}
               rootClassName={componentLoaderClassName}
               rootStyles={componentLoaderStyles}

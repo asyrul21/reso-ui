@@ -84,12 +84,12 @@ module.exports = {
       "<rootDir>/__mocks__/fileMock.js",
     "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
     // must specify path aliases here
-    "@components/(.*)": "<rootDir>/src/components/$1",
-    "@icons": "<rootDir>/src/icons/index.ts",
-    "@interfaces/(.*)": "<rootDir>/src/types/$1",
-    "@utils/(.*)": "<rootDir>/src/utils/$1",
-    "@hooks/(.*)": "<rootDir>/src/hooks/$1",
-    "@styles/(.*)": "<rootDir>/src/styles/$1",
+    "@components/(.*)": "<rootDir>/src/library/components/$1",
+    "@icons": "<rootDir>/src/library/icons/index.ts",
+    "@interfaces/(.*)": "<rootDir>/src/library/types/$1",
+    "@utils/(.*)": "<rootDir>/src/library/utils/$1",
+    "@hooks/(.*)": "<rootDir>/src/library/hooks/$1",
+    "@styles/(.*)": "<rootDir>/src/library/styles/$1",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

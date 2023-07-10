@@ -1,22 +1,8 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-  mode: "development",
-  entry: path.resolve(__dirname, "src/index.tsx"),
-  output: {
-    path: path.resolve(__dirname, "dist"),
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "public", "index.html"),
-    }),
-  ],
-  devtool: "source-map",
-  devServer: {
-    port: 3000,
-  },
+  cache: false,
   module: {
     rules: [
       {
@@ -72,8 +58,11 @@ module.exports = {
     ],
     extensions: [".tsx", ".ts", ".js"],
     alias: {
-      vars_and_mixins: path.join(__dirname, "src/styles/vars_and_mixins"),
-      fonts: path.join(__dirname, "src/styles/fonts"),
+      vars_and_mixins: path.join(
+        __dirname,
+        "src/library/styles/vars_and_mixins"
+      ),
+      fonts: path.join(__dirname, "src/library/styles/fonts"),
     },
   },
 };

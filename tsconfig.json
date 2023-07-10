@@ -1,22 +1,24 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "declaration": true,
     "noImplicitAny": false,
     "module": "es6",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
+    "sourceMap": true,
+    "baseUrl": "./src",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@icons": ["src/icons/"],
-      "@interfaces/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@styles/*": ["src/styles/*"]
+      "@components/*": ["library/components/*"],
+      "@icons": ["library/icons"],
+      "@interfaces/*": ["library/types/*"],
+      "@utils/*": ["library/utils/*"],
+      "@hooks/*": ["library/hooks/*"],
+      "@styles/*": ["library/styles/*"]
     }
   },
   "exclude": ["node_modules"],

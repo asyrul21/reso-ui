@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Panel } from "@components/Panel/";
+import { Panel } from "@components/Panel";
 
 const SampleComponent = () => {
   return (

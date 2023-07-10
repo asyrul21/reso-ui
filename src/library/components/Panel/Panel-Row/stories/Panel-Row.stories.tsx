@@ -2,15 +2,15 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Panel } from "@components/Panel/";
-import { PanelTitle } from "@components/Panel/Panel-Title";
+import { Panel } from "@components/Panel";
+import { PanelRow } from "@components/Panel/Panel-Row";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Panel/Panel Title",
-  component: PanelTitle,
+  title: "Panel/Panel Row",
+  component: PanelRow,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
@@ -19,29 +19,39 @@ export default {
     docs: {
       description: {
         component: dedent`
-            A header component suited for the Panel container.
+            A row component suited for the Panel container, meant to show key-value pairs of information.
         `,
       },
     },
   },
-} as ComponentMeta<typeof PanelTitle>;
+} as ComponentMeta<typeof PanelRow>;
 
-const ComponentTemplate: ComponentStory<typeof PanelTitle> = (args) => (
+const ComponentTemplate: ComponentStory<typeof PanelRow> = (args) => (
   <Panel>
-    <PanelTitle {...args} />
+    <PanelRow {...args} />
   </Panel>
 );
 
 export const Default = ComponentTemplate.bind({});
 Default.args = {
-  text: "Sample Title",
+  keyStr: "Sample key:",
+  value: "Sample value",
 };
 
 export const WithCustomStyle = ComponentTemplate.bind({});
 WithCustomStyle.args = {
-  text: "Sample Title",
+  keyStr: "Sample key:",
+  value: "Sample value",
   rootStyles: {
     color: "green",
-    fontSize: "24px",
+  },
+};
+
+export const WithCustomKeyStyle = ComponentTemplate.bind({});
+WithCustomKeyStyle.args = {
+  keyStr: "Sample key:",
+  value: "Sample value",
+  keyStyles: {
+    color: "green",
   },
 };

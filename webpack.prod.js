@@ -1,24 +1,17 @@
 const path = require("path");
-const WebpackBaseConfig = require("./webpack.config");
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 
-module.exports = {
-  ...WebpackBaseConfig,
+module.exports = merge(common, {
   mode: "production",
-  entry: path.resolve(__dirname, "src/index.ts"),
+  entry: path.resolve(__dirname, "src/library/index.ts"),
   output: {
-    ...WebpackBaseConfig.output,
-  },
-  plugins: [],
-  devtool: undefined,
-  devServer: undefined,
-  module: {
-    rules: [...WebpackBaseConfig.module.rules],
-  },
-  resolve: {
-    plugins: [...WebpackBaseConfig.resolve.plugins],
-    extensions: [...WebpackBaseConfig.resolve.extensions],
-    alias: {
-      ...WebpackBaseConfig.resolve.alias,
+    path: path.resolve(__dirname, "dist"),
+    filename: "main.js",
+    globalObject: "this",
+    library: {
+      name: "reso-ui",
+      type: "umd",
     },
   },
-};
+});

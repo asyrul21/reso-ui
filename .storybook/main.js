@@ -1,4 +1,4 @@
-const webpackConfig = require("../webpack.config");
+const webpackConfig = require("../webpack.dev");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],

@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/asyrul21/reso-ui/compare/v1.1.1...v1.1.2) (2023-07-11)
+
+
+### Bug Fixes
+
+* fix build pipeline failure ([959fb9d](https://github.com/asyrul21/reso-ui/commit/959fb9dfdda3b5800fc83470248b8be006d4746b))
+
 ## [1.1.1](https://github.com/asyrul21/reso-ui/compare/v1.1.0...v1.1.1) (2023-07-11)
 
 

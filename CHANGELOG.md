@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/asyrul21/reso-ui/compare/v1.2.1...v1.2.2) (2023-07-11)
+
+
+### Bug Fixes
+
+* reference declaration files from package.json ([1111a08](https://github.com/asyrul21/reso-ui/commit/1111a0897658151dc8a220199d92ab3655524b9f))
+
 ## [1.2.1](https://github.com/asyrul21/reso-ui/compare/v1.2.0...v1.2.1) (2023-07-11)
 
 

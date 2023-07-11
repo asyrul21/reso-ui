@@ -1,0 +1,1 @@
+{"version":3,"file":"IComponent.d.ts","sourceRoot":"","sources":["../../../../../src/library/types/IComponent.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAG1B,UAAU,UAAU;IAClB,aAAa,CAAC,EAAE,MAAM,CAAC;IACvB,UAAU,CAAC,EAAE,KAAK,CAAC,aAAa,CAAC;CAClC;AAED,eAAe,UAAU,CAAC"}

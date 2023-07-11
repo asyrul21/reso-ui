@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/asyrul21/reso-ui/compare/v1.2.0...v1.2.1) (2023-07-11)
+
+
+### Bug Fixes
+
+* webpack multiple entries and outputs implementation fix ([262ab50](https://github.com/asyrul21/reso-ui/commit/262ab5073084d9bf4c796ef6c7012c9900e2621c))
+
 # [1.2.0](https://github.com/asyrul21/reso-ui/compare/v1.1.4...v1.2.0) (2023-07-11)
 
 

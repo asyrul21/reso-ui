@@ -4,12 +4,12 @@
   "description": "Reusable React components in Typescript",
   "types": "dist/src/index.d.ts",
   "exports": {
-    "components": "./dist/components.bundle.js",
-    "forms/containers": "./dist/formContainers.bundle.js",
-    "forms/inputs": "./dist/formInputs.bundle.js",
-    "icons": "./dist/icons.bundle.js",
-    "interfaces": "./dist/interfaces.bundle.js",
-    "hooks": "./dist/hooks.bundle.js"
+    "./components": "./dist/components.bundle.js",
+    "./forms/containers": "./dist/formContainers.bundle.js",
+    "./forms/inputs": "./dist/formInputs.bundle.js",
+    "./icons": "./dist/icons.bundle.js",
+    "./interfaces": "./dist/interfaces.bundle.js",
+    "./hooks": "./dist/hooks.bundle.js"
   },
   "files": [
     "dist"

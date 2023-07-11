@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/asyrul21/reso-ui/compare/v1.1.2...v1.1.3) (2023-07-11)
+
+
+### Bug Fixes
+
+* add react and react-dom to webpack externals config ([8501cae](https://github.com/asyrul21/reso-ui/commit/8501cae12919e4eb4c6c2a36f1988b920c04c1e5))
+
 ## [1.1.2](https://github.com/asyrul21/reso-ui/compare/v1.1.1...v1.1.2) (2023-07-11)
 
 

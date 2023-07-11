@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 import React, { useState } from "react";
 
-import { Example, Banner } from "./library";
+import { Example, Banner } from "./library/components";
 // import { Example } from "../dist/main";
 // import { Flex } from "@components/Containers/Flex";
 // import { View } from "@components/Containers/View";

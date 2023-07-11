@@ -18,3 +18,4 @@ export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
     markerStyles?: React.CSSProperties;
 }
 export declare const DateDayNumberComponent: ({ dayNumber, dayNumberDisplay, isToday, isSelected, disabled, onClick, selectedClassName, selectedStyles, markerClassName, markerStyles, rootClassName, rootStyles, theme, }: IDateDayNumberComponentProps) => React.JSX.Element;
+//# sourceMappingURL=Date-Day-Number.d.ts.map

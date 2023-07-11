@@ -6,3 +6,4 @@ export interface IModalBodyProps extends IComponent, IPaddingProps {
     children: React.ReactNode;
 }
 export declare const ModalBody: ({ children, rootClassName, rootStyles, ...paddingProps }: IModalBodyProps) => React.JSX.Element;
+//# sourceMappingURL=Modal-Body.d.ts.map

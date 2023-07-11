@@ -14,3 +14,4 @@ export interface ITextInputProps extends IComponent, IFormInputProps, IThemeProp
     readonly?: boolean;
 }
 export declare const TextInput: ({ id, value, onChange, disabled, required, readonly, placeholder, pattern, minLength, maxLength, rootClassName, rootStyles, theme, ...spacingsProps }: ITextInputProps) => React.JSX.Element;
+//# sourceMappingURL=Text-Input.d.ts.map

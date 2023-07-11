@@ -12,3 +12,4 @@ export interface IBackProps extends IComponent, IThemeProps, IMarginProps {
     linkStyles?: React.CSSProperties;
 }
 export declare const Back: ({ to, text, disabled, rootClassName, rootStyles, linkClassName, linkStyles, theme, ...spacingsProps }: IBackProps) => React.JSX.Element;
+//# sourceMappingURL=Back.d.ts.map

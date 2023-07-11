@@ -13,3 +13,4 @@ export declare const WithMiniImageStyles: any;
 export declare const WithMiniSelectedImageStyles: any;
 export declare const WithMiniSelectedImageClassName: any;
 export declare const NavigationViaExternalComponent: () => React.JSX.Element;
+//# sourceMappingURL=Multi-Image-Viewer.stories.d.ts.map

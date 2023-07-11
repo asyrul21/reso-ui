@@ -6,3 +6,4 @@ export default _default;
 export declare const Default: any;
 export declare const WithText: any;
 export declare const CustomContainerClassname: any;
+//# sourceMappingURL=Component-Error.stories.d.ts.map

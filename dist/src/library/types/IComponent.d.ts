@@ -4,3 +4,4 @@ interface IComponent {
     rootStyles?: React.CSSProperties;
 }
 export default IComponent;
+//# sourceMappingURL=IComponent.d.ts.map

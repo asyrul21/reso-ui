@@ -6,3 +6,4 @@ export default _default;
 export declare const Default: any;
 export declare const WithClassName: any;
 export declare const WithCustomStyle: any;
+//# sourceMappingURL=Panel-Container.stories.d.ts.map

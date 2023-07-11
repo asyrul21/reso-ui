@@ -14,3 +14,4 @@ export interface ILoadingContainerProps extends IComponent, IThemeProps {
     componentErrorStyles?: React.CSSProperties;
 }
 export declare const LoadingContainer: ({ type, loading, children, error, minHeight, rootClassName, rootStyles, componentLoaderClassName, componentLoaderStyles, componentErrorClassName, componentErrorStyles, theme, }: ILoadingContainerProps) => React.JSX.Element;
+//# sourceMappingURL=Loading-Container.d.ts.map

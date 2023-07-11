@@ -4,3 +4,4 @@ declare const _default: ComponentMeta<({ children, rootClassName, rootStyles, ..
 export default _default;
 export declare const Default: () => React.JSX.Element;
 export declare const WithContainerStyles: () => React.JSX.Element;
+//# sourceMappingURL=Modal-Body.stories.d.ts.map

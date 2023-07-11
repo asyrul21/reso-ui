@@ -10,3 +10,4 @@ export interface IPanelRowProps extends IComponent {
     valueStyles?: React.CSSProperties;
 }
 export declare const PanelRow: ({ keyStr, value, rootClassName, rootStyles, keyClassName, keyStyles, valueClassName, valueStyles, }: IPanelRowProps) => React.JSX.Element;
+//# sourceMappingURL=Panel-Row.d.ts.map

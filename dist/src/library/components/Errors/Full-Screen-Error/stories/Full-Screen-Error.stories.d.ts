@@ -5,3 +5,4 @@ export default _default;
 export declare const Default: () => React.JSX.Element;
 export declare const DefaultWithCustomText: () => React.JSX.Element;
 export declare const DefaultWithCustomIconStyles: () => React.JSX.Element;
+//# sourceMappingURL=Full-Screen-Error.stories.d.ts.map

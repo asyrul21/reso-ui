@@ -7,3 +7,4 @@ export interface IHSCProps extends IComponent, IPaddingProps, IMarginProps {
     inheritWidth?: boolean;
 }
 export declare const HorizontalScrollContainer: ({ children, inheritWidth, rootClassName, rootStyles, ...spacingsProps }: IHSCProps) => React.JSX.Element;
+//# sourceMappingURL=Horizontal-Scroll-Container.d.ts.map

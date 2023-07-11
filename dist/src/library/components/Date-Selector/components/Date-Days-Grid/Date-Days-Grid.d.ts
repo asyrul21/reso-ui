@@ -19,3 +19,4 @@ export interface IDateDaysGridProps extends IComponent, IThemeProps {
     getDisplayDayName?: (day: DateDayNameIndex) => string;
 }
 export declare const DateDaysGrid: ({ monthStartDay, monthNumberOfDays, prevMonthDays, today, value, selectedYear, selectedMonth, minimumDate, maximumDate, onClickDay, getDisplayDayName, getDisplayDayNumber, rootClassName, rootStyles, theme, }: IDateDaysGridProps) => React.JSX.Element;
+//# sourceMappingURL=Date-Days-Grid.d.ts.map

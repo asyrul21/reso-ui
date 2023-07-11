@@ -12,3 +12,4 @@ export interface IModalContainerProps extends IComponent, IThemeProps, IPaddingP
 export interface IModalChildrenProps extends Omit<IModalContainerProps, "children"> {
 }
 export declare const Modal: ({ children, isOpen, layer, rootClassName, rootStyles, theme, ...paddingProps }: IModalContainerProps) => React.JSX.Element;
+//# sourceMappingURL=Modal-Container.d.ts.map

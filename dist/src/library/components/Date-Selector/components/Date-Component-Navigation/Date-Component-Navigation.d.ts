@@ -20,3 +20,4 @@ export interface IDateComponentNavigation extends IComponent, IThemeProps {
 }
 export declare const ICON_SIZE = 24;
 export declare const DateComponentNavigation: ({ value, disablePrevious, disableNext, onClickPrevious, onClickNext, customPreviousComponent, customNextComponent, textClassName, textStyles, previousBtnClassName, previousBtnStyles, nextBtnClassName, nextBtnStyles, rootClassName, rootStyles, theme, }: IDateComponentNavigation) => React.JSX.Element;
+//# sourceMappingURL=Date-Component-Navigation.d.ts.map

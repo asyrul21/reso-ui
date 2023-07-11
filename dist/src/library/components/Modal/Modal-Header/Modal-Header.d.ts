@@ -8,3 +8,4 @@ export interface IModalHeaderProps extends IComponent, IThemeProps {
     onClose: () => void;
 }
 export declare const ModalHeader: ({ onClose, title, rootClassName, rootStyles, theme, }: IModalHeaderProps) => React.JSX.Element;
+//# sourceMappingURL=Modal-Header.d.ts.map

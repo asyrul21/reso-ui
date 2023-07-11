@@ -15,3 +15,4 @@ export interface IButtonProps extends IComponent, IThemeProps, IMarginProps {
     inline?: boolean;
 }
 export declare const Button: ({ id, type, role, text, onClick, disabled, inheritWidth, inline, rootClassName, rootStyles, theme, ...spacingsProps }: IButtonProps) => React.JSX.Element;
+//# sourceMappingURL=Button.d.ts.map

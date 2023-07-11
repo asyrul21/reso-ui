@@ -12,3 +12,4 @@ export interface IIconProps extends IComponent, IThemeProps, IMarginProps {
     inline?: boolean;
 }
 export declare const Icon: ({ SvgIcon, width, height, inline, fill, stroke, rootClassName, rootStyles, theme, ...spacingsProps }: IIconProps) => React.JSX.Element;
+//# sourceMappingURL=Icon.d.ts.map

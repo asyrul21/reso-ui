@@ -21,3 +21,4 @@ export interface IPaddingProps {
 }
 export type ISpacingsProps = IMarginProps & IPaddingProps;
 export default ISpacingsProps;
+//# sourceMappingURL=ISpacingsProps.d.ts.map

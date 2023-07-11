@@ -7,3 +7,4 @@ export interface IBannerWrapperProps extends IComponent {
     hasMaxHeight?: boolean;
 }
 export declare const BannerWrapper: ({ children, positionAbsolute, hasMaxHeight, rootClassName, rootStyles, }: IBannerWrapperProps) => React.JSX.Element;
+//# sourceMappingURL=Banner-Wrapper.d.ts.map

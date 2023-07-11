@@ -4,3 +4,4 @@ export interface IThemeProps {
 }
 export declare const DefaultTheme: Theme;
 export default IThemeProps;
+//# sourceMappingURL=Theme.d.ts.map

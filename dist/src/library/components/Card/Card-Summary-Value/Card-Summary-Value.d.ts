@@ -5,3 +5,4 @@ export interface ICardSummaryValueProps extends IComponent {
     value: string | number;
 }
 export declare const CardSummaryValue: ({ value, rootClassName, rootStyles, }: ICardSummaryValueProps) => React.JSX.Element;
+//# sourceMappingURL=Card-Summary-Value.d.ts.map

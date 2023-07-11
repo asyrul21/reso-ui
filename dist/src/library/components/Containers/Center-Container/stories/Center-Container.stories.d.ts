@@ -5,3 +5,4 @@ declare const _default: ComponentMeta<({ children, rootClassName, rootStyles, }:
 export default _default;
 export declare const DefaultWithBorder: any;
 export declare const WithCustomClassname: any;
+//# sourceMappingURL=Center-Container.stories.d.ts.map

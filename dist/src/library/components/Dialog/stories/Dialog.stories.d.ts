@@ -6,3 +6,4 @@ export declare const DefaultYesNo: () => React.JSX.Element;
 export declare const DefaultYesNoWithCustomStyles: () => React.JSX.Element;
 export declare const OKDialog: () => React.JSX.Element;
 export declare const OKDialogWithCustomText: () => React.JSX.Element;
+//# sourceMappingURL=Dialog.stories.d.ts.map

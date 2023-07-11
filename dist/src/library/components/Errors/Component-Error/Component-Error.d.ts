@@ -11,3 +11,4 @@ export interface IComponentErrorProps extends IComponent, IThemeProps {
     textStyles?: React.CSSProperties;
 }
 export declare const ComponentError: ({ text, rootClassName, rootStyles, iconClassName, iconStyles, textClassName, textStyles, theme, }: IComponentErrorProps) => React.JSX.Element;
+//# sourceMappingURL=Component-Error.d.ts.map

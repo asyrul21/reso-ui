@@ -17,3 +17,4 @@ export interface IFlexProps extends IComponent, ISpacingsProps {
     borderColor?: string;
 }
 export declare const Flex: ({ direction, justify, align, grow, shrink, basis, wrap, fullWidth, widthFitContent, children, rootClassName, borderColor, rootStyles, ...spacingsProps }: IFlexProps) => React.JSX.Element;
+//# sourceMappingURL=Flex.d.ts.map

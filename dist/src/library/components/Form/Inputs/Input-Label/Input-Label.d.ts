@@ -19,3 +19,4 @@ export interface IInputLabelProps extends IComponent, IThemeProps, IMarginProps 
 }
 export declare const InputLabel: ({ htmlFor, label, description, descriptionSelectedKey, required, labelClassName, labelStyles, rootClassName, rootStyles, theme, ...spacingsProps }: IInputLabelProps) => React.JSX.Element;
 export {};
+//# sourceMappingURL=Input-Label.d.ts.map

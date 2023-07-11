@@ -7,3 +7,4 @@ export declare const Default: any;
 export declare const withCustomStyles: any;
 export declare const withCustomLinkStyles: any;
 export declare const withCustomHoverBehaviour: any;
+//# sourceMappingURL=External-Links.stories.d.ts.map

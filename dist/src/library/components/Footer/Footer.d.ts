@@ -9,3 +9,4 @@ export interface IFooterProps extends IComponent, IThemeProps, IPaddingProps {
     positionFixed?: boolean;
 }
 export declare const Footer: ({ children, positionFixed, rootClassName, rootStyles, theme, ...spacingsProps }: IFooterProps) => React.JSX.Element;
+//# sourceMappingURL=Footer.d.ts.map

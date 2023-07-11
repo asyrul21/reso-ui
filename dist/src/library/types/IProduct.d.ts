@@ -3,3 +3,4 @@ interface IProduct {
     countInStock: number;
 }
 export default IProduct;
+//# sourceMappingURL=IProduct.d.ts.map

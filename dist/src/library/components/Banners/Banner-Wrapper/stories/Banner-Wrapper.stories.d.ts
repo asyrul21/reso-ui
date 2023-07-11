@@ -6,3 +6,4 @@ export declare const Default: any;
 export declare const WithCustomStyle: any;
 export declare const WithPositionAbsolute: any;
 export declare const WithPositionAbsoluteAndHasMaxHeight: any;
+//# sourceMappingURL=Banner-Wrapper.stories.d.ts.map

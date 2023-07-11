@@ -4,3 +4,4 @@ export declare const objectHasValue: (val: any) => boolean;
 export declare const numberHasValue: (val: any) => boolean;
 export declare const methodHasValue: (method: any) => boolean;
 export declare const booleanHasValue: (val: boolean) => boolean;
+//# sourceMappingURL=validations.d.ts.map

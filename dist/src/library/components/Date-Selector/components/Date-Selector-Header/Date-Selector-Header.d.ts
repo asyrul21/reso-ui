@@ -10,3 +10,4 @@ export interface IDateSelectorHeaderProps extends IComponent, IThemeProps {
     disabled?: boolean;
 }
 export declare const DateSelectorHeader: ({ text, opened, onClick, disabled, rootClassName, rootStyles, theme, }: IDateSelectorHeaderProps) => React.JSX.Element;
+//# sourceMappingURL=Date-Selector-Header.d.ts.map

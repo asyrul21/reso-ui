@@ -23,3 +23,4 @@ export interface IMultiImageViewerProps extends IComponent, IMarginProps, ITheme
     miniImageSelectedStyles?: React.CSSProperties;
 }
 export declare const MultiImageViewer: ({ imageObjects, defaultImagePath, clickable, rootClassName, rootStyles, getMiniImagePath, onClickImage, indexOverride, setIndexOverride, initialSelectedIndex, mainImageClassName, mainImageStyles, miniImageClassname, miniImageStyles, miniImageSelectedClassName, miniImageSelectedStyles, theme, ...marginProps }: IMultiImageViewerProps) => React.JSX.Element;
+//# sourceMappingURL=Multi-Image-Viewer.d.ts.map

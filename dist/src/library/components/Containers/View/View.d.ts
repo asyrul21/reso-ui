@@ -8,3 +8,4 @@ export interface IViewProps extends IComponent, IPaddingProps, IThemeProps {
     children: React.ReactNode;
 }
 export declare const View: ({ rootClassName, children, rootStyles, theme, ...paddingProps }: IViewProps) => React.JSX.Element;
+//# sourceMappingURL=View.d.ts.map

@@ -8,3 +8,4 @@ export declare const CustomContainerClass: any;
 export declare const WithoutFallbacks: any;
 export declare const UsingFallbacks: any;
 export declare const ClickableAndOnClick: any;
+//# sourceMappingURL=Image.stories.d.ts.map

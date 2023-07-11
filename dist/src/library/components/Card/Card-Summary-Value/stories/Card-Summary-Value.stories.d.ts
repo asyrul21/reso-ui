@@ -5,3 +5,4 @@ export default _default;
 export declare const DefaultWithBorder: any;
 export declare const WithCustomStyle: any;
 export declare const DefaultWithTextOverflow: () => React.JSX.Element;
+//# sourceMappingURL=Card-Summary-Value.stories.d.ts.map

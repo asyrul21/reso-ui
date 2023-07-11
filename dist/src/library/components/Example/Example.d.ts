@@ -7,3 +7,4 @@ export interface IExampleComponent extends IComponent, IThemeProps {
     name: string;
 }
 export declare const Example: ({ theme, name, rootClassName, rootStyles, }: IExampleComponent) => React.JSX.Element;
+//# sourceMappingURL=Example.d.ts.map

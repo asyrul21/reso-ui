@@ -11,3 +11,4 @@ export interface IFullScreenErrorProps extends IComponent, IThemeProps {
     iconStyles?: React.CSSProperties;
 }
 export declare const FullScreenError: ({ text, rootClassName, rootStyles, textClassName, textStyles, iconClassName, iconStyles, theme, }: IFullScreenErrorProps) => React.JSX.Element;
+//# sourceMappingURL=Full-Screen-Error.d.ts.map

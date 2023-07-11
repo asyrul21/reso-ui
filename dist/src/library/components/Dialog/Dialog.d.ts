@@ -25,3 +25,4 @@ export interface IDialog extends IModalChildrenProps, IComponent, IThemeProps {
     okButtonStyles?: React.CSSProperties;
 }
 export declare const Dialog: ({ isOpen, type, layer, title, header, description, yesText, noText, okText, onClose, onClickYes, onClickNo, onClickOk, rootClassName, rootStyles, yesButtonClassName, yesButtonStyles, noButtonClassName, noButtonStyles, okButtonClassName, okButtonStyles, theme, }: IDialog) => React.JSX.Element;
+//# sourceMappingURL=Dialog.d.ts.map

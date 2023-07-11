@@ -38,3 +38,4 @@ export type MonthsNamesMap = {
 export type YearNamesMap = {
     [id: number]: string;
 };
+//# sourceMappingURL=index.d.ts.map

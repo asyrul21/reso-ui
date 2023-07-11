@@ -10,3 +10,4 @@ export declare const Disabled: any;
 export declare const WithCustomStyle: any;
 export declare const WithCustomClass: any;
 export declare const UseParentComponentWidth: () => React.JSX.Element;
+//# sourceMappingURL=Button.stories.d.ts.map

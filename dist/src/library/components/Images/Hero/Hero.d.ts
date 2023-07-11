@@ -10,3 +10,4 @@ export interface IHeroProps extends IComponent, IMarginProps {
     imgStyles?: React.CSSProperties;
 }
 export declare const Hero: ({ src, alt, fullWidth, rootClassName, imgClassName, rootStyles, imgStyles, ...spacingsProps }: IHeroProps) => React.JSX.Element;
+//# sourceMappingURL=Hero.d.ts.map

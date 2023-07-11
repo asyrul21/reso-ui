@@ -8,3 +8,4 @@ export interface ICardContainerProps extends IComponent, IThemeProps, ISpacingsP
     children: React.ReactNode;
 }
 export declare const Card: ({ children, rootClassName, rootStyles, theme, ...spacingsProps }: ICardContainerProps) => React.JSX.Element;
+//# sourceMappingURL=Card-Container.d.ts.map

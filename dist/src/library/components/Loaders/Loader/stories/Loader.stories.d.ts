@@ -6,3 +6,4 @@ export default _default;
 export declare const Default: any;
 export declare const CustomContainerClass: any;
 export declare const CustomIconContainerClass: any;
+//# sourceMappingURL=Loader.stories.d.ts.map

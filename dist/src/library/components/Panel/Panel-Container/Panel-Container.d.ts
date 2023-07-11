@@ -7,3 +7,4 @@ export interface IPanelContainerProps extends IComponent, IThemeProps {
     children: React.ReactNode;
 }
 export declare const Panel: ({ children, rootClassName, rootStyles, theme, }: IPanelContainerProps) => React.JSX.Element;
+//# sourceMappingURL=Panel-Container.d.ts.map

@@ -7,3 +7,4 @@ export interface IPanelTitleProps extends IComponent, IThemeProps {
     text: string;
 }
 export declare const PanelTitle: ({ text, rootClassName, rootStyles, theme, }: IPanelTitleProps) => React.JSX.Element;
+//# sourceMappingURL=Panel-Title.d.ts.map

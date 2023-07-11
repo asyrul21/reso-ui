@@ -22,3 +22,4 @@ import DeleteIcon from "./svg/delete.svg";
 import OrdersIcon from "./svg/orders.svg";
 import CartIcon from "./svg/cart.svg";
 export { HomeIcon, AboutIcon, ChevronSingleLeft, ChevronSingleRight, ChevronDoubleLeft, ChevronDoubleRight, DashboardIcon, LogoutIcon, ProductsIcon, ProfileIcon, SettingsIcon, UploadIcon, UsersIcon, LoaderIcon, StarFullIcon, StarEmptyIcon, StarHalf, DropdownDown, DropdownUp, EditIcon, DeleteIcon, OrdersIcon, CartIcon, };
+//# sourceMappingURL=index.d.ts.map

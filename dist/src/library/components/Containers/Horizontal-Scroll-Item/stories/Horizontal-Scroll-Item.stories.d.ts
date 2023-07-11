@@ -4,3 +4,4 @@ declare const _default: ComponentMeta<({ children, rootClassName, rootStyles, ..
 export default _default;
 export declare const DefaultWithBorder: any;
 export declare const withPaddingProps: any;
+//# sourceMappingURL=Horizontal-Scroll-Item.stories.d.ts.map

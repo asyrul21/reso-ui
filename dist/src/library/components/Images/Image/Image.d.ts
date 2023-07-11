@@ -17,3 +17,4 @@ export interface IImageProps extends IComponent, IMarginProps {
     fallbacks?: string[];
 }
 export declare const Image: ({ onClick, clickable, loaderSize, src, alt, imgClassName, objectFit, rootClassName, rootStyles, fallbacks, imgStyles, inheritWidth, ...spacingsProps }: IImageProps) => React.JSX.Element;
+//# sourceMappingURL=Image.d.ts.map

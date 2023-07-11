@@ -6,3 +6,4 @@ export interface IBannerProps extends IComponent {
     text: string;
 }
 export declare const Banner: ({ type, text, rootClassName, rootStyles, }: IBannerProps) => React.JSX.Element;
+//# sourceMappingURL=Banner.d.ts.map

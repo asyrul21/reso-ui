@@ -21,3 +21,4 @@ export interface IDateSelectorProps extends IComponent, IThemeProps, IMarginProp
 }
 export declare const DateSelector: ({ value, min, max, onChange, disabled, rootClassName, rootStyles, gridContainerClassName, gridContainerStyles, format, getDisplayDayNumber, getDisplayDayName, getDisplayMonth, getDisplayYear, theme, ...spacingsProps }: IDateSelectorProps) => React.JSX.Element;
 export default DateSelector;
+//# sourceMappingURL=Date-Selector.d.ts.map

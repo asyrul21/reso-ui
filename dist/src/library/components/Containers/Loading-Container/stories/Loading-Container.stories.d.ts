@@ -7,3 +7,4 @@ export declare const LayeringAnErronousComponent: any;
 export declare const LayeringALoadingComponentWithMinHeight: any;
 export declare const ConditionalLoadingComponent: any;
 export declare const ConditionalErronousComponent: any;
+//# sourceMappingURL=Loading-Container.stories.d.ts.map

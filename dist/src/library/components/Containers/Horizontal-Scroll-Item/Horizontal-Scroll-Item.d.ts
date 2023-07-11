@@ -6,3 +6,4 @@ export interface IHSIProps extends IComponent, IPaddingProps, IMarginProps {
     children: React.ReactNode;
 }
 export declare const HorizontalScrollItem: ({ children, rootClassName, rootStyles, ...spacingsProps }: IHSIProps) => React.JSX.Element;
+//# sourceMappingURL=Horizontal-Scroll-Item.d.ts.map

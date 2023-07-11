@@ -9,3 +9,4 @@ export interface IQuantityCounter extends IComponent, IThemeProps {
 }
 export declare const QuantityCounter: ({ value, onChange, rootClassName, rootStyles, theme, }: IQuantityCounter) => React.JSX.Element;
 export default QuantityCounter;
+//# sourceMappingURL=Quantity-Counter.d.ts.map

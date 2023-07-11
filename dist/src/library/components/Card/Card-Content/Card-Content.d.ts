@@ -7,3 +7,4 @@ export interface ICardContentProps extends IComponent, ISpacingsProps {
     wrap?: boolean;
 }
 export declare const CardContent: ({ children, wrap, rootClassName, rootStyles, ...spacingProps }: ICardContentProps) => React.JSX.Element;
+//# sourceMappingURL=Card-Content.d.ts.map

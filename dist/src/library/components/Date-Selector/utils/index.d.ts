@@ -6,3 +6,4 @@ declare const getMonthDisplayNameDefault: (id: DateMonthIndex) => string;
 declare const getRemappedDayIndex: (id: DateDayNameIndex) => DateDayNameIndex;
 declare const destructureDateComponents: (date: Date) => DateComponent;
 export { getMonthDisplayNameDefault, getDayDisplayNamesDefault, getRemappedDayIndex, destructureDateComponents, };
+//# sourceMappingURL=index.d.ts.map

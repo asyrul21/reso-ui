@@ -11,3 +11,4 @@ export interface IExternalLinksProps extends IComponent, IThemeProps, IMarginPro
     linkStyles?: React.CSSProperties;
 }
 export declare const ExternalLinks: ({ links, rootClassName, rootStyles, linkClassName, linkStyles, theme, ...spacingsProps }: IExternalLinksProps) => React.JSX.Element;
+//# sourceMappingURL=External-Links.d.ts.map

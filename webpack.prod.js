@@ -4,10 +4,28 @@ const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "production",
-  entry: path.resolve(__dirname, "src/library/index.ts"),
+  entry: {
+    components: path.resolve(__dirname, "src/library/components/index.ts"),
+    formContainers: path.resolve(
+      __dirname,
+      "src/library/components/Form/Containers/index.ts"
+    ),
+    formInputs: path.resolve(
+      __dirname,
+      "src/library/components/Form/Inputs/index.ts"
+    ),
+    //TODO: formModular: path.resolve(
+    //   __dirname,
+    //   "src/library/components/Form/Modular/index.ts"
+    // ),
+    icons: path.resolve(__dirname, "src/library/icons/index.ts"),
+    interfaces: path.resolve(__dirname, "src/library/types/index.ts"),
+    hooks: path.resolve(__dirname, "src/library/hooks/index.ts"),
+  },
   output: {
+    // asyncChunks: true,
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
+    filename: "[name].bundle.js",
     globalObject: "this",
     library: {
       name: "reso-ui",

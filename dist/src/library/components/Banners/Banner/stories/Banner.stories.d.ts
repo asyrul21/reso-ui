@@ -10,3 +10,4 @@ export declare const DefaultError: any;
 export declare const WithCustomStyle: any;
 export declare const WithCustomClass: any;
 export declare const OverflowBehaviour: any;
+//# sourceMappingURL=Banner.stories.d.ts.map

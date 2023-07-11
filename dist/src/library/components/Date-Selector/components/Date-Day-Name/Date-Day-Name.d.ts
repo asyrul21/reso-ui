@@ -8,3 +8,4 @@ export interface IDateDayNameProps extends IComponent, IThemeProps {
     children: React.ReactNode;
 }
 export declare const DateDayName: ({ children, rootClassName, rootStyles, theme, }: IDateDayNameProps) => React.JSX.Element;
+//# sourceMappingURL=Date-Day-Name.d.ts.map

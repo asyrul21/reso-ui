@@ -6,3 +6,4 @@ export interface ICenterContainerProps extends IComponent {
 }
 export declare const CenterContainer: ({ children, rootClassName, rootStyles, }: ICenterContainerProps) => React.JSX.Element;
 export default CenterContainer;
+//# sourceMappingURL=Center-Container.d.ts.map

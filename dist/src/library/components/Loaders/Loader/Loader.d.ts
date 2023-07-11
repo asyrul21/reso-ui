@@ -12,3 +12,4 @@ export interface ILoaderProps extends IComponent, IThemeProps {
     iconContainerStyles?: React.CSSProperties;
 }
 export declare const Loader: ({ type, text, size, rootClassName, iconContainerClassName, rootStyles, iconContainerStyles, theme, }: ILoaderProps) => React.JSX.Element;
+//# sourceMappingURL=Loader.d.ts.map

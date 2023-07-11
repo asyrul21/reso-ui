@@ -7,3 +7,4 @@ export declare const WithCustomDimensions: any;
 export declare const WithCustomStyle: any;
 export declare const PassingSvgIcon: () => React.JSX.Element;
 export declare const InlineIcon: () => React.JSX.Element;
+//# sourceMappingURL=Icon.stories.d.ts.map

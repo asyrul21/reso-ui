@@ -7,12 +7,6 @@ local
 local/
 App.tsx
 
-# production
-/build
-/src/build
-/src/dist
-dist
-
 # storybook
 storybook-static
 

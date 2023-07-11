@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/asyrul21/reso-ui/compare/v1.1.3...v1.1.4) (2023-07-11)
+
+
+### Bug Fixes
+
+* add peerDependencies and files to package.json ([e61295c](https://github.com/asyrul21/reso-ui/commit/e61295c961a3338d789833575755448535314c22))
+
 ## [1.1.3](https://github.com/asyrul21/reso-ui/compare/v1.1.2...v1.1.3) (2023-07-11)
 
 

@@ -21,6 +21,6 @@
       "@styles/*": ["library/styles/*"]
     }
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "dist"],
   "include": ["./jest-dom-setup.ts", "./**/*.ts", "./**/*.tsx", "./custom.d.ts"]
 }

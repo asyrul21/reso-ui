@@ -14,4 +14,20 @@ module.exports = merge(common, {
       type: "umd",
     },
   },
+  externals: {
+    react: {
+      root: "React",
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "react",
+      umd: "react",
+    },
+    "react-dom": {
+      root: "ReactDOM",
+      commonjs2: "react-dom",
+      commonjs: "react-dom",
+      amd: "react-dom",
+      umd: "react-dom",
+    },
+  },
 });

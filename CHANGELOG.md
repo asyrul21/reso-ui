@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/asyrul21/reso-ui/compare/v1.1.4...v1.2.0) (2023-07-11)
+
+
+### Features
+
+* code restructure and webpack multiple entries and outputs implementation ([0745ded](https://github.com/asyrul21/reso-ui/commit/0745ded4383d77bcf8353114544bb19bdb31b486))
+
 ## [1.1.4](https://github.com/asyrul21/reso-ui/compare/v1.1.3...v1.1.4) (2023-07-11)
 
 

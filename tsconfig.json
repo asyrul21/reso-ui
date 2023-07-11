@@ -3,6 +3,7 @@
     "outDir": "./dist/",
     "declaration": true,
     "declarationMap": true,
+    "declarationDir": "./dist/types",
     "composite": true,
     "noImplicitAny": false,
     "module": "es6",

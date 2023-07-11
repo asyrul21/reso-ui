@@ -2,7 +2,7 @@
   "name": "reso-ui",
   "version": "1.2.1",
   "description": "Reusable React components in Typescript",
-  "types": "dist/src/index.d.ts",
+  "types": "dist/types",
   "exports": {
     "./components": "./dist/components.bundle.js",
     "./forms/containers": "./dist/formContainers.bundle.js",

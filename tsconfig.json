@@ -1,10 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "declaration": true,
-    "declarationMap": true,
-    "declarationDir": "./dist/types",
-    "composite": true,
+    "declaration": false,
+    "declarationMap": false,
     "noImplicitAny": false,
     "module": "es6",
     "target": "es6",

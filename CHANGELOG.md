@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/asyrul21/reso-ui/compare/v1.3.0...v1.4.0) (2023-09-01)
+
+
+### Features
+
+* update library exports structure ([a821a74](https://github.com/asyrul21/reso-ui/commit/a821a746e270eb654734db3363c5d23f960e5416))
+
 # [1.3.0](https://github.com/asyrul21/reso-ui/compare/v1.2.2...v1.3.0) (2023-09-01)
 
 

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Modal } from "@components/Modal";
+import { ModalContainer } from "@components/Modal/Modal-Container";
 import { ModalBody } from "@components/Modal/Modal-Body";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Modal/Modal Body",
+  title: "Components/Modal/Modal Body",
   component: ModalBody,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -40,12 +40,12 @@ export const Default = () => {
   return (
     <>
       {showModal && (
-        <Modal isOpen={showModal} pa={5}>
+        <ModalContainer isOpen={showModal} pa={5}>
           <ModalBody pa={5}>
             <button onClick={() => setShowModal(false)}>Close</button>
             <SampleChildComponent />
           </ModalBody>
-        </Modal>
+        </ModalContainer>
       )}
       <button onClick={() => setShowModal(true)}>Show Modal</button>
     </>
@@ -57,7 +57,7 @@ export const WithContainerStyles = () => {
   return (
     <>
       {showModal && (
-        <Modal isOpen={showModal} pa={5}>
+        <ModalContainer isOpen={showModal} pa={5}>
           <ModalBody
             rootStyles={{
               border: "2px solid red",
@@ -67,7 +67,7 @@ export const WithContainerStyles = () => {
             <button onClick={() => setShowModal(false)}>Close</button>
             <SampleChildComponent />
           </ModalBody>
-        </Modal>
+        </ModalContainer>
       )}
       <button onClick={() => setShowModal(true)}>Show Modal</button>
     </>

@@ -1,17 +1,19 @@
 /* istanbul ignore file */
 
-// components
-export * from "./Containers";
-export * from "./Example";
+// components // please follow order of folders
 export * from "./Banners";
-// export * from "@components/Buttons";
-// export * from "@components/Card";
-// export * from "@components/Modal";
-// export * from "@components/Panel";
-// export * from "@components/Images";
-// export * from "@components/Loaders";
-// export * from "@components/Quantity-Counter";
-// export * from "@components/Icon";
-// export * from "@components/Footer";
-// export * from "@components/Dialog";
-// export * from "@components/Errors";
+export * from "./Buttons";
+export * from "./Card";
+export * from "./Containers";
+export * from "./Containers";
+export * from "./Dialog";
+export * from "./Errors";
+export * from "./Example";
+export * from "./External-Links";
+export * from "./Footer";
+export * from "./Icon";
+export * from "./Images";
+export * from "./Loaders";
+export * from "./Modal";
+export * from "./Panel";
+export * from "./Quantity-Counter";

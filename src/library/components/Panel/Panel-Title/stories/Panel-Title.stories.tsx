@@ -2,14 +2,14 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Panel } from "@components/Panel";
+import { PanelContainer } from "@components/Panel/Panel-Container";
 import { PanelTitle } from "@components/Panel/Panel-Title";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Panel/Panel Title",
+  title: "Components/Panel/Panel Title",
   component: PanelTitle,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -27,9 +27,9 @@ export default {
 } as ComponentMeta<typeof PanelTitle>;
 
 const ComponentTemplate: ComponentStory<typeof PanelTitle> = (args) => (
-  <Panel>
+  <PanelContainer>
     <PanelTitle {...args} />
-  </Panel>
+  </PanelContainer>
 );
 
 export const Default = ComponentTemplate.bind({});

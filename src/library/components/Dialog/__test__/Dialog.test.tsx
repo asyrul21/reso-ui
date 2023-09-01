@@ -10,7 +10,7 @@ import * as ButtonModule from "@components/Buttons/Button/Button";
 
 describe("Dialog Modal Component Unit Tests", () => {
   beforeEach(() => {
-    jest.spyOn(ModalModule, "Modal").mockImplementation((props) => {
+    jest.spyOn(ModalModule, "ModalContainer").mockImplementation((props) => {
       const { rootClassName, rootStyles, children } = props;
 
       return (

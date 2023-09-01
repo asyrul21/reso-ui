@@ -1,0 +1,35 @@
+.label_container {
+  // border: 1px solid blue;
+  width: 256px;
+}
+
+.label_top {
+  // border: 2px solid;
+}
+
+.label_top_marginBottom {
+  margin-bottom: $margin-xxsmall;
+}
+
+.label_label {
+  font-weight: 600;
+  font-size: $font-size-default;
+}
+
+.label_required {
+  font-weight: 500;
+  font-size: $font-size-1;
+  font-family: $font-family;
+  color: $error-red;
+}
+
+.label_description {
+  font-weight: 400;
+  font-size: $font-size-1;
+  font-family: $font-family;
+  color: $fc-dark;
+}
+
+.label_label_margin_right {
+  margin-right: $margin-xxxsmall;
+}

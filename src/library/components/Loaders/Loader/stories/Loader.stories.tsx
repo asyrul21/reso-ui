@@ -9,7 +9,7 @@ import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Loaders/Generic Loader",
+  title: "Components/Loaders/Loader",
   component: Loader,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

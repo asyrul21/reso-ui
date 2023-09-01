@@ -24,7 +24,7 @@ export interface ICardContainerProps
   children: React.ReactNode;
 }
 
-export const Card = ({
+export const CardContainer = ({
   children,
   rootClassName,
   rootStyles = {},

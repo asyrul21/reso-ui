@@ -13,7 +13,7 @@ const SampleChildComponent = () => {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Containers/View Container",
+  title: "Components/Containers/View",
   component: View,
   parameters: {
     docs: {

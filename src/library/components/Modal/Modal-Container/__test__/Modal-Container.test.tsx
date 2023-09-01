@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Modal } from "@components/Modal";
+import { ModalContainer } from "@components/Modal/Modal-Container";
 
 const SampleComponent = () => {
   return (
@@ -13,9 +13,9 @@ const SampleComponent = () => {
 describe("Modal Container Unit Tests", () => {
   test("should render itself and children when isOpen is true without error", () => {
     const { debug } = render(
-      <Modal isOpen={true}>
+      <ModalContainer isOpen={true}>
         <SampleComponent />
-      </Modal>
+      </ModalContainer>
     );
 
     // debug();
@@ -28,9 +28,9 @@ describe("Modal Container Unit Tests", () => {
 
   test("should apply correct container rootClassName when provided as prop", () => {
     const { debug } = render(
-      <Modal isOpen={true} rootClassName="sample_class">
+      <ModalContainer isOpen={true} rootClassName="sample_class">
         <SampleComponent />
-      </Modal>
+      </ModalContainer>
     );
 
     // debug();
@@ -40,9 +40,9 @@ describe("Modal Container Unit Tests", () => {
 
   test("should have default light theme when theme not provided as prop", () => {
     const { debug } = render(
-      <Modal isOpen={true}>
+      <ModalContainer isOpen={true}>
         <SampleComponent />
-      </Modal>
+      </ModalContainer>
     );
 
     // debug();
@@ -52,9 +52,9 @@ describe("Modal Container Unit Tests", () => {
 
   test("should have dark theme when provided as prop", () => {
     const { debug } = render(
-      <Modal isOpen={true} theme="dark">
+      <ModalContainer isOpen={true} theme="dark">
         <SampleComponent />
-      </Modal>
+      </ModalContainer>
     );
 
     // debug();
@@ -64,9 +64,9 @@ describe("Modal Container Unit Tests", () => {
 
   test("should have correct z-index layer style on backdrop when provided as prop", () => {
     const { debug } = render(
-      <Modal isOpen={true} layer={2}>
+      <ModalContainer isOpen={true} layer={2}>
         <SampleComponent />
-      </Modal>
+      </ModalContainer>
     );
 
     // debug();
@@ -76,9 +76,9 @@ describe("Modal Container Unit Tests", () => {
 
   test("should have correct z-index layer style on modal-container when provided as prop", () => {
     const { debug } = render(
-      <Modal isOpen={true} layer={2}>
+      <ModalContainer isOpen={true} layer={2}>
         <SampleComponent />
-      </Modal>
+      </ModalContainer>
     );
 
     // debug();

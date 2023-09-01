@@ -85,8 +85,9 @@ module.exports = {
     "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
     // must specify path aliases here
     "@components/(.*)": "<rootDir>/src/library/components/$1",
+    "@forms/(.*)": "<rootDir>/src/library/forms/$1",
     "@icons": "<rootDir>/src/library/icons/index.ts",
-    "@interfaces/(.*)": "<rootDir>/src/library/types/$1",
+    "@interfaces/(.*)": "<rootDir>/src/library/interfaces/$1",
     "@utils/(.*)": "<rootDir>/src/library/utils/$1",
     "@hooks/(.*)": "<rootDir>/src/library/hooks/$1",
     "@styles/(.*)": "<rootDir>/src/library/styles/$1",

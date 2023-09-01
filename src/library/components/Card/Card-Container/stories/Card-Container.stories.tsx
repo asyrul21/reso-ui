@@ -2,14 +2,14 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Card } from "@components/Card";
+import { CardContainer } from "@components/Card";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Card/Container",
-  component: Card,
+  title: "Components/Card/Card Container",
+  component: CardContainer,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
@@ -25,12 +25,12 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Card>;
+} as ComponentMeta<typeof CardContainer>;
 
-const ComponentTemplate: ComponentStory<typeof Card> = (args) => (
-  <Card pa={5} {...args}>
+const ComponentTemplate: ComponentStory<typeof CardContainer> = (args) => (
+  <CardContainer pa={5} {...args}>
     Sample
-  </Card>
+  </CardContainer>
 );
 
 export const Default = ComponentTemplate.bind({});

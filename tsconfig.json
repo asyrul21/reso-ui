@@ -15,8 +15,9 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["library/components/*"],
+      "@forms/*": ["library/forms/*"],
       "@icons": ["library/icons"],
-      "@interfaces/*": ["library/types/*"],
+      "@interfaces/*": ["library/interfaces/*"],
       "@utils/*": ["library/utils/*"],
       "@hooks/*": ["library/hooks/*"],
       "@styles/*": ["library/styles/*"]

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Modal } from "@components/Modal";
+import { ModalContainer } from "@components/Modal/Modal-Container";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
@@ -17,8 +17,8 @@ const SampleChildComponent = () => {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Modal/Container",
-  component: Modal,
+  title: "Components/Modal/Modal Container",
+  component: ModalContainer,
   parameters: {
     docs: {
       description: {
@@ -34,17 +34,17 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Modal>;
+} as ComponentMeta<typeof ModalContainer>;
 
 export const Default = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   return (
     <>
       {showModal && (
-        <Modal isOpen={showModal} pa={5}>
+        <ModalContainer isOpen={showModal} pa={5}>
           <button onClick={() => setShowModal(false)}>Close</button>
           <SampleChildComponent />
-        </Modal>
+        </ModalContainer>
       )}
       <button onClick={() => setShowModal(true)}>Show Modal</button>
     </>
@@ -56,7 +56,7 @@ export const WithContainerStyles = () => {
   return (
     <>
       {showModal && (
-        <Modal
+        <ModalContainer
           isOpen={showModal}
           rootStyles={{
             border: "2px solid green",
@@ -65,7 +65,7 @@ export const WithContainerStyles = () => {
         >
           <button onClick={() => setShowModal(false)}>Close</button>
           <SampleChildComponent />
-        </Modal>
+        </ModalContainer>
       )}
       <button onClick={() => setShowModal(true)}>Show Modal</button>
     </>

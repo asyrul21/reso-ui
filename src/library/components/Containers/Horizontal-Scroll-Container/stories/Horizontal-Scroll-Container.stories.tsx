@@ -9,7 +9,7 @@ import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Containers/Horizontal Scroll Container",
+  title: "Components/Containers/Horizontal Scroll Container",
   component: HorizontalScrollContainer,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

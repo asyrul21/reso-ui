@@ -30,7 +30,7 @@ export interface IModalContainerProps
 export interface IModalChildrenProps
   extends Omit<IModalContainerProps, "children"> {}
 
-export const Modal = ({
+export const ModalContainer = ({
   children,
   isOpen = false,
   layer = 1,

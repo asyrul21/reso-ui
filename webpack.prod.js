@@ -6,25 +6,14 @@ module.exports = merge(common, {
   mode: "production",
   entry: {
     components: path.resolve(__dirname, "src/library/components/index.ts"),
-    formContainers: path.resolve(
-      __dirname,
-      "src/library/components/Form/Containers/index.ts"
-    ),
-    formInputs: path.resolve(
-      __dirname,
-      "src/library/components/Form/Inputs/index.ts"
-    ),
-    //TODO: formModular: path.resolve(
-    //   __dirname,
-    //   "src/library/components/Form/Modular/index.ts"
-    // ),
-    icons: path.resolve(__dirname, "src/library/icons/index.ts"),
-    interfaces: path.resolve(__dirname, "src/library/types/index.ts"),
+    forms: path.resolve(__dirname, "src/library/forms/index.ts"),
     hooks: path.resolve(__dirname, "src/library/hooks/index.ts"),
+    icons: path.resolve(__dirname, "src/library/icons/index.ts"),
+    interfaces: path.resolve(__dirname, "src/library/interfaces/index.ts"),
   },
   output: {
     // asyncChunks: true,
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist/lib"),
     filename: "[name].bundle.js",
     globalObject: "this",
     library: {

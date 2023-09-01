@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Panel } from "@components/Panel";
+import { PanelContainer } from "@components/Panel/Panel-Container";
 
 const SampleComponent = () => {
   return (
@@ -13,9 +13,9 @@ const SampleComponent = () => {
 describe("Panel Container Component Unit Tests", () => {
   test("should render itself and children without error", () => {
     const { debug } = render(
-      <Panel>
+      <PanelContainer>
         <SampleComponent />
-      </Panel>
+      </PanelContainer>
     );
 
     // debug();
@@ -28,9 +28,9 @@ describe("Panel Container Component Unit Tests", () => {
 
   test("should apply custom className when provided as prop", () => {
     render(
-      <Panel rootClassName="sample_class">
+      <PanelContainer rootClassName="sample_class">
         <SampleComponent />
-      </Panel>
+      </PanelContainer>
     );
 
     const component = screen.queryByTestId("panel-container-root");
@@ -39,9 +39,9 @@ describe("Panel Container Component Unit Tests", () => {
 
   test("should apply custom styles when provided as prop", () => {
     render(
-      <Panel rootStyles={{ border: "2px solid red" }}>
+      <PanelContainer rootStyles={{ border: "2px solid red" }}>
         <SampleComponent />
-      </Panel>
+      </PanelContainer>
     );
 
     const component = screen.queryByTestId("panel-container-root");

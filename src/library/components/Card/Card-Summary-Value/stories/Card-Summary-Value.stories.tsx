@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Card } from "@components/Card";
+import { CardContainer } from "@components/Card";
 import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
 
 import dedent from "ts-dedent";
@@ -10,8 +10,8 @@ import { CardContent } from "@components/Card/Card-Content";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Card/Summary Value",
-  component: Card,
+  title: "Components/Card/Card Summary Value",
+  component: CardSummaryValue,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
@@ -28,9 +28,9 @@ export default {
 } as ComponentMeta<typeof CardSummaryValue>;
 
 const ComponentTemplate: ComponentStory<typeof CardSummaryValue> = (args) => (
-  <Card pa={5}>
+  <CardContainer pa={5}>
     <CardSummaryValue {...args} />
-  </Card>
+  </CardContainer>
 );
 
 export const DefaultWithBorder = ComponentTemplate.bind({});
@@ -52,9 +52,9 @@ WithCustomStyle.args = {
 };
 
 export const DefaultWithTextOverflow = () => (
-  <Card pa={5}>
+  <CardContainer pa={5}>
     <CardContent>
       <CardSummaryValue value={"£12,500,000,000,000"} />
     </CardContent>
-  </Card>
+  </CardContainer>
 );

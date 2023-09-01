@@ -19,7 +19,7 @@ export interface IPanelContainerProps extends IComponent, IThemeProps {
   children: React.ReactNode;
 }
 
-export const Panel = ({
+export const PanelContainer = ({
   children,
   rootClassName,
   rootStyles = {},

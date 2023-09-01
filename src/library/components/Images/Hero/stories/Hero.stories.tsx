@@ -8,7 +8,7 @@ import "./storyStyles.scss";
 import dedent from "ts-dedent";
 
 export default {
-  title: "Images/Hero",
+  title: "Components/Images/Hero",
   component: Hero,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Card } from "@components/Card";
+import { CardContainer } from "@components/Card";
 
 const SampleComponent = () => {
   return (
@@ -13,9 +13,9 @@ const SampleComponent = () => {
 describe("Card Container Component Unit Tests", () => {
   test("should render itself and children without error", () => {
     const { debug } = render(
-      <Card>
+      <CardContainer>
         <SampleComponent />
-      </Card>
+      </CardContainer>
     );
 
     // debug();
@@ -29,9 +29,9 @@ describe("Card Container Component Unit Tests", () => {
 
   test("should have custom rootClassName when passed as prop", () => {
     render(
-      <Card rootClassName="test_custom_className">
+      <CardContainer rootClassName="test_custom_className">
         <SampleComponent />
-      </Card>
+      </CardContainer>
     );
 
     const component = screen.queryByTestId("card-container-root");
@@ -40,9 +40,9 @@ describe("Card Container Component Unit Tests", () => {
 
   test("should have custom rootStyles when passed as prop", () => {
     render(
-      <Card rootStyles={{ border: "2px solid red" }}>
+      <CardContainer rootStyles={{ border: "2px solid red" }}>
         <SampleComponent />
-      </Card>
+      </CardContainer>
     );
 
     const component = screen.queryByTestId("card-container-root");
@@ -51,9 +51,9 @@ describe("Card Container Component Unit Tests", () => {
 
   test("should apply padding class when passed as prop", () => {
     render(
-      <Card pa={5}>
+      <CardContainer pa={5}>
         <SampleComponent />
-      </Card>
+      </CardContainer>
     );
 
     const component = screen.queryByTestId("card-container-root");

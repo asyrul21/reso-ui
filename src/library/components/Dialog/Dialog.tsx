@@ -3,7 +3,7 @@ import classnames from "classnames";
 import {
   IModalChildrenProps,
   IModalContainerProps,
-  Modal,
+  ModalContainer,
 } from "@components/Modal";
 
 // import base interface
@@ -136,7 +136,7 @@ export const Dialog = ({
   );
 
   return (
-    <Modal
+    <ModalContainer
       isOpen={isOpen}
       rootClassName={containerStyles}
       rootStyles={rootStyles}
@@ -208,6 +208,6 @@ export const Dialog = ({
           )}
         </div>
       </ModalBody>
-    </Modal>
+    </ModalContainer>
   );
 };

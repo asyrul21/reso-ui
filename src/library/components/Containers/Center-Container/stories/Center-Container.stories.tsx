@@ -10,7 +10,7 @@ const SampleChildComponent = () => {
 };
 
 export default {
-  title: "Containers/Center Container",
+  title: "Components/Containers/Center Container",
   component: CenterContainer,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

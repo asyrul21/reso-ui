@@ -13,7 +13,7 @@ import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Images/Multi Image Viewer",
+  title: "Components/Images/Multi Image Viewer",
   component: MultiImageViewer,
   parameters: {
     docs: {

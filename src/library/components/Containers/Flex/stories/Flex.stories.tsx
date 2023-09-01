@@ -13,7 +13,7 @@ const SampleChildComponent = () => {
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Containers/Flex",
+  title: "Components/Containers/Flex",
   component: Flex,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

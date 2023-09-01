@@ -1,0 +1,7 @@
+.label_container_theme_light {
+  @include use_theme(unset, "light");
+}
+
+.label_theme_light {
+  color: inherit;
+}

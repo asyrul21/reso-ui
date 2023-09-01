@@ -2,15 +2,15 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Card } from "@components/Card";
+import { CardContainer } from "@components/Card";
 import { CardContent } from "@components/Card/Card-Content";
 
 import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Card/Content",
-  component: Card,
+  title: "Components/Card/Card Content",
+  component: CardContent,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
@@ -26,15 +26,15 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Card>;
+} as ComponentMeta<typeof CardContent>;
 
-const ComponentTemplate: ComponentStory<typeof Card> = (args) => (
-  <Card pa={5}>
+const ComponentTemplate: ComponentStory<typeof CardContent> = (args) => (
+  <CardContainer pa={5}>
     <CardContent {...args}>
       content 1 this is a sample content for a card.
     </CardContent>
     <CardContent {...args}>content 2</CardContent>
-  </Card>
+  </CardContainer>
 );
 
 export const DefaultWithBorder = ComponentTemplate.bind({});
@@ -53,10 +53,10 @@ WithCustomStyle.args = {
 };
 
 export const DefaultWithTextOverflow = () => (
-  <Card pa={5}>
+  <CardContainer pa={5}>
     <CardContent rootStyles={{ border: "1px solid green" }} wrap={false}>
       is simply dummy text of the printing and typesetting industry. Lorem Ipsum
       has been the industry's
     </CardContent>
-  </Card>
+  </CardContainer>
 );

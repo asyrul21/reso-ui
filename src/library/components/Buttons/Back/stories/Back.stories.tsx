@@ -9,7 +9,7 @@ import dedent from "ts-dedent";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Buttons/Back",
+  title: "Components/Buttons/Back",
   component: Back,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {

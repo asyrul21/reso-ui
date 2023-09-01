@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/asyrul21/reso-ui/compare/v1.2.2...v1.3.0) (2023-09-01)
+
+
+### Features
+
+* reorganize folder structure and file names to mirror storybook structure ([a6f296f](https://github.com/asyrul21/reso-ui/commit/a6f296fa6747134f155fee5600d659a5a231aed8))
+
 ## [1.2.2](https://github.com/asyrul21/reso-ui/compare/v1.2.1...v1.2.2) (2023-07-11)
 
 

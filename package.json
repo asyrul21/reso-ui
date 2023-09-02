@@ -4,11 +4,11 @@
   "description": "Reusable React components in Typescript",
   "types": "dist/types",
   "exports": {
-    "./lib/components": "./dist/lib/components.bundle.js",
-    "./lib/forms": "./dist/lib/forms.bundle.js",
-    "./lib/icons": "./dist/lib/icons.bundle.js",
-    "./lib/interfaces": "./dist/lib/interfaces.bundle.js",
-    "./lib/hooks": "./dist/lib/hooks.bundle.js"
+    "./components": "./dist/lib/components.bundle.js",
+    "./forms": "./dist/lib/forms.bundle.js",
+    "./icons": "./dist/lib/icons.bundle.js",
+    "./interfaces": "./dist/lib/interfaces.bundle.js",
+    "./hooks": "./dist/lib/hooks.bundle.js"
   },
   "files": [
     "dist"

@@ -23,12 +23,16 @@ export interface IFormContainerProps
     ISpacingsProps {
   children: React.ReactNode;
   onSubmit: () => void;
+  onInvalid?: () => void;
+  noValidate?: boolean;
 }
 
 export const FormContainer = ({
   rootClassName,
   rootStyles = {},
   onSubmit,
+  onInvalid,
+  noValidate = false,
   children,
   theme = "light",
   ...spacingsProps
@@ -48,6 +52,8 @@ export const FormContainer = ({
 
   return (
     <form
+      onInvalid={onInvalid}
+      noValidate={noValidate}
       data-testid="form-root"
       className={containerClasses}
       style={rootStyles}

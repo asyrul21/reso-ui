@@ -8,10 +8,11 @@ import { IFormInputProps } from "@interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
-import "./styles/Text-Input.layout.scss";
-import "./styles/Text-Input.theme.scss";
+import "./styles/Number-Input.layout.scss";
+import "./styles/Number-Input.theme.scss";
 
 // utils
+import { useDisableNumberInputScroll } from "@forms/Hooks/useDisableNumberInputScroll";
 import {
   createComponentStyles,
   createLayoutStyles,
@@ -19,20 +20,19 @@ import {
   withSpacingsProps,
 } from "@utils/styles";
 
-export interface ITextInputProps
+import { methodHasValue } from "@utils/validations";
+
+export interface INumberInputProps
   extends IComponent,
     IFormInputProps,
     IThemeProps,
     IMarginProps {
-  type?: "text" | "email" | "password" | "tel";
-  placeholder?: string;
-  pattern?: string;
-  minLength?: number;
-  maxLength?: number;
-  size?: number;
+  min?: number;
+  max?: number;
+  step?: number;
 }
 
-export const TextInput = ({
+export const NumberInput = ({
   id = null,
   value,
   onChange,
@@ -43,33 +43,30 @@ export const TextInput = ({
   required = false,
   readonly = false,
   autofocus = false,
-  type = "text",
   autocomplete = "off",
   error,
-  placeholder,
-  pattern,
-  minLength,
-  maxLength,
-  size = 50,
+  min = 0,
+  max,
+  step,
   rootClassName,
   rootStyles = {},
   inputClassName,
   inputStyles = {},
   theme = "light",
   ...spacingsProps
-}: ITextInputProps) => {
-  // const handleInputError = (e: ChangeEvent<HTMLInputElement>) => {
-  //   console.log("input error");
-  //   console.log(e);
-  //   e.preventDefault();
-  // };
+}: INumberInputProps) => {
+  useDisableNumberInputScroll();
+  const handleInputError = (e: ChangeEvent<HTMLInputElement>) => {
+    // console.log("input error");
+    // console.log(e);
+  };
 
   const containerClasses = createComponentStyles(
     createLayoutStyles(
       withSpacingsProps(
         {
           form_input_container: true,
-          input_text_container: true,
+          input_number_container: true,
         },
         spacingsProps
       ),
@@ -80,15 +77,16 @@ export const TextInput = ({
   const inputClasses = createComponentStyles(
     createLayoutStyles(
       {
-        input_text: true,
+        input_number: true,
         form_controls_input: true,
       },
       inputClassName,
       {
         disabled,
+        no_select: true,
       }
     ),
-    createThemeStyles(`input_text_theme_`, theme)
+    createThemeStyles(`input_number_theme_`, theme)
   );
 
   return (
@@ -99,8 +97,8 @@ export const TextInput = ({
     >
       <input
         id={id}
-        type={type}
-        value={value ? value : ""}
+        type="number"
+        value={value}
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
@@ -110,12 +108,11 @@ export const TextInput = ({
         required={required}
         autoFocus={autofocus}
         autoComplete={autocomplete}
-        size={size}
-        maxLength={maxLength}
-        minLength={minLength}
+        max={max}
+        min={min}
+        step={step}
         className={inputClasses}
-        placeholder={placeholder}
-        pattern={pattern}
+        // onError={handleInputError}
         style={inputStyles}
       />
       {error && <p className="form_input_error">{error}</p>}

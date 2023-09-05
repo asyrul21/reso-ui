@@ -1,5 +1,5 @@
 import React from "react";
-import { IFormDataContext } from "../Form-Types";
+import { IFormDataContext } from "@interfaces/Form";
 
 export const createParentFormDataContext =
   (): React.Context<IFormDataContext> => {

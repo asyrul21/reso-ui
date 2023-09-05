@@ -1,11 +1,42 @@
-.input_text {
+.form_input_container {
+  // border: 2px solid red;
+  // sometimes container is flex, otherwise take width 100%
+  flex: 1;
+  width: 100%;
+}
+
+.form_controls_input {
   font-weight: 400;
   font-size: $font-size-default;
   font-family: $font-family;
-  color: $fc-dark;
+  height: 40px;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: $border-radius-default;
+  outline: none;
+  padding: $padding-xsmall $padding-small;
+  font-family: $font-family;
+  &:focus {
+    box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+  }
+  &:disabled {
+    background-color: $primary-grey-medium-light;
+  }
+  &::placeholder {
+    font-weight: 400;
+    font-size: $font-size-default;
+  }
 }
 
-.input_placeholder {
-  font-weight: 400;
-  font-size: $font-size-4;
+.form_input_error {
+  color: red;
+  font-size: $font-size-2;
+  margin-top: $margin-xxxsmall;
+  padding-left: $padding-xxsmall;
 }
+
+// .form_controls_input_placeholder {
+//   font-weight: 400;
+//   font-size: $font-size-4;
+// }

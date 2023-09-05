@@ -1,5 +1,5 @@
 import { Context } from "react";
-import { IFormDataContext } from "../Form-Types";
+import { IFormDataContext } from "@interfaces/Form";
 
 type FormDataContextRepository = {
   [key: string]: Context<IFormDataContext>;

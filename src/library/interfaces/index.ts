@@ -4,3 +4,4 @@ export * from "./IImageObject";
 export * from "./ILink";
 export * from "./ISpacingsProps";
 export * from "./Theme";
+export * from "./Form";

@@ -1,12 +1,5 @@
 .input_text_container {
-  height: $input-text-height;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: $border-radius-default;
-  outline: none;
-  padding: $padding-xsmall $padding-small;
-  font-family: $font-family;
-  // sometimes container is flex, otherwise take width 100%
-  flex: 1;
-  width: 100%;
+}
+
+.input_text {
 }

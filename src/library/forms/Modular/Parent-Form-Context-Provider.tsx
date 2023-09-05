@@ -1,5 +1,5 @@
 import React, { Context, useState } from "react";
-import { IFormDataContext } from "../Form-Types";
+import { IFormDataContext } from "@interfaces/Form";
 
 export interface IParentFormContextProviderProps {
   children: React.ReactNode;

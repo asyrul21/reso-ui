@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/asyrul21/reso-ui/compare/v1.4.0...v1.5.0) (2023-09-05)
+
+
+### Features
+
+* form input and validation poc ([2afc22c](https://github.com/asyrul21/reso-ui/commit/2afc22c3597b2469603dffc62d8239fab007bda6))
+
 # [1.4.0](https://github.com/asyrul21/reso-ui/compare/v1.3.0...v1.4.0) (2023-09-01)
 
 

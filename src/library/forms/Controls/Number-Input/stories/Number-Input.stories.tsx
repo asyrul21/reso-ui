@@ -15,7 +15,7 @@ import {
   numberIsMoreThanOrEqualsTo,
   numberIsRequired,
 } from "@forms/Validators";
-import { useNumberInput } from "@forms/Hooks";
+import { useFormInput, useNumberInput } from "@forms/Hooks";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -37,25 +37,63 @@ export default {
 } as ComponentMeta<typeof NumberInput>;
 
 export const Default = () => {
+  // const {
+  //   value: numberInputValue1,
+  //   setValue: setNumberInputValue1,
+  //   error: numberInput1Error,
+  //   forceValidate: forceValidateInput1,
+  // } = useNumberInput(1, [numberIsRequired, numberIsMoreThanOrEqualsTo(5)]);
+
+  // const {
+  //   value: numberInputValue2,
+  //   setValue: setNumberInputValue2,
+  //   error: numberInput2Error,
+  //   forceValidate: forceValidateInput2,
+  // } = useNumberInput(1, [numberIsRequired, numberIsLessThan(10)]);
+
+  // // using regular React's useStateHook
+  // const [numberInputValue3, setNumberInputValue3] = useState(1);
+
   const {
     value: numberInputValue1,
     setValue: setNumberInputValue1,
     error: numberInput1Error,
-    forceValidate: forceValidateInput1,
-  } = useNumberInput(1, [numberIsRequired, numberIsMoreThanOrEqualsTo(5)]);
+    setError: setNumberInput1Error,
+  } = useFormInput<number>(1);
 
   const {
     value: numberInputValue2,
     setValue: setNumberInputValue2,
     error: numberInput2Error,
-    forceValidate: forceValidateInput2,
-  } = useNumberInput(1, [numberIsRequired, numberIsLessThan(10)]);
+    setError: setNumberInput2Error,
+  } = useFormInput<number>(1);
 
   // using regular React's useStateHook
   const [numberInputValue3, setNumberInputValue3] = useState(1);
 
+  const {
+    value: numberInputValue4,
+    setValue: setNumberInputValue4,
+    error: numberInput4Error,
+    setError: setNumberInput4Error,
+  } = useFormInput<number>(1);
+
+  const handleSubmit = () => {
+    // forceValidateInput1();
+    console.log(numberInput1Error);
+
+    // forceValidateInput2();
+    console.log(numberInput2Error);
+
+    if (!numberInput1Error && !numberInput2Error) {
+      alert("Form data submitted!");
+    }
+
+    // if there is error, do not submit
+  };
+
   return (
-    <FormContainer onSubmit={() => alert("Form data submitted!")}>
+    <FormContainer onSubmit={handleSubmit}>
       <h2>Sample Form</h2>
       <ControlWrapper>
         <Label
@@ -68,9 +106,11 @@ export const Default = () => {
         <NumberInput
           id="sampleNumberInput1"
           value={numberInputValue1}
-          onChange={(e) => setNumberInputValue1(Number(e.target.value))}
+          onChange={(val) => setNumberInputValue1(Number(val))}
           error={numberInput1Error}
-          onInvalid={(e) => forceValidateInput1()}
+          setError={(e) => setNumberInput1Error(e)}
+          min={5}
+          // onInvalid={(e) => forceValidateInput1()}
           // min={5}
         />
       </ControlWrapper>
@@ -92,9 +132,10 @@ export const Default = () => {
             borderRadius: "10px",
           }}
           max={10}
-          onChange={(e) => setNumberInputValue2(Number(e.target.value))}
+          onChange={(val) => setNumberInputValue2(Number(val))}
           error={numberInput2Error}
-          onInvalid={(e) => forceValidateInput2()}
+          setError={(e) => setNumberInput2Error(e)}
+          // onInvalid={(e) => forceValidateInput2()}
         />
       </ControlWrapper>
       <ControlWrapper>
@@ -112,7 +153,26 @@ export const Default = () => {
           inputStyles={{
             borderColor: "blue",
           }}
-          onChange={(e) => setNumberInputValue3(Number(e.target.value))}
+          onChange={(val) => setNumberInputValue3(Number(val))}
+        />
+      </ControlWrapper>
+      <ControlWrapper>
+        <Label
+          htmlFor="sampleNumberInput4"
+          label="Quantity"
+          description="Minimum 5, with showHTMLErrorMessage set to true"
+          required
+          mr={7}
+          rootStyles={{ width: "128px" }}
+        />
+        <NumberInput
+          id="sampleNumberInput4"
+          min={5}
+          value={numberInputValue4}
+          onChange={(val) => setNumberInputValue4(Number(val))}
+          error={numberInput4Error}
+          setError={(e) => setNumberInput4Error(e)}
+          showHTMLErrorMessage
         />
       </ControlWrapper>
       <SubmitButton mb={4} />

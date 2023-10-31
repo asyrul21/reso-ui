@@ -42,13 +42,13 @@ export const Default = () => {
     value: textInputValue1,
     setValue: setTextInputValue1,
     error: textInput1Error,
-    forceValidate: forceValidateInput1,
+    // forceValidate: forceValidateInput1,
   } = useTextInput("", [stringIsRequired]);
   const {
     value: textInputValue2,
     setValue: setTextInputValue2,
     error: textInput2Error,
-    forceValidate: forceValidateInput2,
+    // forceValidate: forceValidateInput2,
   } = useTextInput("", [stringIsRequired]);
 
   // using regular useState hook
@@ -58,21 +58,21 @@ export const Default = () => {
     value: emailInputValue,
     setValue: setEmailInputValue,
     error: emailInputError,
-    forceValidate: forceValidateEmail,
+    // forceValidate: forceValidateEmail,
   } = useTextInput("", [stringIsEmail]);
 
   const {
     value: passwordInputValue,
     setValue: setPasswordInputValue,
     error: passwordInputError,
-    forceValidate: forceValidatePasswordInput,
+    // forceValidate: forceValidatePasswordInput,
   } = useTextInput("", [stringHasMinLength(6)]);
 
   const {
     value: telInputValue,
     setValue: setTelInputValue,
     error: telInputError,
-    forceValidate: forceValidateTelInput,
+    // forceValidate: forceValidateTelInput,
   } = useTextInput("", [stringIsPhoneDefault]);
 
   return (
@@ -94,7 +94,7 @@ export const Default = () => {
           placeholder="Your first name"
           error={textInput1Error}
           required
-          onInvalid={(e) => forceValidateInput1()}
+          // onInvalid={(e) => forceValidateInput1()}
         />
       </ControlWrapper>
       <ControlWrapper>
@@ -119,7 +119,7 @@ export const Default = () => {
           required
           error={textInput2Error}
           onChange={(e) => setTextInputValue2(e.target.value)}
-          onInvalid={(e) => forceValidateInput2(e)}
+          // onInvalid={(e) => forceValidateInput2(e)}
         />
       </ControlWrapper>
       <ControlWrapper>
@@ -151,7 +151,7 @@ export const Default = () => {
           id="sampleEmailInput"
           value={emailInputValue}
           onChange={(e) => setEmailInputValue(e.target.value)}
-          onInvalid={(e) => forceValidateEmail(e)}
+          // onInvalid={(e) => forceValidateEmail(e)}
           error={emailInputError}
         />
       </ControlWrapper>
@@ -168,7 +168,7 @@ export const Default = () => {
           value={passwordInputValue}
           onChange={(e) => setPasswordInputValue(e.target.value)}
           error={passwordInputError}
-          onInvalid={(e) => forceValidatePasswordInput(e)}
+          // onInvalid={(e) => forceValidatePasswordInput(e)}
           minLength={6}
         />
       </ControlWrapper>
@@ -185,7 +185,7 @@ export const Default = () => {
           value={telInputValue}
           onChange={(e) => setTelInputValue(e.target.value)}
           error={telInputError}
-          onInvalid={(e) => forceValidateTelInput(e)}
+          // onInvalid={(e) => forceValidateTelInput(e)}
         />
       </ControlWrapper>
       <SubmitButton mb={4} />

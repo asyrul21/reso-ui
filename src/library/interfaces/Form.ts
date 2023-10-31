@@ -7,27 +7,30 @@ export type FormInputValidator<T> = {
 
 export type FormInputHookReturnObj<T> = {
   value: any;
-  setValue: (val: T) => void;
-  error: string | null;
-  forceValidate: (event?: FormEvent<HTMLInputElement>) => void;
+  setValue: Dispatch<SetStateAction<T>>;
+  error?: string | null;
+  setError?: Dispatch<SetStateAction<string>>;
 };
 
-export interface IFormInputProps {
+export interface IFormInputProps<T> {
   id: string;
   inputClassName?: string;
   inputStyles?: React.CSSProperties;
-  onInvalid?: (event?: FormEvent<HTMLInputElement>) => void;
-  onChange?: (event?: ChangeEvent<HTMLInputElement>) => void;
+  // ideally comes from hook
+  value?: string | number;
+  onChange: (event?: ChangeEvent<HTMLInputElement>) => void;
+  error?: string;
+  setError?: Dispatch<SetStateAction<string>>;
+  // ideall comes form hook ends
+  showHTMLErrorMessage?: boolean;
   onBlur?: () => void;
   onFocus?: () => void;
-  value?: string | number;
   disabled?: boolean;
   readonly?: boolean;
   required?: boolean;
   autofocus?: boolean;
   autocomplete?: "on" | "off";
-  error?: string;
-  // validations?: FormInputValidation[];
+  validators?: FormInputValidator<T> | FormInputValidator<T>[];
 }
 
 export interface IFormDataContext {

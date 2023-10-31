@@ -4,7 +4,7 @@ import React, { ChangeEvent } from "react";
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
-import { IFormInputProps } from "@interfaces/Form";
+import { FormInputValidator, IFormInputProps } from "@interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
@@ -21,7 +21,7 @@ import {
 
 export interface ITextInputProps
   extends IComponent,
-    IFormInputProps,
+    IFormInputProps<string>,
     IThemeProps,
     IMarginProps {
   type?: "text" | "email" | "password" | "tel";
@@ -38,14 +38,15 @@ export const TextInput = ({
   onChange,
   onBlur,
   onFocus,
-  onInvalid,
+  showHTMLErrorMessage = false,
+  error,
+  setError,
   disabled = false,
   required = false,
   readonly = false,
   autofocus = false,
   type = "text",
   autocomplete = "off",
-  error,
   placeholder,
   pattern,
   minLength,
@@ -104,7 +105,7 @@ export const TextInput = ({
         onChange={onChange}
         onBlur={onBlur}
         onFocus={onFocus}
-        onInvalid={onInvalid}
+        // onInvalid={onInvalid}
         disabled={disabled}
         readOnly={readonly}
         required={required}

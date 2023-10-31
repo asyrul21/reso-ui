@@ -5,7 +5,8 @@ import { FormInputValidator } from "@interfaces/Form";
  */
 export const numberIsNotNull: FormInputValidator<number> = {
   validationFn: (val?: number) => {
-    if (typeof val === "number") {
+    const number = Number(val);
+    if (!isNaN(number) && typeof number === "number") {
       return true;
     }
     return false;
@@ -15,7 +16,8 @@ export const numberIsNotNull: FormInputValidator<number> = {
 
 export const numberIsRequired: FormInputValidator<number> = {
   validationFn: (val?: number) => {
-    if (typeof val === "number" && val > 0) {
+    const number = Number(val);
+    if (typeof number === "number" && number > 0) {
       return true;
     }
     return false;
@@ -28,7 +30,8 @@ export const numberIsMoreThanOrEqualsTo: (
 ) => FormInputValidator<number> = (min: number) => {
   return {
     validationFn: (val?: number) => {
-      if (typeof val === "number" && val >= min) {
+      const number = Number(val);
+      if (typeof number === "number" && number >= min) {
         return true;
       }
       return false;
@@ -42,7 +45,8 @@ export const numberIsLessThan: (max: number) => FormInputValidator<number> = (
 ) => {
   return {
     validationFn: (val?: number) => {
-      if (typeof val === "number" && val < max) {
+      const number = Number(val);
+      if (typeof number === "number" && number < max) {
         return true;
       }
       return false;

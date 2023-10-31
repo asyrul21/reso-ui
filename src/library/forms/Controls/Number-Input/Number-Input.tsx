@@ -1,10 +1,10 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, memo, useEffect, useMemo, useState } from "react";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
-import { IFormInputProps } from "@interfaces/Form";
+import { FormInputValidator, IFormInputProps } from "@interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
@@ -20,16 +20,24 @@ import {
   withSpacingsProps,
 } from "@utils/styles";
 
-import { methodHasValue } from "@utils/validations";
+import { methodHasValue, numberHasValue } from "@utils/validations";
+import {
+  numberIsLessThan,
+  numberIsMoreThanOrEqualsTo,
+  numberIsNotNull,
+  numberIsRequired,
+  stringIsNotNull,
+  validate,
+} from "@forms/Validators";
 
 export interface INumberInputProps
   extends IComponent,
-    IFormInputProps,
+    IFormInputProps<number>,
     IThemeProps,
     IMarginProps {
   min?: number;
   max?: number;
-  step?: number;
+  step?: number | "any";
 }
 
 export const NumberInput = ({
@@ -38,27 +46,73 @@ export const NumberInput = ({
   onChange,
   onBlur,
   onFocus,
-  onInvalid,
+  showHTMLErrorMessage = false,
+  error,
+  setError,
   disabled = false,
   required = false,
   readonly = false,
   autofocus = false,
   autocomplete = "off",
-  error,
   min = 0,
   max,
-  step,
+  step = "any",
   rootClassName,
   rootStyles = {},
   inputClassName,
   inputStyles = {},
   theme = "light",
+  validators,
   ...spacingsProps
 }: INumberInputProps) => {
   useDisableNumberInputScroll();
-  const handleInputError = (e: ChangeEvent<HTMLInputElement>) => {
-    // console.log("input error");
-    // console.log(e);
+  const inputValidators = useMemo(() => {
+    let defaultInputValidators = [numberIsNotNull];
+
+    if (required) {
+      defaultInputValidators = [...defaultInputValidators, numberIsRequired];
+    }
+    if (numberHasValue(min)) {
+      defaultInputValidators = [
+        ...defaultInputValidators,
+        numberIsMoreThanOrEqualsTo(min),
+      ];
+    }
+    if (numberHasValue(max)) {
+      defaultInputValidators = [
+        ...defaultInputValidators,
+        numberIsLessThan(max),
+      ];
+    }
+
+    // TODO: compose input validators
+    // return composeInputValidators(inputValidators, validators)
+
+    if (typeof validators === "object" && Array.isArray(validators)) {
+      return [...defaultInputValidators, ...validators];
+    } else if (typeof validators === "object") {
+      return [...defaultInputValidators, validators];
+    }
+    return [...defaultInputValidators];
+  }, []);
+
+  // on render
+  useEffect(() => {
+    validate(value, inputValidators, setError);
+  }, []);
+
+  // const { validate } = useInputValidation<number>(inputValidators, setError)
+
+  const handleInputChange = (e) => {
+    const val = e.target.value;
+    validate(val, inputValidators, setError);
+    onChange(e.target.value);
+  };
+
+  const handleInputInvalid = (e) => {
+    if (!showHTMLErrorMessage) {
+      e.preventDefault();
+    }
   };
 
   const containerClasses = createComponentStyles(
@@ -98,11 +152,11 @@ export const NumberInput = ({
       <input
         id={id}
         type="number"
-        value={value}
-        onChange={onChange}
+        value={Number(value).toString()}
+        onChange={handleInputChange}
         onBlur={onBlur}
         onFocus={onFocus}
-        onInvalid={onInvalid}
+        onInvalid={handleInputInvalid}
         disabled={disabled}
         readOnly={readonly}
         required={required}
@@ -112,7 +166,6 @@ export const NumberInput = ({
         min={min}
         step={step}
         className={inputClasses}
-        // onError={handleInputError}
         style={inputStyles}
       />
       {error && <p className="form_input_error">{error}</p>}

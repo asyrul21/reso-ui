@@ -18,10 +18,10 @@ export interface IFormInputProps<T> {
   inputStyles?: React.CSSProperties;
   // ideally comes from hook
   value?: string | number;
-  onChange: (event?: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: string | number | boolean) => void;
   error?: string;
   setError?: Dispatch<SetStateAction<string>>;
-  // ideall comes form hook ends
+  // ideally comes form hook ends
   showHTMLErrorMessage?: boolean;
   onBlur?: () => void;
   onFocus?: () => void;
@@ -30,7 +30,7 @@ export interface IFormInputProps<T> {
   required?: boolean;
   autofocus?: boolean;
   autocomplete?: "on" | "off";
-  validators?: FormInputValidator<T> | FormInputValidator<T>[];
+  customValidators?: FormInputValidator<T> | FormInputValidator<T>[];
 }
 
 export interface IFormDataContext {

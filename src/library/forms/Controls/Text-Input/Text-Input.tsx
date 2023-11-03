@@ -1,10 +1,10 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useMemo } from "react";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
-import { FormInputValidator, IFormInputProps } from "@interfaces/Form";
+import { IFormInputProps } from "@interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
@@ -18,6 +18,15 @@ import {
   createThemeStyles,
   withSpacingsProps,
 } from "@utils/styles";
+import {
+  stringHasMaxLength,
+  stringHasMinLength,
+  stringIsNotNull,
+  stringIsRequired,
+  validate,
+} from "@forms/Validators";
+import { numberHasValue } from "@utils/validations";
+import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
 
 export interface ITextInputProps
   extends IComponent,
@@ -46,17 +55,24 @@ export const TextInput = ({
   readonly = false,
   autofocus = false,
   type = "text",
+  /**
+   * Text Input - specific props
+   */
   autocomplete = "off",
   placeholder,
   pattern,
   minLength,
   maxLength,
   size = 50,
+  /**
+   * Text Input - specific props
+   */
   rootClassName,
   rootStyles = {},
   inputClassName,
   inputStyles = {},
   theme = "light",
+  customValidators,
   ...spacingsProps
 }: ITextInputProps) => {
   // const handleInputError = (e: ChangeEvent<HTMLInputElement>) => {
@@ -64,6 +80,64 @@ export const TextInput = ({
   //   console.log(e);
   //   e.preventDefault();
   // };
+  // const inputValidators = useMemo(() => {
+  //   let defaultInputValidators = [stringIsNotNull];
+
+  //   if (required) {
+  //     defaultInputValidators = [...defaultInputValidators, stringIsRequired];
+  //   }
+  //   if (numberHasValue(minLength)) {
+  //     defaultInputValidators = [
+  //       ...defaultInputValidators,
+  //       stringHasMinLength(minLength),
+  //     ];
+  //   }
+  //   if (numberHasValue(maxLength)) {
+  //     defaultInputValidators = [
+  //       ...defaultInputValidators,
+  //       stringHasMaxLength(maxLength),
+  //     ];
+  //   }
+
+  //   // check for pattern
+
+  //   // check for size
+
+  //   // TODO: compose input validators
+  //   // return composeInputValidators(inputValidators, validators)
+
+  //   if (typeof validators === "object" && Array.isArray(validators)) {
+  //     return [...defaultInputValidators, ...validators];
+  //   } else if (typeof validators === "object") {
+  //     return [...defaultInputValidators, validators];
+  //   }
+  //   return [...defaultInputValidators];
+  // }, []);
+
+  const inputValidators = useInputValidatorsMemo(
+    "string",
+    [stringIsNotNull],
+    {
+      required,
+      minLength,
+      maxLength,
+    },
+    customValidators
+  );
+
+  const handleInputChange = (e) => {
+    const val = e.target.value;
+
+    validate(val, inputValidators, setError);
+    console.log(val);
+    onChange(val);
+  };
+
+  const handleInputInvalid = (e) => {
+    if (!showHTMLErrorMessage) {
+      e.preventDefault();
+    }
+  };
 
   const containerClasses = createComponentStyles(
     createLayoutStyles(
@@ -102,10 +176,10 @@ export const TextInput = ({
         id={id}
         type={type}
         value={value ? value : ""}
-        onChange={onChange}
+        onChange={handleInputChange}
         onBlur={onBlur}
         onFocus={onFocus}
-        // onInvalid={onInvalid}
+        onInvalid={handleInputInvalid}
         disabled={disabled}
         readOnly={readonly}
         required={required}

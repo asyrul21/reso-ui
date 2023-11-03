@@ -15,7 +15,7 @@ import {
   numberIsMoreThanOrEqualsTo,
   numberIsRequired,
 } from "@forms/Validators";
-import { useFormInput, useNumberInput } from "@forms/Hooks";
+import { useFormInput } from "@forms/Hooks";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

@@ -4,7 +4,7 @@ import React, { ChangeEvent, memo, useEffect, useMemo, useState } from "react";
 import IComponent from "@interfaces/IComponent";
 import IThemeProps from "@interfaces/Theme";
 import { IMarginProps } from "@interfaces/ISpacingsProps";
-import { FormInputValidator, IFormInputProps } from "@interfaces/Form";
+import { IFormInputProps } from "@interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
@@ -20,7 +20,7 @@ import {
   withSpacingsProps,
 } from "@utils/styles";
 
-import { methodHasValue, numberHasValue } from "@utils/validations";
+import { numberHasValue } from "@utils/validations";
 import {
   numberIsLessThan,
   numberIsMoreThanOrEqualsTo,
@@ -29,6 +29,7 @@ import {
   stringIsNotNull,
   validate,
 } from "@forms/Validators";
+import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
 
 export interface INumberInputProps
   extends IComponent,
@@ -54,47 +55,64 @@ export const NumberInput = ({
   readonly = false,
   autofocus = false,
   autocomplete = "off",
+  /**
+   * Number Input - specific props
+   */
   min = 0,
   max,
   step = "any",
+  /**
+   * Number Input - specific props ends
+   */
   rootClassName,
   rootStyles = {},
   inputClassName,
   inputStyles = {},
   theme = "light",
-  validators,
+  customValidators,
   ...spacingsProps
 }: INumberInputProps) => {
   useDisableNumberInputScroll();
-  const inputValidators = useMemo(() => {
-    let defaultInputValidators = [numberIsNotNull];
+  // const inputValidators = useMemo(() => {
+  //   let defaultInputValidators = [numberIsNotNull];
 
-    if (required) {
-      defaultInputValidators = [...defaultInputValidators, numberIsRequired];
-    }
-    if (numberHasValue(min)) {
-      defaultInputValidators = [
-        ...defaultInputValidators,
-        numberIsMoreThanOrEqualsTo(min),
-      ];
-    }
-    if (numberHasValue(max)) {
-      defaultInputValidators = [
-        ...defaultInputValidators,
-        numberIsLessThan(max),
-      ];
-    }
+  //   if (required) {
+  //     defaultInputValidators = [...defaultInputValidators, numberIsRequired];
+  //   }
+  //   if (numberHasValue(min)) {
+  //     defaultInputValidators = [
+  //       ...defaultInputValidators,
+  //       numberIsMoreThanOrEqualsTo(min),
+  //     ];
+  //   }
+  //   if (numberHasValue(max)) {
+  //     defaultInputValidators = [
+  //       ...defaultInputValidators,
+  //       numberIsLessThan(max),
+  //     ];
+  //   }
 
-    // TODO: compose input validators
-    // return composeInputValidators(inputValidators, validators)
+  //   // TODO: compose input validators
+  //   // return composeInputValidators(inputValidators, validators)
 
-    if (typeof validators === "object" && Array.isArray(validators)) {
-      return [...defaultInputValidators, ...validators];
-    } else if (typeof validators === "object") {
-      return [...defaultInputValidators, validators];
-    }
-    return [...defaultInputValidators];
-  }, []);
+  //   if (typeof validators === "object" && Array.isArray(validators)) {
+  //     return [...defaultInputValidators, ...validators];
+  //   } else if (typeof validators === "object") {
+  //     return [...defaultInputValidators, validators];
+  //   }
+  //   return [...defaultInputValidators];
+  // }, []);
+
+  const inputValidators = useInputValidatorsMemo(
+    "number",
+    [numberIsNotNull],
+    {
+      required,
+      min,
+      max,
+    },
+    customValidators
+  );
 
   // on render
   useEffect(() => {
@@ -106,7 +124,7 @@ export const NumberInput = ({
   const handleInputChange = (e) => {
     const val = e.target.value;
     validate(val, inputValidators, setError);
-    onChange(e.target.value);
+    onChange(val);
   };
 
   const handleInputInvalid = (e) => {

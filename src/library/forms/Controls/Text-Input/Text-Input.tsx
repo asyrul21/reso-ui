@@ -18,14 +18,7 @@ import {
   createThemeStyles,
   withSpacingsProps,
 } from "@utils/styles";
-import {
-  stringHasMaxLength,
-  stringHasMinLength,
-  stringIsNotNull,
-  stringIsRequired,
-  validate,
-} from "@forms/Validators";
-import { numberHasValue } from "@utils/validations";
+import { stringIsNotNull, validate } from "@forms/Validators";
 import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
 
 export interface ITextInputProps
@@ -76,45 +69,6 @@ export const TextInput = ({
   customValidators,
   ...spacingsProps
 }: ITextInputProps) => {
-  // const handleInputError = (e: ChangeEvent<HTMLInputElement>) => {
-  //   console.log("input error");
-  //   console.log(e);
-  //   e.preventDefault();
-  // };
-  // const inputValidators = useMemo(() => {
-  //   let defaultInputValidators = [stringIsNotNull];
-
-  //   if (required) {
-  //     defaultInputValidators = [...defaultInputValidators, stringIsRequired];
-  //   }
-  //   if (numberHasValue(minLength)) {
-  //     defaultInputValidators = [
-  //       ...defaultInputValidators,
-  //       stringHasMinLength(minLength),
-  //     ];
-  //   }
-  //   if (numberHasValue(maxLength)) {
-  //     defaultInputValidators = [
-  //       ...defaultInputValidators,
-  //       stringHasMaxLength(maxLength),
-  //     ];
-  //   }
-
-  //   // check for pattern
-
-  //   // check for size
-
-  //   // TODO: compose input validators
-  //   // return composeInputValidators(inputValidators, validators)
-
-  //   if (typeof validators === "object" && Array.isArray(validators)) {
-  //     return [...defaultInputValidators, ...validators];
-  //   } else if (typeof validators === "object") {
-  //     return [...defaultInputValidators, validators];
-  //   }
-  //   return [...defaultInputValidators];
-  // }, []);
-
   const inputValidators = useInputValidatorsMemo(
     "string",
     [stringIsNotNull],

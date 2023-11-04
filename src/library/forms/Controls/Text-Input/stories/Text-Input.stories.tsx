@@ -10,12 +10,6 @@ import { TextInput } from "@forms/Controls/Text-Input";
 import { SubmitButton } from "@forms/Controls/Submit-Button";
 
 import dedent from "ts-dedent";
-import {
-  stringHasMinLength,
-  stringIsEmail,
-  stringIsPhoneDefault,
-  stringIsRequired,
-} from "@forms/Validators";
 import { useFormInput } from "@forms/Hooks";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -188,7 +182,6 @@ export const Default = () => {
           pattern={/^[0-9]{6,}$/}
         />
       </ControlWrapper>
-
       <ControlWrapper>
         <Label
           htmlFor="sampleTelInput"
@@ -222,6 +215,7 @@ export const Default = () => {
           error={textInput4Error}
           setError={setInputError4}
           customValidators={[
+            // order matters
             {
               validationFn: (val) => {
                 if (!val) {

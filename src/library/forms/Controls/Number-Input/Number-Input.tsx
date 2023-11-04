@@ -74,36 +74,6 @@ export const NumberInput = ({
   ...spacingsProps
 }: INumberInputProps) => {
   useDisableNumberInputScroll();
-  // const inputValidators = useMemo(() => {
-  //   let defaultInputValidators = [numberIsNotNull];
-
-  //   if (required) {
-  //     defaultInputValidators = [...defaultInputValidators, numberIsRequired];
-  //   }
-  //   if (numberHasValue(min)) {
-  //     defaultInputValidators = [
-  //       ...defaultInputValidators,
-  //       numberIsMoreThanOrEqualsTo(min),
-  //     ];
-  //   }
-  //   if (numberHasValue(max)) {
-  //     defaultInputValidators = [
-  //       ...defaultInputValidators,
-  //       numberIsLessThan(max),
-  //     ];
-  //   }
-
-  //   // TODO: compose input validators
-  //   // return composeInputValidators(inputValidators, validators)
-
-  //   if (typeof validators === "object" && Array.isArray(validators)) {
-  //     return [...defaultInputValidators, ...validators];
-  //   } else if (typeof validators === "object") {
-  //     return [...defaultInputValidators, validators];
-  //   }
-  //   return [...defaultInputValidators];
-  // }, []);
-
   const inputValidators = useInputValidatorsMemo(
     "number",
     [numberIsNotNull],
@@ -121,8 +91,6 @@ export const NumberInput = ({
       validate(value, inputValidators, setError);
     }
   }, []);
-
-  // const { validate } = useInputValidation<number>(inputValidators, setError)
 
   const handleInputChange = (e) => {
     const val = e.target.value;

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useMemo } from "react";
+import React, { useEffect } from "react";
 
 // import base interface
 import IComponent from "@interfaces/IComponent";
@@ -35,7 +35,7 @@ export interface ITextInputProps
     IMarginProps {
   type?: "text" | "email" | "password" | "tel";
   placeholder?: string;
-  pattern?: string;
+  pattern?: RegExp | string;
   minLength?: number;
   maxLength?: number;
   size?: number;
@@ -47,7 +47,8 @@ export const TextInput = ({
   onChange,
   onBlur,
   onFocus,
-  showHTMLErrorMessage = false,
+  useHTMLErrorMessage = false,
+  validateOnLoad,
   error,
   setError,
   disabled = false,
@@ -121,21 +122,30 @@ export const TextInput = ({
       required,
       minLength,
       maxLength,
+      isEmail: type === "email",
+      isTel: type === "tel",
+      pattern,
     },
     customValidators
   );
 
+  // on render
+  useEffect(() => {
+    if (validateOnLoad) {
+      validate(value, inputValidators, setError);
+    }
+  }, []);
+
   const handleInputChange = (e) => {
     const val = e.target.value;
-
     validate(val, inputValidators, setError);
-    console.log(val);
     onChange(val);
   };
 
   const handleInputInvalid = (e) => {
-    if (!showHTMLErrorMessage) {
+    if (!useHTMLErrorMessage) {
       e.preventDefault();
+      validate(value, inputValidators, setError);
     }
   };
 
@@ -190,7 +200,11 @@ export const TextInput = ({
         minLength={minLength}
         className={inputClasses}
         placeholder={placeholder}
-        pattern={pattern}
+        pattern={
+          pattern && typeof pattern.toString === "function"
+            ? pattern.toString()
+            : (pattern as string)
+        }
         style={inputStyles}
       />
       {error && <p className="form_input_error">{error}</p>}

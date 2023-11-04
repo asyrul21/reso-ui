@@ -26,6 +26,12 @@ export const stringIsRequired: FormInputValidator<string> = {
 // https://www.w3resource.com/javascript/form/email-validation.php
 export const stringIsEmail: FormInputValidator<string> = {
   validationFn: (val?: string) => {
+    /**
+     * skip validation if no value entered. This wil be handled by [stringIsRequired]
+     */
+    if (!val || val === "") {
+      return true;
+    }
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (typeof val === "string" && emailRegex.test(val)) {
       return true;
@@ -38,6 +44,12 @@ export const stringIsEmail: FormInputValidator<string> = {
 // https://www.w3resource.com/javascript/form/phone-no-validation.php
 export const stringIsPhoneDefault: FormInputValidator<string> = {
   validationFn: (val) => {
+    /**
+     * skip validation if no value entered. This wil be handled by [stringIsRequired]
+     */
+    if (!val || val === "") {
+      return true;
+    }
     const telRegex = /^\(?([0-9]{3,4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if (typeof val === "string" && telRegex.test(val)) {
       return true;
@@ -52,6 +64,12 @@ export const stringHasMinLength: (min: number) => FormInputValidator<string> = (
 ) => {
   return {
     validationFn: (val?: string) => {
+      /**
+       * skip validation if no value entered. This wil be handled by [stringIsRequired]
+       */
+      if (!val) {
+        return true;
+      }
       if (typeof val === "string" && val.length >= min) {
         return true;
       }
@@ -66,6 +84,12 @@ export const stringHasMaxLength: (max: number) => FormInputValidator<string> = (
 ) => {
   return {
     validationFn: (val?: string) => {
+      /**
+       * skip validation if no value entered. This wil be handled by [stringIsRequired]
+       */
+      if (!val) {
+        return true;
+      }
       if (typeof val === "string" && val.length <= max) {
         return true;
       }
@@ -80,6 +104,12 @@ export const stringMatchesRegex: (
 ) => FormInputValidator<string> = (regex) => {
   return {
     validationFn: (val?: string) => {
+      /**
+       * skip validation if no value entered. This wil be handled by [stringIsRequired]
+       */
+      if (!val || val === "") {
+        return true;
+      }
       const rx = new RegExp(regex);
       if (typeof val === "string" && rx.test(val)) {
         return true;

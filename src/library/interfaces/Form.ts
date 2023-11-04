@@ -22,7 +22,8 @@ export interface IFormInputProps<T> {
   error?: string;
   setError?: Dispatch<SetStateAction<string>>;
   // ideally comes form hook ends
-  showHTMLErrorMessage?: boolean;
+  useHTMLErrorMessage?: boolean;
+  validateOnLoad?: boolean;
   onBlur?: () => void;
   onFocus?: () => void;
   disabled?: boolean;

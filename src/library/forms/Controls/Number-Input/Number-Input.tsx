@@ -47,7 +47,8 @@ export const NumberInput = ({
   onChange,
   onBlur,
   onFocus,
-  showHTMLErrorMessage = false,
+  useHTMLErrorMessage = false,
+  validateOnLoad = false,
   error,
   setError,
   disabled = false,
@@ -116,7 +117,9 @@ export const NumberInput = ({
 
   // on render
   useEffect(() => {
-    validate(value, inputValidators, setError);
+    if (validateOnLoad) {
+      validate(value, inputValidators, setError);
+    }
   }, []);
 
   // const { validate } = useInputValidation<number>(inputValidators, setError)
@@ -128,7 +131,7 @@ export const NumberInput = ({
   };
 
   const handleInputInvalid = (e) => {
-    if (!showHTMLErrorMessage) {
+    if (!useHTMLErrorMessage) {
       e.preventDefault();
     }
   };

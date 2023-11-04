@@ -43,14 +43,13 @@ export const Default = () => {
     setValue: setTextInputValue1,
     error: textInput1Error,
     setError: setTextInputError1,
-    // forceValidate: forceValidateInput1,
   } = useFormInput<string>("");
+
   const {
     value: textInputValue2,
     setValue: setTextInputValue2,
     error: textInput2Error,
     setError: setTextInputError2,
-    // forceValidate: forceValidateInput2,
   } = useFormInput<string>("");
 
   // using regular useState hook
@@ -61,7 +60,6 @@ export const Default = () => {
     setValue: setEmailInputValue,
     error: emailInputError,
     setError: setEmailInputError,
-    // forceValidate: forceValidateEmail,
   } = useFormInput<string>("");
 
   const {
@@ -69,7 +67,6 @@ export const Default = () => {
     setValue: setPasswordInputValue,
     error: passwordInputError,
     setError: setPasswordInputError,
-    // forceValidate: forceValidatePasswordInput,
   } = useFormInput<string>("");
 
   const {
@@ -77,7 +74,13 @@ export const Default = () => {
     setValue: setTelInputValue,
     error: telInputError,
     setError: setTelInputError,
-    // forceValidate: forceValidateTelInput,
+  } = useFormInput<string>("");
+
+  const {
+    value: textInputValue4,
+    setValue: setTextInputValue4,
+    error: textInput4Error,
+    setError: setInputError4,
   } = useFormInput<string>("");
 
   const handleFormSubmit = () => {
@@ -91,7 +94,7 @@ export const Default = () => {
         <Label
           htmlFor="sampleTextInput1"
           label="First Name"
-          description="Required validation with default HTML error message"
+          description="Required validation, validated on render"
           required
           mr={7}
           rootStyles={{ width: "128px" }}
@@ -104,7 +107,7 @@ export const Default = () => {
           error={textInput1Error}
           required
           setError={setTextInputError1}
-          // onInvalid={(val) => forceValidateInput1()}
+          validateOnLoad
         />
       </ControlWrapper>
       <ControlWrapper>
@@ -112,7 +115,7 @@ export const Default = () => {
           htmlFor="sampleTextInput2"
           label="Middle Name"
           description={
-            "With container styles, required validation but without default HTML error message"
+            "With container styles, and required validation using HTML error message"
           }
           required
           mr={7}
@@ -130,14 +133,14 @@ export const Default = () => {
           error={textInput2Error}
           onChange={(val) => setTextInputValue2(val as string)}
           setError={setTextInputError2}
-          // onInvalid={(val) => forceValidateInput2(e)}
+          useHTMLErrorMessage
         />
       </ControlWrapper>
       <ControlWrapper>
         <Label
           htmlFor="sampleTextInput3"
           label="Last Name"
-          description={"With inputStyles"}
+          description={"With inputStyles, no validation"}
           mr={7}
           rootStyles={{ width: "128px" }}
         />
@@ -162,15 +165,16 @@ export const Default = () => {
           id="sampleEmailInput"
           value={emailInputValue}
           onChange={(val) => setEmailInputValue(val as string)}
-          // onInvalid={(val) => forceValidateEmail(e)}
           setError={setEmailInputError}
           error={emailInputError}
         />
       </ControlWrapper>
+
       <ControlWrapper>
         <Label
           htmlFor="samplePasswordInput"
           label="Password"
+          description="Using regex pattern validation for password requirements"
           mr={7}
           rootStyles={{ width: "128px" }}
         />
@@ -181,14 +185,15 @@ export const Default = () => {
           onChange={(val) => setPasswordInputValue(val as string)}
           error={passwordInputError}
           setError={setPasswordInputError}
-          // onInvalid={(val) => forceValidatePasswordInput(e)}
-          minLength={6}
+          pattern={/^[0-9]{6,}$/}
         />
       </ControlWrapper>
+
       <ControlWrapper>
         <Label
           htmlFor="sampleTelInput"
           label="Telephone"
+          description="Using built-in telephone number pattern validation"
           mr={7}
           rootStyles={{ width: "128px" }}
         />
@@ -199,10 +204,42 @@ export const Default = () => {
           onChange={(val) => setTelInputValue(val as string)}
           error={telInputError}
           setError={setTelInputError}
-          // onInvalid={(val) => forceValidateTelInput(e)}
         />
       </ControlWrapper>
-      <button type="submit">send</button>
+      <ControlWrapper>
+        <Label
+          htmlFor="sampleTextInput4"
+          label="Custom Validation"
+          description="Pass your validation functions"
+          mr={7}
+          rootStyles={{ width: "128px" }}
+        />
+        <TextInput
+          id="sampleTextInput4"
+          value={textInputValue4}
+          onChange={(val) => setTextInputValue4(val as string)}
+          placeholder="You cannot be John Doe"
+          error={textInput4Error}
+          setError={setInputError4}
+          customValidators={[
+            {
+              validationFn: (val) => {
+                if (!val) {
+                  return true;
+                }
+                if (
+                  typeof val === "string" &&
+                  val.toLowerCase() !== "john doe"
+                ) {
+                  return true;
+                }
+                return false;
+              },
+              errorMessage: "You cannot be him!",
+            },
+          ]}
+        />
+      </ControlWrapper>
       <SubmitButton mb={4} />
     </FormContainer>
   );

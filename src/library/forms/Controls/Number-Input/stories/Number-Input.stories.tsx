@@ -99,7 +99,7 @@ export const Default = () => {
         <Label
           htmlFor="sampleNumberInput1"
           label="Quantity"
-          description={"With minimum 5 validation"}
+          description={"With minimum 5 validation, validated on Load"}
           mr={7}
           rootStyles={{ width: "128px" }}
         />
@@ -110,6 +110,7 @@ export const Default = () => {
           error={numberInput1Error}
           setError={(e) => setNumberInput1Error(e)}
           min={5}
+          validateOnLoad
           // onInvalid={(e) => forceValidateInput1()}
           // min={5}
         />
@@ -160,7 +161,7 @@ export const Default = () => {
         <Label
           htmlFor="sampleNumberInput4"
           label="Quantity"
-          description="Minimum 5, with showHTMLErrorMessage set to true"
+          description="Minimum 5, with useHTMLErrorMessage set to true"
           required
           mr={7}
           rootStyles={{ width: "128px" }}
@@ -172,7 +173,7 @@ export const Default = () => {
           onChange={(val) => setNumberInputValue4(Number(val))}
           error={numberInput4Error}
           setError={(e) => setNumberInput4Error(e)}
-          showHTMLErrorMessage
+          useHTMLErrorMessage
         />
       </ControlWrapper>
       <SubmitButton mb={4} />

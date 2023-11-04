@@ -57,7 +57,7 @@ export const TextInput = ({
   pattern,
   minLength,
   maxLength,
-  size = 50,
+  size = 50, // width
   /**
    * Text Input - specific props
    */
@@ -132,11 +132,12 @@ export const TextInput = ({
 
   return (
     <div
-      data-testid={`text-input-${id}`}
+      data-testid={`text-input-${id}-container`}
       className={containerClasses}
       style={rootStyles}
     >
       <input
+        data-testid={`text-input-${id}-input`}
         id={id}
         type={type}
         value={value ? value : ""}
@@ -161,7 +162,11 @@ export const TextInput = ({
         }
         style={inputStyles}
       />
-      {error && <p className="form_input_error">{error}</p>}
+      {error && (
+        <p data-testid={`text-input-${id}-error`} className="form_input_error">
+          {error}
+        </p>
+      )}
     </div>
   );
 };

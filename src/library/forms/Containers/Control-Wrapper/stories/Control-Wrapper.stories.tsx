@@ -54,7 +54,7 @@ export const Default = () => {
         <TextInput
           id="firstNameInput"
           value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
+          onChange={(val) => setFirstName(val as string)}
         />
       </ControlWrapper>
       <ControlWrapper>
@@ -68,7 +68,7 @@ export const Default = () => {
         <TextInput
           id="lastNameInput"
           value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          onChange={(val) => setLastName(val as string)}
         />
       </ControlWrapper>
     </FormContainer>

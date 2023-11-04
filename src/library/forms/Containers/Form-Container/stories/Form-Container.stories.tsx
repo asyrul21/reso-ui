@@ -50,7 +50,7 @@ export const Default = () => {
         <TextInput
           id="sampleTextInput1"
           value={textInputValue}
-          onChange={(e) => setTextInputValue(e.target.value)}
+          onChange={(val) => setTextInputValue(val as string)}
         />
       </ControlWrapper>
       <SubmitButton mb={4} />
@@ -79,7 +79,7 @@ export const WithContainerStyles = () => {
         <TextInput
           id="sampleTextInput1"
           value={textInputValue}
-          onChange={(e) => setTextInputValue(e.target.value)}
+          onChange={(val) => setTextInputValue(val as string)}
         />
       </ControlWrapper>
       <SubmitButton mb={4} />

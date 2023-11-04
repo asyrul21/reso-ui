@@ -23,7 +23,7 @@
     "dev": "npm run storybook",
     "start": "webpack serve --mode development --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js --mode production",
-    "lint": "tslint -p . -c tslint.json --exclude '**/*.stories.tsx'",
+    "lint": "tslint -p . -c tslint.json --exclude '**/*.stories.tsx' --exclude '**/*.test.{ts,tsx}' ",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

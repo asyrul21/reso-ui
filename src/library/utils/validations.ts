@@ -11,8 +11,8 @@ export const objectHasValue = (val: any) => {
 };
 
 export const numberHasValue = (val: any) => {
-  const number = Number(val);
-  return hasValue(number) && typeof number === "number" && !isNaN(number);
+  const num = Number(val);
+  return hasValue(num) && typeof num === "number" && !isNaN(num);
 };
 
 export const numberHasPositiveValue = (val: any) => {

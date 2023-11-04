@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { TextInput } from "@forms/Controls/Text-Input";
+import { TextInput } from "@forms/Controls/Text-Input/Text-Input";
 import { FormInputValidator } from "@interfaces/Form";
 
 describe("Text Input Component Unit Tests", () => {
@@ -273,7 +273,7 @@ describe("Text Input Component Unit Tests", () => {
         // debug();
         const component = screen.queryByTestId("text-input-test-input");
         fireEvent.change(component, { target: { value: "test" } });
-        expect(mockValidationFn).toBeCalled;
+        expect(mockValidationFn).toBeCalled();
         expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
       });
 
@@ -299,7 +299,7 @@ describe("Text Input Component Unit Tests", () => {
         // debug();
         const component = screen.queryByTestId("text-input-test-input");
         fireEvent.change(component, { target: { value: "test" } });
-        expect(mockValidationFn).toBeCalled;
+        expect(mockValidationFn).toBeCalled();
         expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
       });
 
@@ -333,10 +333,10 @@ describe("Text Input Component Unit Tests", () => {
         const component = screen.queryByTestId("text-input-test-input");
         fireEvent.change(component, { target: { value: "test" } });
 
-        expect(mockValidationFn1).toBeCalled;
+        expect(mockValidationFn1).toBeCalled();
         expect(mockValidationFn1).toHaveReturnedWith(true);
 
-        expect(mockValidationFn2).toBeCalled;
+        expect(mockValidationFn2).toBeCalled();
         expect(mockValidationFn2).toHaveReturnedWith(false);
 
         expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
@@ -372,10 +372,10 @@ describe("Text Input Component Unit Tests", () => {
         const component = screen.queryByTestId("text-input-test-input");
         fireEvent.change(component, { target: { value: "test" } });
 
-        expect(mockValidationFn1).toBeCalled;
+        expect(mockValidationFn1).toBeCalled();
         expect(mockValidationFn1).toHaveReturnedWith(true);
 
-        expect(mockValidationFn2).toBeCalled;
+        expect(mockValidationFn2).toBeCalled();
         expect(mockValidationFn2).toHaveReturnedWith(true);
 
         expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only

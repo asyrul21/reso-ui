@@ -9,7 +9,6 @@
     "no-invalid-template-strings": true,
     "no-trailing-whitespace": true,
     "no-consecutive-blank-lines": true,
-    "newline-before-return": true,
     "unnecessary-else": [true, { "allow-else-if": true }],
     "interface-name": [true, "always-prefix"],
     "no-implicit-dependencies": [
@@ -22,10 +21,11 @@
         "@interfaces",
         "@utils",
         "@hooks",
-        "@styles"
+        "@styles",
+        "@forms"
       ]
     ],
-    "no-submodule-imports": [true, "@components"],
+    "no-submodule-imports": [true, "@components", "@forms"],
     "promise-function-async": true,
     "await-promise": true,
     "jsx-no-lambda": false,

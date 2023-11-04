@@ -48,8 +48,8 @@ describe("Form Container Unit Tests", () => {
 
   test("should apply custom styles when provided as prop", () => {
     render(
-      // tslint:disable-next-line: no-empty
       <FormContainer
+        // tslint:disable-next-line: no-empty
         onSubmit={() => {}}
         rootStyles={{ border: "2px solid red" }}
       >

@@ -59,7 +59,6 @@ export const FormContainer = ({
       style={rootStyles}
       onSubmit={(e) => {
         e.preventDefault();
-        console.log("hello");
         onSubmit();
       }}
     >

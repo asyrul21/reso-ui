@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/asyrul21/reso-ui/compare/v1.5.0...v1.6.0) (2023-11-04)
+
+
+### Bug Fixes
+
+* build errors ([c2578b1](https://github.com/asyrul21/reso-ui/commit/c2578b1e90db596a8fd56e0207941e3eb8a2e7db))
+
+
+### Features
+
+* form input for text and number validation poc done ([7642db6](https://github.com/asyrul21/reso-ui/commit/7642db63c54428b34243ee1d18544d3757db9e16))
+
 # [1.5.0](https://github.com/asyrul21/reso-ui/compare/v1.4.0...v1.5.0) (2023-09-05)
 
 

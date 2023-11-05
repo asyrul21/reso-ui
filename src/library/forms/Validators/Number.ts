@@ -14,6 +14,14 @@ const valueIsEmpty = (val?: string | number): boolean => {
 export const numberIsRequired: FormInputValidator<number | string> = {
   validationFn: (val?: number | string) => {
     if (valueIsEmpty(val)) return false;
+    return true;
+  },
+  errorMessage: "This field is required",
+};
+
+export const valueIsNumber: FormInputValidator<number | string> = {
+  validationFn: (val?: number | string) => {
+    if (valueIsEmpty(val)) return true; // skip if null or empty
     /* redundant cast */
     const num = Number(val);
     if (!isNaN(num) && typeof num === "number") {
@@ -21,7 +29,7 @@ export const numberIsRequired: FormInputValidator<number | string> = {
     }
     return false;
   },
-  errorMessage: "This field is required",
+  errorMessage: "Value must be a number",
 };
 
 export const numberIsPositiveInteger: FormInputValidator<number | string> = {
@@ -32,7 +40,7 @@ export const numberIsPositiveInteger: FormInputValidator<number | string> = {
     if (
       !isNaN(num) &&
       typeof num === "number" &&
-      num > 0 &&
+      num > -1 &&
       Number.isInteger(num)
     ) {
       return true;

@@ -11,6 +11,11 @@ import { SubmitButton } from "@forms/Controls/Submit-Button";
 
 import dedent from "ts-dedent";
 import { useFormInput } from "@forms/Hooks";
+import {
+  numberIsPositiveInteger,
+  numberIsRequired,
+  valueIsNumber,
+} from "@forms/Validators";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -75,6 +80,13 @@ export const Default = () => {
     setValue: setTextInputValue4,
     error: textInput4Error,
     setError: setInputError4,
+  } = useFormInput<string>("");
+
+  const {
+    value: numberStrInput,
+    setValue: setNumberStrInput,
+    error: numberStrInputError,
+    setError: setNumberStrInputError,
   } = useFormInput<string>("");
 
   const handleFormSubmit = () => {
@@ -163,7 +175,6 @@ export const Default = () => {
           error={emailInputError}
         />
       </ControlWrapper>
-
       <ControlWrapper>
         <Label
           htmlFor="samplePasswordInput"
@@ -197,6 +208,29 @@ export const Default = () => {
           onChange={(val) => setTelInputValue(val as string)}
           error={telInputError}
           setError={setTelInputError}
+        />
+      </ControlWrapper>
+      <ControlWrapper>
+        <Label
+          htmlFor="sampleNumberInput"
+          label="Amount"
+          description="Using Text Input to only accept positive numbers"
+          mr={7}
+          required
+          rootStyles={{ width: "128px" }}
+        />
+        <TextInput
+          type="text"
+          id="sampleNumberInput"
+          value={numberStrInput}
+          onChange={(val) => setNumberStrInput(val as string)}
+          error={numberStrInputError}
+          setError={setNumberStrInputError}
+          customValidators={[
+            numberIsRequired,
+            valueIsNumber,
+            numberIsPositiveInteger,
+          ]}
         />
       </ControlWrapper>
       <ControlWrapper>

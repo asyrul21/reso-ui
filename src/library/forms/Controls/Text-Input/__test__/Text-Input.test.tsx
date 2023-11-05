@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { TextInput } from "@forms/Controls/Text-Input/Text-Input";
+import { TextInput } from "@forms/Controls/Text-Input";
 import { FormInputValidator } from "@interfaces/Form";
 
 describe("Text Input Component Unit Tests", () => {
@@ -23,24 +23,20 @@ describe("Text Input Component Unit Tests", () => {
     expect(onChangeFn).toBeCalledWith("test input value");
   });
 
+  test("should render error if error is not null", () => {
+    const onChangeFn = jest.fn();
+
+    const { debug } = render(
+      <TextInput id="test" onChange={onChangeFn} error={"Test error message"} />
+    );
+
+    // debug();
+    const componentError = screen.queryByTestId("text-input-test-error");
+    expect(componentError).toBeInTheDocument();
+    expect(componentError).toHaveTextContent("Test error message");
+  });
+
   describe("Validations", () => {
-    test("should render error if error is not null", () => {
-      const onChangeFn = jest.fn();
-
-      const { debug } = render(
-        <TextInput
-          id="test"
-          onChange={onChangeFn}
-          error={"Test error message"}
-        />
-      );
-
-      // debug();
-      const componentError = screen.queryByTestId("text-input-test-error");
-      expect(componentError).toBeInTheDocument();
-      expect(componentError).toHaveTextContent("Test error message");
-    });
-
     test("should execute setError second time if required and validated on load", () => {
       const onChangeFn = jest.fn();
       const setErrorMock = jest.fn();

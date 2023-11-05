@@ -32,7 +32,6 @@ type InputPrimitiveType = "string" | "boolean" | "number";
 
 export default <T>(
   type: InputPrimitiveType,
-  initialValidators: FormInputValidator<T>[],
   validationProps: IInputValidationProps,
   customValidators?: FormInputValidator<T> | FormInputValidator<T>[]
 ) => {
@@ -48,7 +47,7 @@ export default <T>(
       isTel,
     } = validationProps;
 
-    let finalValidators = [...initialValidators];
+    let finalValidators: FormInputValidator<T>[] = [];
 
     if (required) {
       if (type === "string") {

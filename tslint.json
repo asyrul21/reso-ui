@@ -3,7 +3,7 @@
   "extends": ["tslint:latest", "tslint-react"],
   "jsRules": {},
   "rules": {
-    "curly": true,
+    "curly": false,
     "no-duplicate-variable": true,
     "no-eval": true,
     "no-invalid-template-strings": true,

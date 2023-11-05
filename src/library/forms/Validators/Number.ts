@@ -1,23 +1,22 @@
 import { FormInputValidator } from "@interfaces/Form";
 
-/**
- * Number validators
- */
-export const numberIsNotNull: FormInputValidator<number> = {
-  validationFn: (val?: number) => {
-    const num = Number(val);
-    if (!isNaN(num) && typeof num === "number") {
-      return true;
-    }
-    return false;
-  },
-  errorMessage: "Value must be a number",
+const valueIsEmpty = (val?: string | number): boolean => {
+  /* If value is number - 0 is also a number */
+  if (val === null || typeof val === undefined) return true;
+  /* If value is string */
+  if (typeof val === "string" && val === "") return true;
+  return false;
 };
 
-export const numberIsRequired: FormInputValidator<number> = {
-  validationFn: (val?: number) => {
+/**
+ * Number validators: should work even if number is passed as string
+ */
+export const numberIsRequired: FormInputValidator<number | string> = {
+  validationFn: (val?: number | string) => {
+    if (valueIsEmpty(val)) return false;
+    /* redundant cast */
     const num = Number(val);
-    if (typeof num === "number" && num > 0) {
+    if (!isNaN(num) && typeof num === "number") {
       return true;
     }
     return false;
@@ -25,13 +24,33 @@ export const numberIsRequired: FormInputValidator<number> = {
   errorMessage: "This field is required",
 };
 
+export const numberIsPositiveInteger: FormInputValidator<number | string> = {
+  validationFn: (val?: number | string) => {
+    if (valueIsEmpty(val)) return true; // skip if null or empty
+    /* redundant cast */
+    const num = Number(val);
+    if (
+      !isNaN(num) &&
+      typeof num === "number" &&
+      num > 0 &&
+      Number.isInteger(num)
+    ) {
+      return true;
+    }
+    return false;
+  },
+  errorMessage: "Value must be a positive integer",
+};
+
 export const numberIsMoreThanOrEqualsTo: (
   min: number
-) => FormInputValidator<number> = (min: number) => {
+) => FormInputValidator<number | string> = (min: number) => {
   return {
-    validationFn: (val?: number) => {
+    validationFn: (val?: number | string) => {
+      if (valueIsEmpty(val)) return true; // skip if null or empty
+      /* redundant cast */
       const num = Number(val);
-      if (typeof num === "number" && num >= min) {
+      if (!isNaN(num) && typeof num === "number" && num >= min) {
         return true;
       }
       return false;
@@ -40,13 +59,15 @@ export const numberIsMoreThanOrEqualsTo: (
   };
 };
 
-export const numberIsLessThan: (max: number) => FormInputValidator<number> = (
+export const numberIsLessThan: (
   max: number
-) => {
+) => FormInputValidator<number | string> = (max: number) => {
   return {
-    validationFn: (val?: number) => {
+    validationFn: (val?: number | string) => {
+      if (valueIsEmpty(val)) return true; // skip if null or empty
+      /* redundant cast */
       const num = Number(val);
-      if (typeof num === "number" && num < max) {
+      if (!isNaN(num) && typeof num === "number" && num < max) {
         return true;
       }
       return false;

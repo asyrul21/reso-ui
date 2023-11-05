@@ -20,15 +20,8 @@ import {
   withSpacingsProps,
 } from "@utils/styles";
 
-import { numberHasValue } from "@utils/validations";
-import {
-  numberIsLessThan,
-  numberIsMoreThanOrEqualsTo,
-  numberIsNotNull,
-  numberIsRequired,
-  stringIsNotNull,
-  validate,
-} from "@forms/Validators";
+// validation
+import { validate } from "@forms/Validators";
 import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
 
 export interface INumberInputProps
@@ -70,13 +63,12 @@ export const NumberInput = ({
   inputClassName,
   inputStyles = {},
   theme = "light",
-  customValidators,
+  customValidators = [],
   ...spacingsProps
 }: INumberInputProps) => {
   useDisableNumberInputScroll();
   const inputValidators = useInputValidatorsMemo(
     "number",
-    [numberIsNotNull],
     {
       required,
       min,
@@ -95,7 +87,7 @@ export const NumberInput = ({
   const handleInputChange = (e) => {
     const val = e.target.value;
     validate(val, inputValidators, setError);
-    onChange(val);
+    onChange(Number(val));
   };
 
   const handleInputInvalid = (e) => {
@@ -134,14 +126,15 @@ export const NumberInput = ({
 
   return (
     <div
-      data-testid={`text-input-${id}`}
+      data-testid={`number-input-${id}-container`}
       className={containerClasses}
       style={rootStyles}
     >
       <input
         id={id}
+        data-testid={`number-input-${id}-input`}
         type="number"
-        value={Number(value).toString()}
+        value={Number(value).toString()} // if "" do not cast to numberZ ;"≥
         onChange={handleInputChange}
         onBlur={onBlur}
         onFocus={onFocus}
@@ -157,7 +150,14 @@ export const NumberInput = ({
         className={inputClasses}
         style={inputStyles}
       />
-      {error && <p className="form_input_error">{error}</p>}
+      {error && (
+        <p
+          data-testid={`number-input-${id}-error`}
+          className="form_input_error"
+        >
+          {error}
+        </p>
+      )}
     </div>
   );
 };

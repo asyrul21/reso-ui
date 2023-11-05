@@ -3,16 +3,6 @@ import { FormInputValidator } from "@interfaces/Form";
 /**
  * String validators
  */
-export const stringIsNotNull: FormInputValidator<string> = {
-  validationFn: (val?: string) => {
-    if (typeof val === "string") {
-      return true;
-    }
-    return false;
-  },
-  errorMessage: "Value must be a string",
-};
-
 export const stringIsRequired: FormInputValidator<string> = {
   validationFn: (val?: string) => {
     if (typeof val === "string" && val !== "") {

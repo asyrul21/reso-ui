@@ -18,7 +18,7 @@ import {
   createThemeStyles,
   withSpacingsProps,
 } from "@utils/styles";
-import { stringIsNotNull, validate } from "@forms/Validators";
+import { validate } from "@forms/Validators";
 import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
 
 export interface ITextInputProps
@@ -66,12 +66,11 @@ export const TextInput = ({
   inputClassName,
   inputStyles = {},
   theme = "light",
-  customValidators,
+  customValidators = [],
   ...spacingsProps
 }: ITextInputProps) => {
   const inputValidators = useInputValidatorsMemo(
     "string",
-    [stringIsNotNull],
     {
       required,
       minLength,

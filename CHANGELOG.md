@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/asyrul21/reso-ui/compare/v1.6.0...v1.7.0) (2023-11-08)
+
+
+### Features
+
+* **checkbox:** Form Checkbox Input component, stories and unit tests ([0a644b3](https://github.com/asyrul21/reso-ui/commit/0a644b3478f5e24ac5092b7d322e860e5b14175e))
+
 # [1.6.0](https://github.com/asyrul21/reso-ui/compare/v1.5.0...v1.6.0) (2023-11-04)
 
 

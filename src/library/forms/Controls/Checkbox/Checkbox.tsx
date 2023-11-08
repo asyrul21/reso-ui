@@ -8,34 +8,29 @@ import { IFormInputProps } from "@interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
-import "./styles/Text-Input.layout.scss";
-import "./styles/Text-Input.theme.scss";
+import "./styles/Checkbox.layout.scss";
+import "./styles/Checkbox.theme.scss";
 
-// utils
+import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
+import { validate } from "@forms/Validators";
 import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
 } from "@utils/styles";
-import { validate } from "@forms/Validators";
-import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
 
-export interface ITextInputProps
+export interface ICheckboxInputProps
   extends IComponent,
-    IFormInputProps<string>,
+    IFormInputProps<boolean>,
     IThemeProps,
     IMarginProps {
-  type?: "text" | "email" | "password" | "tel";
-  placeholder?: string;
-  pattern?: RegExp | string;
-  minLength?: number;
-  maxLength?: number;
-  size?: number;
+  children?: React.ReactNode;
 }
 
-export const TextInput = ({
+export const Checkbox = ({
   id = null,
+  children,
   value,
   onChange,
   onBlur,
@@ -48,19 +43,6 @@ export const TextInput = ({
   required = false,
   readonly = false,
   autofocus = false,
-  type = "text",
-  /**
-   * Text Input - specific props
-   */
-  autocomplete = "off",
-  placeholder,
-  pattern,
-  minLength,
-  maxLength,
-  size = 50, // width
-  /**
-   * Text Input - specific props
-   */
   rootClassName,
   rootStyles = {},
   inputClassName,
@@ -68,16 +50,11 @@ export const TextInput = ({
   theme = "light",
   customValidators = [],
   ...spacingsProps
-}: ITextInputProps) => {
+}: ICheckboxInputProps) => {
   const inputValidators = useInputValidatorsMemo(
-    "string",
+    "boolean",
     {
       required,
-      minLength,
-      maxLength,
-      isEmail: type === "email",
-      isTel: type === "tel",
-      pattern,
     },
     customValidators
   );
@@ -90,7 +67,7 @@ export const TextInput = ({
   }, []);
 
   const handleInputChange = (e) => {
-    const val = e.target.value;
+    const val = e.target.checked;
     validate(val, inputValidators, setError);
     onChange(val);
   };
@@ -107,12 +84,13 @@ export const TextInput = ({
       withSpacingsProps(
         {
           form_input_container: true,
-          input_text_container: true,
+          checkbox_container: true,
         },
         spacingsProps
       ),
       rootClassName
-    )
+    ),
+    createThemeStyles(`checkbox_theme_`, theme)
   );
 
   const inputClasses = createComponentStyles(
@@ -120,26 +98,26 @@ export const TextInput = ({
       {
         input_text: true,
         form_controls_input: true,
+        input_checkbox: true,
       },
       inputClassName,
       {
         disabled,
       }
-    ),
-    createThemeStyles(`input_text_theme_`, theme)
+    )
   );
 
   return (
     <div
-      data-testid={`text-input-${id}-container`}
       className={containerClasses}
       style={rootStyles}
+      data-testid={`checkbox-${id}-container`}
     >
       <input
-        data-testid={`text-input-${id}-input`}
+        data-testid={`checkbox-${id}-input`}
         id={id}
-        type={type}
-        value={value ? (value as string) : ""}
+        type="checkbox"
+        checked={value as boolean}
         onChange={handleInputChange}
         onBlur={onBlur}
         onFocus={onFocus}
@@ -148,24 +126,21 @@ export const TextInput = ({
         readOnly={readonly}
         required={required}
         autoFocus={autofocus}
-        autoComplete={autocomplete}
-        size={size}
-        maxLength={maxLength}
-        minLength={minLength}
         className={inputClasses}
-        placeholder={placeholder}
-        pattern={
-          pattern && typeof pattern.toString === "function"
-            ? pattern.toString()
-            : (pattern as string)
-        }
         style={inputStyles}
       />
-      {error && (
-        <p data-testid={`text-input-${id}-error`} className="form_input_error">
-          {error}
-        </p>
-      )}
+      <div className="checkbox_right_container">
+        {children && <div className="checkbox_children">{children}</div>}
+        {error && (
+          <p
+            data-testid={`checkbox-${id}-error`}
+            className="form_input_error checkbox_error"
+          >
+            {error}
+          </p>
+        )}
+      </div>
+      {/* <div className="component_checkbox_children">{children}</div> */}
     </div>
   );
 };

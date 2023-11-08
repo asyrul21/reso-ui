@@ -13,6 +13,7 @@ import {
 } from "..";
 import { numberHasValue } from "@utils/validations";
 import { composeInputValidators } from "./utils";
+import { booleanIsRequired } from "@forms/Validators/Boolean";
 
 interface IInputValidationProps {
   // shared
@@ -59,6 +60,11 @@ export default <T>(
         finalValidators = [
           ...finalValidators,
           numberIsRequired as FormInputValidator<T>,
+        ];
+      } else if (type === "boolean") {
+        finalValidators = [
+          ...finalValidators,
+          booleanIsRequired as FormInputValidator<T>,
         ];
       }
     }

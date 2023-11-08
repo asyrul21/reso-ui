@@ -1,0 +1,45 @@
+.checkbox_container {
+  //   border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: $margin-xxlarge;
+}
+
+.input_checkbox {
+  border-width: 1px;
+  border-style: solid;
+  height: 24px;
+  width: 24px;
+  border-radius: $border-radius-default;
+  margin-right: $margin-xsmall;
+  cursor: pointer;
+  &:disabled {
+    pointer-events: none;
+  }
+}
+
+.checkbox_right_container {
+  //   border: 2px solid blue;
+  width: inherit;
+}
+
+.checkbox_children {
+  font-size: $font-size-default;
+  margin-bottom: $margin-xxxsmall;
+}
+
+.checkbox_error {
+  margin: 0;
+  padding: 0;
+}
+
+.container_auth_tnc {
+  text-decoration: underline;
+  opacity: 0.9;
+  color: $fc-dark;
+  &:hover {
+    opacity: 1;
+  }
+}

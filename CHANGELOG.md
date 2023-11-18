@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/asyrul21/reso-ui/compare/v1.7.0...v1.8.0) (2023-11-18)
+
+
+### Bug Fixes
+
+* tscconfig to exclude types directory ([902bf2a](https://github.com/asyrul21/reso-ui/commit/902bf2a4897c44ee01b83ebbb360f7f538feb5c0))
+
+
+### Features
+
+* type declarations init ([3b47c5d](https://github.com/asyrul21/reso-ui/commit/3b47c5d8fdf16d180431890fa12d5873fa6bb246))
+
 # [1.7.0](https://github.com/asyrul21/reso-ui/compare/v1.6.0...v1.7.0) (2023-11-08)
 
 

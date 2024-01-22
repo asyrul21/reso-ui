@@ -1,6 +1,6 @@
 {
   "name": "reso-ui",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "Reusable React components in Typescript",
   "types": "types",
   "exports": {

@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/asyrul21/reso-ui/compare/v1.8.0...v1.8.1) (2024-01-22)
+
+
+### Bug Fixes
+
+* minor fixes ([f82c23f](https://github.com/asyrul21/reso-ui/commit/f82c23f77ffaabecba609e29052e4de5fa790290))
+
 # [1.8.0](https://github.com/asyrul21/reso-ui/compare/v1.7.0...v1.8.0) (2023-11-18)
 
 

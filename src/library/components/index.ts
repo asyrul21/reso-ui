@@ -5,7 +5,6 @@ export * from "./Banners";
 export * from "./Buttons";
 export * from "./Card";
 export * from "./Containers";
-export * from "./Containers";
 export * from "./Dialog";
 export * from "./Errors";
 export * from "./Example";

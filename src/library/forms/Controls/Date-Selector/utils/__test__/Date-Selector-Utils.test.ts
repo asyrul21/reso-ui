@@ -40,7 +40,8 @@ describe("Date Selector Utility Methods Unit Tests", () => {
       expect(typeof result.year).toEqual("number");
 
       expect(result).toHaveProperty("month");
-      expect(result.month).toBeTruthy();
+      expect(result.month).not.toBeUndefined();
+      expect(result.month).not.toBeNull();
       expect(typeof result.month).toEqual("number");
 
       expect(result).toHaveProperty("year");

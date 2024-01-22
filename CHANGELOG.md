@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/asyrul21/reso-ui/compare/v1.8.1...v1.8.2) (2024-01-22)
+
+
+### Bug Fixes
+
+* move to single entry webpack implementation to resolve import issues ([56eb90c](https://github.com/asyrul21/reso-ui/commit/56eb90c54afdecb70da5204c0dcf7d792de50ca0))
+
 ## [1.8.1](https://github.com/asyrul21/reso-ui/compare/v1.8.0...v1.8.1) (2024-01-22)
 
 

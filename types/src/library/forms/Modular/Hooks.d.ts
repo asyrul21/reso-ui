@@ -2,7 +2,7 @@ export declare const useFormData: () => {
     formData: {};
     setFormData: (key: string, value?: string | null | undefined) => void;
 };
-export declare const useModularFormContext: (formName: string) => import("../../interfaces").IFormDataContext;
+export declare const useModularFormContext: (formName: string) => import("../..").IFormDataContext;
 export declare const useModularSubForm: (parentFormName: string, subFormDataKey: string) => {
     subFormData: any;
     setSubFormData: (key: string, value: string) => void;

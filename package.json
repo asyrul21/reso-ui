@@ -2,14 +2,8 @@
   "name": "reso-ui",
   "version": "1.8.1",
   "description": "Reusable React components in Typescript",
-  "types": "types",
-  "exports": {
-    "./components": "./dist/lib/components.bundle.js",
-    "./forms": "./dist/lib/forms.bundle.js",
-    "./icons": "./dist/lib/icons.bundle.js",
-    "./interfaces": "./dist/lib/interfaces.bundle.js",
-    "./hooks": "./dist/lib/hooks.bundle.js"
-  },
+  "types": "types/src/library/index",
+  "main": "dist/lib.js",
   "files": [
     "dist",
     "types"

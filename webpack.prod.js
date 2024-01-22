@@ -4,21 +4,21 @@ const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "production",
-  entry: {
-    components: path.resolve(__dirname, "src/library/components/index.ts"),
-    forms: path.resolve(__dirname, "src/library/forms/index.ts"),
-    hooks: path.resolve(__dirname, "src/library/hooks/index.ts"),
-    icons: path.resolve(__dirname, "src/library/icons/index.ts"),
-    interfaces: path.resolve(__dirname, "src/library/interfaces/index.ts"),
-  },
+  entry: './src/library/index.ts',
+  // entry: {
+  //   components: path.resolve(__dirname, "src/library/components/index.ts"),
+  //   forms: path.resolve(__dirname, "src/library/forms/index.ts"),
+  //   hooks: path.resolve(__dirname, "src/library/hooks/index.ts"),
+  //   icons: path.resolve(__dirname, "src/library/icons/index.ts"),
+  //   interfaces: path.resolve(__dirname, "src/library/interfaces/index.ts"),
+  // },
   output: {
-    // asyncChunks: true,
-    path: path.resolve(__dirname, "dist/lib"),
-    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    filename: "lib.js",
     globalObject: "this",
     library: {
       name: "reso-ui",
-      type: "umd",
+      type: "umd", 
     },
   },
   externals: {

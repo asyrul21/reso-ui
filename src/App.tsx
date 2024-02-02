@@ -2,12 +2,8 @@
 import React, { useState } from "react";
 
 import { Example, Banner } from "./library/components";
-// import { Example } from "../dist/main";
-// import { Flex } from "@components/Containers/Flex";
-import { View } from "@components/Containers/View";
-// import { Modal } from "@components/Modal";
-// import { ModalHeader } from "@components/Modal/Modal-Header";
-import { DropdownSelect } from "@forms/Controls/Dropdown-Select";
+import { View } from "./library/components/Containers";
+import { DropdownSelect } from "./library/forms/Controls/Dropdown-Select";
 
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports

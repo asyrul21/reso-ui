@@ -18,7 +18,7 @@
         "src"
       ]
     ],
-    "no-submodule-imports": [true, "@components", "@forms"],
+    "no-submodule-imports": [true],
     "promise-function-async": true,
     "await-promise": true,
     "jsx-no-lambda": false,

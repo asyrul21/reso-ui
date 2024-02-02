@@ -1,0 +1,49 @@
+$font-family: "Poppins", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  "Droid Sans", "Helvetica Neue", sans-serif;
+
+$p-line-height-default: auto;
+
+// font sizes for sizing = default
+$font-size-1: 10px;
+$font-size-2: 12px;
+$font-size-3: 14px;
+$font-size-4: 16px;
+$font-size-5: 18px;
+$font-size-6: 20px;
+$font-size-7: 22px;
+$font-size-8: 24px;
+$font-size-9: 26px;
+$font-size-default: $font-size-3;
+
+// font sizes for sizing = large
+$font-size-large-1: 32px;
+$font-size-large-2: 36px;
+$font-size-large-3: 40px;
+$font-size-large-4: 42px;
+$font-size-large-5: 46px;
+$font-size-large-6: 50px;
+$font-size-large-7: 54px;
+$font-size-large-8: 60px;
+$font-size-large-9: 64px;
+
+// font weights
+$font-bold-weight: 600;
+
+// heading sizes
+$h1-font-size: $font-size-9; //26px
+$h1-font-line-height: 34px;
+
+$h2-font-size: $font-size-6; //20px
+$h2-font-line-height: 26px;
+
+$h3-font-size: $font-size-5; //18px
+$h3-font-line-height: 23px;
+
+$h4-font-size: $font-size-4; //16px
+$h4-font-line-height: 21px;
+
+$h5-font-size: $font-size-3; //14px
+$h5-font-line-height: 18px;
+
+$h6-font-size: $font-size-2; //12px
+$h6-font-line-height: 18px;

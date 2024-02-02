@@ -22,6 +22,11 @@
   border-radius: 100px;
 }
 
+.componentError_text {
+  font-size: $font-size-5; //18px
+  font-weight: normal;
+}
+
 .componentError_icon_margin {
   margin-bottom: $margin-medium;
 }

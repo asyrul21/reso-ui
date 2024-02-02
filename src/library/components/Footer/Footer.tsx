@@ -15,7 +15,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../utils/styles";
+} from "../../utils/styles";
 
 export interface IFooterProps extends IComponent, IThemeProps, IPaddingProps {
   children?: React.ReactNode;

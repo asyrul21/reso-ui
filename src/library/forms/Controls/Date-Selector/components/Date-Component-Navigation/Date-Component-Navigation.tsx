@@ -17,9 +17,9 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../../../utils/styles";
+} from "../../../../../utils/styles";
 
-import { methodHasValue } from "./../../../../../utils/validations";
+import { methodHasValue } from "../../../../../utils/validations";
 
 // #8B93A2
 

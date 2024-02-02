@@ -15,9 +15,9 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
-import { methodHasValue } from "./../../../utils/validations";
+import { methodHasValue } from "../../../utils/validations";
 
 export interface IButtonProps extends IComponent, IThemeProps, IMarginProps {
   type?: "plain" | "primary" | "link";

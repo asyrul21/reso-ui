@@ -13,7 +13,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 import useDisableBodyScroll from "../../../hooks/useDisableBodyScroll";
 
 export interface IFullScreenErrorProps extends IComponent, IThemeProps {
@@ -59,7 +59,7 @@ export const FullScreenError = ({
   const textClasses = createComponentStyles(
     createLayoutStyles(
       {
-        loader_text: true,
+        fullScreenError_text: true,
       },
       textClassName
     ),

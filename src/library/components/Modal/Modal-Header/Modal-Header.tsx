@@ -15,7 +15,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
 export interface IModalHeaderProps extends IComponent, IThemeProps {
   title: string;

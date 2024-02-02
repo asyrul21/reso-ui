@@ -12,9 +12,9 @@ import {
   createComponentStyles,
   createLayoutStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
-import { hasValue } from "./../../../utils/validations";
+import { hasValue } from "../../../utils/validations";
 
 export interface IFlexProps extends IComponent, ISpacingsProps {
   direction?: "row" | "column";

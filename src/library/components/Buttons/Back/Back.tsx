@@ -15,7 +15,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
 export interface IBackProps extends IComponent, IThemeProps, IMarginProps {
   to: string;
@@ -41,7 +41,6 @@ export const Back = ({
       withSpacingsProps(
         {
           back_container: true,
-          button_text: true,
         },
         spacingsProps
       ),
@@ -55,7 +54,12 @@ export const Back = ({
   );
 
   const linkClasses = createComponentStyles(
-    createLayoutStyles({}, linkClassName),
+    createLayoutStyles(
+      {
+        a_base: true,
+      },
+      linkClassName
+    ),
     createThemeStyles("back_link_theme", theme)
   );
 

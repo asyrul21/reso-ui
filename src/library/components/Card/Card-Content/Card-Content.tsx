@@ -12,7 +12,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
 export interface ICardContentProps extends IComponent, ISpacingsProps {
   children: React.ReactNode;

@@ -1,0 +1,108 @@
+.p_base {
+  line-height: $p-line-height-default;
+}
+
+.text_no_block_margin {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.text_no_inline_margin {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.span_base {
+}
+
+.heading_h1_base {
+  font-size: $h1-font-size;
+  line-height: $h1-font-line-height;
+}
+
+.heading_h2_base {
+  font-size: $h2-font-size;
+  line-height: $h2-font-line-height;
+}
+
+.heading_h3_base {
+  font-size: $h3-font-size;
+  line-height: $h3-font-line-height;
+}
+
+.heading_h4_base {
+  font-size: $h4-font-size;
+  line-height: $h4-font-line-height;
+}
+
+.heading_h5_base {
+  font-size: $h5-font-size;
+  line-height: $h5-font-line-height;
+}
+
+.heading_h6_base {
+  font-size: $h6-font-size;
+  line-height: $h6-font-line-height;
+}
+
+////////////////////////////////
+// Font Sizes for Sizing: Default
+////////////////////////////////
+.fontsize_default_1 {
+  font-size: $font-size-1;
+}
+.fontsize_default_2 {
+  font-size: $font-size-2;
+}
+.fontsize_default_3 {
+  font-size: $font-size-3;
+}
+.fontsize_default_4 {
+  font-size: $font-size-4;
+}
+.fontsize_default_5 {
+  font-size: $font-size-5;
+}
+.fontsize_default_6 {
+  font-size: $font-size-6;
+}
+.fontsize_default_7 {
+  font-size: $font-size-7;
+}
+.fontsize_default_8 {
+  font-size: $font-size-8;
+}
+.fontsize_default_9 {
+  font-size: $font-size-9;
+}
+
+////////////////////////////////
+// Font Sizes for Sizing: Large
+////////////////////////////////
+.fontsize_large_1 {
+  font-size: $font-size-large-1;
+}
+.fontsize_large_2 {
+  font-size: $font-size-large-2;
+}
+.fontsize_large_3 {
+  font-size: $font-size-large-3;
+}
+.fontsize_large_4 {
+  font-size: $font-size-large-4;
+}
+.fontsize_large_5 {
+  font-size: $font-size-large-5;
+}
+.fontsize_large_6 {
+  font-size: $font-size-large-6;
+}
+.fontsize_large_7 {
+  font-size: $font-size-large-7;
+}
+.fontsize_large_8 {
+  font-size: $font-size-large-8;
+}
+.fontsize_large_9 {
+  font-size: $font-size-large-9;
+}

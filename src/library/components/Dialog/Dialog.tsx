@@ -23,9 +23,9 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../utils/styles";
+} from "../../utils/styles";
 
-import { methodHasValue, hasValue } from "./../../utils/validations";
+import { methodHasValue, hasValue } from "../../utils/validations";
 import { Button } from "../Buttons";
 
 export type DialogType = "ok" | "yesNo";

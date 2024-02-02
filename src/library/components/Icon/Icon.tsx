@@ -17,7 +17,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../utils/styles";
+} from "../../utils/styles";
 
 export interface IIconProps extends IComponent, IThemeProps, IMarginProps {
   SvgIcon: (props: React.SVGProps<SVGElement>) => React.ReactElement;

@@ -10,7 +10,7 @@ import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import "./styles/Hero.layout.scss";
 
 // utils
-import { createComponentStyles, createLayoutStyles } from "./../../../utils/styles";
+import { createComponentStyles, createLayoutStyles } from "../../../utils/styles";
 
 export interface IHeroProps extends IComponent, IMarginProps {
   src: string;

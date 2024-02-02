@@ -16,9 +16,9 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../utils/styles";
+} from "../../utils/styles";
 
-import { methodHasValue } from "./../../utils/validations";
+import { methodHasValue } from "../../utils/validations";
 
 export interface IExternalLinksProps
   extends IComponent,
@@ -54,6 +54,7 @@ export const ExternalLinks = ({
   const linkClasses = createComponentStyles(
     createLayoutStyles(
       {
+        a_base: true,
         externalLinks_link: true,
       },
       linkClassName

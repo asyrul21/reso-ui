@@ -4,7 +4,7 @@ const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "production",
-  entry: './src/library/index.ts',
+  entry: "./src/library/index.ts",
   // entry: {
   //   components: path.resolve(__dirname, "src/library/components/index.ts"),
   //   forms: path.resolve(__dirname, "src/library/forms/index.ts"),
@@ -14,11 +14,12 @@ module.exports = merge(common, {
   // },
   output: {
     path: path.resolve(__dirname, "dist"),
+    clean: true,
     filename: "lib.js",
     globalObject: "this",
     library: {
       name: "reso-ui",
-      type: "umd", 
+      type: "umd",
     },
   },
   externals: {

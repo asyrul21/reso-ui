@@ -11,7 +11,7 @@ import {
   stringIsRequired,
   stringMatchesRegex,
 } from "..";
-import { numberHasValue } from "./../../utils/validations";
+import { numberHasValue } from "../../utils/validations";
 import { composeInputValidators } from "./utils";
 import { booleanIsRequired } from "../Validators/Boolean";
 

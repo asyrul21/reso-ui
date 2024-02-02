@@ -9,7 +9,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../../../utils/styles";
+} from "../../../../../utils/styles";
 
 // styles
 import "./styles/Date-Day-Name.layout.scss";

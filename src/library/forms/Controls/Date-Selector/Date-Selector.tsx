@@ -25,8 +25,8 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
-import { methodHasValue, hasValue } from "./../../../utils/validations";
+} from "../../../utils/styles";
+import { methodHasValue, hasValue } from "../../../utils/validations";
 import { useClickOutside } from "../../../hooks/useClickOutside";
 import { getMonthDisplayNameDefault, getRemappedDayIndex } from "./utils";
 

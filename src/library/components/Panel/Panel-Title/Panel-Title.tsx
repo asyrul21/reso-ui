@@ -13,7 +13,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
 export interface IPanelTitleProps extends IComponent, IThemeProps {
   text: string;

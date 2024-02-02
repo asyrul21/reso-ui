@@ -29,12 +29,19 @@ You can then use our ExampleComponent as below:
 ```jsx
 import { Example } from "reso-ui";
 
+/**
+ * !! IMPORTANT
+*/
+import "./App.scss";
+
 export const SampleApp = () => {
   return (
     <Example theme="light" name="john" rootClassName="example_app_styles" />
   );
 };
 ```
+
+IMPORTANT NOTE: You must import your Application-Specific styles AFTER importing library components. Otherwise, the class name overriding would not work properly.
 
 For other components, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/) for information on components' usage.
 

@@ -15,7 +15,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 import useDisableBodyScroll from "../../../hooks/useDisableBodyScroll";
 
 export interface IModalContainerProps

@@ -10,7 +10,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../utils/styles";
+} from "../../utils/styles";
 
 import "./styles/Quantity-Counter.layout.scss";
 import "./styles/Quantity-Counter.theme.scss";

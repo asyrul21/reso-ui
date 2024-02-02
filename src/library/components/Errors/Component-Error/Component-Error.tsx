@@ -13,7 +13,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
 export interface IComponentErrorProps extends IComponent, IThemeProps {
   text?: string;
@@ -57,7 +57,6 @@ export const ComponentError = ({
   const textClasses = createComponentStyles(
     createLayoutStyles(
       {
-        loader_text: true,
         componentError_text: true,
       },
       textClassName

@@ -11,7 +11,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
 export interface IPanelRowProps extends IComponent {
   keyStr: string;

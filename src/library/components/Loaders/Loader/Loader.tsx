@@ -4,6 +4,8 @@ import React from "react";
 import IComponent from "../../../interfaces/IComponent";
 import IThemeProps from "../../../interfaces/Theme";
 
+import { Text } from "../../Text";
+
 // styles
 import "./styles/Component-Loader.layout.scss";
 import "./styles/Component-Loader.theme.scss";
@@ -13,7 +15,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
 export type LoaderSize = "small" | "medium" | "large";
 
@@ -71,7 +73,11 @@ export const Loader = ({
         style={iconContainerStyles}
         data-testid="component-loader-icon-container"
       />
-      {text && <p>{text}</p>}
+      {text && (
+        <Text Element="p" noBlockMargin noInlineMargin>
+          {text}
+        </Text>
+      )}
     </div>
   );
 };

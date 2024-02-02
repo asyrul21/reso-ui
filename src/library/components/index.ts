@@ -15,4 +15,5 @@ export * from "./Images";
 export * from "./Loaders";
 export * from "./Modal";
 export * from "./Panel";
+export * from "./Text";
 export * from "./Quantity-Counter";

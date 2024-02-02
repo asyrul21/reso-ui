@@ -6,11 +6,11 @@
 // [defaults] must come before [spacings]
 @use "defaults" as *;
 @use "spacings" as *;
-@use "typography" as *;
+@use "fontClasses" as *;
 @use "transitions" as *;
 @use "mixins" as *;
 
-code {
+.code_base {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
@@ -73,7 +73,7 @@ svg {
   margin: auto;
 }
 
-a {
+.a_base {
   text-decoration: none;
   color: $lc-blue;
   &:hover {
@@ -81,33 +81,29 @@ a {
   }
 }
 
-ul {
-  list-style: none;
-}
-
 /**
 * TODO: Tables should be moved to its own component and styles
 */
-table {
+.table_base {
   font-family: $font-family;
   // color: $fc-dark;
   border-collapse: collapse;
   width: 100%;
 }
 
-td,
-th {
+.td_base,
+.th_base {
   padding: $padding-xsmall;
   border: 1px solid #ddd;
 }
 
-th {
+.th_base {
   // background-color: $primary-grey-dark;
   // color: $fc-light;
   // text-align: left;
   font-weight: 500;
 }
 
-td {
+.td_base {
   // text-align: center;
 }

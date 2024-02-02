@@ -14,7 +14,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 import IThemeProps from "../../../interfaces/Theme";
 
 export interface IViewProps extends IComponent, IPaddingProps, IThemeProps {

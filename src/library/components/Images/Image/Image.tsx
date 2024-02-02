@@ -15,8 +15,8 @@ import {
   createComponentStyles,
   createLayoutStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
-import { methodHasValue } from "./../../../utils/validations";
+} from "../../../utils/styles";
+import { methodHasValue } from "../../../utils/validations";
 
 export interface IImageProps extends IComponent, IMarginProps {
   onClick?: () => void;

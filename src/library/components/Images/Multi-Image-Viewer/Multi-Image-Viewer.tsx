@@ -19,12 +19,12 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 import {
   methodHasValue,
   numberHasValue,
   objectHasValue,
-} from "./../../../utils/validations";
+} from "../../../utils/validations";
 import IThemeProps from "../../../interfaces/Theme";
 
 export interface IMultiImageViewerProps

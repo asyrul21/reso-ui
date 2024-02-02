@@ -10,14 +10,14 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../../../../utils/styles";
+} from "../../../../../utils/styles";
 
 // styles
 import "./styles/Date-Day-Number.layout.scss";
 import "./styles/Date-Day-Number.theme.scss";
 import "../../styles/Date-Selector.shared.scss";
 
-import { hasValue, methodHasValue, objectHasValue } from "./../../../../../utils/validations";
+import { hasValue, methodHasValue, objectHasValue } from "../../../../../utils/validations";
 import { DateDayNumber } from "../../types";
 
 export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {

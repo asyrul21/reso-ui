@@ -12,7 +12,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   withSpacingsProps,
-} from "./../../../utils/styles";
+} from "../../../utils/styles";
 
 export interface IModalBodyProps extends IComponent, IPaddingProps {
   children: React.ReactNode;

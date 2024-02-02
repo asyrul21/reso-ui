@@ -1,7 +1,7 @@
 /* istanbul ignore file */
 
 import { FormInputValidator } from "../../interfaces/Form";
-import { methodHasValue } from "./../../utils/validations";
+import { methodHasValue } from "../../utils/validations";
 
 export * from "./Number";
 export * from "./String";

@@ -11,7 +11,7 @@ import IThemeProps from "../../../interfaces/Theme";
 import "./styles/Loading-Container.layout.scss";
 
 // utils
-import { createComponentStyles, createLayoutStyles } from "./../../../utils/styles";
+import { createComponentStyles, createLayoutStyles } from "../../../utils/styles";
 
 export interface ILoadingContainerProps extends IComponent, IThemeProps {
   type: "layer" | "conditional";

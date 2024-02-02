@@ -5,6 +5,7 @@ import IComponent from "../../interfaces/IComponent";
 import IThemeProps from "../../interfaces/Theme";
 
 // !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
+import { Text } from "../Text";
 
 // styles
 import "./styles/Example.layout.scss";
@@ -15,7 +16,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "./../../utils/styles";
+} from "../../utils/styles";
 
 export interface IExampleComponent extends IComponent, IThemeProps {
   name: string;
@@ -43,9 +44,13 @@ export const Example = ({
       data-testid="example-component-root"
       style={rootStyles}
     >
-      <h1>Hello World!</h1>
-      <p>This is just an example component</p>
-      <p>Name: {name}</p>
+      <Text Element="h1" mb={5}>
+        Hello World!
+      </Text>
+      <Text Element="p" mb={2}>
+        This is just an example component
+      </Text>
+      <Text Element="p">Name: {name}</Text>
     </div>
   );
 };

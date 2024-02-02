@@ -1,4 +1,4 @@
-import { FormInputValidator } from "../../../interfaces/Form";
+import { FormInputValidator } from "../../interfaces/Form";
 /**
  * String validators
  */

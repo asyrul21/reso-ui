@@ -1,10 +1,10 @@
 import React from "react";
-import IComponent from "../../../interfaces/IComponent";
-import IThemeProps from "../../../interfaces/Theme";
+import IComponent from "../../../../../interfaces/IComponent";
+import IThemeProps from "../../../../../interfaces/Theme";
 import "./styles/Date-Day-Number.layout.scss";
 import "./styles/Date-Day-Number.theme.scss";
 import "../../styles/Date-Selector.shared.scss";
-import { DateDayNumber } from "@forms/Controls/Date-Selector/types";
+import { DateDayNumber } from "../../types";
 export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
     dayNumber: DateDayNumber;
     dayNumberDisplay?: DateDayNumber | string;

@@ -1,7 +1,7 @@
 import React from "react";
 import IComponent from "../../../interfaces/IComponent";
-import "./styles/Flex.layout.scss";
 import { ISpacingsProps } from "../../../interfaces/ISpacingsProps";
+import "./styles/Flex.layout.scss";
 export interface IFlexProps extends IComponent, ISpacingsProps {
     direction?: "row" | "column";
     justify?: "space-between" | "start" | "end" | "space-around" | "center";

@@ -1,7 +1,7 @@
 import React from "react";
-import IComponent from "../../../interfaces/IComponent";
-import IThemeProps from "../../../interfaces/Theme";
-import { IMarginProps } from "../../../interfaces/ISpacingsProps";
+import IComponent from "../../interfaces/IComponent";
+import IThemeProps from "../../interfaces/Theme";
+import { IMarginProps } from "../../interfaces/ISpacingsProps";
 import "./styles/Icon.layout.scss";
 export interface IIconProps extends IComponent, IThemeProps, IMarginProps {
     SvgIcon: (props: React.SVGProps<SVGElement>) => React.ReactElement;

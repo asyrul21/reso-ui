@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
 import "./storiesStyle.scss";
-declare const _default: ComponentMeta<({ type, text, rootClassName, rootStyles, }: import("@components/Banners/Banner").IBannerProps) => React.JSX.Element>;
+declare const _default: ComponentMeta<({ type, text, rootClassName, rootStyles, }: import("../Banner").IBannerProps) => React.JSX.Element>;
 export default _default;
 export declare const DefaultInfo: any;
 export declare const DefaultSuccess: any;

@@ -1,7 +1,7 @@
 import React from "react";
-import IComponent from "../../../interfaces/IComponent";
-import IThemeProps from "../../../interfaces/Theme";
-import { DateDayNameIndex, DateDayNumber } from "@forms/Controls/Date-Selector/types";
+import IComponent from "../../../../../interfaces/IComponent";
+import IThemeProps from "../../../../../interfaces/Theme";
+import { DateDayNameIndex, DateDayNumber } from "../../types";
 import "./styles/Date-Days-Grid.layout.scss";
 import "./styles/Date-Days-Grid.theme.scss";
 export interface IDateDaysGridProps extends IComponent, IThemeProps {

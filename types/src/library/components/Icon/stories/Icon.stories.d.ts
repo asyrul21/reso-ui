@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
-declare const _default: ComponentMeta<({ SvgIcon, width, height, inline, fill, stroke, rootClassName, rootStyles, theme, ...spacingsProps }: import("@components/Icon").IIconProps) => React.JSX.Element>;
+declare const _default: ComponentMeta<({ SvgIcon, width, height, inline, fill, stroke, rootClassName, rootStyles, theme, ...spacingsProps }: import("../Icon").IIconProps) => React.JSX.Element>;
 export default _default;
 export declare const Default: any;
 export declare const WithCustomDimensions: any;

@@ -1,7 +1,7 @@
 import React from "react";
-import { IModalChildrenProps } from "@components/Modal";
-import IComponent from "../../../interfaces/IComponent";
-import IThemeProps from "../../../interfaces/Theme";
+import { IModalChildrenProps } from "../Modal";
+import IComponent from "../../interfaces/IComponent";
+import IThemeProps from "../../interfaces/Theme";
 import "./styles/Dialog.layout.scss";
 import "./styles/Dialog.theme.scss";
 export type DialogType = "ok" | "yesNo";

@@ -1,6 +1,6 @@
 import React from "react";
-import IComponent from "../../../interfaces/IComponent";
-import IThemeProps from "../../../interfaces/Theme";
+import IComponent from "../../../../../interfaces/IComponent";
+import IThemeProps from "../../../../../interfaces/Theme";
 import "./styles/Date-Component-Navigation.layout.scss";
 import "./styles/Date-Component-Navigation.theme.scss";
 export interface IDateComponentNavigation extends IComponent, IThemeProps {

@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
 import "./storiesStyle.scss";
-declare const _default: ComponentMeta<({ to, text, disabled, rootClassName, rootStyles, linkClassName, linkStyles, theme, ...spacingsProps }: import("@components/Buttons/Back").IBackProps) => React.JSX.Element>;
+declare const _default: ComponentMeta<({ to, text, disabled, rootClassName, rootStyles, linkClassName, linkStyles, theme, ...spacingsProps }: import("../Back").IBackProps) => React.JSX.Element>;
 export default _default;
 export declare const Default: any;
 export declare const WithCustomContainerClassName: any;

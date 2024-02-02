@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
 import "./storiesStyle.scss";
-declare const _default: ComponentMeta<({ id, type, role, text, onClick, disabled, inheritWidth, inline, rootClassName, rootStyles, theme, ...spacingsProps }: import("@components/Buttons/Button").IButtonProps) => React.JSX.Element>;
+declare const _default: ComponentMeta<({ id, type, role, text, onClick, disabled, inheritWidth, inline, rootClassName, rootStyles, theme, ...spacingsProps }: import("../Button").IButtonProps) => React.JSX.Element>;
 export default _default;
 export declare const Default: any;
 export declare const DefaultPrimary: any;

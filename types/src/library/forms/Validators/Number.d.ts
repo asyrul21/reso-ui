@@ -1,4 +1,4 @@
-import { FormInputValidator } from "../../../interfaces/Form";
+import { FormInputValidator } from "../../interfaces/Form";
 /**
  * Number validators: should work even if number is passed as string
  */

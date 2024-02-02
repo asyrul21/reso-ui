@@ -1,4 +1,4 @@
-import { DateComponent, DayNamesMap, DateDayNameIndex, DateMonthIndex, MonthsNamesMap } from "@forms/Controls/Date-Selector/types";
+import { DateComponent, DayNamesMap, DateDayNameIndex, DateMonthIndex, MonthsNamesMap } from "../types";
 export declare const DAY_NAMES_DEFAULT: DayNamesMap;
 export declare const MONTHS_NAMES_DEFAULT: MonthsNamesMap;
 declare const getDayDisplayNamesDefault: () => string[];

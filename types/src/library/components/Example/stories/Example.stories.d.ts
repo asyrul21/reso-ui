@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
 import "./storiesStyle.scss";
-declare const _default: ComponentMeta<({ theme, name, rootClassName, rootStyles, }: import("@components/Example").IExampleComponent) => React.JSX.Element>;
+declare const _default: ComponentMeta<({ theme, name, rootClassName, rootStyles, }: import("../Example").IExampleComponent) => React.JSX.Element>;
 export default _default;
 export declare const DefaultNoTheme: any;
 export declare const NoThemeWithClassname: any;

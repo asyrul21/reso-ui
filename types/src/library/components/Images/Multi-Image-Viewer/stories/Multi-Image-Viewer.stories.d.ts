@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
-import { IMultiImageViewerProps } from "@components/Images/Multi-Image-Viewer";
+import { IMultiImageViewerProps } from "../";
 import "./storiesStyle.scss";
 declare const _default: ComponentMeta<({ imageObjects, defaultImagePath, clickable, rootClassName, rootStyles, getMiniImagePath, onClickImage, indexOverride, setIndexOverride, initialSelectedIndex, mainImageClassName, mainImageStyles, miniImageClassname, miniImageStyles, miniImageSelectedClassName, miniImageSelectedStyles, theme, ...marginProps }: IMultiImageViewerProps) => React.JSX.Element>;
 export default _default;

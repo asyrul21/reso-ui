@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
-import { IDateSelectorProps } from "@forms/Controls/Date-Selector";
+import { IDateSelectorProps } from "../";
 import "./storiesStyle.scss";
 declare const _default: ComponentMeta<({ value, min, max, onChange, disabled, rootClassName, rootStyles, gridContainerClassName, gridContainerStyles, format, getDisplayDayNumber, getDisplayDayName, getDisplayMonth, getDisplayYear, theme, ...spacingsProps }: IDateSelectorProps) => React.JSX.Element>;
 export default _default;

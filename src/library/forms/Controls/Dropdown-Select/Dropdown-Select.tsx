@@ -18,7 +18,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "./../../utils/styles";
+} from "../../../utils/styles";
 import { validate } from "../../Validators";
 import useInputValidatorsMemo from "../../Hooks/useInputValidatorsMemo";
 

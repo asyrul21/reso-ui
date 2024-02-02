@@ -1,6 +1,6 @@
 import React from "react";
-import IComponent from "../../../interfaces/IComponent";
-import IThemeProps from "../../../interfaces/Theme";
+import IComponent from "../../../../../interfaces/IComponent";
+import IThemeProps from "../../../../../interfaces/Theme";
 import "./styles/Date-Selector-Header.layout.scss";
 import "./styles/Date-Selector-Header.theme.scss";
 export interface IDateSelectorHeaderProps extends IComponent, IThemeProps {

@@ -1,5 +1,5 @@
 import React from "react";
-import { LoaderSize } from "@components/Loaders/Loader";
+import { LoaderSize } from "../../Loaders";
 import IComponent from "../../../interfaces/IComponent";
 import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import ImageClickable from "../../../interfaces/ImageClickable";

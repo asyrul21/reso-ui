@@ -1,3 +1,12 @@
+## [1.8.3](https://github.com/asyrul21/reso-ui/compare/v1.8.2...v1.8.3) (2024-02-02)
+
+
+### Bug Fixes
+
+* minor build error ([bab6d7b](https://github.com/asyrul21/reso-ui/commit/bab6d7b9d592b20c9e70d01ab4ede88537f3285d))
+* more build errors ([55b8a9e](https://github.com/asyrul21/reso-ui/commit/55b8a9e39f652d381fc21333878edee145662582))
+* remove all alias imports, replace with relative imports ([bbbcd2d](https://github.com/asyrul21/reso-ui/commit/bbbcd2d8829d143e849f490022490ad2d172b523))
+
 ## [1.8.2](https://github.com/asyrul21/reso-ui/compare/v1.8.1...v1.8.2) (2024-01-22)
 
 

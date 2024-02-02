@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DateSelectorHeader } from "@forms/Controls/Date-Selector/components/Date-Selector-Header/Date-Selector-Header";
+import { DateSelectorHeader } from "../Date-Selector-Header";
 
 describe("Date Selector Header Component Unit Tests", () => {
   test("should render itself without error", () => {

@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { FormContainer, ControlWrapper } from "@forms/Containers";
+import { FormContainer, ControlWrapper } from "../../../Containers";
 // import "./storiesStyle.scss";
 
-import { Label } from "@forms/Controls/Label";
-import { Checkbox } from "@forms/Controls/Checkbox";
-import { SubmitButton } from "@forms/Controls/Submit-Button";
+import { Label } from "../../../Controls/Label";
+import { Checkbox } from "../";
+import { SubmitButton } from "../../../Controls/Submit-Button";
 
 import dedent from "ts-dedent";
-import { useFormInput } from "@forms/Hooks";
+import { useFormInput } from "../../../Hooks/useFormInput";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

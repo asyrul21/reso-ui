@@ -1,4 +1,4 @@
-import { FormInputValidator } from "@interfaces/Form";
+import { FormInputValidator } from "../../interfaces/Form";
 import { useMemo } from "react";
 import {
   numberIsLessThan,
@@ -11,9 +11,9 @@ import {
   stringIsRequired,
   stringMatchesRegex,
 } from "..";
-import { numberHasValue } from "@utils/validations";
+import { numberHasValue } from "./../../utils/validations";
 import { composeInputValidators } from "./utils";
-import { booleanIsRequired } from "@forms/Validators/Boolean";
+import { booleanIsRequired } from "../Validators/Boolean";
 
 interface IInputValidationProps {
   // shared

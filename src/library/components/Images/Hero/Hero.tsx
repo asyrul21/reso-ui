@@ -1,16 +1,16 @@
 import React from "react";
 
-import { Image } from "@components/Images/Image";
+import { Image } from "../../Images/Image";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Hero.layout.scss";
 
 // utils
-import { createComponentStyles, createLayoutStyles } from "@utils/styles";
+import { createComponentStyles, createLayoutStyles } from "./../../../utils/styles";
 
 export interface IHeroProps extends IComponent, IMarginProps {
   src: string;

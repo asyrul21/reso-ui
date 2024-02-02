@@ -1,8 +1,8 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import { IPaddingProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import { IPaddingProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Modal-Body.layout.scss";
@@ -12,7 +12,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 
 export interface IModalBodyProps extends IComponent, IPaddingProps {
   children: React.ReactNode;

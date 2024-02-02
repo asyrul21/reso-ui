@@ -1,6 +1,6 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
 import "./styles/Panel-Container.layout.scss";
 import "./styles/Panel-Container.theme.scss";
 export interface IPanelContainerProps extends IComponent, IThemeProps {

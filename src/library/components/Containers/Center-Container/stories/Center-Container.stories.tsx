@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { CenterContainer } from "@components/Containers/Center-Container";
+import { CenterContainer } from "../";
 import "./storiesStyle.scss";
 
 const SampleChildComponent = () => {

@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 // import { DropdownDown, DropdownUp } from "../../../icons";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
-import { IFormInputProps } from "@interfaces/Form";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
+import { IFormInputProps } from "../../../interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
@@ -18,9 +18,9 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
-import { validate } from "@forms/Validators";
-import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
+} from "./../../utils/styles";
+import { validate } from "../../Validators";
+import useInputValidatorsMemo from "../../Hooks/useInputValidatorsMemo";
 
 export const DropdownSelect = ({
   options = [],

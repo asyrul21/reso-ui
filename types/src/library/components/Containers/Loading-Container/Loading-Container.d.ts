@@ -1,6 +1,6 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
 import "./styles/Loading-Container.layout.scss";
 export interface ILoadingContainerProps extends IComponent, IThemeProps {
     type: "layer" | "conditional";

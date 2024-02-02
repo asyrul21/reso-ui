@@ -2,23 +2,23 @@ import React from "react";
 import classnames from "classnames";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../../../interfaces/IComponent";
+import IThemeProps from "../../../../../interfaces/Theme";
 
 // utils
 import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "./../../../../../utils/styles";
 
 // styles
 import "./styles/Date-Day-Number.layout.scss";
 import "./styles/Date-Day-Number.theme.scss";
 import "../../styles/Date-Selector.shared.scss";
 
-import { hasValue, methodHasValue, objectHasValue } from "@utils/validations";
-import { DateDayNumber } from "@forms/Controls/Date-Selector/types";
+import { hasValue, methodHasValue, objectHasValue } from "./../../../../../utils/validations";
+import { DateDayNumber } from "../../types";
 
 export interface IDateDayNumberComponentProps extends IComponent, IThemeProps {
   dayNumber: DateDayNumber;

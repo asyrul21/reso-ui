@@ -1,12 +1,12 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../../../interfaces/IComponent";
+import IThemeProps from "../../../../../interfaces/Theme";
 import {
   DateDayNameIndex,
   DateDayNumber,
-} from "@forms/Controls/Date-Selector/types";
+} from "../../types";
 
 // !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
 import { DateDayName } from "../Date-Day-Name/Date-Day-Name";
@@ -21,13 +21,13 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
-import { methodHasValue } from "@utils/validations";
+} from "../../../../../utils/styles";
+import { methodHasValue } from "../../../../../utils/validations";
 import {
   destructureDateComponents,
   getDayDisplayNamesDefault,
-} from "@forms/Controls/Date-Selector/utils";
-import { getArrayFor } from "@utils/arrays";
+} from "../../utils";
+import { getArrayFor } from "../../../../../utils/arrays";
 
 export interface IDateDaysGridProps extends IComponent, IThemeProps {
   monthStartDay: number;

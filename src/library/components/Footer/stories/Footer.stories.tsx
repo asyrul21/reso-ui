@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Footer } from "@components/Footer";
+import { Footer } from "../";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";

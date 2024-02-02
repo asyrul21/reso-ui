@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ModalContainer } from "@components/Modal/Modal-Container";
+import { ModalContainer } from "../Modal-Container";
 
 const SampleComponent = () => {
   return (

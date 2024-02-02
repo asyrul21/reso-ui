@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { LoadingContainer } from "@components/Containers/Loading-Container";
+import { LoadingContainer } from "../";
 
 import dedent from "ts-dedent";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { LoadingContainer } from "@components/Containers/Loading-Container";
-import * as ComponentLoaderModule from "@components/Loaders/Loader/Loader";
-import * as ComponentErrorModule from "@components/Errors/Component-Error/Component-Error";
+import { LoadingContainer } from "../Loading-Container";
+import * as ComponentLoaderModule from "../../../Loaders/Loader/Loader";
+import * as ComponentErrorModule from "../../../Errors/Component-Error/Component-Error";
 
 const SampleChildComponent = () => {
   return (

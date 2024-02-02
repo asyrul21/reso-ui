@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { ComponentError } from "@components/Errors/Component-Error";
+import { ComponentError } from "../Component-Error";
 
 describe("Component Error Unit Tests", () => {
   test("should render without crashing", () => {

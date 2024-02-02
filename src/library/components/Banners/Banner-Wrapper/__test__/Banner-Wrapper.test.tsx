@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { BannerWrapper } from "@components/Banners/Banner-Wrapper";
+import { BannerWrapper } from "../";
 
 const SampleComponent = () => {
   return (

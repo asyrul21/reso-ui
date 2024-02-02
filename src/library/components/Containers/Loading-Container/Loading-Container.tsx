@@ -1,17 +1,17 @@
 import React from "react";
 
-import { Loader } from "@components/Loaders/Loader";
-import { ComponentError } from "@components/Errors/Component-Error";
+import { Loader } from "../../Loaders";
+import { ComponentError } from "../../Errors/Component-Error";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
 
 // styles
 import "./styles/Loading-Container.layout.scss";
 
 // utils
-import { createComponentStyles, createLayoutStyles } from "@utils/styles";
+import { createComponentStyles, createLayoutStyles } from "./../../../utils/styles";
 
 export interface ILoadingContainerProps extends IComponent, IThemeProps {
   type: "layer" | "conditional";

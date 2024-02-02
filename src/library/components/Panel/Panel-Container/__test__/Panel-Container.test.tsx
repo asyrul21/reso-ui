@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { PanelContainer } from "@components/Panel/Panel-Container";
+import { PanelContainer } from "../Panel-Container";
 
 const SampleComponent = () => {
   return (

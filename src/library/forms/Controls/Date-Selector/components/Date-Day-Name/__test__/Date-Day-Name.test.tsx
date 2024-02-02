@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DateDayName } from "@forms/Controls/Date-Selector/components/Date-Day-Name/Date-Day-Name";
+import { DateDayName } from "../Date-Day-Name";
 
 describe("Date Selector Day Name Component Unit Tests", () => {
   test("should render itself without error", () => {

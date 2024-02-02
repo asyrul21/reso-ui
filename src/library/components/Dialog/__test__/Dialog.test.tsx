@@ -1,12 +1,12 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Dialog } from "@components/Dialog";
+import { Dialog } from "../Dialog";
 
 // import from index does not work for jest.spyOn
-import * as ModalModule from "@components/Modal/Modal-Container/Modal-Container";
-import * as ModalHeaderModule from "@components/Modal/Modal-Header/Modal-Header";
-import * as ModalBodyModule from "@components/Modal/Modal-Body/Modal-Body";
-import * as ButtonModule from "@components/Buttons/Button/Button";
+import * as ModalModule from "../../Modal/Modal-Container/Modal-Container";
+import * as ModalHeaderModule from "../../Modal/Modal-Header/Modal-Header";
+import * as ModalBodyModule from "../../Modal/Modal-Body/Modal-Body";
+import * as ButtonModule from "../../Buttons/Button/Button";
 
 describe("Dialog Modal Component Unit Tests", () => {
   beforeEach(() => {

@@ -15,14 +15,7 @@
       true,
       "dev",
       [
-        "src",
-        "@components",
-        "@icons",
-        "@interfaces",
-        "@utils",
-        "@hooks",
-        "@styles",
-        "@forms"
+        "src"
       ]
     ],
     "no-submodule-imports": [true, "@components", "@forms"],

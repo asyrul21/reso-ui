@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { ModalContainer } from "@components/Modal/Modal-Container";
-import { ModalBody } from "@components/Modal/Modal-Body";
+import { ModalContainer } from "../../Modal-Container";
+import { ModalBody } from "../";
 
 import dedent from "ts-dedent";
 

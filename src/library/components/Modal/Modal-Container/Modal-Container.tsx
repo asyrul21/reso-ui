@@ -1,9 +1,9 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IPaddingProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IPaddingProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Modal-Container.layout.scss";
@@ -15,8 +15,8 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
-import useDisableBodyScroll from "@hooks/useDisableBodyScroll";
+} from "./../../../utils/styles";
+import useDisableBodyScroll from "../../../hooks/useDisableBodyScroll";
 
 export interface IModalContainerProps
   extends IComponent,

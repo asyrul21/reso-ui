@@ -1,8 +1,8 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../../../interfaces/IComponent";
+import IThemeProps from "../../../../../interfaces/Theme";
 
 // styles
 import "./styles/Date-Selector-Header.layout.scss";
@@ -13,9 +13,9 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "./../../../../../utils/styles";
 
-import { methodHasValue } from "@utils/validations";
+import { methodHasValue } from "./../../../../../utils/validations";
 
 export interface IDateSelectorHeaderProps extends IComponent, IThemeProps {
   text: string;

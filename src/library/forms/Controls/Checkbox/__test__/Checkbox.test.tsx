@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { Checkbox } from "@forms/Controls/Checkbox";
+import { Checkbox } from "../Checkbox";
 
 describe("Checkbox Input Component Unit Tests", () => {
   test("should render itself without error", () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { FormContainer } from "@forms/Containers";
+import { FormContainer } from "../Form-Container";
 
 const SampleFormChildComponent = () => {
   return (

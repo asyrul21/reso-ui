@@ -1,5 +1,5 @@
-import { ISpacingsProps } from "@interfaces/ISpacingsProps";
-import { DefaultTheme, Theme } from "@interfaces/Theme";
+import { ISpacingsProps } from "../interfaces/ISpacingsProps";
+import { DefaultTheme, Theme } from "../interfaces/Theme";
 import classnames from "classnames";
 import { booleanHasValue, hasValue } from "./validations";
 

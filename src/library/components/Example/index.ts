@@ -1,3 +1,3 @@
 /* istanbul ignore file */
-import "@styles/global.scss";
+import "../../../styles/global.scss";
 export * from "./Example";

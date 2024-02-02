@@ -1,7 +1,7 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import "./styles/Control-Wrapper.layout.scss";
 import "./styles/Control-Wrapper.theme.scss";
 export interface IControlWrapperProps extends IComponent, IThemeProps, IMarginProps {

@@ -1,6 +1,6 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
 import "./styles/Modal-Header.layout.scss";
 import "./styles/Modal-Header.theme.scss";
 export interface IModalHeaderProps extends IComponent, IThemeProps {

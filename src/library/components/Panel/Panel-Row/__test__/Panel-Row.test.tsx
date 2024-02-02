@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { PanelRow } from "@components/Panel/Panel-Row";
+import { PanelRow } from "../Panel-Row";
 
 describe("Panel Title Component Unit Tests", () => {
   test("should render itself without error", () => {

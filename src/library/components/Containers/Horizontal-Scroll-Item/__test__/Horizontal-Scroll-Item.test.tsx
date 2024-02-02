@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { HorizontalScrollItem } from "@components/Containers/Horizontal-Scroll-Item";
+import { HorizontalScrollItem } from "../Horizontal-Scroll-Item";
 
 const SampleComponent = () => {
   return (

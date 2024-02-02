@@ -1,11 +1,11 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 
-import { Flex } from "@components/Containers/Flex";
+import { Flex } from "../../../components/Containers/Flex";
 
 // styles
 import "./styles/Control-Wrapper.layout.scss";
@@ -17,7 +17,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "../../../utils/styles";
 
 export interface IControlWrapperProps
   extends IComponent,

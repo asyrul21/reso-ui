@@ -1,5 +1,5 @@
 import React, { Context } from "react";
-import { IFormDataContext } from "@interfaces/Form";
+import { IFormDataContext } from "../../../interfaces/Form";
 export interface IParentFormContextProviderProps {
     children: React.ReactNode;
     parentFormContext: Context<IFormDataContext>;

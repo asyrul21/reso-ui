@@ -1,7 +1,8 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
+import IComponent from "../../../interfaces/IComponent";
+import { ISpacingsProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Flex.layout.scss";
@@ -11,10 +12,9 @@ import {
   createComponentStyles,
   createLayoutStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 
-import { ISpacingsProps } from "@interfaces/ISpacingsProps";
-import { hasValue } from "@utils/validations";
+import { hasValue } from "./../../../utils/validations";
 
 export interface IFlexProps extends IComponent, ISpacingsProps {
   direction?: "row" | "column";

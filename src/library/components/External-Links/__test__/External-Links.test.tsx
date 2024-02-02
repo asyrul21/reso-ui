@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ExternalLinks } from "@components/External-Links";
+import { ExternalLinks } from "../External-Links";
 
 const sampleLinks = [
   {

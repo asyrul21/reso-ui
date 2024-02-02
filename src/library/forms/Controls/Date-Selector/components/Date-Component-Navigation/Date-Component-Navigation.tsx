@@ -1,12 +1,12 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../../../interfaces/IComponent";
+import IThemeProps from "../../../../../interfaces/Theme";
 
 // !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
-import { ChevronSingleLeft, ChevronSingleRight } from "@icons";
-import { Icon } from "@components/Icon";
+import { ChevronSingleLeft, ChevronSingleRight } from "../../../../../icons";
+import { Icon } from "../../../../../components/Icon";
 
 // styles
 import "./styles/Date-Component-Navigation.layout.scss";
@@ -17,9 +17,9 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "./../../../../../utils/styles";
 
-import { methodHasValue } from "@utils/validations";
+import { methodHasValue } from "./../../../../../utils/validations";
 
 // #8B93A2
 

@@ -1,9 +1,9 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Button.layout.scss";
@@ -15,9 +15,9 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 
-import { methodHasValue } from "@utils/validations";
+import { methodHasValue } from "./../../../utils/validations";
 
 export interface IButtonProps extends IComponent, IThemeProps, IMarginProps {
   type?: "plain" | "primary" | "link";

@@ -1,7 +1,7 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import { DateDayNameIndex, DateDayNumber, DateMonthIndex } from "./types";
 import "./styles/Date-Selector.layout.scss";
 import "./styles/Date-Selector.theme.scss";

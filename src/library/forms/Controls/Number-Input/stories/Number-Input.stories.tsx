@@ -2,20 +2,20 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { FormContainer, ControlWrapper } from "@forms/Containers";
+import { FormContainer, ControlWrapper } from "../../../Containers";
 // import "./storiesStyle.scss";
 
-import { Label } from "@forms/Controls/Label";
-import { NumberInput } from "@forms/Controls/Number-Input";
-import { SubmitButton } from "@forms/Controls/Submit-Button";
+import { Label } from "../../../Controls/Label";
+import { NumberInput } from "../";
+import { SubmitButton } from "../../../Controls/Submit-Button";
 
 import dedent from "ts-dedent";
 import {
   numberIsLessThan,
   numberIsMoreThanOrEqualsTo,
   numberIsRequired,
-} from "@forms/Validators";
-import { useFormInput } from "@forms/Hooks";
+} from "../../../Validators";
+import { useFormInput } from "../../../Hooks";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

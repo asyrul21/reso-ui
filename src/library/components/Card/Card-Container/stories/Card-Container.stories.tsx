@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { CardContainer } from "@components/Card";
+import { CardContainer } from "../Card-Container";
 
 import dedent from "ts-dedent";
 

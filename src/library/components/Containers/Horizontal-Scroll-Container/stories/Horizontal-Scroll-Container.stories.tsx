@@ -2,8 +2,8 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { HorizontalScrollContainer } from "@components/Containers/Horizontal-Scroll-Container";
-import { HorizontalScrollItem } from "@components/Containers/Horizontal-Scroll-Item";
+import { HorizontalScrollContainer } from "../";
+import { HorizontalScrollItem } from "../../Horizontal-Scroll-Item";
 
 import dedent from "ts-dedent";
 

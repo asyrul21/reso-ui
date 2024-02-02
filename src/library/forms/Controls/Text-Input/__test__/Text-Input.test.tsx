@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { TextInput } from "@forms/Controls/Text-Input";
-import { FormInputValidator } from "@interfaces/Form";
+import { TextInput } from "../";
+import { FormInputValidator } from "../../../../interfaces";
 
 describe("Text Input Component Unit Tests", () => {
   test("should render itself without error", () => {

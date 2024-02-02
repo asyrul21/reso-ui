@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DateComponentNavigation } from "@forms/Controls/Date-Selector/components/Date-Component-Navigation/Date-Component-Navigation";
+import { DateComponentNavigation } from "../Date-Component-Navigation";
 
 describe("Date Component Navigation Component Unit Tests", () => {
   test("should render itself without error", () => {

@@ -1,9 +1,9 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Back.layout.scss";
@@ -15,7 +15,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 
 export interface IBackProps extends IComponent, IThemeProps, IMarginProps {
   to: string;

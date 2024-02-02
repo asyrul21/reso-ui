@@ -1,9 +1,9 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { Banner } from "@components/Banners/Banner";
+import { Banner } from "../Banner";
 
 // import from index does not work for jest.spyOn
-import * as ButtonModule from "@components/Buttons/Button/Button";
+import * as ButtonModule from "../../../Buttons/Button/Button";
 
 describe("Banner Component Unit Tests", () => {
   beforeEach(() => {

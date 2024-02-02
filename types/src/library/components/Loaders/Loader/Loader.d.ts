@@ -1,6 +1,6 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
 import "./styles/Component-Loader.layout.scss";
 import "./styles/Component-Loader.theme.scss";
 export type LoaderSize = "small" | "medium" | "large";

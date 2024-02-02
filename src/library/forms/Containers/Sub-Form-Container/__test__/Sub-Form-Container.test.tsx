@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { SubFormContainer } from "@forms/Containers";
+import { SubFormContainer } from "../Sub-Form-Container";
 
 const SampleSubFormChildComponent = () => {
   return <input data-testid="sub-form-input" />;

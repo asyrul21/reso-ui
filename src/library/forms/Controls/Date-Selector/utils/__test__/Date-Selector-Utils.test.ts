@@ -4,12 +4,12 @@ import {
   getRemappedDayIndex,
   destructureDateComponents,
   MONTHS_NAMES_DEFAULT,
-} from "@forms/Controls/Date-Selector/utils/index";
+} from "../../utils";
 
 import {
   DateDayNameIndex,
   DateMonthIndex,
-} from "@forms/Controls/Date-Selector/types/index";
+} from "../../types";
 
 describe("Date Selector Utility Methods Unit Tests", () => {
   describe("getDayDisplayNamesDefault", () => {

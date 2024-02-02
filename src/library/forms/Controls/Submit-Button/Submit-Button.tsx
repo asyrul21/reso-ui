@@ -1,9 +1,9 @@
 import React from "react";
 
 // import base interface
-// import IComponent from "@interfaces/IComponent";
-// import IThemeProps from "@interfaces/Theme";
-import { Button, IButtonProps } from "@components/Buttons/Button";
+// import IComponent from "../../../interfaces/IComponent";
+// import IThemeProps from "../../../interfaces/Theme";
+import { Button, IButtonProps } from "../../../components/Buttons/Button";
 
 // styles
 import "./styles/Submit-Button.layout.scss";
@@ -14,7 +14,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "../../../utils/styles";
 
 export interface ISubmitButtonProps extends Omit<IButtonProps, "text"> {
   text?: string;

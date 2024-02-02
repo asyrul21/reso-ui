@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import { Loader, LoaderSize } from "@components/Loaders/Loader";
+import { Loader, LoaderSize } from "../../Loaders";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
-import ImageClickable from "@interfaces/ImageClickable";
+import IComponent from "../../../interfaces/IComponent";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
+import ImageClickable from "../../../interfaces/ImageClickable";
 
 // styles
 import "./styles/Image.layout.scss";
@@ -15,8 +15,8 @@ import {
   createComponentStyles,
   createLayoutStyles,
   withSpacingsProps,
-} from "@utils/styles";
-import { methodHasValue } from "@utils/validations";
+} from "./../../../utils/styles";
+import { methodHasValue } from "./../../../utils/validations";
 
 export interface IImageProps extends IComponent, IMarginProps {
   onClick?: () => void;

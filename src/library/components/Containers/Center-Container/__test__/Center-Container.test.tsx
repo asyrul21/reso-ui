@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { CenterContainer } from "@components/Containers/Center-Container";
+import { CenterContainer } from "../Center-Container";
 
 const SampleComponent = () => {
   return (

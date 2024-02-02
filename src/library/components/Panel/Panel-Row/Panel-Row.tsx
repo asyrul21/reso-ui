@@ -1,7 +1,7 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
+import IComponent from "../../../interfaces/IComponent";
 
 // styles
 import "./styles/Panel-Row.layout.scss";
@@ -11,7 +11,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 
 export interface IPanelRowProps extends IComponent {
   keyStr: string;

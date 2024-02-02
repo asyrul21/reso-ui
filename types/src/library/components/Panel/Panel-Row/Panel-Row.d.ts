@@ -1,5 +1,5 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
+import IComponent from "../../../interfaces/IComponent";
 import "./styles/Panel-Row.layout.scss";
 export interface IPanelRowProps extends IComponent {
     keyStr: string;

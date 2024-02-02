@@ -14,15 +14,6 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["library/components/*"],
-      "@forms/*": ["library/forms/*"],
-      "@icons": ["library/icons"],
-      "@interfaces/*": ["library/interfaces/*"],
-      "@utils/*": ["library/utils/*"],
-      "@hooks/*": ["library/hooks/*"],
-      "@styles/*": ["library/styles/*"]
-    }
   },
   "exclude": ["node_modules", "dist", "types"],
   "include": ["./jest-dom-setup.ts", "./**/*.ts", "./**/*.tsx", "./custom.d.ts"]

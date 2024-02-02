@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Hero } from "@components/Images/Hero";
+import { Hero } from "../";
 import "./storyStyles.scss";
 
 import dedent from "ts-dedent";

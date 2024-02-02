@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DateDayNumberComponent } from "@forms/Controls/Date-Selector/components/Date-Day-Number/Date-Day-Number";
+import { DateDayNumberComponent } from "../Date-Day-Number";
 
 describe("Date Selector Day Number Component Unit Tests", () => {
   test("should render itself without error", () => {

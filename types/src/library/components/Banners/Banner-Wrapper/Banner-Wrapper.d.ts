@@ -1,5 +1,5 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
+import IComponent from "../../../interfaces/IComponent";
 import "./styles/Banner-Wrapper.layout.scss";
 export interface IBannerWrapperProps extends IComponent {
     children: React.ReactNode;

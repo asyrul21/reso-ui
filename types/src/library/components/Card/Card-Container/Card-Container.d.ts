@@ -1,7 +1,7 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import ISpacingsProps from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import ISpacingsProps from "../../../interfaces/ISpacingsProps";
 import "./styles/Card-Container.layout.scss";
 import "./styles/Card-Container.theme.scss";
 export interface ICardContainerProps extends IComponent, IThemeProps, ISpacingsProps {

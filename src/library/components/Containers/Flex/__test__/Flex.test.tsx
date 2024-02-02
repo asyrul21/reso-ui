@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Flex } from "@components/Containers/Flex";
+import { Flex } from "../Flex";
 
 const SampleComponent = () => {
   return (

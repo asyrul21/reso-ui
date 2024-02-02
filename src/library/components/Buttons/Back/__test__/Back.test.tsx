@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Back } from "@components/Buttons/Back";
+import { Back } from "../../Back/Back";
 
 describe("Back Button Component Unit Tests", () => {
   test("should render itself with default text without error", () => {

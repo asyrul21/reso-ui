@@ -1,12 +1,12 @@
 import React from "react";
 import classnames from "classnames";
 import { render, screen } from "@testing-library/react";
-import { methodHasValue, stringHasValue } from "@utils/validations";
+import { methodHasValue, stringHasValue } from "../../../../../../utils/validations";
 
 // import from index does not work for jest.spyOn
-import { DateDaysGrid } from "@forms/Controls/Date-Selector/components/Date-Days-Grid/Date-Days-Grid";
-import * as DateDayNameModule from "@forms/Controls/Date-Selector/components/Date-Day-Name/Date-Day-Name";
-import * as DateDayNumberModule from "@forms/Controls/Date-Selector/components/Date-Day-Number/Date-Day-Number";
+import { DateDaysGrid } from "../Date-Days-Grid";
+import * as DateDayNameModule from "../../Date-Day-Name/Date-Day-Name";
+import * as DateDayNumberModule from "../../Date-Day-Number/Date-Day-Number";
 
 describe("Date Selector Days Grid Component Unit Tests", () => {
   beforeEach(() => {

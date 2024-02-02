@@ -1,7 +1,7 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import "./styles/Sub-Form-Container.layout.scss";
 import "./styles/Sub-Form-Container.theme.scss";
 export interface ISubFormContainerProps extends IComponent, IThemeProps, IMarginProps {

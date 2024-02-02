@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { FullScreenError } from "@components/Errors/Full-Screen-Error";
+import { FullScreenError } from "../Full-Screen-Error";
 
 describe("Full Screen Error Unit Tests", () => {
   test("should render without crashing with default text", () => {

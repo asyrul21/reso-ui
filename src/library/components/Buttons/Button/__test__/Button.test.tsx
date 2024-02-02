@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Button } from "@components/Buttons/Button";
+import { Button } from "../Button";
 
 describe("Generic Button Component Unit Tests", () => {
   test("should render itself without error", () => {

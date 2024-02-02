@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { FormContainer, ControlWrapper } from "@forms/Containers";
+import { FormContainer, ControlWrapper } from "../../";
 // import "./storiesStyle.scss";
 
-import { Label } from "@forms/Controls/Label";
-import { TextInput } from "@forms/Controls/Text-Input";
-import { SubmitButton } from "@forms/Controls/Submit-Button";
+import { Label } from "../../../Controls/Label";
+import { TextInput } from "../../../Controls/Text-Input";
+import { SubmitButton } from "../../../Controls/Submit-Button";
 
 import dedent from "ts-dedent";
 

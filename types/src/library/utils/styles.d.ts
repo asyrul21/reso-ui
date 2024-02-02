@@ -1,5 +1,5 @@
-import { ISpacingsProps } from "@interfaces/ISpacingsProps";
-import { Theme } from "@interfaces/Theme";
+import { ISpacingsProps } from "../../../interfaces/ISpacingsProps";
+import { Theme } from "../../../interfaces/Theme";
 interface IStyleClassnames {
     [key: string]: boolean;
 }

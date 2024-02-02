@@ -1,9 +1,9 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../interfaces/IComponent";
+import IThemeProps from "../../interfaces/Theme";
+import { IMarginProps } from "../../interfaces/ISpacingsProps";
 
 // !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
 
@@ -17,7 +17,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "./../../utils/styles";
 
 export interface IIconProps extends IComponent, IThemeProps, IMarginProps {
   SvgIcon: (props: React.SVGProps<SVGElement>) => React.ReactElement;

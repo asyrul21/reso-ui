@@ -5,11 +5,11 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import {
   DateSelector,
   IDateSelectorProps,
-} from "@forms/Controls/Date-Selector";
+} from "../";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
-import { Flex } from "@components/Containers/Flex";
+import { Flex } from "../../../../components/Containers/Flex";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

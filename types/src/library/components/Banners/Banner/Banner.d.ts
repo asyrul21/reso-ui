@@ -1,5 +1,5 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
+import IComponent from "../../../interfaces/IComponent";
 import "./styles/Banner.layout.scss";
 export interface IBannerProps extends IComponent {
     type: "info" | "warning" | "error" | "success";

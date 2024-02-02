@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { View } from "@components/Containers/View";
+import { View } from "../../../Containers/View";
 import {
   IMultiImageViewerProps,
   MultiImageViewer,
-} from "@components/Images/Multi-Image-Viewer";
+} from "../";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";

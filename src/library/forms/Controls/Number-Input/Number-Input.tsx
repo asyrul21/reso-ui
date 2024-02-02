@@ -1,10 +1,10 @@
 import React, { ChangeEvent, memo, useEffect, useMemo, useState } from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
-import { IFormInputProps } from "@interfaces/Form";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
+import { IFormInputProps } from "../../../interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
@@ -12,17 +12,17 @@ import "./styles/Number-Input.layout.scss";
 import "./styles/Number-Input.theme.scss";
 
 // utils
-import { useDisableNumberInputScroll } from "@forms/Hooks/useDisableNumberInputScroll";
+import { useDisableNumberInputScroll } from "../../Hooks/useDisableNumberInputScroll";
 import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "../../../utils/styles";
 
 // validation
-import { validate } from "@forms/Validators";
-import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
+import { validate } from "../../Validators";
+import useInputValidatorsMemo from "../../Hooks/useInputValidatorsMemo";
 
 export interface INumberInputProps
   extends IComponent,

@@ -1,6 +1,6 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import "./styles/Hero.layout.scss";
 export interface IHeroProps extends IComponent, IMarginProps {
     src: string;

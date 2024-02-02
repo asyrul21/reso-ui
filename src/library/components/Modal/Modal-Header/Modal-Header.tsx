@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Button } from "@components/Buttons/Button";
+import { Button } from "../../Buttons/Button";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
 
 // styles
 import "./styles/Modal-Header.layout.scss";
@@ -15,7 +15,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 
 export interface IModalHeaderProps extends IComponent, IThemeProps {
   title: string;

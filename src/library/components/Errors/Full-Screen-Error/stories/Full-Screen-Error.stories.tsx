@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { FullScreenError } from "@components/Errors/Full-Screen-Error";
+import { FullScreenError } from "../";
 
 import dedent from "ts-dedent";
 

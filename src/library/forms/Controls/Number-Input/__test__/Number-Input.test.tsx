@@ -1,7 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { NumberInput } from "@forms/Controls/Number-Input";
-import { FormInputValidator } from "@interfaces/Form";
+import { NumberInput } from "../Number-Input";
 
 describe("Number Input Component Unit Tests", () => {
   test("should render itself without error", () => {

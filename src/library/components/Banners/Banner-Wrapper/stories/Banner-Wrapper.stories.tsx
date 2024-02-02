@@ -2,8 +2,8 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Banner } from "@components/Banners/Banner";
-import { BannerWrapper } from "@components/Banners/Banner-Wrapper";
+import { Banner } from "../../Banner";
+import { BannerWrapper } from "../../Banner-Wrapper";
 
 import dedent from "ts-dedent";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { LoaderSize } from "@components/Loaders/Loader";
-import IComponent from "@interfaces/IComponent";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
-import ImageClickable from "@interfaces/ImageClickable";
+import IComponent from "../../../interfaces/IComponent";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
+import ImageClickable from "../../../interfaces/ImageClickable";
 import "./styles/Image.layout.scss";
 export interface IImageProps extends IComponent, IMarginProps {
     onClick?: () => void;

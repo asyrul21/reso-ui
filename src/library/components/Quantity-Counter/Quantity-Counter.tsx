@@ -2,15 +2,15 @@ import React from "react";
 import classnames from "classnames";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../interfaces/IComponent";
+import IThemeProps from "../../interfaces/Theme";
 
 // utils
 import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "./../../utils/styles";
 
 import "./styles/Quantity-Counter.layout.scss";
 import "./styles/Quantity-Counter.theme.scss";

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Icon } from "@components/Icon";
-import { HomeIcon } from "@icons";
+import { Icon } from "../Icon";
+import { HomeIcon } from "../../../icons";
 
 describe("Icon Container Component Unit Tests", () => {
   test("should render itself without error", () => {

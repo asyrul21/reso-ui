@@ -1,13 +1,13 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
+import IComponent from "../../../interfaces/IComponent";
 
 // styles
 import "./styles/Center-Container.layout.scss";
 
 // utils
-import { createLayoutStyles } from "@utils/styles";
+import { createLayoutStyles } from "./../../../utils/styles";
 
 export interface ICenterContainerProps extends IComponent {
   children: React.ReactNode;

@@ -1,8 +1,8 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
 
 // styles
 import "./styles/Component-Loader.layout.scss";
@@ -13,7 +13,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 
 export type LoaderSize = "small" | "medium" | "large";
 

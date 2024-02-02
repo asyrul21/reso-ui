@@ -1,10 +1,10 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { ILink } from "@interfaces/ILink";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../interfaces/IComponent";
+import IThemeProps from "../../interfaces/Theme";
+import { ILink } from "../../interfaces/ILink";
+import { IMarginProps } from "../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/External-Links.layout.scss";
@@ -16,9 +16,9 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "./../../utils/styles";
 
-import { methodHasValue } from "@utils/validations";
+import { methodHasValue } from "./../../utils/validations";
 
 export interface IExternalLinksProps
   extends IComponent,

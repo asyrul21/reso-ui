@@ -1,4 +1,4 @@
-import { FormInputValidator } from "@interfaces/Form";
+import { FormInputValidator } from "../../interfaces/Form";
 
 const valueIsEmpty = (val?: string | number): boolean => {
   /* If value is number - 0 is also a number */

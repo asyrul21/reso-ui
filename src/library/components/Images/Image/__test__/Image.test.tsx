@@ -1,9 +1,9 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { Image } from "@components/Images/Image";
+import { Image } from "../Image";
 
 // import from index does not work for jest.spyOn
-import * as ComponentLoaderModule from "@components/Loaders/Loader/Loader";
+import * as ComponentLoaderModule from "../../../Loaders/Loader/Loader";
 
 describe("Image Component Unit Tests", () => {
   afterEach(() => {

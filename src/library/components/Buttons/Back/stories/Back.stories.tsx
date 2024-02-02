@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Back } from "@components/Buttons/Back";
+import { Back } from "../Back";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";

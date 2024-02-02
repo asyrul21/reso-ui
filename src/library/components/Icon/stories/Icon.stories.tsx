@@ -2,9 +2,9 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { Icon } from "@components/Icon";
-import { HomeIcon } from "@icons";
-import { Flex } from "@components/Containers/Flex";
+import { Icon } from "../";
+import { HomeIcon } from "../../../icons";
+import { Flex } from "../../Containers/Flex";
 // import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
@@ -74,12 +74,9 @@ export const PassingSvgIcon = () => {
 };
 
 export const InlineIcon = () => {
-  // container
-  // import { Flex } from "@components/Containers/Flex";
 
-  // Icon
-  // import { Icon } from "@components/Icon";
-  // import { HomeIcon } from "@icons";
+  // import { Flex, Icon, HomeIcon } from 'reso-ui;
+
   return (
     <Flex
       justify="start"

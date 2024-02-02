@@ -1,8 +1,8 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import * as FlexModule from "@components/Containers/Flex/Flex";
-import { ControlWrapper } from "@forms/Containers";
-import { createComponentStyles, withSpacingsProps } from "@utils/styles";
+import * as FlexModule from "../../../../components/Containers/Flex/Flex";
+import { ControlWrapper } from "../Control-Wrapper";
+import { createComponentStyles, withSpacingsProps } from "../../../../utils/styles";
 
 const SampleChildComponent = () => {
   return (

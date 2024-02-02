@@ -1,8 +1,8 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
-import { IFormInputProps } from "@interfaces/Form";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
+import { IFormInputProps } from "../../../interfaces/Form";
 import "../sharedStyles.scss";
 import "./styles/Number-Input.layout.scss";
 import "./styles/Number-Input.theme.scss";

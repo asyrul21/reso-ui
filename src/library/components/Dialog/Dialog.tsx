@@ -4,15 +4,15 @@ import {
   IModalChildrenProps,
   IModalContainerProps,
   ModalContainer,
-} from "@components/Modal";
+} from "../Modal";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../interfaces/IComponent";
+import IThemeProps from "../../interfaces/Theme";
 
 // !! IMPORT OTHER COMPONENTS FIRST BEFORE IMPORTING STYLE FILES
-import { ModalHeader } from "@components/Modal/Modal-Header";
-import { ModalBody } from "@components/Modal/Modal-Body";
+import { ModalHeader } from "../Modal/Modal-Header";
+import { ModalBody } from "../Modal/Modal-Body";
 
 // styles
 import "./styles/Dialog.layout.scss";
@@ -23,10 +23,10 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
+} from "./../../utils/styles";
 
-import { methodHasValue, hasValue } from "@utils/validations";
-import { Button } from "@components/Buttons/Button";
+import { methodHasValue, hasValue } from "./../../utils/validations";
+import { Button } from "../Buttons";
 
 export type DialogType = "ok" | "yesNo";
 

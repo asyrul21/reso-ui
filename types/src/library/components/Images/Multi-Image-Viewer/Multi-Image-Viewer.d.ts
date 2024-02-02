@@ -1,11 +1,11 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import { IImageObject } from "@interfaces/IImageObject";
-import ImageClickable from "@interfaces/ImageClickable";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import { IImageObject } from "../../../interfaces/IImageObject";
+import ImageClickable from "../../../interfaces/ImageClickable";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import "./styles/Multi-Image-Viewer.layout.scss";
 import "./styles/Multi-Image-Viewer.theme.scss";
-import IThemeProps from "@interfaces/Theme";
+import IThemeProps from "../../../interfaces/Theme";
 export interface IMultiImageViewerProps extends IComponent, IMarginProps, IThemeProps {
     imageObjects: IImageObject[];
     defaultImagePath?: string;

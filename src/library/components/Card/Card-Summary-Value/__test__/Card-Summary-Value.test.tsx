@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
+import { CardSummaryValue } from "../Card-Summary-Value";
 
 describe("Card Summary Value Component Unit Tests", () => {
   test("should render numerical value without error", () => {

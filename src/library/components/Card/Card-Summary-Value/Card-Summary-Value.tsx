@@ -1,13 +1,13 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
+import IComponent from "../../../interfaces/IComponent";
 
 // styles
 import "./styles/Card-Summary-Value.layout.scss";
 
 // utils
-import { createComponentStyles, createLayoutStyles } from "@utils/styles";
+import { createComponentStyles, createLayoutStyles } from "./../../../utils/styles";
 
 export interface ICardSummaryValueProps extends IComponent {
   value: string | number;

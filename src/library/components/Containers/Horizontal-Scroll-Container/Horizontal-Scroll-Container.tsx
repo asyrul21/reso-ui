@@ -1,8 +1,8 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import { IPaddingProps, IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import { IPaddingProps, IMarginProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Horizontal-Scroll-Container.layout.scss";
@@ -12,7 +12,7 @@ import {
   createComponentStyles,
   createLayoutStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 
 export interface IHSCProps extends IComponent, IPaddingProps, IMarginProps {
   children: React.ReactNode;

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ModalHeader } from "@components/Modal/Modal-Header";
-import * as ButtonModule from "@components/Buttons/Button/Button";
+import { ModalHeader } from "../Modal-Header";
+import * as ButtonModule from "../../../Buttons/Button/Button";
 
 describe("Modal Header Component Unit Tests", () => {
   beforeEach(() => {

@@ -6,12 +6,12 @@ import {
   FormContainer,
   SubFormContainer,
   ControlWrapper,
-} from "@forms/Containers";
+} from "../../";
 // import "./storiesStyle.scss";
 
-import { Label } from "@forms/Controls/Label";
-import { TextInput } from "@forms/Controls/Text-Input";
-import { SubmitButton } from "@forms/Controls/Submit-Button";
+import { Label } from "../../../Controls/Label";
+import { TextInput } from "../../../Controls/Text-Input";
+import { SubmitButton } from "../../../Controls/Submit-Button";
 
 import dedent from "ts-dedent";
 

@@ -1,24 +1,24 @@
 import React, { useEffect } from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
-import { IFormInputProps } from "@interfaces/Form";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
+import { IFormInputProps } from "../../../interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
 import "./styles/Checkbox.layout.scss";
 import "./styles/Checkbox.theme.scss";
 
-import useInputValidatorsMemo from "@forms/Hooks/useInputValidatorsMemo";
-import { validate } from "@forms/Validators";
+import useInputValidatorsMemo from "../../Hooks/useInputValidatorsMemo";
+import { validate } from "../../Validators";
 import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "../../../utils/styles";
 
 export interface ICheckboxInputProps
   extends IComponent,

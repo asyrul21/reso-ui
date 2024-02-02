@@ -1,10 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { DateSelector } from "@forms/Controls/Date-Selector";
+import { DateSelector } from "../Date-Selector";
 
-import * as DateSelectorHeaderModule from "@forms/Controls/Date-Selector/components/Date-Selector-Header/Date-Selector-Header";
-import * as DateComponentNavigationModule from "@forms/Controls/Date-Selector/components/Date-Component-Navigation/Date-Component-Navigation";
-// import * as DateDaysGridModule from "@components/Date-Selector/components/Date-Days-Grid/Date-Days-Grid";
+import * as DateSelectorHeaderModule from "../components/Date-Selector-Header/Date-Selector-Header";
+import * as DateComponentNavigationModule from "../components/Date-Component-Navigation/Date-Component-Navigation";
 
 describe("Date Selector Overall Component Unit Tests", () => {
   beforeEach(() => {

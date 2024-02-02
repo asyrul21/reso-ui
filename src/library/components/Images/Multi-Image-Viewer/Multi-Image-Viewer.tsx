@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-import { Image } from "@components/Images/Image";
-import { HorizontalScrollContainer } from "@components/Containers/Horizontal-Scroll-Container";
+import { Image } from "../Image";
+import { HorizontalScrollContainer } from "../../Containers/Horizontal-Scroll-Container";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import { IImageObject } from "@interfaces/IImageObject";
-import ImageClickable from "@interfaces/ImageClickable";
-import { IMarginProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import { IImageObject } from "../../../interfaces/IImageObject";
+import ImageClickable from "../../../interfaces/ImageClickable";
+import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/Multi-Image-Viewer.layout.scss";
@@ -19,13 +19,13 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
+} from "./../../../utils/styles";
 import {
   methodHasValue,
   numberHasValue,
   objectHasValue,
-} from "@utils/validations";
-import IThemeProps from "@interfaces/Theme";
+} from "./../../../utils/validations";
+import IThemeProps from "../../../interfaces/Theme";
 
 export interface IMultiImageViewerProps
   extends IComponent,

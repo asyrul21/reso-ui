@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Loader } from "@components/Loaders/Loader";
+import { Loader } from "../Loader";
 
 describe("Generic Loader Unit Tests", () => {
   test("should render parent and itself without error", () => {

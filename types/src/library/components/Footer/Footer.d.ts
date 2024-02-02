@@ -1,7 +1,7 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
-import { IPaddingProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
+import { IPaddingProps } from "../../../interfaces/ISpacingsProps";
 import "./styles/Footer.layout.scss";
 import "./styles/Footer.theme.scss";
 export interface IFooterProps extends IComponent, IThemeProps, IPaddingProps {

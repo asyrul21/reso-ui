@@ -5,7 +5,7 @@ import {
   DateDayNameIndex,
   DateMonthIndex,
   MonthsNamesMap,
-} from "@forms/Controls/Date-Selector/types";
+} from "../types";
 
 /*    this variable is needed because by default javascript date gives value of 0-6
  *    from sunday (0) to saturday (6).

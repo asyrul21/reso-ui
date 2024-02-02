@@ -1,8 +1,8 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import IThemeProps from "@interfaces/Theme";
+import IComponent from "../../../interfaces/IComponent";
+import IThemeProps from "../../../interfaces/Theme";
 
 // styles
 import "./styles/Full-Screen-Error.layout.scss";
@@ -13,8 +13,8 @@ import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-} from "@utils/styles";
-import useDisableBodyScroll from "@hooks/useDisableBodyScroll";
+} from "./../../../utils/styles";
+import useDisableBodyScroll from "../../../hooks/useDisableBodyScroll";
 
 export interface IFullScreenErrorProps extends IComponent, IThemeProps {
   text?: string;

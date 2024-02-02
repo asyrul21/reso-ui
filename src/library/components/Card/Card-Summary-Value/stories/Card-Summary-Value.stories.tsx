@@ -2,11 +2,11 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import { CardContainer } from "@components/Card";
-import { CardSummaryValue } from "@components/Card/Card-Summary-Value";
+import { CardContainer } from "../../Card-Container";
+import { CardSummaryValue } from "../";
 
 import dedent from "ts-dedent";
-import { CardContent } from "@components/Card/Card-Content";
+import { CardContent } from "../../Card-Content";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

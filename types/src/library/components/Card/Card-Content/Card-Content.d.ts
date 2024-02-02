@@ -1,6 +1,6 @@
 import React from "react";
-import IComponent from "@interfaces/IComponent";
-import ISpacingsProps from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import ISpacingsProps from "../../../interfaces/ISpacingsProps";
 import "./styles/Card-Content.layout.scss";
 export interface ICardContentProps extends IComponent, ISpacingsProps {
     children: React.ReactNode;

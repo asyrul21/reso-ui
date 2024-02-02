@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
+import IComponent from "../../../interfaces/IComponent";
 
-import { Button } from "@components/Buttons/Button";
+import { Button } from "../../Buttons";
 
 // styles
 import "./styles/Banner.layout.scss";
 
 // utils
-import { createComponentStyles, createLayoutStyles } from "@utils/styles";
+import { createComponentStyles, createLayoutStyles } from "../../../utils/styles";
 
 export interface IBannerProps extends IComponent {
   type: "info" | "warning" | "error" | "success";

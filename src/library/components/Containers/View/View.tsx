@@ -1,8 +1,8 @@
 import React from "react";
 
 // import base interface
-import IComponent from "@interfaces/IComponent";
-import { IPaddingProps } from "@interfaces/ISpacingsProps";
+import IComponent from "../../../interfaces/IComponent";
+import { IPaddingProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
 import "./styles/View.layout.scss";
@@ -14,8 +14,8 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "@utils/styles";
-import IThemeProps from "@interfaces/Theme";
+} from "./../../../utils/styles";
+import IThemeProps from "../../../interfaces/Theme";
 
 export interface IViewProps extends IComponent, IPaddingProps, IThemeProps {
   children: React.ReactNode;

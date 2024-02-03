@@ -5,11 +5,6 @@ module.exports = {
   cache: false,
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        loader: "ts-loader",
-      },
       /* Styles / CSS and SCSS */
       {
         test: /\.(css|scss)$/i,
@@ -51,11 +46,7 @@ module.exports = {
     ],
   },
   resolve: {
-    plugins: [
-      new TsconfigPathsPlugin({
-        extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
-      }),
-    ],
+    plugins: [],
     extensions: [".tsx", ".ts", ".js"],
     alias: {
       vars_and_mixins: path.join(

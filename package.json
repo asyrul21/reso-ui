@@ -2,7 +2,7 @@
   "name": "reso-ui",
   "version": "1.8.3",
   "description": "Reusable React components in Typescript",
-  "types": "types/src/library/index",
+  "types": "types/index",
   "main": "dist/lib.js",
   "files": [
     "dist",
@@ -69,7 +69,6 @@
     "style-loader": "^3.3.1",
     "ts-jest": "^29.0.3",
     "ts-loader": "^9.4.2",
-    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "tslint": "^6.1.3",
     "tslint-react": "^5.0.0",
     "typescript": "^4.9.4",

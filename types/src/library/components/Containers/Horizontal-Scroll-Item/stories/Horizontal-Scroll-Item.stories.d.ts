@@ -1,6 +1,0 @@
-import React from "react";
-import { ComponentMeta } from "@storybook/react";
-declare const _default: ComponentMeta<({ children, rootClassName, rootStyles, ...spacingsProps }: import("../Horizontal-Scroll-Item").IHSIProps) => React.JSX.Element>;
-export default _default;
-export declare const DefaultWithBorder: any;
-export declare const withPaddingProps: any;

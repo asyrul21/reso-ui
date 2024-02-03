@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "src/App.tsx",
+    "src/index.tsx",
+    "src/temp.tsx",
+    "./jest-dom-setup.ts",
+    "**/__tests__/*",
+    "**/__test__/*",
+    "**/stories/*",
+    "**/*.test.ts"
+  ]
+}

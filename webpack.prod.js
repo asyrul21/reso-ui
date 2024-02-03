@@ -5,13 +5,6 @@ const common = require("./webpack.common.js");
 module.exports = merge(common, {
   mode: "production",
   entry: "./src/library/index.ts",
-  // entry: {
-  //   components: path.resolve(__dirname, "src/library/components/index.ts"),
-  //   forms: path.resolve(__dirname, "src/library/forms/index.ts"),
-  //   hooks: path.resolve(__dirname, "src/library/hooks/index.ts"),
-  //   icons: path.resolve(__dirname, "src/library/icons/index.ts"),
-  //   interfaces: path.resolve(__dirname, "src/library/interfaces/index.ts"),
-  // },
   output: {
     path: path.resolve(__dirname, "dist"),
     clean: true,
@@ -21,6 +14,18 @@ module.exports = merge(common, {
       name: "reso-ui",
       type: "umd",
     },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: "ts-loader",
+        options: {
+          configFile: "tsconfig.build.json",
+        },
+      },
+    ],
   },
   externals: {
     react: {

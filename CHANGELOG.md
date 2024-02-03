@@ -1,3 +1,17 @@
+# [1.9.0](https://github.com/asyrul21/reso-ui/compare/v1.8.3...v1.9.0) (2024-02-03)
+
+
+### Bug Fixes
+
+* remove tests and stories in compiled declaration files, remove tsconfig-paths-webpack-plugin ([bc7141c](https://github.com/asyrul21/reso-ui/commit/bc7141c05646a1c65bb0ebe73bb10e44c4dffb09))
+* remove url-loader to resolve fonts not loading, Main and Navbar Components ([ca4985c](https://github.com/asyrul21/reso-ui/commit/ca4985ca6bdef9cd3fd0158c206374030ac77d36))
+* upgrade compatibility to Node version 20 ([766d9db](https://github.com/asyrul21/reso-ui/commit/766d9dbd1272b900b6f6ea0440ca600ca5117421))
+
+
+### Features
+
+* Text component, and remove element-bound stylings ([b9dea98](https://github.com/asyrul21/reso-ui/commit/b9dea98d07fbf3380801cf2cbacaf0dc9c823fdc))
+
 ## [1.8.3](https://github.com/asyrul21/reso-ui/compare/v1.8.2...v1.8.3) (2024-02-02)
 
 

@@ -1,5 +1,4 @@
 const path = require("path");
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
   cache: false,
@@ -39,9 +38,8 @@ module.exports = {
       },
       /* Images and fonts */
       {
-        test: /\.(png|woff|woff2|eot|ttf)$/, // to import images and fonts
-        loader: "url-loader",
-        options: { limit: false },
+        test: /\.(png|woff|woff2|eot|ttf)$/, // to fonts
+        type: "asset/resource",
       },
     ],
   },

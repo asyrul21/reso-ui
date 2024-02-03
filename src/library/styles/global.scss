@@ -1,7 +1,6 @@
 /*
 * [global.scss] should only be imported ONCE in index.ts
 */
-@use "fonts" as *;
 @use "variables" as *;
 // [defaults] must come before [spacings]
 @use "defaults" as *;

@@ -1,0 +1,4 @@
+.main_container {
+  margin-top: $navbar_height;
+  min-height: calc(100vh - $navbar_height);
+}

@@ -1,8 +1,8 @@
 /* istanbul ignore file */
 import React, { useState } from "react";
 
-import { Example, Banner } from "./library/components";
-import { View } from "./library/components/Containers";
+import { Example, Banner, Navbar } from "./library/components";
+import { Main, View } from "./library/components/Containers";
 import { DropdownSelect } from "./library/forms/Controls/Dropdown-Select";
 
 // import sample scss
@@ -13,12 +13,17 @@ const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
-    <View>
-      <Banner type="info" text="hello" />
-      <Example name="john" />
-      <h2>Dropdown</h2>
-      <DropdownSelect />
-    </View>
+    <>
+      <Navbar ph={5}>Test</Navbar>
+      <Main>
+        <View>
+          <Banner type="info" text="hello" />
+          <Example name="john" />
+          <h2>Dropdown</h2>
+          <DropdownSelect />
+        </View>
+      </Main>
+    </>
   );
 };
 

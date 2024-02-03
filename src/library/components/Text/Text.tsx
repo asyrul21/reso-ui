@@ -30,7 +30,7 @@ export interface ITextProps extends IComponent, IThemeProps, IMarginProps {
     | "h4"
     | "h5"
     | "h6";
-  size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+  size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
   sizing?: "default" | "large";
   children: React.ReactNode;
   noSelect?: boolean;

@@ -2,7 +2,6 @@
 @use "variables" as *;
 
 .component_theme_base {
-  font-family: $font-family;
   background: unset;
   @include theme_nature("light");
 }

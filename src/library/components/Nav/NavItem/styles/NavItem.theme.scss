@@ -1,0 +1,17 @@
+.navItem_theme_light {
+  .navItem_element_theme_light {
+    @include use_theme(unset, "light");
+  }
+  .navItem_element_active {
+    border-bottom: 4px solid #f95959;
+  }
+}
+
+.navItem_theme_dark {
+  .navItem_element_theme_dark {
+    @include use_theme(unset, "dark");
+  }
+  .navItem_element_active {
+    border-bottom: 4px solid $primary-grey-light;
+  }
+}

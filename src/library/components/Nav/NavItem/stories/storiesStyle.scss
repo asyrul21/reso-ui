@@ -1,0 +1,8 @@
+.custom-nav-link {
+  color: green;
+  font-weight: 600;
+  &:hover {
+    color: white;
+    background-color: #f95959;
+  }
+}

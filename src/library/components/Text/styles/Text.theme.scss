@@ -1,3 +1,7 @@
 .text_theme_light {
   @include use_theme(unset, "light");
 }
+
+.text_theme_dark {
+  @include use_theme(unset, "dark");
+}

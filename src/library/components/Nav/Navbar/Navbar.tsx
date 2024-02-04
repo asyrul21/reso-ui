@@ -1,4 +1,5 @@
 import React from "react";
+import clasnames from "classnames";
 
 import { Text } from "../../Text";
 
@@ -22,8 +23,10 @@ import {
 } from "../../../utils/styles";
 
 export interface INavbarProps extends IComponent, IThemeProps, IPaddingProps {
+  LogoWrapperElement?: "a" | "div";
+  logoHref?: string;
   textLogo?: string;
-  renderCustomLogo?: (props: { onClickLogo: () => void }) => React.ReactNode;
+  renderCustomLogo?: () => React.ReactNode;
   onClickLogo?: () => void;
   children: React.ReactNode;
   maxWidth?: number;
@@ -33,6 +36,8 @@ export interface INavbarProps extends IComponent, IThemeProps, IPaddingProps {
 }
 
 export const Navbar = ({
+  LogoWrapperElement = "a",
+  logoHref = "#",
   textLogo = "Logo",
   renderCustomLogo,
   onClickLogo,
@@ -40,10 +45,11 @@ export const Navbar = ({
   children,
   position = "fixed",
   navClassName,
-  navStyles,
+  navStyles = {},
   rootClassName,
   rootStyles = {},
   theme = "light",
+  ph = 5,
   ...spacingsProps
 }: INavbarProps) => {
   const containerStyles = createComponentStyles(
@@ -51,8 +57,9 @@ export const Navbar = ({
       withSpacingsProps(
         {
           navbar_header_container: true,
+          [`navbar_header_position_${position}`]: true,
         },
-        spacingsProps
+        { ph, ...spacingsProps }
       ),
       rootClassName,
       {
@@ -71,12 +78,23 @@ export const Navbar = ({
       {
         no_select: true,
       }
-    ),
-    createThemeStyles(`navbar_theme_`, theme)
+    )
   );
 
+  const logoContainerClasses = clasnames({
+    a_base: LogoWrapperElement === "a",
+    no_select: true,
+    navbar_nav_logo_container: true,
+    navbar_nav_logo_container_curson_pointer:
+      methodHasValue(onClickLogo) || LogoWrapperElement === "a",
+  });
+
   return (
-    <header className={containerStyles} style={rootStyles}>
+    <header
+      data-testid="navbar-root"
+      className={containerStyles}
+      style={rootStyles}
+    >
       <nav
         className={navClasses}
         style={{
@@ -84,19 +102,30 @@ export const Navbar = ({
           ...navStyles,
         }}
       >
-        <div className="navbar_nav_logo_container">
+        <LogoWrapperElement
+          data-testid="navbar-logo"
+          className={logoContainerClasses}
+          onClick={() => {
+            if (methodHasValue(onClickLogo)) {
+              onClickLogo();
+            }
+          }}
+          href={LogoWrapperElement === "a" ? logoHref : undefined}
+        >
           {typeof renderCustomLogo === "function" ? (
-            renderCustomLogo({
-              onClickLogo:
-                typeof onClickLogo === "function" ? onClickLogo : null,
-            })
+            renderCustomLogo()
           ) : (
-            <Text Element="span" rootClassName="navbar_nav_logo_text" size={9}>
+            <Text
+              theme={theme}
+              Element="span"
+              rootClassName="navbar_nav_logo_text"
+              size={9}
+            >
               {textLogo}
             </Text>
           )}
-        </div>
-        {children}
+        </LogoWrapperElement>
+        <div className="navbar_nav_children_container">{children}</div>
       </nav>
     </header>
   );

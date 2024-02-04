@@ -5,10 +5,10 @@ import { IPaddingProps } from "../../../interfaces/ISpacingsProps";
 import "./styles/Navbar.layout.scss";
 import "./styles/Navbar.theme.scss";
 export interface INavbarProps extends IComponent, IThemeProps, IPaddingProps {
+    LogoWrapperElement?: "a" | "div";
+    logoHref?: string;
     textLogo?: string;
-    renderCustomLogo?: (props: {
-        onClickLogo: () => void;
-    }) => React.ReactNode;
+    renderCustomLogo?: () => React.ReactNode;
     onClickLogo?: () => void;
     children: React.ReactNode;
     maxWidth?: number;
@@ -16,4 +16,4 @@ export interface INavbarProps extends IComponent, IThemeProps, IPaddingProps {
     navClassName?: string;
     navStyles?: React.CSSProperties;
 }
-export declare const Navbar: ({ textLogo, renderCustomLogo, onClickLogo, maxWidth, children, position, navClassName, navStyles, rootClassName, rootStyles, theme, ...spacingsProps }: INavbarProps) => React.JSX.Element;
+export declare const Navbar: ({ LogoWrapperElement, logoHref, textLogo, renderCustomLogo, onClickLogo, maxWidth, children, position, navClassName, navStyles, rootClassName, rootStyles, theme, ph, ...spacingsProps }: INavbarProps) => React.JSX.Element;

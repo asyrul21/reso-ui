@@ -1,3 +1,3 @@
 /* istanbul ignore file */
-export * from "./Navbar";
+import "../../../styles/global.scss";
 export * from "./NavItem";

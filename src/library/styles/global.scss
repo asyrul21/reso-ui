@@ -9,6 +9,11 @@
 @use "transitions" as *;
 @use "mixins" as *;
 
+// TODO
+body {
+  margin: 0;
+}
+
 .code_base {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -73,6 +78,7 @@ svg {
 }
 
 .a_base {
+  cursor: pointer;
   text-decoration: none;
   color: $lc-blue;
   &:hover {

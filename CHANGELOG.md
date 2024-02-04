@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/asyrul21/reso-ui/compare/v1.9.0...v1.10.0) (2024-02-04)
+
+
+### Features
+
+* Navbar and NavItem components, stories and unit tests ([bacf9a2](https://github.com/asyrul21/reso-ui/commit/bacf9a218cf867ca41a8ad515397b078e860c27b))
+
 # [1.9.0](https://github.com/asyrul21/reso-ui/compare/v1.8.3...v1.9.0) (2024-02-03)
 
 

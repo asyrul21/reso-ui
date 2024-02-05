@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/asyrul21/reso-ui/compare/v1.10.0...v1.11.0) (2024-02-05)
+
+
+### Features
+
+* optimize stylings and re-architecture overriding mechanism ([c65d039](https://github.com/asyrul21/reso-ui/commit/c65d039e7cc6256e9e53199baeb257183829a1cd))
+
 # [1.10.0](https://github.com/asyrul21/reso-ui/compare/v1.9.0...v1.10.0) (2024-02-04)
 
 

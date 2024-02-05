@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/asyrul21/reso-ui/compare/v1.11.0...v1.11.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* storybook build errors ([057a2ea](https://github.com/asyrul21/reso-ui/commit/057a2ea99b756cce841936c684718eb911850df5))
+
 # [1.11.0](https://github.com/asyrul21/reso-ui/compare/v1.10.0...v1.11.0) (2024-02-05)
 
 

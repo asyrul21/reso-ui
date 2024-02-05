@@ -15,7 +15,7 @@ npm install reso-ui
 1. Import the styles in your `index.ts` or `index.ts`. Import it BEFORE importing Application-spcific styles:
 
 ```js
-import "reso-ui/styles.css";
+import "reso-ui/styles";
 
 // your application-specific styles will override reso-ui styles
 import "./index.css";

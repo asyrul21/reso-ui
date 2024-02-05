@@ -9,7 +9,8 @@
     "types"
   ],
   "exports": {
-    ".": "./dist"
+    ".": "./dist/lib.js",
+    "./styles": "./dist/styles.css"
   },
   "scripts": {
     "setup-commitlint": "husky install && npx husky add .husky/commit-msg \"npx --no-install commitlint --edit \"$1\"\"",

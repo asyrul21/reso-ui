@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/asyrul21/reso-ui/compare/v1.11.1...v1.11.2) (2024-02-05)
+
+
+### Bug Fixes
+
+* package exports issues ([8384a95](https://github.com/asyrul21/reso-ui/commit/8384a95f2731f2424748333e96cfe6faede8bfb1))
+
 ## [1.11.1](https://github.com/asyrul21/reso-ui/compare/v1.11.0...v1.11.1) (2024-02-05)
 
 

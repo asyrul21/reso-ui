@@ -1,23 +1,16 @@
-/*
-* [global.scss] should only be imported ONCE in index.ts
+/**
+*
+* ORDER IS IMPORTANT
+*
 */
+@use "fonts" as *;
 @use "variables" as *;
-// [defaults] must come before [spacings]
 @use "defaults" as *;
 @use "spacings" as *;
 @use "fontClasses" as *;
 @use "transitions" as *;
 @use "mixins" as *;
-
-// TODO
-body {
-  margin: 0;
-}
-
-.code_base {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+@use "resets" as *;
 
 .component_disabled {
   position: relative;
@@ -77,7 +70,7 @@ svg {
   margin: auto;
 }
 
-.a_base {
+a {
   cursor: pointer;
   text-decoration: none;
   color: $lc-blue;

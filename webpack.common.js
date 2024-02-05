@@ -1,4 +1,5 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   cache: false,
@@ -8,14 +9,9 @@ module.exports = {
       {
         test: /\.(css|scss)$/i,
         use: [
-          // Creates `style` nodes from JS strings
-          {
-            loader: "style-loader",
-            options: {
-              injectType: "singletonStyleTag",
-            },
-          },
-          // Translates CSS into CommonJS
+          // optimize the CSS
+          MiniCssExtractPlugin.loader,
+          // Loads the CSS
           "css-loader",
           // Compiles Sass to CSS
           {
@@ -43,8 +39,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "styles.css",
+    }),
+  ],
   resolve: {
-    plugins: [],
     extensions: [".tsx", ".ts", ".js"],
     alias: {
       vars_and_mixins: path.join(

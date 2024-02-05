@@ -82,7 +82,6 @@ export const Navbar = ({
   );
 
   const logoContainerClasses = clasnames({
-    a_base: LogoWrapperElement === "a",
     no_select: true,
     navbar_nav_logo_container: true,
     navbar_nav_logo_container_curson_pointer:

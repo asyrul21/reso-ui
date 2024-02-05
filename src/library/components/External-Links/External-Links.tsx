@@ -54,7 +54,6 @@ export const ExternalLinks = ({
   const linkClasses = createComponentStyles(
     createLayoutStyles(
       {
-        a_base: true,
         externalLinks_link: true,
       },
       linkClassName

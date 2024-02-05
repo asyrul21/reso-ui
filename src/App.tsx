@@ -34,8 +34,6 @@ const App = () => {
         <View>
           <Banner type="info" text="hello" />
           <Example name="john" />
-          {/* <h2>Dropdown</h2>
-          <DropdownSelect /> */}
         </View>
       </Main>
     </>

@@ -54,12 +54,7 @@ export const Back = ({
   );
 
   const linkClasses = createComponentStyles(
-    createLayoutStyles(
-      {
-        a_base: true,
-      },
-      linkClassName
-    ),
+    createLayoutStyles({}, linkClassName),
     createThemeStyles("back_link_theme", theme)
   );
 

@@ -76,7 +76,6 @@ export const NavItem = ({
   const elementClasses = createComponentStyles(
     createLayoutStyles(
       {
-        a_base: Implementation === "a",
         navItem_base: true,
         navItem_element: true,
         navItem_element_active: enableActiveStyles === true && active === true,

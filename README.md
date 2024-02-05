@@ -12,27 +12,21 @@ For more information, please see our [Storybook instance](http://reso-ui-storybo
 npm install reso-ui
 ```
 
-## Import Components
+## Basic Usage
 
-You can import our ExampleComponent as below:
+1. Import the styles in your `index.ts` or `index.ts`. Import it BEFORE importing Application-spcific styles:
+
+```js
+import "reso-ui/styles.css";
+
+// your application-specific styles will override reso-ui styles
+import "./index.css";
+```
+
+2. Import and use our components:
 
 ```javascript
 import { Example } from "reso-ui";
-```
-
-For other components, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/) for information on import statements and component properties.
-
-## Using the Component
-
-You can then use our ExampleComponent as below:
-
-```jsx
-import { Example } from "reso-ui";
-
-/**
- * !! IMPORTANT
-*/
-import "./App.scss";
 
 export const SampleApp = () => {
   return (
@@ -41,9 +35,7 @@ export const SampleApp = () => {
 };
 ```
 
-IMPORTANT NOTE: You must import your Application-Specific styles AFTER importing library components. Otherwise, the class name overriding would not work properly.
-
-For other components, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/) for information on components' usage.
+3. For other usage docs, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/) for information on import statements and component properties.
 
 # Authors' Notes
 

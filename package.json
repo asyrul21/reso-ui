@@ -8,6 +8,9 @@
     "dist",
     "types"
   ],
+  "exports": {
+    ".": "./dist"
+  },
   "scripts": {
     "setup-commitlint": "husky install && npx husky add .husky/commit-msg \"npx --no-install commitlint --edit \"$1\"\"",
     "disable-commitlint": "rm -f .husky/commit-msg",
@@ -62,6 +65,7 @@
     "husky": "^8.0.3",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
+    "mini-css-extract-plugin": "^2.8.0",
     "npm": "^9.2.0",
     "sass": "^1.56.2",
     "sass-loader": "^13.2.0",

@@ -14,7 +14,6 @@ describe("NavItem Component Unit Tests", () => {
 
     const aTag = screen.queryByTestId("navItem-element-a");
     expect(aTag).toBeInTheDocument();
-    expect(aTag).toHaveClass("a_base");
   });
 
   test("should render button if passed as prop", () => {

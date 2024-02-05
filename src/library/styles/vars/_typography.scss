@@ -1,9 +1,8 @@
-@use "../fonts" as *;
 // $font-family: "Poppins", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
 //   "Droid Sans", "Helvetica Neue", sans-serif;
 
-$font-family: "Poppins";
-$font-family-dancing-script: "DancingScript";
+$font-family: "Poppins", "Roboto";
+$font-family-dancing-script: "DancingScript", "Poppins", "Roboto";
 
 $p-line-height-default: auto;
 

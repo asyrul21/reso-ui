@@ -19,6 +19,27 @@ module.exports = merge(common, {
           configFile: "tsconfig.json",
         },
       },
+      /* Styles / CSS and SCSS */
+      {
+        test: /\.(css|scss)$/i,
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              injectType: "singletonStyleTag",
+            },
+          },
+          // Loads the CSS
+          "css-loader",
+          // Compiles Sass to CSS
+          {
+            loader: "sass-loader",
+            options: {
+              additionalData: '@use "vars_and_mixins" as *;',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [

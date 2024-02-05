@@ -1,7 +1,5 @@
 # Reso UI (Beta/Pre-release)
 
-PLEASE NOTE THAT THIS LIBRARY IS STILL UNDER DEVELOPMENT AND MAY STILL HAVE MISSING CRUCIAL INFORMATION
-
 Home to reusable react components to Reso Applications.
 
 For more information, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/).

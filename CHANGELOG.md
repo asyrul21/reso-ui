@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/asyrul21/reso-ui/compare/v1.11.2...v1.12.0) (2024-02-10)
+
+
+### Features
+
+* Main wrapper component theme support and minor adjustments to layout components ([68ee4e8](https://github.com/asyrul21/reso-ui/commit/68ee4e8bd1132f4e48eb007d96132727193c3b58))
+
 ## [1.11.2](https://github.com/asyrul21/reso-ui/compare/v1.11.1...v1.11.2) (2024-02-05)
 
 

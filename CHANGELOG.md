@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/asyrul21/reso-ui/compare/v1.12.0...v1.12.1) (2024-02-10)
+
+
+### Bug Fixes
+
+* update types for Center Container and Main ([db15b0a](https://github.com/asyrul21/reso-ui/commit/db15b0a50f495f829c065eaa5320f240495f74f9))
+
 # [1.12.0](https://github.com/asyrul21/reso-ui/compare/v1.11.2...v1.12.0) (2024-02-10)
 
 

@@ -1,8 +1,8 @@
 /* istanbul ignore file */
 import React, { useState } from "react";
 
-import { Example, Banner, Navbar, NavItem } from "./library/components";
-import { Main, View } from "./library/components/Containers";
+import { Example, Banner, Navbar, NavItem, Text } from "./library/components";
+import { Main, View, CenterContainer } from "./library/components/Containers";
 import { DropdownSelect } from "./library/forms/Controls/Dropdown-Select";
 
 // import sample scss
@@ -30,10 +30,12 @@ const App = () => {
           Button
         </NavItem>
       </Navbar>
-      <Main>
+      <Main theme="dark">
         <View>
           <Banner type="info" text="hello" />
-          <Example name="john" />
+          <CenterContainer maxWidth={540}>
+            <Example name="john" />
+          </CenterContainer>
         </View>
       </Main>
     </>

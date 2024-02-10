@@ -1,6 +1,5 @@
 .component_center_container {
+  // border: 2px solid red;
   margin: $margin-center;
-  padding: $padding-xlarge $padding-xxlarge;
-  min-height: inherit;
-  max-width: $max-width-screen-lg;
+  max-width: $max-width-screen-lg; // default
 }

@@ -25,7 +25,7 @@ export default {
 
             You can customize hover and behaviour via linkClassName.
 
-            Import statement: \`import { Back } from 'reso-ui/Back'\`
+            Import statement: \`import { Back } from 'reso-ui'\`
         `,
       },
     },

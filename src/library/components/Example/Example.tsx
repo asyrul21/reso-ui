@@ -44,13 +44,15 @@ export const Example = ({
       data-testid="example-component-root"
       style={rootStyles}
     >
-      <Text Element="h1" mb={5}>
+      <Text Element="h1" mb={5} theme={theme}>
         Hello World!
       </Text>
-      <Text Element="p" mb={2}>
+      <Text Element="p" mb={2} theme={theme}>
         This is just an example component
       </Text>
-      <Text Element="p">Name: {name}</Text>
+      <Text Element="p" theme={theme}>
+        Name: {name}
+      </Text>
     </div>
   );
 };

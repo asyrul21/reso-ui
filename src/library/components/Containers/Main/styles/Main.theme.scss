@@ -1,0 +1,7 @@
+.main_container_theme_light {
+  @include use_theme($primary-grey-light, "light");
+}
+
+.main_container_theme_dark {
+  @include use_theme($primary-grey-dark, "dark");
+}

@@ -11,11 +11,13 @@ import { createLayoutStyles } from "../../../utils/styles";
 
 export interface ICenterContainerProps extends IComponent {
   children: React.ReactNode;
+  maxWidth?: number;
 }
 
 // width and height will follow children
 export const CenterContainer = ({
   children,
+  maxWidth,
   rootClassName,
   rootStyles = {},
 }: ICenterContainerProps) => {
@@ -30,7 +32,10 @@ export const CenterContainer = ({
     <div
       className={containerStyles}
       data-testid="center-container-root"
-      style={rootStyles}
+      style={{
+        maxWidth,
+        ...rootStyles,
+      }}
     >
       {children}
     </div>

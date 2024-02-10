@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import dedent from "ts-dedent";
 
 // always import from index to include global styles
 import { CenterContainer } from "../";
@@ -15,6 +16,17 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     // backgroundColor: { control: "color" },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component: dedent`
+            A wrapper component to keep page content in the center (vertically aligned).
+
+            Import statement: \`import { CenterContainer } from 'reso-ui'\`
+        `,
+      },
+    },
   },
 } as ComponentMeta<typeof CenterContainer>;
 
@@ -32,4 +44,10 @@ DefaultWithBorder.args = {
 export const WithCustomClassname = ComponentTemplate.bind({});
 WithCustomClassname.args = {
   rootClassName: "centerContainer_story_sample",
+};
+
+export const WithCustomMaxWidth = ComponentTemplate.bind({});
+WithCustomMaxWidth.args = {
+  rootStyles: { border: "2px solid blue" },
+  maxWidth: 540,
 };

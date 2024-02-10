@@ -2,23 +2,20 @@ import React from "react";
 
 // import base interface
 import IComponent from "../../../interfaces/IComponent";
-import {
-  IMarginProps,
-  IPaddingProps,
-} from "../../../interfaces/ISpacingsProps";
+import { IThemeProps } from "../../../interfaces";
 
 // styles
 import "./styles/Main.layout.scss";
+import "./styles/Main.theme.scss";
 
 // utils
 import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
-  withSpacingsProps,
 } from "../../../utils/styles";
 
-export interface IMainProps extends IComponent, IMarginProps, IPaddingProps {
+export interface IMainProps extends IComponent, IThemeProps {
   children: React.ReactNode;
 }
 
@@ -26,23 +23,25 @@ export const Main = ({
   children,
   rootClassName,
   rootStyles = {},
-  ...spacingsProps
+  theme = "light",
 }: IMainProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
-      withSpacingsProps(
-        {
-          main_container: true,
-        },
-        spacingsProps
-      ),
+      {
+        main_container: true,
+      },
       rootClassName,
       {}
-    )
+    ),
+    createThemeStyles(`main_container_theme_`, theme)
   );
 
   return (
-    <main data-testid="main-root" className={containerStyles}>
+    <main
+      data-testid="main-root"
+      className={containerStyles}
+      style={rootStyles}
+    >
       {children}
     </main>
   );

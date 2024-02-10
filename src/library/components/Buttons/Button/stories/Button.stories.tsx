@@ -25,7 +25,7 @@ export default {
 
             You can customize hover behaviour via rootClassName.
 
-            Import statement: \`import { Button } from 'reso-ui/Button'\`
+            Import statement: \`import { Button } from 'reso-ui'\`
         `,
       },
     },

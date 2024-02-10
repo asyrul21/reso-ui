@@ -1,8 +1,8 @@
 // define themes here
 .exampleComponent_theme_light {
-  @include use_theme($primary-grey-light, "light");
+  @include use_theme($primary-grey-medium-light, "light");
 }
 
 .exampleComponent_theme_dark {
-  @include use_theme($primary-grey-dark, "dark");
+  @include use_theme($primary-grey-medium, "dark");
 }

@@ -1,6 +1,6 @@
-# Reso UI (Beta/Pre-release)
+# Reso UI
 
-Home to reusable react components to Reso Applications.
+Home to reusable React components to Reso Applications.
 
 For more information, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/).
 
@@ -12,7 +12,7 @@ npm install reso-ui
 
 ## Basic Usage
 
-1. Import the styles in your `index.ts` or `index.ts`. Import it BEFORE importing Application-spcific styles:
+1. Import the styles in your project root `index.ts` or `index.tsx` or `index.js`. Import it BEFORE importing Application-spcific styles:
 
 ```js
 import "reso-ui/styles";

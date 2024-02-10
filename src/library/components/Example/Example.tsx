@@ -20,10 +20,12 @@ import {
 
 export interface IExampleComponent extends IComponent, IThemeProps {
   name: string;
+  children?: React.ReactNode;
 }
 
 export const Example = ({
-  theme,
+  theme = "light",
+  children,
   name,
   rootClassName,
   rootStyles = {},
@@ -53,6 +55,7 @@ export const Example = ({
       <Text Element="p" theme={theme}>
         Name: {name}
       </Text>
+      {typeof children !== null && typeof children !== undefined && children}
     </div>
   );
 };

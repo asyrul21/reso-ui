@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/asyrul21/reso-ui/compare/v1.12.1...v1.12.2) (2024-02-22)
+
+
+### Bug Fixes
+
+* Main and View layout bug ([5ee3d9a](https://github.com/asyrul21/reso-ui/commit/5ee3d9aa95174c0bb72adde015fb393daf9f4a36))
+
 ## [1.12.1](https://github.com/asyrul21/reso-ui/compare/v1.12.0...v1.12.1) (2024-02-10)
 
 

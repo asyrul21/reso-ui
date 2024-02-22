@@ -1,5 +1,5 @@
 .main_container {
   // border: 2px solid blue;
   padding-top: $navbar_height; // default
-  min-height: calc(100vh - $navbar_height);
+  min-height: 100vh;
 }

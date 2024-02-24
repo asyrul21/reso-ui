@@ -1,3 +1,10 @@
+## [1.12.3](https://github.com/asyrul21/reso-ui/compare/v1.12.2...v1.12.3) (2024-02-24)
+
+
+### Bug Fixes
+
+* minor useFormInput error type bug ([21a5097](https://github.com/asyrul21/reso-ui/commit/21a509767076762f9aef87b7e1c1281659832bdb))
+
 ## [1.12.2](https://github.com/asyrul21/reso-ui/compare/v1.12.1...v1.12.2) (2024-02-22)
 
 

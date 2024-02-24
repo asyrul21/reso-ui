@@ -1,3 +1,10 @@
+## [1.12.4](https://github.com/asyrul21/reso-ui/compare/v1.12.3...v1.12.4) (2024-02-24)
+
+
+### Bug Fixes
+
+* useFormInput return type fix, export checkbox, refresh types ([e9a9349](https://github.com/asyrul21/reso-ui/commit/e9a934934f403b0cd571c1ddd639f310db112eb3))
+
 ## [1.12.3](https://github.com/asyrul21/reso-ui/compare/v1.12.2...v1.12.3) (2024-02-24)
 
 

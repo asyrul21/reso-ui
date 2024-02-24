@@ -69,6 +69,13 @@ export const Default = () => {
   } = useFormInput<string>("");
 
   const {
+    value: confirmPasswordValue,
+    setValue: setConfirmPasswordValue,
+    error: confirmPasswordError,
+    setError: setConfirmPasswordError,
+  } = useFormInput<string>("");
+
+  const {
     value: telInputValue,
     setValue: setTelInputValue,
     error: telInputError,
@@ -191,6 +198,33 @@ export const Default = () => {
           error={passwordInputError}
           setError={setPasswordInputError}
           pattern={/^[0-9]{6,}$/}
+        />
+      </ControlWrapper>
+      <ControlWrapper>
+        <Label
+          htmlFor="sampleConfirmPasswordInput"
+          label="Confirm Password"
+          description="Custom validation against another state value"
+          mr={7}
+          rootStyles={{ width: "128px" }}
+        />
+        <TextInput
+          type="password"
+          id="sampleConfirmPasswordInput"
+          value={confirmPasswordValue}
+          onChange={(val) => setConfirmPasswordValue(val as string)}
+          error={confirmPasswordError}
+          setError={setConfirmPasswordError}
+          customValidators={{
+            validationFn: (val) => {
+              if (!val) return true;
+              if (typeof val === "string" && val === passwordInputValue) {
+                return true;
+              }
+              return false;
+            },
+            errorMessage: "Passwords do not match",
+          }}
         />
       </ControlWrapper>
       <ControlWrapper>

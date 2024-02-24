@@ -4,6 +4,7 @@
     "src/App.tsx",
     "src/index.tsx",
     "src/temp.tsx",
+    "src/library.stories.tsx",
     "./jest-dom-setup.ts",
     "**/__tests__/*",
     "**/__test__/*",

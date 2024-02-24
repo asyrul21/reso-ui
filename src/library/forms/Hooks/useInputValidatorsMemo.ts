@@ -1,4 +1,4 @@
-import { FormInputValidator } from "../../interfaces/Form";
+import { CustomValidators, FormInputValidator } from "../../interfaces/Form";
 import { useMemo } from "react";
 import {
   numberIsLessThan,
@@ -34,9 +34,9 @@ type InputPrimitiveType = "string" | "boolean" | "number";
 export default <T>(
   type: InputPrimitiveType,
   validationProps: IInputValidationProps,
-  customValidators?: FormInputValidator<T> | FormInputValidator<T>[]
+  customValidators?: CustomValidators<T>
 ) => {
-  const inputValidatorsMemo = useMemo<FormInputValidator<T>[]>(() => {
+  const defaultValidatorsMemo = useMemo<FormInputValidator<T>[]>(() => {
     const {
       required,
       min,
@@ -48,77 +48,77 @@ export default <T>(
       isTel,
     } = validationProps;
 
-    let finalValidators: FormInputValidator<T>[] = [];
+    let defaultValidators: FormInputValidator<T>[] = [];
 
     if (required) {
       if (type === "string") {
-        finalValidators = [
-          ...finalValidators,
+        defaultValidators = [
+          ...defaultValidators,
           stringIsRequired as FormInputValidator<T>,
         ];
       } else if (type === "number") {
-        finalValidators = [
-          ...finalValidators,
+        defaultValidators = [
+          ...defaultValidators,
           numberIsRequired as FormInputValidator<T>,
         ];
       } else if (type === "boolean") {
-        finalValidators = [
-          ...finalValidators,
+        defaultValidators = [
+          ...defaultValidators,
           booleanIsRequired as FormInputValidator<T>,
         ];
       }
     }
 
     if (pattern) {
-      finalValidators = [
-        ...finalValidators,
+      defaultValidators = [
+        ...defaultValidators,
         stringMatchesRegex(pattern) as FormInputValidator<T>,
       ];
     }
 
     if (isEmail) {
-      finalValidators = [
-        ...finalValidators,
+      defaultValidators = [
+        ...defaultValidators,
         stringIsEmail as FormInputValidator<T>,
       ];
     }
 
     if (isTel) {
-      finalValidators = [
-        ...finalValidators,
+      defaultValidators = [
+        ...defaultValidators,
         stringIsPhoneDefault as FormInputValidator<T>,
       ];
     }
 
     if (numberHasValue(minLength)) {
-      finalValidators = [
-        ...finalValidators,
+      defaultValidators = [
+        ...defaultValidators,
         stringHasMinLength(minLength) as FormInputValidator<T>,
       ];
     }
 
     if (numberHasValue(maxLength)) {
-      finalValidators = [
-        ...finalValidators,
+      defaultValidators = [
+        ...defaultValidators,
         stringHasMaxLength(maxLength) as FormInputValidator<T>,
       ];
     }
 
     if (numberHasValue(min)) {
-      finalValidators = [
-        ...finalValidators,
+      defaultValidators = [
+        ...defaultValidators,
         numberIsMoreThanOrEqualsTo(min) as FormInputValidator<T>,
       ];
     }
     if (numberHasValue(max)) {
-      finalValidators = [
-        ...finalValidators,
+      defaultValidators = [
+        ...defaultValidators,
         numberIsLessThan(max) as FormInputValidator<T>,
       ];
     }
 
-    return composeInputValidators(finalValidators, customValidators);
+    return defaultValidators;
   }, []);
 
-  return inputValidatorsMemo;
+  return composeInputValidators(defaultValidatorsMemo, customValidators);
 };

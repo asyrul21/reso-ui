@@ -6,11 +6,15 @@ export type FormInputValidator<T> = {
 };
 
 export type FormInputHookReturnObj<T> = {
-  value: any;
+  value: T;
   setValue: Dispatch<SetStateAction<T>>;
-  error?: string | null;
+  error?: string;
   setError?: Dispatch<SetStateAction<string>>;
 };
+
+export type CustomValidators<T> =
+  | FormInputValidator<T>
+  | FormInputValidator<T>[];
 
 export interface IFormInputProps<T> {
   id: string;
@@ -31,7 +35,7 @@ export interface IFormInputProps<T> {
   required?: boolean;
   autofocus?: boolean;
   autocomplete?: "on" | "off";
-  customValidators?: FormInputValidator<T> | FormInputValidator<T>[];
+  customValidators?: CustomValidators<T>;
 }
 
 export interface IFormDataContext {

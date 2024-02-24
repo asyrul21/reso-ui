@@ -24,7 +24,9 @@
     "build": "webpack --config webpack.prod.js --mode production",
     "lint": "tslint -p . -c tslint.json --exclude '**/*.stories.tsx' --exclude '**/*.test.{ts,tsx}' ",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "refresh-types": "rm -rf types && npm run build",
+    "reset-dist": "rm -rf dist && git restore dist"
   },
   "author": "Asyrul Ahmad",
   "license": "ISC",

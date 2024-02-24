@@ -1,4 +1,4 @@
-import { FormInputValidator } from "../../interfaces/Form";
+import { CustomValidators, FormInputValidator } from "../../interfaces/Form";
 interface IInputValidationProps {
     required?: boolean;
     min?: number;
@@ -10,5 +10,5 @@ interface IInputValidationProps {
     isTel?: boolean;
 }
 type InputPrimitiveType = "string" | "boolean" | "number";
-declare const _default: <T>(type: InputPrimitiveType, validationProps: IInputValidationProps, customValidators?: FormInputValidator<T> | FormInputValidator<T>[]) => FormInputValidator<T>[];
+declare const _default: <T>(type: InputPrimitiveType, validationProps: IInputValidationProps, customValidators?: CustomValidators<T>) => FormInputValidator<T>[];
 export default _default;

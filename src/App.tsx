@@ -30,11 +30,15 @@ const App = () => {
           Button
         </NavItem>
       </Navbar>
-      <Main theme="dark">
+      <Main theme={theme}>
         <View>
           <Banner type="info" text="hello" />
           <CenterContainer maxWidth={540}>
             <Example name="john" />
+            <Text Element="h3" mv={5}>
+              Dropdown
+            </Text>
+            <DropdownSelect optionsMaxHeight="120px" />
           </CenterContainer>
         </View>
       </Main>

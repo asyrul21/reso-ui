@@ -1,5 +1,8 @@
-import React, { useEffect } from "react";
-// import { DropdownDown, DropdownUp } from "../../../icons";
+import React, { useEffect, useState } from "react";
+import classnames from "classnames";
+import { DropdownDown, DropdownUp } from "../../../icons";
+
+import { Icon } from "../../../components";
 
 // import base interface
 import IComponent from "../../../interfaces/IComponent";
@@ -22,11 +25,42 @@ import {
 import { validate } from "../../Validators";
 import useInputValidatorsMemo from "../../Hooks/useInputValidatorsMemo";
 
+export type DropdownOption = {
+  key: string;
+  value: string;
+};
+
+export interface IDropdownSelectProps
+  extends IComponent,
+    IThemeProps,
+    IMarginProps {
+  expandOn?: "click" | "hover";
+  optionsMaxHeight?: string;
+  id?: string;
+  disabled?: boolean;
+  options?: DropdownOption[];
+  headerClassName?: string;
+  headerStyles?: React.CSSProperties;
+  optionsContainerClassName?: string;
+  optionsContainerStyles?: React.CSSProperties;
+}
+
 export const DropdownSelect = ({
   options = [],
-  value = "",
-  //   onChange = () => {},
-}) => {
+  // value = "",
+  optionsMaxHeight,
+  disabled = false,
+  rootClassName,
+  rootStyles = {},
+  headerClassName,
+  headerStyles = {},
+  optionsContainerClassName,
+  optionsContainerStyles = {},
+  theme = "light",
+  ...spacingsProps
+}: //   onChange = () => {},
+IDropdownSelectProps) => {
+  const [isOpen, setIsOpened] = useState(false);
   //   const node = useRef();
   //   const [isOpened, setIsOpened] = useState(false);
 
@@ -53,6 +87,49 @@ export const DropdownSelect = ({
   //     component_dropdownselect_option_selected: true,
   //   });
 
+  const containerClasses = createComponentStyles(
+    createLayoutStyles(
+      withSpacingsProps(
+        {
+          dropdown_container: true,
+        },
+        spacingsProps
+      ),
+      rootClassName,
+      {
+        disabled,
+        no_select: true,
+      }
+    )
+  );
+
+  const headerClasses = createComponentStyles(
+    createLayoutStyles(
+      {
+        dropdown_header: true,
+        dropdown_header_opened: isOpen,
+      },
+      headerClassName,
+      {
+        no_select: true,
+      }
+    ),
+    createThemeStyles(`dropdown_header_theme_`, theme)
+  );
+
+  const dropdownOptionsClasses = createComponentStyles(
+    createLayoutStyles(
+      {
+        dropdown_options_container: true,
+        dropdown_options_show: isOpen,
+      },
+      optionsContainerClassName,
+      {
+        no_select: true,
+      }
+    )
+  );
+
   //   const ul_header_classes = classnames({
   //     component_dropdownselect_li_header: true,
   //     [`${
@@ -66,25 +143,49 @@ export const DropdownSelect = ({
   //     component_dropdownselect_option: true,
   //   });
 
+  const IconClasses = classnames({
+    dropdown_icon_invert: isOpen,
+  });
+
   return (
     <div
       //   ref={node}
       //   id="selectInput"
-      className="dropdown_container"
+      className={containerClasses}
+      style={rootStyles}
     >
-      <button className="dropdown_header_button">Click</button>
-      <ul className="dropdown_content">
+      <div
+        role="button"
+        className={headerClasses}
+        style={headerStyles}
+        onClick={() => setIsOpened(!isOpen)}
+      >
+        <span>Click</span>
+        <Icon
+          rootClassName={IconClasses}
+          SvgIcon={DropdownDown}
+          width={24}
+          height={24}
+        />
+      </div>
+      <ul
+        className={dropdownOptionsClasses}
+        style={{
+          ...optionsContainerStyles,
+          maxHeight: isOpen ? optionsMaxHeight : 0,
+        }}
+      >
         <li className="dropdown_option">Option 1</li>
         <li className="dropdown_option">Option 2</li>
-        <li className="dropdown_option">Option 3</li>
+        {/* <li className="dropdown_option">Option 3</li>
         <li className="dropdown_option">Option 4</li>
         <li className="dropdown_option">Option 5</li>
         <li className="dropdown_option">Option 6</li>
         <li className="dropdown_option">Option 7</li>
         <li className="dropdown_option">Option 8</li>
-        <li className="dropdown_option">Option 9</li>
+        <li className="dropdown_option">Option 9</li> */}
       </ul>
-      {/* Hello */}
+      {/* Hello
       {/* <div
         className={ul_header_classes}
         onClick={() => {

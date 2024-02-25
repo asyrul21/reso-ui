@@ -1,0 +1,11 @@
+.dropdown_header_theme_light {
+  @include use_theme($white, "light");
+  border-color: $primary-grey-medium;
+  &:hover {
+    // background: $primary-grey-medium-light;
+    border-color: $primary-green;
+  }
+  &:focus {
+    border-color: $primary-green;
+  }
+}

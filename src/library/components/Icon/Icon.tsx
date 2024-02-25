@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent, SVGAttributes } from "react";
 
 // import base interface
 import IComponent from "../../interfaces/IComponent";
@@ -20,7 +20,7 @@ import {
 } from "../../utils/styles";
 
 export interface IIconProps extends IComponent, IThemeProps, IMarginProps {
-  SvgIcon: (props: React.SVGProps<SVGElement>) => React.ReactElement;
+  SvgIcon: FunctionComponent<SVGAttributes<SVGElement>>;
   width?: number | string;
   height?: number | string;
   fill?: string;

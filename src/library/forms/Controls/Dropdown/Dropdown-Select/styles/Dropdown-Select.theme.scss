@@ -1,0 +1,29 @@
+.dropdown_header_theme_light {
+  @include use_theme($white, "light");
+  border-color: $primary-grey-medium;
+  &:hover {
+    // background: $primary-grey-medium-light;
+    border-color: $primary-green;
+  }
+  &:focus {
+    border-color: $primary-green;
+  }
+}
+.dropdown_header_navItem_theme_light {
+  @include use_theme(unset, "light");
+  &:hover {
+    background: $primary-grey-medium-light;
+    border-color: $primary-green;
+  }
+  &:focus {
+    border-color: $primary-green;
+  }
+}
+
+.dropdown_options_container_theme_light {
+  border-color: $primary-grey-medium;
+  @include use_theme($white, "light");
+}
+.dropdown_options_container_navItem_theme_light {
+  @include use_theme($primary-grey-light, "light");
+}

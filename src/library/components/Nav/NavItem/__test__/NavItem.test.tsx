@@ -67,12 +67,10 @@ describe("NavItem Component Unit Tests", () => {
     const testText = "test";
     const { debug } = render(
       <NavItem
-        renderCustomNavItem={({ children }) => {
-          return <span data-testid="custom-nav-item-test">{children}</span>;
+        renderCustomNavItem={() => {
+          return <span data-testid="custom-nav-item-test">{testText}</span>;
         }}
-      >
-        {testText}
-      </NavItem>
+      />
     );
 
     // debug();

@@ -110,11 +110,15 @@ export const createThemeStyles = (
   componentStylePrefix?: string,
   theme?: Theme
 ) => {
+  if (typeof componentStylePrefix === "string" && componentStylePrefix !== "") {
+    return classnames({
+      component_theme_base: true,
+      [`${componentStylePrefix}${DefaultTheme}`]: true,
+      [`${componentStylePrefix}${theme}`]: theme ? true : false,
+    });
+  }
   return classnames({
     component_theme_base: true,
-    [`${componentStylePrefix}${DefaultTheme}`]: true,
-    [`${componentStylePrefix}${theme}`]:
-      componentStylePrefix && theme ? true : false,
   });
 };
 

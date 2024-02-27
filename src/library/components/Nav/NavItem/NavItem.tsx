@@ -24,7 +24,7 @@ import {
 } from "../../../utils/validations";
 
 export interface INavItemProps extends IComponent, IThemeProps, IMarginProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   Implementation?: "a" | "button";
   onClick?: () => void;
   active?: boolean;
@@ -37,7 +37,6 @@ export interface INavItemProps extends IComponent, IThemeProps, IMarginProps {
   //   ) => React.ReactNode;
   renderCustomNavItem?: (props: {
     theme: IThemeProps;
-    children: React.ReactNode;
     active: boolean;
   }) => React.ReactNode;
 }
@@ -93,7 +92,6 @@ export const NavItem = ({
       {methodHasValue(renderCustomNavItem) ? (
         renderCustomNavItem({
           theme: theme as IThemeProps,
-          children,
           active,
         })
       ) : (

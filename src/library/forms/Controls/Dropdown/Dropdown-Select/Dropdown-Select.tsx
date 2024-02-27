@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classnames from "classnames";
-import { DropdownDown, DropdownUp } from "../../../icons";
+import { DropdownDown, DropdownUp } from "../../../../icons";
 
-import { Icon } from "../../../components";
+import { Icon } from "../../../../components";
 
 // import base interface
-import IComponent from "../../../interfaces/IComponent";
-import IThemeProps from "../../../interfaces/Theme";
-import { IMarginProps } from "../../../interfaces/ISpacingsProps";
-import { IFormInputProps } from "../../../interfaces/Form";
+import IComponent from "../../../../interfaces/IComponent";
+import IThemeProps from "../../../../interfaces/Theme";
+import { IMarginProps } from "../../../../interfaces/ISpacingsProps";
+import { IFormInputProps } from "../../../../interfaces/Form";
 
 // styles
-import "../sharedStyles.scss";
 import "./styles/Dropdown-Select.layout.scss";
 import "./styles/Dropdown-Select.theme.scss";
 
@@ -21,24 +20,26 @@ import {
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
-} from "../../../utils/styles";
-import { validate } from "../../Validators";
-import useInputValidatorsMemo from "../../Hooks/useInputValidatorsMemo";
-
-export type DropdownOption = {
-  key: string;
-  value: string;
-};
+} from "../../../../utils/styles";
+import { validate } from "../../../Validators";
+import useInputValidatorsMemo from "../../../Hooks/useInputValidatorsMemo";
+import { IDropdownOption } from "../Dropdown-Option";
+import { useClickOutside } from "../../../../hooks";
+import { stringHasValue } from "../../../../utils/validations";
 
 export interface IDropdownSelectProps
   extends IComponent,
     IThemeProps,
     IMarginProps {
+  asNavItem?: boolean;
   expandOn?: "click" | "hover";
+  OptionsContainerElement?: "ul" | "div";
+  value?: string;
+  children: React.ReactNode;
   optionsMaxHeight?: string;
   id?: string;
   disabled?: boolean;
-  options?: DropdownOption[];
+  options?: IDropdownOption[];
   headerClassName?: string;
   headerStyles?: React.CSSProperties;
   optionsContainerClassName?: string;
@@ -46,8 +47,12 @@ export interface IDropdownSelectProps
 }
 
 export const DropdownSelect = ({
-  options = [],
-  // value = "",
+  id,
+  expandOn = "click",
+  asNavItem = false,
+  value,
+  children,
+  OptionsContainerElement,
   optionsMaxHeight,
   disabled = false,
   rootClassName,
@@ -60,8 +65,12 @@ export const DropdownSelect = ({
   ...spacingsProps
 }: //   onChange = () => {},
 IDropdownSelectProps) => {
+  const node = useRef();
   const [isOpen, setIsOpened] = useState(false);
-  //   const node = useRef();
+
+  useClickOutside(node, () => {
+    setIsOpened(false);
+  });
   //   const [isOpened, setIsOpened] = useState(false);
 
   //   const handleClickComponent = (e) => {
@@ -107,26 +116,43 @@ IDropdownSelectProps) => {
     createLayoutStyles(
       {
         dropdown_header: true,
-        dropdown_header_opened: isOpen,
+        dropdown_header_navItem: asNavItem === true,
+        dropdown_header_opened: !asNavItem && isOpen,
       },
       headerClassName,
       {
         no_select: true,
       }
     ),
-    createThemeStyles(`dropdown_header_theme_`, theme)
+    createThemeStyles(
+      (() => {
+        return asNavItem
+          ? "dropdown_header_navItem_theme_"
+          : "dropdown_header_theme_";
+      })(),
+      theme
+    )
   );
 
   const dropdownOptionsClasses = createComponentStyles(
     createLayoutStyles(
       {
         dropdown_options_container: true,
-        dropdown_options_show: isOpen,
+        dropdown_options_container_navItem: asNavItem === true,
+        dropdown_options_show: isOpen === true,
       },
       optionsContainerClassName,
       {
         no_select: true,
       }
+    ),
+    createThemeStyles(
+      (() => {
+        return asNavItem
+          ? `dropdown_options_container_navItem_theme_`
+          : `dropdown_options_container_theme_`;
+      })(),
+      theme
     )
   );
 
@@ -149,18 +175,32 @@ IDropdownSelectProps) => {
 
   return (
     <div
-      //   ref={node}
-      //   id="selectInput"
+      id={id || "selectInput"}
+      ref={node}
       className={containerClasses}
       style={rootStyles}
+      onMouseEnter={() => {
+        if (expandOn === "hover") {
+          setIsOpened(true);
+        }
+      }}
+      onMouseLeave={() => {
+        if (expandOn === "hover") {
+          setIsOpened(false);
+        }
+      }}
     >
       <div
         role="button"
         className={headerClasses}
         style={headerStyles}
-        onClick={() => setIsOpened(!isOpen)}
+        onClick={() => {
+          if (expandOn === "click") {
+            setIsOpened(!isOpen);
+          }
+        }}
       >
-        <span>Click</span>
+        <span>{stringHasValue(value) ? value : "Select an option"}</span>
         <Icon
           rootClassName={IconClasses}
           SvgIcon={DropdownDown}
@@ -168,23 +208,15 @@ IDropdownSelectProps) => {
           height={24}
         />
       </div>
-      <ul
+      <OptionsContainerElement
         className={dropdownOptionsClasses}
         style={{
           ...optionsContainerStyles,
           maxHeight: isOpen ? optionsMaxHeight : 0,
         }}
       >
-        <li className="dropdown_option">Option 1</li>
-        <li className="dropdown_option">Option 2</li>
-        {/* <li className="dropdown_option">Option 3</li>
-        <li className="dropdown_option">Option 4</li>
-        <li className="dropdown_option">Option 5</li>
-        <li className="dropdown_option">Option 6</li>
-        <li className="dropdown_option">Option 7</li>
-        <li className="dropdown_option">Option 8</li>
-        <li className="dropdown_option">Option 9</li> */}
-      </ul>
+        {children}
+      </OptionsContainerElement>
       {/* Hello
       {/* <div
         className={ul_header_classes}

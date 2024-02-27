@@ -74,15 +74,13 @@ export const WithCustomImplementation = () => {
       <NavItem
         mh={3}
         renderCustomNavItem={(props) => {
-          const { children, theme, active } = props;
+          const { theme, active } = props;
           return (
             /** use the [navItem_base] public CSS Class */
-            <span className="navItem_base custom-nav-link">{children}</span>
+            <span className="navItem_base custom-nav-link">Custom</span>
           );
         }}
-      >
-        Custom
-      </NavItem>
+      />
     </Navbar>
   );
 };

@@ -24,6 +24,7 @@ export interface IDropdownOption {
 
 export interface IDropdownOptionProps extends IComponent, IThemeProps {
   Element?: "li" | "a";
+  testKey?: string; // for unit tests only
   option?: string;
   active?: boolean;
   enableActiveStyles?: boolean;

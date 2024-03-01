@@ -109,7 +109,7 @@ export const DropdownSelect = ({
       {
         dropdown_header: true,
         dropdown_header_navItem: asNavItem === true,
-        dropdown_header_opened: !asNavItem && isOpen,
+        dropdown_header_opened: !asNavItem && isOpen /** border radius stuff */,
       },
       headerClassName,
       {
@@ -154,7 +154,8 @@ export const DropdownSelect = ({
 
   return (
     <div
-      id={id || "selectInput"}
+      id={id || "resoi_dropdown_select"}
+      data-testid="dropdown-select-root"
       ref={node}
       className={containerClasses}
       style={rootStyles}
@@ -171,6 +172,7 @@ export const DropdownSelect = ({
     >
       <div
         role="button"
+        data-testid="dropdown-select-header"
         className={headerClasses}
         style={headerStyles}
         onClick={() => {
@@ -188,6 +190,7 @@ export const DropdownSelect = ({
         />
       </div>
       <OptionsContainerElement
+        data-testid="dropdown-select-options-container"
         className={dropdownOptionsClasses}
         style={{
           ...optionsContainerStyles,
@@ -198,6 +201,7 @@ export const DropdownSelect = ({
           ? options.map((o: IDropdownOption, idx) => {
               return (
                 <DropdownOption
+                  testKey={o.key} // for unit tests only
                   Element="li"
                   key={o.key || `resoui_dddoption_${id || "noid"}_${idx}`}
                   option={o.value}
@@ -215,7 +219,7 @@ export const DropdownSelect = ({
           : null}
       </OptionsContainerElement>
       {error && (
-        <p data-testid={`text-input-${id}-error`} className="form_input_error">
+        <p data-testid={`dropdown-select-error`} className="form_input_error">
           {error}
         </p>
       )}

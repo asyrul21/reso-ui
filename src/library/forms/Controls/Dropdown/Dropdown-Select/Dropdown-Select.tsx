@@ -32,6 +32,7 @@ export interface IDropdownSelectProps
     IThemeProps,
     IMarginProps {
   id?: string;
+  selectedKey?: string;
   value?: string;
   options?: IDropdownOption[];
   onChange?: (key: string) => void;
@@ -52,6 +53,7 @@ export interface IDropdownSelectProps
 
 export const DropdownSelect = ({
   id,
+  selectedKey,
   value /* default is undefined, must be valid string like 'banana' */,
   options,
   onChange,
@@ -203,6 +205,9 @@ export const DropdownSelect = ({
                 <DropdownOption
                   testKey={o.key} // for unit tests only
                   Element="li"
+                  active={
+                    typeof selectedKey === "string" && selectedKey === o.key
+                  }
                   key={o.key || `resoui_dddoption_${id || "noid"}_${idx}`}
                   option={o.value}
                   onClick={() => {

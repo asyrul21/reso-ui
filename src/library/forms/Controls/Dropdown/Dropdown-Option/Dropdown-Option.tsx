@@ -52,8 +52,9 @@ export const DropdownOption = ({
   const containerStyles = createComponentStyles(
     createLayoutStyles(
       {
-        dropdown_option_base_layout: true,
-        [`dropdown_option_active_${theme}`]:
+        dropdown_option_base: true,
+        [`dropdown_option_hover_theme_${theme}`]: enableActiveStyles && !active,
+        [`dropdown_option_active_theme_${theme}`]:
           enableActiveStyles === true && active === true,
       },
       rootClassName,
@@ -61,7 +62,7 @@ export const DropdownOption = ({
         no_select: true,
       }
     ),
-    createThemeStyles(`dropdown_option_base_theme_`, theme)
+    createThemeStyles(`dropdown_option_theme_`, theme)
   );
 
   return methodHasValue(renderCustomOption) ? (
@@ -72,6 +73,7 @@ export const DropdownOption = ({
     })
   ) : (
     <Element
+      data-testid="dropdown-option-root"
       href={href}
       onClick={() => {
         if (methodHasValue(onClick)) {

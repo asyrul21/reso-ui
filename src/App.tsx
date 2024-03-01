@@ -40,7 +40,6 @@ const App = () => {
   const theme = "light";
 
   console.log("selected key:", selectedKey);
-
   return (
     <>
       <Navbar theme={theme} maxWidth={1280}>
@@ -57,10 +56,7 @@ const App = () => {
                 <DropdownOption
                   renderCustomOption={({ theme, active, option }) => {
                     return (
-                      <Link
-                        to="/"
-                        className="dropdown_option_base_layout dropdown_option_base_theme_light"
-                      >
+                      <Link to="/" className="dropdown_option_base">
                         Link 1
                       </Link>
                     );
@@ -99,6 +95,7 @@ const App = () => {
               error={error}
               setError={setError}
               required
+              selectedKey={selectedKey}
             />
             <Text Element="h3" mv={5}>
               Dropdown UI & LI

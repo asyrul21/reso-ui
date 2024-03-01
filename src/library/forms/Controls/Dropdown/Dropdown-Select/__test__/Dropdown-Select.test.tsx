@@ -109,8 +109,8 @@ describe("Dropdown Select Component Unit Tests", () => {
       );
 
       // debug();
-      const componentError = screen.queryByTestId("dropdown-select-test-child");
-      expect(componentError).toBeInTheDocument();
+      const childComponent = screen.queryByTestId("dropdown-select-test-child");
+      expect(childComponent).toBeInTheDocument();
     });
 
     test("should render options correctly", () => {

@@ -1,11 +1,13 @@
-.dropdown_option_base_theme_light {
+.dropdown_option_theme_light {
   // DropdownOption background should follow DrowdownSelect's Options Container background
   @include use_theme(unset, "light");
+}
+.dropdown_option_hover_theme_light {
   &:hover {
-    color: $fc-light;
-    background-color: $primary-grey-medium;
+    background-color: $primary-grey-medium-light;
   }
 }
-.dropdown_option_active_light {
-  background-color: $primary-grey-medium-light;
+.dropdown_option_active_theme_light {
+  color: $fc-light;
+  background-color: $primary-grey-medium;
 }

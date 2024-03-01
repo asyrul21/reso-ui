@@ -10,11 +10,36 @@ import { DropdownOption } from "./library/forms/Controls/Dropdown/Dropdown-Optio
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
+import { useDropdown } from "./library";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
+  const Sample = [
+    { id: "0", name: "Banana" },
+    { id: "1", name: "Apple" },
+    { id: "2", name: "Orange" },
+  ];
+
+  const {
+    value: selectedValue,
+    options,
+    selectedKey,
+    error,
+    setError,
+    setSelectedKey,
+  } = useDropdown(undefined, Sample, {
+    keyProp: "id",
+    valueProp: "name",
+    initObject: {
+      key: "all",
+      value: "All",
+    },
+  });
+
   const theme = "light";
+
+  console.log("selected key:", selectedKey);
 
   return (
     <>
@@ -30,7 +55,7 @@ const App = () => {
               >
                 <DropdownOption Element="a" option="Page 1" />
                 <DropdownOption
-                  renderCustomOption={({ theme, active, key, option }) => {
+                  renderCustomOption={({ theme, active, option }) => {
                     return (
                       <Link
                         to="/"
@@ -64,6 +89,17 @@ const App = () => {
           <Banner type="info" text="hello" />
           <CenterContainer maxWidth={540}>
             <Example name="john" />
+            <Text Element="h3" mv={5}>
+              Dropdown Default Options and Hooks: {selectedValue}
+            </Text>
+            <DropdownSelect
+              options={options}
+              value={selectedValue}
+              onChange={(key) => setSelectedKey(key)}
+              error={error}
+              setError={setError}
+              required
+            />
             <Text Element="h3" mv={5}>
               Dropdown UI & LI
             </Text>

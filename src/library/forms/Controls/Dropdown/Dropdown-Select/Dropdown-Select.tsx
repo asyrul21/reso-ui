@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import classnames from "classnames";
-import { DropdownDown, DropdownUp } from "../../../../icons";
+import { DropdownDown } from "../../../../icons";
 
 import { Icon } from "../../../../components";
 
@@ -8,9 +8,9 @@ import { Icon } from "../../../../components";
 import IComponent from "../../../../interfaces/IComponent";
 import IThemeProps from "../../../../interfaces/Theme";
 import { IMarginProps } from "../../../../interfaces/ISpacingsProps";
-import { IFormInputProps } from "../../../../interfaces/Form";
 
 // styles
+import "../../sharedStyles.scss";
 import "./styles/Dropdown-Select.layout.scss";
 import "./styles/Dropdown-Select.theme.scss";
 
@@ -23,23 +23,27 @@ import {
 } from "../../../../utils/styles";
 import { validate } from "../../../Validators";
 import useInputValidatorsMemo from "../../../Hooks/useInputValidatorsMemo";
-import { IDropdownOption } from "../Dropdown-Option";
+import { DropdownOption, IDropdownOption } from "../Dropdown-Option";
 import { useClickOutside } from "../../../../hooks";
-import { stringHasValue } from "../../../../utils/validations";
+import { methodHasValue, stringHasValue } from "../../../../utils/validations";
 
 export interface IDropdownSelectProps
   extends IComponent,
     IThemeProps,
     IMarginProps {
+  id?: string;
+  value?: string;
+  options?: IDropdownOption[];
+  onChange?: (key: string) => void;
+  error?: string;
+  setError?: React.Dispatch<React.SetStateAction<string>>;
+  required?: boolean;
+  disabled?: boolean;
   asNavItem?: boolean;
   expandOn?: "click" | "hover";
   OptionsContainerElement?: "ul" | "div";
-  value?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   optionsMaxHeight?: string;
-  id?: string;
-  disabled?: boolean;
-  options?: IDropdownOption[];
   headerClassName?: string;
   headerStyles?: React.CSSProperties;
   optionsContainerClassName?: string;
@@ -48,53 +52,41 @@ export interface IDropdownSelectProps
 
 export const DropdownSelect = ({
   id,
-  expandOn = "click",
-  asNavItem = false,
-  value,
-  children,
-  OptionsContainerElement,
-  optionsMaxHeight,
+  value /* default is undefined, must be valid string like 'banana' */,
+  options,
+  onChange,
+  error,
+  setError,
+  required = false,
   disabled = false,
-  rootClassName,
-  rootStyles = {},
+  asNavItem = false,
+  expandOn = "click",
+  OptionsContainerElement = "ul",
+  children,
+  optionsMaxHeight,
   headerClassName,
   headerStyles = {},
   optionsContainerClassName,
   optionsContainerStyles = {},
+  rootClassName,
+  rootStyles = {},
   theme = "light",
   ...spacingsProps
-}: //   onChange = () => {},
-IDropdownSelectProps) => {
+}: IDropdownSelectProps) => {
   const node = useRef();
   const [isOpen, setIsOpened] = useState(false);
+
+  const inputValidators = useInputValidatorsMemo("string", {
+    required,
+  });
 
   useClickOutside(node, () => {
     setIsOpened(false);
   });
-  //   const [isOpened, setIsOpened] = useState(false);
 
-  //   const handleClickComponent = (e) => {
-  //     if (node.current.contains(e.target)) {
-  //       // inside click
-  //       return;
-  //     }
-  //     // outside click
-  //     setIsOpened(false);
-  //   };
-
-  //   useEffect(() => {
-  //     // add event listener on mount
-  //     document.addEventListener("mousedown", handleClickComponent);
-
-  //     // remove event listener when unmounted
-  //     return () => {
-  //       document.removeEventListener("mousedown", handleClickComponent);
-  //     };
-  //   }, []);
-  //   const listItemClassesActive = classnames({
-  //     component_dropdownselect_option: true,
-  //     component_dropdownselect_option_selected: true,
-  //   });
+  useEffect(() => {
+    validate(value, inputValidators, setError);
+  }, [value]);
 
   const containerClasses = createComponentStyles(
     createLayoutStyles(
@@ -156,19 +148,6 @@ IDropdownSelectProps) => {
     )
   );
 
-  //   const ul_header_classes = classnames({
-  //     component_dropdownselect_li_header: true,
-  //     [`${
-  //       isOpened
-  //         ? "component_dropdownselect_li_header_opened"
-  //         : "component_dropdownselect_li_header_not_opened"
-  //     }`]: true,
-  //   });
-
-  //   const listItemClasses = classnames({
-  //     component_dropdownselect_option: true,
-  //   });
-
   const IconClasses = classnames({
     dropdown_icon_invert: isOpen,
   });
@@ -180,12 +159,12 @@ IDropdownSelectProps) => {
       className={containerClasses}
       style={rootStyles}
       onMouseEnter={() => {
-        if (expandOn === "hover") {
+        if (expandOn === "hover" && !disabled) {
           setIsOpened(true);
         }
       }}
       onMouseLeave={() => {
-        if (expandOn === "hover") {
+        if (expandOn === "hover" && !disabled) {
           setIsOpened(false);
         }
       }}
@@ -195,7 +174,7 @@ IDropdownSelectProps) => {
         className={headerClasses}
         style={headerStyles}
         onClick={() => {
-          if (expandOn === "click") {
+          if (expandOn === "click" && !disabled) {
             setIsOpened(!isOpen);
           }
         }}
@@ -215,41 +194,31 @@ IDropdownSelectProps) => {
           maxHeight: isOpen ? optionsMaxHeight : 0,
         }}
       >
-        {children}
+        {options && options.length > 0
+          ? options.map((o: IDropdownOption, idx) => {
+              return (
+                <DropdownOption
+                  Element="li"
+                  key={o.key || `resoui_dddoption_${id || "noid"}_${idx}`}
+                  option={o.value}
+                  onClick={() => {
+                    setIsOpened(false);
+                    if (methodHasValue(onChange)) {
+                      onChange(o.key);
+                    }
+                  }}
+                />
+              );
+            })
+          : children
+          ? children
+          : null}
       </OptionsContainerElement>
-      {/* Hello
-      {/* <div
-        className={ul_header_classes}
-        onClick={() => {
-          setIsOpened(!isOpened);
-        }}
-      >
-        {value ? value : ""}
-      </div>
-      {isOpened && (
-        <div className="component_dropdownselect_li_inactive_container">
-          {options.map((op, index) => (
-            <li
-              key={index}
-              className={op === value ? listItemClassesActive : listItemClasses}
-              onClick={() => {
-                setIsOpened(false);
-                onChange(op, index);
-              }}
-            >
-              {op}
-            </li>
-          ))}
-        </div>
+      {error && (
+        <p data-testid={`text-input-${id}-error`} className="form_input_error">
+          {error}
+        </p>
       )}
-      <div
-        className="component_dropdownselect_arrow"
-        onClick={() => {
-          setIsOpened(!isOpened);
-        }}
-      >
-        {isOpened ? <DropdownUp /> : <DropdownDown />}
-      </div> */}
     </div>
   );
 };

@@ -10,7 +10,7 @@ import { Checkbox } from "../";
 import { SubmitButton } from "../../../Controls/Submit-Button";
 
 import dedent from "ts-dedent";
-import { useFormInput } from "../../../Hooks/useFormInput";
+import { useFormInput } from "../../../Hooks/Controls";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

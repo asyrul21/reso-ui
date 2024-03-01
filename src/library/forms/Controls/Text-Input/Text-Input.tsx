@@ -59,7 +59,7 @@ export const TextInput = ({
   maxLength,
   size = 50, // width
   /**
-   * Text Input - specific props
+   * Inherited props
    */
   rootClassName,
   rootStyles = {},

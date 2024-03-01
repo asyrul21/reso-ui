@@ -1,3 +1,3 @@
 /* istanbul ignore file */
 
-export * from "./useFormInput";
+export * from "./Controls";

@@ -24,23 +24,20 @@ export interface IDropdownOption {
 
 export interface IDropdownOptionProps extends IComponent, IThemeProps {
   Element?: "li" | "a";
-  key?: string;
   option?: string;
   active?: boolean;
   enableActiveStyles?: boolean;
   href?: string;
-  onClick?: ({ key, option }: { key?: string; option?: string }) => void;
+  onClick?: () => void;
   renderCustomOption?: (props: {
     theme: IThemeProps;
     active?: boolean;
-    key?: string;
     option?: string;
   }) => JSX.Element;
 }
 
 export const DropdownOption = ({
   Element = "li",
-  key,
   option,
   active,
   enableActiveStyles = true,
@@ -66,25 +63,10 @@ export const DropdownOption = ({
     createThemeStyles(`dropdown_option_base_theme_`, theme)
   );
 
-  //   return (
-  //     <Element
-  //       href={href}
-  //       onClick={() => {
-  //         if (methodHasValue(onClick)) {
-  //           onClick({ key, option });
-  //         }
-  //       }}
-  //       className={containerStyles}
-  //       style={rootStyles}
-  //     >
-  //       DropdownOption
-  //     </Element>
-  //   );
   return methodHasValue(renderCustomOption) ? (
     renderCustomOption({
       theme: theme as IThemeProps,
       active,
-      key,
       option,
     })
   ) : (
@@ -92,7 +74,7 @@ export const DropdownOption = ({
       href={href}
       onClick={() => {
         if (methodHasValue(onClick)) {
-          onClick({ key, option });
+          onClick();
         }
       }}
       className={containerStyles}

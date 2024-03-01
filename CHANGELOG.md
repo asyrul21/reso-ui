@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/asyrul21/reso-ui/compare/v1.12.4...v1.13.0) (2024-03-01)
+
+
+### Features
+
+* Dropdown Select, Dropdown Option components and useDropdown hook ([6b2d836](https://github.com/asyrul21/reso-ui/commit/6b2d8361a09db3a2597a68bea8876d148cd7bb1b))
+
 ## [1.12.4](https://github.com/asyrul21/reso-ui/compare/v1.12.3...v1.12.4) (2024-02-24)
 
 

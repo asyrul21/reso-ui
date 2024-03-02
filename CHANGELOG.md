@@ -1,3 +1,10 @@
+## [1.14.2](https://github.com/asyrul21/reso-ui/compare/v1.14.1...v1.14.2) (2024-03-02)
+
+
+### Bug Fixes
+
+* storybook not updating fix ([fda4084](https://github.com/asyrul21/reso-ui/commit/fda40842d3fb1b244bf7e8a1ca1ef976965d9fcd))
+
 ## [1.14.1](https://github.com/asyrul21/reso-ui/compare/v1.14.0...v1.14.1) (2024-03-02)
 
 

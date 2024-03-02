@@ -17,10 +17,6 @@ module.exports = {
   webpackFinal: async (config) => {
     return {
       ...config,
-      output: {
-        ...config.output,
-        path: path.resolve(__dirname, "../sb_dist"),
-      },
       module: {
         ...config.module,
         rules: [

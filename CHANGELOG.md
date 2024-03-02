@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/asyrul21/reso-ui/compare/v1.13.0...v1.14.0) (2024-03-02)
+
+
+### Features
+
+* DropdownSelect and DropdownOption components, stories, and types ([379e878](https://github.com/asyrul21/reso-ui/commit/379e878ea03dbac19dce8410f99d2e3eb8fbc59d))
+
 # [1.13.0](https://github.com/asyrul21/reso-ui/compare/v1.12.4...v1.13.0) (2024-03-01)
 
 

@@ -38,13 +38,11 @@ const App = () => {
   });
 
   const theme = "light";
-
-  console.log("selected key:", selectedKey);
   return (
     <>
       <Navbar theme={theme} maxWidth={1280}>
         <NavItem
-          renderCustomNavItem={({ theme, active }) => {
+          renderCustomNavItem={() => {
             return (
               <DropdownSelect
                 OptionsContainerElement="div"
@@ -54,7 +52,7 @@ const App = () => {
               >
                 <DropdownOption Element="a" option="Page 1" />
                 <DropdownOption
-                  renderCustomOption={({ theme, active, option }) => {
+                  renderCustomOption={() => {
                     return (
                       <Link to="/" className="dropdown_option_base">
                         Link 1

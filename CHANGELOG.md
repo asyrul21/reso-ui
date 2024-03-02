@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/asyrul21/reso-ui/compare/v1.14.0...v1.14.1) (2024-03-02)
+
+
+### Bug Fixes
+
+* lint fixes ([cba1d95](https://github.com/asyrul21/reso-ui/commit/cba1d953dd6575ab2ff67356a32c511bb1de7b61))
+
 # [1.14.0](https://github.com/asyrul21/reso-ui/compare/v1.13.0...v1.14.0) (2024-03-02)
 
 

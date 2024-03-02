@@ -205,6 +205,7 @@ export const DropdownSelect = ({
                 <DropdownOption
                   testKey={o.key} // for unit tests only
                   Element="li"
+                  theme={theme}
                   active={
                     typeof selectedKey === "string" && selectedKey === o.key
                   }

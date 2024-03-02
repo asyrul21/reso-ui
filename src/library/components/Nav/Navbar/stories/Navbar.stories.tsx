@@ -7,6 +7,10 @@ import { NavItem } from "../../NavItem";
 // import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
+import {
+  DropdownOption,
+  DropdownSelect,
+} from "../../../../forms/Controls/Dropdown";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -45,6 +49,45 @@ export const DefaultWithNavItem = () => {
   return (
     /** Remove the position: relative as it is meant for storybook only */
     <Navbar textLogo="Logo" rootStyles={{ position: "relative" }}>
+      <NavItem>Item 1</NavItem>
+      <NavItem>Item 2</NavItem>
+    </Navbar>
+  );
+};
+
+export const UsingDropdownAsNavItem = () => {
+  return (
+    /** Remove the position: relative as it is meant for storybook only */
+    <Navbar
+      textLogo="Logo"
+      rootStyles={{ position: "relative", marginBottom: "180px" }}
+    >
+      <NavItem
+        renderCustomNavItem={({ theme, active }) => {
+          return (
+            <DropdownSelect
+              OptionsContainerElement="div"
+              asNavItem
+              expandOn="hover"
+              value="Profile"
+            >
+              <DropdownOption Element="a" option="Page 1" />
+              <DropdownOption
+                renderCustomOption={({ theme, active, option }) => {
+                  return (
+                    <a className="dropdown_option_base">Link</a>
+                    // or render your ReactRouterDom's <Link /> as below:
+                    // <Link to="/" className="dropdown_option_base">
+                    //   Link 1
+                    // </Link>
+                  );
+                }}
+              />
+              <DropdownOption Element="a" option="Page 3" />
+            </DropdownSelect>
+          );
+        }}
+      />
       <NavItem>Item 1</NavItem>
       <NavItem>Item 2</NavItem>
     </Navbar>

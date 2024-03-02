@@ -29,6 +29,7 @@ export interface IDropdownOptionProps extends IComponent, IThemeProps {
   active?: boolean;
   enableActiveStyles?: boolean;
   href?: string;
+  target?: string;
   onClick?: () => void;
   renderCustomOption?: (props: {
     theme: IThemeProps;
@@ -44,6 +45,7 @@ export const DropdownOption = ({
   enableActiveStyles = true,
   renderCustomOption,
   href = "#",
+  target,
   onClick,
   rootClassName,
   rootStyles,
@@ -75,8 +77,9 @@ export const DropdownOption = ({
     <Element
       data-testid="dropdown-option-root"
       href={href}
+      target={target}
       onClick={() => {
-        if (methodHasValue(onClick)) {
+        if (Element !== "a" && methodHasValue(onClick)) {
           onClick();
         }
       }}

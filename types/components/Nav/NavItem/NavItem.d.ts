@@ -5,7 +5,7 @@ import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import "./styles/NavItem.layout.scss";
 import "./styles/NavItem.theme.scss";
 export interface INavItemProps extends IComponent, IThemeProps, IMarginProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     Implementation?: "a" | "button";
     onClick?: () => void;
     active?: boolean;
@@ -15,7 +15,6 @@ export interface INavItemProps extends IComponent, IThemeProps, IMarginProps {
     elementStyles?: React.CSSProperties;
     renderCustomNavItem?: (props: {
         theme: IThemeProps;
-        children: React.ReactNode;
         active: boolean;
     }) => React.ReactNode;
 }

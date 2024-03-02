@@ -9,6 +9,7 @@ App.tsx
 
 # storybook
 storybook-static
+sb_dist
 
 .nyc_output/
 

@@ -10,7 +10,13 @@ import { DropdownOption } from "./library/forms/Controls/Dropdown/Dropdown-Optio
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
-import { useDropdown } from "./library";
+import {
+  ControlWrapper,
+  Label,
+  RadioSelect,
+  useDropdown,
+  useRadioSelect,
+} from "./library";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -19,6 +25,9 @@ const App = () => {
     { id: "0", name: "Banana" },
     { id: "1", name: "Apple" },
     { id: "2", name: "Orange" },
+    { id: "3", name: "Mango" },
+    { id: "4", name: "Pineapple" },
+    { id: "5", name: "Grapes" },
   ];
 
   const {
@@ -35,6 +44,18 @@ const App = () => {
       key: "all",
       value: "All",
     },
+  });
+
+  const {
+    value: selectedRadioValue,
+    options: radioOptions,
+    selectedKey: selectedRadioKey,
+    error: radioError,
+    setError: setRadioError,
+    setSelectedKey: setSelectedRadioKey,
+  } = useRadioSelect(undefined, Sample, {
+    keyProp: "id",
+    valueProp: "name",
   });
 
   const theme = "light";
@@ -96,21 +117,29 @@ const App = () => {
               selectedKey={selectedKey}
             />
             <Text Element="h3" mv={5}>
-              Dropdown UI & LI
+              Radio Select: {selectedRadioValue}
             </Text>
-            <DropdownSelect OptionsContainerElement="ul">
-              <DropdownOption option="Option 1" />
-              <DropdownOption option="Option 2" active />
-              <DropdownOption option="Option 3" />
-            </DropdownSelect>
-            <Text Element="h3" mv={5}>
-              Dropdown DIV & A
-            </Text>
-            <DropdownSelect OptionsContainerElement="div">
-              <DropdownOption Element="a" option="Option 1" />
-              <DropdownOption Element="a" option="Option 2" active />
-              <DropdownOption Element="a" option="Option 3" />
-            </DropdownSelect>
+            <ControlWrapper>
+              <Label
+                htmlFor="sampleradio1"
+                label="Favourite fruit"
+                required
+                mr={7}
+                rootStyles={{ width: "145px" }}
+              />
+              <RadioSelect
+                id="sampleradio1"
+                required
+                name="my_radio"
+                value={selectedRadioValue}
+                error={radioError}
+                setError={setRadioError}
+                selectedKey={selectedRadioKey}
+                onChange={(key) => setSelectedRadioKey(key)}
+                // radioStyles={{ margin: "5px" }}
+                options={[...radioOptions]}
+              />
+            </ControlWrapper>
           </CenterContainer>
         </View>
       </Main>

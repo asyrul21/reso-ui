@@ -23,9 +23,10 @@ import {
 } from "../../../../utils/styles";
 import { validate } from "../../../Validators";
 import useInputValidatorsMemo from "../../../Hooks/useInputValidatorsMemo";
-import { DropdownOption, IDropdownOption } from "../Dropdown-Option";
+import { DropdownOption } from "../Dropdown-Option";
 import { useClickOutside } from "../../../../hooks";
 import { methodHasValue, stringHasValue } from "../../../../utils/validations";
+import { ISelectableOption } from "../../../../interfaces";
 
 export interface IDropdownSelectProps
   extends IComponent,
@@ -34,7 +35,7 @@ export interface IDropdownSelectProps
   id?: string;
   selectedKey?: string;
   value?: string;
-  options?: IDropdownOption[];
+  options?: ISelectableOption[];
   onChange?: (key: string) => void;
   error?: string;
   setError?: React.Dispatch<React.SetStateAction<string>>;
@@ -200,7 +201,7 @@ export const DropdownSelect = ({
         }}
       >
         {options && options.length > 0
-          ? options.map((o: IDropdownOption, idx) => {
+          ? options.map((o: ISelectableOption, idx) => {
               return (
                 <DropdownOption
                   testKey={o.key} // for unit tests only

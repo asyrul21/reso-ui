@@ -1,13 +1,14 @@
 import { FormEvent, useMemo, useState } from "react";
 import {
-  DropdownHookReturnObj,
+  SelectableHookReturnObj,
   FormInputHookReturnObj,
+  ISelectableOption,
 } from "../../../interfaces/Form";
-import { IDropdownOption } from "../../Controls/Dropdown";
+
 import {
   OptionsConfig,
   defaultOptionsConfig,
-  dataArrayToDropdownOptions,
+  dataArrayToSelectableOptions,
   optionsArrayToMap,
 } from "../utils";
 import { AnyObject } from "../../../interfaces";
@@ -24,26 +25,26 @@ export const useFormInput = <T>(initialValue: T): FormInputHookReturnObj<T> => {
   };
 };
 
-export const useDropdown = (
+export const useSelectableOptions = (
   initialSelectedKey: string | undefined,
   options: AnyObject[],
   config?: OptionsConfig
-): DropdownHookReturnObj => {
+): SelectableHookReturnObj => {
   const optionsConfig = { ...defaultOptionsConfig, ...(config || {}) };
 
   /**
-   * Convert whatever data structure to IDropdownOption type
+   * Convert whatever data structure to ISelectableOption type
    */
-  const dropdownOptions = useMemo<IDropdownOption[]>(() => {
-    return dataArrayToDropdownOptions(options, optionsConfig);
+  const selectableOptions = useMemo<ISelectableOption[]>(() => {
+    return dataArrayToSelectableOptions(options, optionsConfig);
   }, [options]);
 
   /**
    * Flatten whatever data structure to key: value map, for fast access
    */
   const OptionsMap = useMemo(() => {
-    return optionsArrayToMap(dropdownOptions);
-  }, [dropdownOptions]);
+    return optionsArrayToMap(selectableOptions);
+  }, [selectableOptions]);
 
   const getOptionValue = (key: string) => {
     return OptionsMap[key];
@@ -64,8 +65,24 @@ export const useDropdown = (
     value,
     selectedKey,
     setSelectedKey,
-    options: dropdownOptions,
+    options: selectableOptions,
     error: inputError,
     setError: setInputError,
   };
+};
+
+export const useDropdown = (
+  initialSelectedKey: string | undefined,
+  options: AnyObject[],
+  config?: OptionsConfig
+): SelectableHookReturnObj => {
+  return useSelectableOptions(initialSelectedKey, options, config);
+};
+
+export const useRadioSelect = (
+  initialSelectedKey: string | undefined,
+  options: AnyObject[],
+  config?: OptionsConfig
+): SelectableHookReturnObj => {
+  return useSelectableOptions(initialSelectedKey, options, config);
 };

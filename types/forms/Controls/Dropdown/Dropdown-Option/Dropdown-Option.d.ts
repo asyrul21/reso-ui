@@ -3,10 +3,6 @@ import IComponent from "../../../../interfaces/IComponent";
 import IThemeProps from "../../../../interfaces/Theme";
 import "./styles/Dropdown-Option.layout.scss";
 import "./styles/Dropdown-Option.theme.scss";
-export interface IDropdownOption {
-    key: string;
-    value: string;
-}
 export interface IDropdownOptionProps extends IComponent, IThemeProps {
     Element?: "li" | "a";
     testKey?: string;

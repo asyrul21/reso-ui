@@ -5,12 +5,12 @@ import { IMarginProps } from "../../../../interfaces/ISpacingsProps";
 import "../../sharedStyles.scss";
 import "./styles/Dropdown-Select.layout.scss";
 import "./styles/Dropdown-Select.theme.scss";
-import { IDropdownOption } from "../Dropdown-Option";
+import { ISelectableOption } from "../../../../interfaces";
 export interface IDropdownSelectProps extends IComponent, IThemeProps, IMarginProps {
     id?: string;
     selectedKey?: string;
     value?: string;
-    options?: IDropdownOption[];
+    options?: ISelectableOption[];
     onChange?: (key: string) => void;
     error?: string;
     setError?: React.Dispatch<React.SetStateAction<string>>;

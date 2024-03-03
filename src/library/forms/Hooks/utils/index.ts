@@ -1,6 +1,9 @@
 import { AnyObject } from "../../../interfaces";
-import { CustomValidators, FormInputValidator } from "../../../interfaces/Form";
-import { IDropdownOption } from "../../Controls/Dropdown";
+import {
+  CustomValidators,
+  FormInputValidator,
+  ISelectableOption,
+} from "../../../interfaces/Form";
 
 export const composeInputValidators = <T>(
   defaultValidators: FormInputValidator<T>[],
@@ -16,7 +19,7 @@ export const composeInputValidators = <T>(
 export type OptionsConfig = {
   keyProp?: string;
   valueProp?: string;
-  initObject?: IDropdownOption;
+  initObject?: ISelectableOption;
 };
 
 export const defaultOptionsConfig: OptionsConfig = {
@@ -24,10 +27,10 @@ export const defaultOptionsConfig: OptionsConfig = {
   valueProp: "value",
 };
 
-export const dataArrayToDropdownOptions = (
+export const dataArrayToSelectableOptions = (
   arr: AnyObject[],
   config?: OptionsConfig
-): IDropdownOption[] => {
+): ISelectableOption[] => {
   const optionConfig = { ...defaultOptionsConfig, ...(config || {}) };
   const { keyProp, valueProp, initObject } = optionConfig;
 
@@ -45,12 +48,12 @@ export const dataArrayToDropdownOptions = (
 };
 
 export const optionsArrayToMap = (
-  arr: IDropdownOption[]
+  arr: ISelectableOption[]
 ): {
   [key: string]: string;
 } => {
   const result = {};
-  arr.forEach((item: IDropdownOption, idx: number) => {
+  arr.forEach((item: ISelectableOption, idx: number) => {
     result[item.key] = item.value;
   });
 

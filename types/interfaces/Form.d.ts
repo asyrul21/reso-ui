@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from "react";
-import { IDropdownOption } from "../forms/Controls/Dropdown";
 export type FormInputValidator<T> = {
     validationFn: (value?: T) => boolean;
     errorMessage: string;
@@ -10,14 +9,18 @@ export type FormInputHookReturnObj<T> = {
     error?: string;
     setError?: Dispatch<SetStateAction<string>>;
 };
-export type DropdownHookReturnObj = {
+export type SelectableHookReturnObj = {
     value: string;
-    options: IDropdownOption[];
+    options: ISelectableOption[];
     selectedKey: string;
     setSelectedKey: Dispatch<SetStateAction<string>>;
     error?: string;
     setError?: Dispatch<SetStateAction<string>>;
 };
+export interface ISelectableOption {
+    key: string;
+    value: string;
+}
 export type CustomValidators<T> = FormInputValidator<T> | FormInputValidator<T>[];
 export interface IFormInputProps<T> {
     id: string;

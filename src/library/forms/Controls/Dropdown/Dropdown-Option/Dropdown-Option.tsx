@@ -17,11 +17,6 @@ import {
 } from "../../../../utils/styles";
 import { methodHasValue } from "../../../../utils/validations";
 
-export interface IDropdownOption {
-  key: string;
-  value: string;
-}
-
 export interface IDropdownOptionProps extends IComponent, IThemeProps {
   Element?: "li" | "a";
   testKey?: string; // for unit tests only

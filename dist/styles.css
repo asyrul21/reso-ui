@@ -76,3 +76,5 @@
 .input_number_theme_light{background:unset;color:#434b59;border-color:#8b93a1}
 .checkbox_container{display:flex;flex-direction:row;justify-content:flex-start;align-items:center;margin-right:64px}.input_checkbox{border-width:1px;border-style:solid;height:24px;width:24px;border-radius:12px;margin-right:12px;cursor:pointer}.input_checkbox:disabled{pointer-events:none}.checkbox_right_container{width:inherit}.checkbox_children{font-size:14px;margin-bottom:4px}.checkbox_error{margin:0;padding:0}.container_auth_tnc{text-decoration:underline;opacity:.9;color:#434b59}.container_auth_tnc:hover{opacity:1}
 .checkbox_theme_light{background:unset;color:#434b59;border-color:#8b93a1}
+.radioselect_container{width:100%}.radioselect_options_container{width:inherit;min-height:40px;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;flex-wrap:wrap}.radioselect_radio{padding:4px 8px;padding-top:0;margin-bottom:4px}.radioselect_input{cursor:pointer}.radioselect_label{font-size:14px;margin-left:8px;cursor:pointer}
+.radioselect_label_theme_light{background:unset;color:#434b59}

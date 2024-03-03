@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/asyrul21/reso-ui/compare/v1.14.2...v1.15.0) (2024-03-03)
+
+
+### Features
+
+* Form Control RadioSelect component, unit tests and stories ([bfecf60](https://github.com/asyrul21/reso-ui/commit/bfecf6087d2d7a3f054921ea5caf2dfc67217413))
+
 ## [1.14.2](https://github.com/asyrul21/reso-ui/compare/v1.14.1...v1.14.2) (2024-03-02)
 
 

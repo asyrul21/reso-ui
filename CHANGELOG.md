@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/asyrul21/reso-ui/compare/v1.15.0...v1.16.0) (2024-03-04)
+
+
+### Features
+
+* TextArea component, unit test and stories, layout fixes ([ed60bd5](https://github.com/asyrul21/reso-ui/commit/ed60bd51e50d338544f0d87302dbd76a58446b79))
+
 # [1.15.0](https://github.com/asyrul21/reso-ui/compare/v1.14.2...v1.15.0) (2024-03-03)
 
 

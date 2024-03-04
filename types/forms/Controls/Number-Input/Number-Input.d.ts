@@ -11,4 +11,4 @@ export interface INumberInputProps extends IComponent, IFormInputProps<number>, 
     max?: number;
     step?: number | "any";
 }
-export declare const NumberInput: ({ id, value, onChange, onBlur, onFocus, useHTMLErrorMessage, validateOnLoad, error, setError, disabled, required, readonly, autofocus, autocomplete, min, max, step, rootClassName, rootStyles, inputClassName, inputStyles, theme, customValidators, ...spacingsProps }: INumberInputProps) => React.JSX.Element;
+export declare const NumberInput: ({ id, value, onChange, onBlur, onFocus, useHTMLErrorMessage, noShadowOnFocus, validateOnLoad, error, setError, disabled, required, readonly, autofocus, autocomplete, min, max, step, rootClassName, rootStyles, inputClassName, inputStyles, theme, customValidators, ...spacingsProps }: INumberInputProps) => React.JSX.Element;

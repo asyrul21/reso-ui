@@ -1,4 +1,4 @@
 .input_number_theme_light {
-  @include use_theme(unset, "light");
+  @include use_theme($white, "light");
   border-color: $primary-grey-medium;
 }

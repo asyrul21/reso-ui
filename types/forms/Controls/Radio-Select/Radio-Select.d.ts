@@ -2,6 +2,7 @@ import React from "react";
 import IComponent from "../../../interfaces/IComponent";
 import IThemeProps from "../../../interfaces/Theme";
 import { IMarginProps } from "../../../interfaces/ISpacingsProps";
+import "../sharedStyles.scss";
 import "./styles/Radio-Select.layout.scss";
 import "./styles/Radio-Select.theme.scss";
 import { ISelectableOption } from "../../../interfaces";

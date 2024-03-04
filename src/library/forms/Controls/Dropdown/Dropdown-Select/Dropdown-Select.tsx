@@ -95,6 +95,7 @@ export const DropdownSelect = ({
     createLayoutStyles(
       withSpacingsProps(
         {
+          form_input_container: asNavItem !== true,
           dropdown_container: true,
         },
         spacingsProps

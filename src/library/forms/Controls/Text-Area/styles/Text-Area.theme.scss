@@ -1,4 +1,4 @@
-.input_text_theme_light {
+.textarea_input_theme_light {
   @include use_theme($white, "light");
   border-color: $primary-grey-medium;
 }

@@ -41,6 +41,7 @@ export interface IFormInputProps<T> {
   setError?: Dispatch<SetStateAction<string>>;
   // ideally comes form hook ends
   useHTMLErrorMessage?: boolean;
+  noShadowOnFocus?: boolean;
   validateOnLoad?: boolean;
   onBlur?: () => void;
   onFocus?: () => void;

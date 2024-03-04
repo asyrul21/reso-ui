@@ -28,6 +28,8 @@ export const Footer = ({
   rootClassName,
   rootStyles = {},
   theme = "light",
+  pv = 3,
+  ph = 5,
   ...spacingsProps
 }: IFooterProps) => {
   const containerStyles = createComponentStyles(
@@ -37,7 +39,7 @@ export const Footer = ({
           footer_container: true,
           footer_container_positionFixed: positionFixed,
         },
-        spacingsProps
+        { ph, pv, ...spacingsProps }
       ),
       rootClassName
     ),

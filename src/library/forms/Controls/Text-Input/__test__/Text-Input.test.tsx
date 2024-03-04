@@ -53,7 +53,7 @@ describe("Text Input Component Unit Tests", () => {
       );
 
       // debug();
-      expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+      expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
     test("should execute setError second time if entered value is less than minLength", () => {
@@ -72,7 +72,7 @@ describe("Text Input Component Unit Tests", () => {
       );
 
       // debug();
-      expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+      expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
     test("should execute setError second time if entered value is more than maxLength", () => {
@@ -91,7 +91,7 @@ describe("Text Input Component Unit Tests", () => {
       );
 
       // debug();
-      expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+      expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
     test("should execute setError second time if type is Email but entered value has invalid format", () => {
@@ -110,7 +110,7 @@ describe("Text Input Component Unit Tests", () => {
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
       fireEvent.change(component, { target: { value: "abc" } });
-      expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+      expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
     test("should NOT execute setError second time if type is Email and entered valid value", () => {
@@ -129,7 +129,7 @@ describe("Text Input Component Unit Tests", () => {
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
       fireEvent.change(component, { target: { value: "abc@mail.com" } });
-      expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
+      expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
     });
 
     test("should execute setError second time if type is telephone but entered value has invalid format", () => {
@@ -148,7 +148,7 @@ describe("Text Input Component Unit Tests", () => {
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
       fireEvent.change(component, { target: { value: "abc" } });
-      expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+      expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
     test("should NOT execute setError second time if type is telephone and entered valid value", () => {
@@ -167,7 +167,7 @@ describe("Text Input Component Unit Tests", () => {
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
       fireEvent.change(component, { target: { value: "60120120120" } });
-      expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
+      expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
     });
 
     test("should execute setError second time if pattern is defined as regex but entered value does not match", () => {
@@ -186,7 +186,7 @@ describe("Text Input Component Unit Tests", () => {
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
       fireEvent.change(component, { target: { value: "abc" } });
-      expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+      expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
     test("should execute setError second time if pattern is defined as string but entered value does not match", () => {
@@ -205,7 +205,7 @@ describe("Text Input Component Unit Tests", () => {
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
       fireEvent.change(component, { target: { value: "abc" } });
-      expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+      expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
     test("should NOT execute setError second time if pattern is defined as regex and entered value matches", () => {
@@ -224,7 +224,7 @@ describe("Text Input Component Unit Tests", () => {
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
       fireEvent.change(component, { target: { value: "1234567" } });
-      expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
+      expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
     });
 
     test("should NOT execute setError second time if pattern is defined as string and entered value matches", () => {
@@ -243,7 +243,7 @@ describe("Text Input Component Unit Tests", () => {
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
       fireEvent.change(component, { target: { value: "1234567" } });
-      expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
+      expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
     });
 
     describe("Custom Validators", () => {
@@ -270,7 +270,7 @@ describe("Text Input Component Unit Tests", () => {
         const component = screen.queryByTestId("text-input-test-input");
         fireEvent.change(component, { target: { value: "test" } });
         expect(mockValidationFn).toBeCalled();
-        expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+        expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
       });
 
       test("should NOT execute setError second time if custom validator passed as object and succeeds", () => {
@@ -296,7 +296,7 @@ describe("Text Input Component Unit Tests", () => {
         const component = screen.queryByTestId("text-input-test-input");
         fireEvent.change(component, { target: { value: "test" } });
         expect(mockValidationFn).toBeCalled();
-        expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
+        expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
       });
 
       test("should execute setError second time if custom validators passed as array and fails", () => {
@@ -335,7 +335,7 @@ describe("Text Input Component Unit Tests", () => {
         expect(mockValidationFn2).toBeCalled();
         expect(mockValidationFn2).toHaveReturnedWith(false);
 
-        expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+        expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
       });
 
       test("should NOT execute setError second time if custom validators passed as array and succeeds", () => {
@@ -374,7 +374,7 @@ describe("Text Input Component Unit Tests", () => {
         expect(mockValidationFn2).toBeCalled();
         expect(mockValidationFn2).toHaveReturnedWith(true);
 
-        expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
+        expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
       });
 
       test("should execute setError second time if custom validator passed as object and input value is invalid", () => {
@@ -409,7 +409,7 @@ describe("Text Input Component Unit Tests", () => {
           target: { value: "test-forbidden-value" },
         });
 
-        expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
+        expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
       });
     });
   });

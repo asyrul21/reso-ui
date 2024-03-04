@@ -1,4 +1,4 @@
-import React, { ChangeEvent, memo, useEffect, useMemo, useState } from "react";
+import React, { useEffect } from "react";
 
 // import base interface
 import IComponent from "../../../interfaces/IComponent";
@@ -8,33 +8,35 @@ import { IFormInputProps } from "../../../interfaces/Form";
 
 // styles
 import "../sharedStyles.scss";
-import "./styles/Number-Input.layout.scss";
-import "./styles/Number-Input.theme.scss";
+import "./styles/Text-Area.layout.scss";
+import "./styles/Text-Area.theme.scss";
 
 // utils
-import { useDisableNumberInputScroll } from "../../Hooks/useDisableNumberInputScroll";
 import {
   createComponentStyles,
   createLayoutStyles,
   createThemeStyles,
   withSpacingsProps,
 } from "../../../utils/styles";
-
-// validation
 import { validate } from "../../Validators";
 import useInputValidatorsMemo from "../../Hooks/useInputValidatorsMemo";
 
-export interface INumberInputProps
+export interface ITextAreaProps
   extends IComponent,
-    IFormInputProps<number>,
+    IFormInputProps<string>,
     IThemeProps,
     IMarginProps {
-  min?: number;
-  max?: number;
-  step?: number | "any";
+  wrap?: "soft" | "hard";
+  placeholder?: string;
+  cols?: number;
+  rows?: number;
+  formId: string;
+  minLength?: number;
+  maxLength?: number;
+  name?: string;
 }
 
-export const NumberInput = ({
+export const TextArea = ({
   id = null,
   value,
   onChange,
@@ -42,22 +44,26 @@ export const NumberInput = ({
   onFocus,
   useHTMLErrorMessage = false,
   noShadowOnFocus = false,
-  validateOnLoad = false,
+  validateOnLoad,
   error,
   setError,
   disabled = false,
   required = false,
   readonly = false,
   autofocus = false,
-  autocomplete = "off",
   /**
-   * Number Input - specific props
+   * Text Area - specific props
    */
-  min = 0,
-  max,
-  step = "any",
+  wrap = "soft",
+  placeholder,
+  cols = 50,
+  rows = 4,
+  formId,
+  minLength,
+  maxLength = 255,
+  name = "resoui_textarea_input",
   /**
-   * Number Input - specific props ends
+   * Inherited props
    */
   rootClassName,
   rootStyles = {},
@@ -66,14 +72,13 @@ export const NumberInput = ({
   theme = "light",
   customValidators = [],
   ...spacingsProps
-}: INumberInputProps) => {
-  useDisableNumberInputScroll();
+}: ITextAreaProps) => {
   const inputValidators = useInputValidatorsMemo(
-    "number",
+    "string",
     {
       required,
-      min,
-      max,
+      minLength,
+      maxLength,
     },
     customValidators
   );
@@ -88,12 +93,13 @@ export const NumberInput = ({
   const handleInputChange = (e) => {
     const val = e.target.value;
     validate(val, inputValidators, setError);
-    onChange(Number(val));
+    onChange(val);
   };
 
   const handleInputInvalid = (e) => {
     if (!useHTMLErrorMessage) {
       e.preventDefault();
+      validate(value, inputValidators, setError);
     }
   };
 
@@ -102,7 +108,7 @@ export const NumberInput = ({
       withSpacingsProps(
         {
           form_input_container: true,
-          input_number_container: true,
+          input_textarea_container: true,
         },
         spacingsProps
       ),
@@ -113,30 +119,28 @@ export const NumberInput = ({
   const inputClasses = createComponentStyles(
     createLayoutStyles(
       {
-        input_number: true,
-        form_controls_input: true,
-        form_controls_focus_noshadow: noShadowOnFocus === true,
+        textarea_input: true,
+        textarea_input_focus_noshadow: noShadowOnFocus === true,
       },
       inputClassName,
       {
         disabled,
-        no_select: true,
       }
     ),
-    createThemeStyles(`input_number_theme_`, theme)
+    createThemeStyles(`textarea_input_theme_`, theme)
   );
 
   return (
     <div
-      data-testid={`number-input-${id}-container`}
+      data-testid={`text-area-${id}-container`}
       className={containerClasses}
       style={rootStyles}
     >
-      <input
+      <textarea
+        data-testid={`text-area-${id}-input`}
+        wrap={wrap}
         id={id}
-        data-testid={`number-input-${id}-input`}
-        type="number"
-        value={Number(value).toString()} // if "" do not cast to numberZ ;"≥
+        value={value ? (value as string) : ""}
         onChange={handleInputChange}
         onBlur={onBlur}
         onFocus={onFocus}
@@ -145,18 +149,17 @@ export const NumberInput = ({
         readOnly={readonly}
         required={required}
         autoFocus={autofocus}
-        autoComplete={autocomplete}
-        max={max}
-        min={min}
-        step={step}
+        rows={rows}
+        form={formId}
+        name={name}
+        placeholder={placeholder}
+        minLength={minLength}
+        maxLength={maxLength}
         className={inputClasses}
         style={inputStyles}
       />
       {error && (
-        <p
-          data-testid={`number-input-${id}-error`}
-          className="form_input_error"
-        >
+        <p data-testid={`text-area-${id}-error`} className="form_input_error">
           {error}
         </p>
       )}

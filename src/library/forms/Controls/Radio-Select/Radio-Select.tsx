@@ -6,6 +6,7 @@ import IThemeProps from "../../../interfaces/Theme";
 import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 
 // styles
+import "../sharedStyles.scss";
 import "./styles/Radio-Select.layout.scss";
 import "./styles/Radio-Select.theme.scss";
 
@@ -78,6 +79,7 @@ export const RadioSelect = ({
     createLayoutStyles(
       withSpacingsProps(
         {
+          form_input_container: true,
           radioselect_container: true,
         },
         spacingsProps

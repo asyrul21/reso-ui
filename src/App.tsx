@@ -2,7 +2,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Example, Banner, Navbar, NavItem, Text } from "./library/components";
+import {
+  Example,
+  Banner,
+  Navbar,
+  NavItem,
+  Text,
+  Footer,
+} from "./library/components";
 import { Main, View, CenterContainer } from "./library/components/Containers";
 import { DropdownSelect } from "./library/forms/Controls/Dropdown/Dropdown-Select";
 import { DropdownOption } from "./library/forms/Controls/Dropdown/Dropdown-Option";
@@ -10,13 +17,7 @@ import { DropdownOption } from "./library/forms/Controls/Dropdown/Dropdown-Optio
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
-import {
-  ControlWrapper,
-  Label,
-  RadioSelect,
-  useDropdown,
-  useRadioSelect,
-} from "./library";
+import { ControlWrapper, FormContainer, Label, useDropdown } from "./library";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -44,18 +45,6 @@ const App = () => {
       key: "all",
       value: "All",
     },
-  });
-
-  const {
-    value: selectedRadioValue,
-    options: radioOptions,
-    selectedKey: selectedRadioKey,
-    error: radioError,
-    setError: setRadioError,
-    setSelectedKey: setSelectedRadioKey,
-  } = useRadioSelect(undefined, Sample, {
-    keyProp: "id",
-    valueProp: "name",
   });
 
   const theme = "light";
@@ -104,44 +93,38 @@ const App = () => {
           <Banner type="info" text="hello" />
           <CenterContainer maxWidth={540}>
             <Example name="john" />
-            <Text Element="h3" mv={5}>
-              Dropdown Default Options and Hooks: {selectedValue}
-            </Text>
-            <DropdownSelect
-              options={options}
-              value={selectedValue}
-              onChange={(key) => setSelectedKey(key)}
-              error={error}
-              setError={setError}
-              required
-              selectedKey={selectedKey}
-            />
-            <Text Element="h3" mv={5}>
-              Radio Select: {selectedRadioValue}
-            </Text>
-            <ControlWrapper>
-              <Label
-                htmlFor="sampleradio1"
-                label="Favourite fruit"
-                required
-                mr={7}
-                rootStyles={{ width: "145px" }}
-              />
-              <RadioSelect
-                id="sampleradio1"
-                required
-                name="my_radio"
-                value={selectedRadioValue}
-                error={radioError}
-                setError={setRadioError}
-                selectedKey={selectedRadioKey}
-                onChange={(key) => setSelectedRadioKey(key)}
-                // radioStyles={{ margin: "5px" }}
-                options={[...radioOptions]}
-              />
-            </ControlWrapper>
+            <FormContainer
+              id="test-form-1"
+              onSubmit={() => {
+                alert("submitting form");
+              }}
+            >
+              <Text Element="h3" mv={5}>
+                Dropdown Default Options and Hooks: {selectedValue}
+              </Text>
+              <ControlWrapper>
+                <Label
+                  htmlFor="sampleDropdown1"
+                  label="Fruit"
+                  required
+                  mr={7}
+                  rootStyles={{ width: "145px" }}
+                />
+                <DropdownSelect
+                  id="sampleDropdown1"
+                  options={options}
+                  value={selectedValue}
+                  onChange={(key) => setSelectedKey(key)}
+                  error={error}
+                  setError={setError}
+                  required
+                  selectedKey={selectedKey}
+                />
+              </ControlWrapper>
+            </FormContainer>
           </CenterContainer>
         </View>
+        <Footer theme="dark">Footer</Footer>
       </Main>
     </>
   );

@@ -1,4 +1,7 @@
 .footer_container_theme_light {
-  background: $bg-footer;
-  color: $primary-grey-medium;
+  @include use_theme($primary-grey-medium-light, "light");
+}
+
+.footer_container_theme_dark {
+  @include use_theme($primary-blue, "dark");
 }

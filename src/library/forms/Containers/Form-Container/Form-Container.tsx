@@ -21,6 +21,7 @@ export interface IFormContainerProps
   extends IComponent,
     IThemeProps,
     ISpacingsProps {
+  id?: string;
   children: React.ReactNode;
   onSubmit: () => void;
   onInvalid?: () => void;
@@ -28,6 +29,7 @@ export interface IFormContainerProps
 }
 
 export const FormContainer = ({
+  id,
   rootClassName,
   rootStyles = {},
   onSubmit,
@@ -52,6 +54,7 @@ export const FormContainer = ({
 
   return (
     <form
+      id={id}
       onInvalid={onInvalid}
       noValidate={noValidate}
       data-testid="form-root"

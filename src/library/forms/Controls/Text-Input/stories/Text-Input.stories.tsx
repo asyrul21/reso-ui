@@ -29,7 +29,21 @@ export default {
     docs: {
       description: {
         component: dedent`
-            A form input components for texts, email, and telephone strings.
+            A form input component for texts, email, and telephone strings.
+
+            You may use the \`useFormInput\` built-in hook for better interactivity.
+
+            Use \`rootClassNmae\` or \`rootStyles\` to override wrapper stylings.
+
+            Use \`inputClassName\` or \`inputStyles\` to override default input element styles.
+
+            You can provide custom validators via the \`customValidators\` prop.
+
+            You may use the \`useFormInput\` built-in hook for better interactivity.
+
+            Supports Margin Props.
+
+            Import statement: \`import { TextInput } from 'reso-ui'\`
         `,
       },
     },

@@ -41,6 +41,7 @@ export const TextInput = ({
   onBlur,
   onFocus,
   useHTMLErrorMessage = false,
+  noShadowOnFocus = false,
   validateOnLoad,
   error,
   setError,
@@ -107,7 +108,7 @@ export const TextInput = ({
       withSpacingsProps(
         {
           form_input_container: true,
-          input_text_container: true,
+          input_textfield_container: true,
         },
         spacingsProps
       ),
@@ -118,8 +119,9 @@ export const TextInput = ({
   const inputClasses = createComponentStyles(
     createLayoutStyles(
       {
-        input_text: true,
+        input_textarea: true,
         form_controls_input: true,
+        form_controls_focus_noshadow: noShadowOnFocus === true,
       },
       inputClassName,
       {

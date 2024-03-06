@@ -8,6 +8,7 @@ import "./styles/Dropdown-Select.theme.scss";
 import { ISelectableOption } from "../../../../interfaces";
 export interface IDropdownSelectProps extends IComponent, IThemeProps, IMarginProps {
     id?: string;
+    width?: string;
     selectedKey?: string;
     value?: string;
     options?: ISelectableOption[];
@@ -21,9 +22,11 @@ export interface IDropdownSelectProps extends IComponent, IThemeProps, IMarginPr
     OptionsContainerElement?: "ul" | "div";
     children?: React.ReactNode;
     optionsMaxHeight?: string;
+    dropdownClassName?: string;
+    dropdownStyles?: React.CSSProperties;
     headerClassName?: string;
     headerStyles?: React.CSSProperties;
     optionsContainerClassName?: string;
     optionsContainerStyles?: React.CSSProperties;
 }
-export declare const DropdownSelect: ({ id, selectedKey, value, options, onChange, error, setError, required, disabled, asNavItem, expandOn, OptionsContainerElement, children, optionsMaxHeight, headerClassName, headerStyles, optionsContainerClassName, optionsContainerStyles, rootClassName, rootStyles, theme, ...spacingsProps }: IDropdownSelectProps) => React.JSX.Element;
+export declare const DropdownSelect: ({ id, width, selectedKey, value, options, onChange, error, setError, required, disabled, asNavItem, expandOn, OptionsContainerElement, children, optionsMaxHeight, dropdownClassName, dropdownStyles, headerClassName, headerStyles, optionsContainerClassName, optionsContainerStyles, rootClassName, rootStyles, theme, ...spacingsProps }: IDropdownSelectProps) => React.JSX.Element;

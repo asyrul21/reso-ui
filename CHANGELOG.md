@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/asyrul21/reso-ui/compare/v1.16.0...v1.16.1) (2024-03-06)
+
+
+### Bug Fixes
+
+* dropdown-select layout width issue ([43446cf](https://github.com/asyrul21/reso-ui/commit/43446cfa1f6c7d2b7de652c514d20d1bb05bb9a5))
+
 # [1.16.0](https://github.com/asyrul21/reso-ui/compare/v1.15.0...v1.16.0) (2024-03-04)
 
 

@@ -17,7 +17,15 @@ import { DropdownOption } from "./library/forms/Controls/Dropdown/Dropdown-Optio
 // import sample scss
 // IMPORTANT: App.scss must come AFTER component imports
 import "./App.scss";
-import { ControlWrapper, FormContainer, Label, useDropdown } from "./library";
+import {
+  ControlWrapper,
+  FileInput,
+  FormContainer,
+  Label,
+  TextInput,
+  useDropdown,
+  useFormInput,
+} from "./library";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -46,6 +54,13 @@ const App = () => {
       value: "All",
     },
   });
+
+  const {
+    value: textInputValue1,
+    setValue: setTextInputValue1,
+    error: textInput1Error,
+    setError: setTextInputError1,
+  } = useFormInput<string>("");
 
   const theme = "light";
   return (
@@ -91,7 +106,7 @@ const App = () => {
       <Main theme={theme}>
         <View>
           <Banner type="info" text="hello" />
-          <CenterContainer maxWidth={540}>
+          <CenterContainer maxWidth={720}>
             <Example name="john" />
             <FormContainer
               id="test-form-1"
@@ -99,6 +114,29 @@ const App = () => {
                 alert("submitting form");
               }}
             >
+              <Text Element="h2" mv={5}>
+                Sample Form
+              </Text>
+              <ControlWrapper>
+                <Label
+                  htmlFor="sampleTextInput1"
+                  label="First Name"
+                  description="Required validation, validated on render"
+                  required
+                  mr={7}
+                  rootStyles={{ width: "145px" }}
+                />
+                <TextInput
+                  id="sampleTextInput1"
+                  value={textInputValue1}
+                  onChange={(val) => setTextInputValue1(val as string)}
+                  placeholder="Your first name"
+                  error={textInput1Error}
+                  required
+                  setError={setTextInputError1}
+                  validateOnLoad
+                />
+              </ControlWrapper>
               <Text Element="h3" mv={5}>
                 Dropdown Default Options and Hooks: {selectedValue}
               </Text>
@@ -119,6 +157,25 @@ const App = () => {
                   setError={setError}
                   required
                   selectedKey={selectedKey}
+                />
+              </ControlWrapper>
+              <ControlWrapper>
+                <Label
+                  htmlFor="sampleFileInput"
+                  label="Upload Image"
+                  description="Required validation, validated on render"
+                  required
+                  mr={7}
+                  rootStyles={{ width: "145px" }}
+                />
+                <FileInput
+                  id="sampleFileInput"
+                  selectedFilePath={null}
+                  onFileChange={(val) => {}}
+                  error={"test error"}
+                  required
+                  setError={() => {}}
+                  validateOnLoad
                 />
               </ControlWrapper>
             </FormContainer>

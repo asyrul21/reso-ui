@@ -1,0 +1,44 @@
+.fileinput_wrapper {
+  //   border: 2px solid red;
+}
+
+.resoui_fileinput_row {
+  //   border: 2px solid pink;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fileinput_textinput {
+  //   border: 2px solid blue;
+  margin-right: $margin-xxxsmall;
+  width: unset;
+  flex: 1;
+}
+
+.fileinput_fileinput {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: $font-size-default;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $border-radius-default;
+  height: $upload-button-height;
+  line-height: $upload-button-height;
+  width: 80px;
+  text-align: center;
+  margin-right: $margin-xxxsmall;
+}
+
+.fileinput_reset_button {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: $font-size-default;
+  display: block;
+  height: $input-text-height;
+  width: 80px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $border-radius-default;
+}

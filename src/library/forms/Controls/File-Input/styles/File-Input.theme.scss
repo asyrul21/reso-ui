@@ -1,0 +1,20 @@
+.fileinput_textinput_theme_light {
+  @include use_theme($white, "light");
+  border-color: $primary-grey-medium;
+}
+
+.fileinput_fileinput_theme_light {
+  @include use_theme($primary-grey-light, "light");
+  border-color: $primary-grey-medium;
+  &:hover {
+    background-color: $primary-grey-medium;
+    color: $fc-light;
+  }
+}
+
+.fileinput_resetbtn_theme_light {
+  @include use_theme($primary-grey-dark, "dark");
+  &:hover {
+    background-color: $primary-grey-medium;
+  }
+}

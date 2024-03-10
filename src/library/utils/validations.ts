@@ -1,9 +1,11 @@
+import { ACCEPT_STRING_REGEX } from "../forms";
+
 export const hasValue = (val: any) => {
   return val !== null && val !== undefined;
 };
 
 export const stringHasValue = (val: any) => {
-  return hasValue(val) && typeof val === "string";
+  return hasValue(val) && typeof val === "string" && val !== "";
 };
 
 export const objectHasValue = (val: any) => {
@@ -25,4 +27,12 @@ export const methodHasValue = (method: any) => {
 
 export const booleanHasValue = (val: boolean) => {
   return hasValue(val) && typeof val === "boolean";
+};
+
+export const stringIsValidAccept = (val: string) => {
+  return ACCEPT_STRING_REGEX.test(val);
+};
+
+export const valueIsAFile = (val: any) => {
+  return hasValue(val) && val instanceof File;
 };

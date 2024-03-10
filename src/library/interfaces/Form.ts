@@ -36,7 +36,7 @@ export interface IFormInputProps<T> {
   inputStyles?: React.CSSProperties;
   // ideally comes from hook
   value?: string | number | boolean;
-  onChange: (value: string | number | boolean) => void;
+  onChange: (value: T) => void;
   error?: string;
   setError?: Dispatch<SetStateAction<string>>;
   // ideally comes form hook ends

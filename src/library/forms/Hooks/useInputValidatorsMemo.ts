@@ -14,6 +14,7 @@ import {
 import { numberHasValue } from "../../utils/validations";
 import { composeInputValidators } from "./utils";
 import { booleanIsRequired } from "../Validators/Boolean";
+import { fileIsRequired, fileMatchesAccept } from "../Validators/File";
 
 interface IInputValidationProps {
   // shared
@@ -27,9 +28,11 @@ interface IInputValidationProps {
   maxLength?: number;
   isEmail?: boolean;
   isTel?: boolean;
+  // file
+  accept?: string;
 }
 
-type InputPrimitiveType = "string" | "boolean" | "number";
+type InputPrimitiveType = "string" | "boolean" | "number" | "file";
 
 export default <T>(
   type: InputPrimitiveType,
@@ -46,6 +49,7 @@ export default <T>(
       maxLength,
       isEmail,
       isTel,
+      accept,
     } = validationProps;
 
     let defaultValidators: FormInputValidator<T>[] = [];
@@ -66,6 +70,11 @@ export default <T>(
           ...defaultValidators,
           booleanIsRequired as FormInputValidator<T>,
         ];
+      } else if (type === "file") {
+        defaultValidators = [
+          ...defaultValidators,
+          fileIsRequired as FormInputValidator<T>,
+        ];
       }
     }
 
@@ -73,6 +82,13 @@ export default <T>(
       defaultValidators = [
         ...defaultValidators,
         stringMatchesRegex(pattern) as FormInputValidator<T>,
+      ];
+    }
+
+    if (accept) {
+      defaultValidators = [
+        ...defaultValidators,
+        fileMatchesAccept(accept) as FormInputValidator<T>,
       ];
     }
 

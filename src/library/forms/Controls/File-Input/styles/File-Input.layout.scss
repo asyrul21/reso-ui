@@ -17,6 +17,14 @@
   flex: 1;
 }
 
+._resoui_fileinput_input {
+  /**
+  * We are setting the display none as a style class,
+  * to enable style overriding for unit testing puposes
+  */
+  display: none;
+}
+
 .fileinput_fileinput {
   cursor: pointer;
   font-weight: 500;

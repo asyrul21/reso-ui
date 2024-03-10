@@ -5,3 +5,5 @@ export declare const numberHasValue: (val: any) => boolean;
 export declare const numberHasPositiveValue: (val: any) => boolean;
 export declare const methodHasValue: (method: any) => boolean;
 export declare const booleanHasValue: (val: boolean) => boolean;
+export declare const stringIsValidAccept: (val: string) => boolean;
+export declare const valueIsAFile: (val: any) => boolean;

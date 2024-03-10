@@ -20,25 +20,34 @@ import {
 } from "../../../utils/styles";
 import { validate } from "../../Validators";
 import useInputValidatorsMemo from "../../Hooks/useInputValidatorsMemo";
+import {
+  methodHasValue,
+  stringHasValue,
+  stringIsValidAccept,
+} from "../../../utils/validations";
+
+export const ACCEPT_STRING_REGEX =
+  /^((((([*]|\w+)\/([*]|\w+))|(\.\w+)),?\s*)+)$/;
 
 export interface IFileInputProps
   extends IComponent,
     Omit<
-      IFormInputProps<string>,
-      | "value"
-      | "onChange"
+      IFormInputProps<File>,
       | "type"
       | "autocomplete"
       | "inputClassName"
       | "inputStyles"
+      | "validateOnLoad"
+      | "autofocus"
+      | "useHTMLErrorMessage"
     >,
     IThemeProps,
     IMarginProps {
-  selectedFilePath?: string;
+  selectedFile?: File;
   accept?: string;
   multiple?: boolean;
-  onFileChange?: (file: File) => void;
   onReset?: () => void;
+  filterExtensionsInUsersFileExplorer?: boolean;
   labelText?: string;
   placeholder?: string;
   textInputClassName?: string;
@@ -47,21 +56,13 @@ export interface IFileInputProps
   fileInputStyles?: React.CSSProperties;
   resetButtonClassName?: string;
   resetButtonStyles?: React.CSSProperties;
-  //   type?: "text" | "email" | "password" | "tel";
-  //   placeholder?: string;
-  //   pattern?: RegExp | string;
-  //   minLength?: number;
-  //   maxLength?: number;
-  //   size?: number;
 }
 
 export const FileInput = ({
   id = "resoui_file_input",
   onBlur,
   onFocus,
-  useHTMLErrorMessage = false,
   noShadowOnFocus = false,
-  validateOnLoad,
   error,
   setError,
   disabled,
@@ -70,13 +71,25 @@ export const FileInput = ({
   /**
    * File Input - specific props
    */
-  selectedFilePath,
-  accept, // ".jpg, .jpeg, .png"
+  value = "",
+  onChange,
+  accept,
+  /**
+   * accepteable values:
+   *
+   * "image/png"
+   *
+   * ".png"
+   *
+   * "image/png, image/jpeg", ".png, .jpg, .jpeg"
+   *
+   */
   multiple = false,
-  onFileChange,
   onReset,
+  filterExtensionsInUsersFileExplorer = true,
   labelText = "Select",
   placeholder = "Select a file",
+  selectedFile,
   /**
    * Inherited props
    */
@@ -92,6 +105,32 @@ export const FileInput = ({
   customValidators = [],
   ...spacingsProps
 }: IFileInputProps) => {
+  if (stringHasValue(accept) && !stringIsValidAccept(accept)) {
+    throw new Error(
+      "Invalid string value passed to [accept] property of FileInput component."
+    );
+  }
+
+  const inputValidators = useInputValidatorsMemo<File>(
+    "file",
+    {
+      required,
+      accept,
+    },
+    customValidators
+  );
+
+  useEffect(() => {
+    validate(selectedFile, inputValidators, setError);
+  }, [selectedFile, error]);
+
+  const handleInputChange = (e) => {
+    if (e.target?.files[0]) {
+      const file = e.target.files[0];
+      onChange(file);
+    }
+  };
+
   const containerClasses = createComponentStyles(
     createLayoutStyles(
       withSpacingsProps(
@@ -141,7 +180,7 @@ export const FileInput = ({
       },
       resetButtonClassName,
       {
-        disabled: disabled || !selectedFilePath,
+        disabled: disabled || !stringHasValue(value),
         no_select: true,
       }
     ),
@@ -156,44 +195,43 @@ export const FileInput = ({
     >
       <div className="resoui_fileinput_row">
         <input
-          id={id}
+          id={`resoui-file-input-textinput-${id}`}
           type="text"
-          value={selectedFilePath}
-          required={required}
+          value={String(value)}
           readOnly
           className={textInputClasses}
           placeholder={placeholder}
           disabled
-        ></input>
-        <label className={fileInputClasses}>
+          onBlur={onBlur}
+          onFocus={onFocus}
+        />
+        <label
+          className={fileInputClasses}
+          htmlFor={`resoui-file-input-fileinput-${id}`}
+        >
           <input
+            id={`resoui-file-input-fileinput-${id}`}
+            name={id}
             type="file"
-            style={{ display: "none" }}
+            value=""
+            className="_resoui_fileinput_input"
             disabled={disabled}
-            accept={accept}
+            accept={filterExtensionsInUsersFileExplorer ? accept : undefined}
             multiple={multiple}
             onChange={(event) => {
-              if (event && event.target && event.target.files[0]) {
-                // if (validateInput(event)) {
-                //   setTempFileName(event.target.files[0].name);
-                //   onFileChange(event);
-                //   setFileChanged(true);
-                // }
-              }
+              handleInputChange(event);
             }}
-          ></input>
+          />
           {labelText}
         </label>
         <button
           className={resetButtonClasses}
           onClick={() => {
-            // setTempFileName(value || "");
-            // setInputError(null);
-            // setFileChanged(false);
-            // onReset();
+            if (methodHasValue(onReset)) {
+              onReset();
+            }
           }}
-          // disabled={!tempFileName || !fileChanged}
-          disabled={!selectedFilePath}
+          disabled={!stringHasValue(value)}
         >
           Reset
         </button>

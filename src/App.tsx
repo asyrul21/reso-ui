@@ -22,8 +22,10 @@ import {
   FileInput,
   FormContainer,
   Label,
+  SubmitButton,
   TextInput,
   useDropdown,
+  useFileInput,
   useFormInput,
 } from "./library";
 
@@ -61,6 +63,15 @@ const App = () => {
     error: textInput1Error,
     setError: setTextInputError1,
   } = useFormInput<string>("");
+
+  const {
+    selectedFile,
+    setSelectedFile,
+    selectedFilePath,
+    reset,
+    error: fileError,
+    setError: setFileError,
+  } = useFileInput();
 
   const theme = "light";
   return (
@@ -170,14 +181,18 @@ const App = () => {
                 />
                 <FileInput
                   id="sampleFileInput"
-                  selectedFilePath={null}
-                  onFileChange={(val) => {}}
-                  error={"test error"}
+                  value={selectedFile?.name}
+                  onChange={(file) => setSelectedFile(file)}
+                  error={fileError}
+                  onReset={() => reset()}
                   required
-                  setError={() => {}}
-                  validateOnLoad
+                  setError={setFileError}
+                  filterExtensionsInUsersFileExplorer={false}
+                  selectedFile={selectedFile}
+                  accept="image/png, .svg, image/jpg"
                 />
               </ControlWrapper>
+              <SubmitButton />
             </FormContainer>
           </CenterContainer>
         </View>

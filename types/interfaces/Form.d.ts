@@ -27,7 +27,7 @@ export interface IFormInputProps<T> {
     inputClassName?: string;
     inputStyles?: React.CSSProperties;
     value?: string | number | boolean;
-    onChange: (value: string | number | boolean) => void;
+    onChange: (value: T) => void;
     error?: string;
     setError?: Dispatch<SetStateAction<string>>;
     useHTMLErrorMessage?: boolean;

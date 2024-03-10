@@ -8,7 +8,8 @@ interface IInputValidationProps {
     maxLength?: number;
     isEmail?: boolean;
     isTel?: boolean;
+    accept?: string;
 }
-type InputPrimitiveType = "string" | "boolean" | "number";
+type InputPrimitiveType = "string" | "boolean" | "number" | "file";
 declare const _default: <T>(type: InputPrimitiveType, validationProps: IInputValidationProps, customValidators?: CustomValidators<T>) => FormInputValidator<T>[];
 export default _default;

@@ -1,4 +1,4 @@
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
   SelectableHookReturnObj,
   FormInputHookReturnObj,
@@ -12,6 +12,7 @@ import {
   optionsArrayToMap,
 } from "../utils";
 import { AnyObject } from "../../../interfaces";
+import { stringHasValue, valueIsAFile } from "../../../utils/validations";
 
 export const useFormInput = <T>(initialValue: T): FormInputHookReturnObj<T> => {
   const [inputValue, setInputValue] = useState<T>(initialValue);
@@ -20,6 +21,70 @@ export const useFormInput = <T>(initialValue: T): FormInputHookReturnObj<T> => {
   return {
     value: inputValue,
     setValue: setInputValue,
+    error: inputError,
+    setError: setInputError,
+  };
+};
+
+interface IUseFileInputConfig {
+  defaultPath?: string;
+  pathHandle?: string;
+}
+
+export const useFileInputDefaultConfig: IUseFileInputConfig = {
+  defaultPath: undefined,
+  pathHandle: undefined,
+};
+
+export const useFileInput = (
+  initialPath?: string,
+  config?: IUseFileInputConfig
+) => {
+  const hookConfig = { ...useFileInputDefaultConfig, ...(config || {}) };
+  const { defaultPath, pathHandle } = hookConfig;
+
+  const [file, setFile] = useState<File>(undefined);
+  const [filePath, setFilePath] = useState<string>(initialPath);
+  const [inputError, setInputError] = useState<string>(undefined);
+
+  const clearObjectURL = () => {
+    if (stringHasValue(filePath)) {
+      URL.revokeObjectURL(filePath);
+    }
+  };
+
+  const setSelectedFile = (f?: File) => {
+    clearObjectURL();
+    setFile(f);
+    if (valueIsAFile(f)) {
+      setFilePath(URL.createObjectURL(f));
+    }
+  };
+
+  const reset = () => {
+    setSelectedFile(undefined);
+
+    // reset file path
+    if (stringHasValue(initialPath) && stringHasValue(pathHandle)) {
+      setFilePath(`${pathHandle}${initialPath}`);
+    } else if (stringHasValue(initialPath) && !stringHasValue(pathHandle)) {
+      setFilePath(initialPath);
+    } else if (stringHasValue(defaultPath)) {
+      setFilePath(defaultPath);
+    } else {
+      // neither initial path nor default path is provided
+      setFilePath(undefined);
+    }
+
+    setInputError(undefined);
+  };
+
+  return {
+    selectedFile: file,
+    setSelectedFile,
+    selectedFilePath: filePath,
+    setSelectedFilePath: setFilePath,
+    reset,
     error: inputError,
     setError: setInputError,
   };

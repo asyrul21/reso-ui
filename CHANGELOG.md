@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/asyrul21/reso-ui/compare/v1.16.1...v1.17.0) (2024-03-10)
+
+
+### Features
+
+* file input component and companion hook ([9e3a786](https://github.com/asyrul21/reso-ui/commit/9e3a7867b73df7ef10eb8b2134a0b0f3a2c2d8fd))
+
 ## [1.16.1](https://github.com/asyrul21/reso-ui/compare/v1.16.0...v1.16.1) (2024-03-06)
 
 

@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/asyrul21/reso-ui/compare/v1.17.0...v1.18.0) (2024-03-11)
+
+
+### Features
+
+* FileInput unit tests and stories ([5ca4f8d](https://github.com/asyrul21/reso-ui/commit/5ca4f8d37fad64bcb64b47ecc54870ec1e3cccaf))
+
 # [1.17.0](https://github.com/asyrul21/reso-ui/compare/v1.16.1...v1.17.0) (2024-03-10)
 
 

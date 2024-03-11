@@ -21,5 +21,6 @@ export interface IFileInputProps extends IComponent, Omit<IFormInputProps<File>,
     fileInputStyles?: React.CSSProperties;
     resetButtonClassName?: string;
     resetButtonStyles?: React.CSSProperties;
+    _resoui_fileinput_input_styles?: React.CSSProperties;
 }
-export declare const FileInput: ({ id, onBlur, onFocus, noShadowOnFocus, error, setError, disabled, required, readonly, value, onChange, accept, multiple, onReset, filterExtensionsInUsersFileExplorer, labelText, placeholder, selectedFile, rootClassName, rootStyles, textInputClassName, textInputStyles, fileInputClassName, fileInputStyles, resetButtonClassName, resetButtonStyles, theme, customValidators, ...spacingsProps }: IFileInputProps) => React.JSX.Element;
+export declare const FileInput: ({ id, onBlur, onFocus, noShadowOnFocus, error, setError, disabled, required, readonly, value, onChange, accept, multiple, onReset, filterExtensionsInUsersFileExplorer, labelText, placeholder, selectedFile, rootClassName, rootStyles, textInputClassName, textInputStyles, fileInputClassName, fileInputStyles, resetButtonClassName, resetButtonStyles, _resoui_fileinput_input_styles, theme, customValidators, ...spacingsProps }: IFileInputProps) => React.JSX.Element;

@@ -56,6 +56,7 @@ export interface IFileInputProps
   fileInputStyles?: React.CSSProperties;
   resetButtonClassName?: string;
   resetButtonStyles?: React.CSSProperties;
+  _resoui_fileinput_input_styles?: React.CSSProperties; // for unit testing only
 }
 
 export const FileInput = ({
@@ -101,6 +102,7 @@ export const FileInput = ({
   fileInputStyles = {},
   resetButtonClassName,
   resetButtonStyles = {},
+  _resoui_fileinput_input_styles = {}, // for unit testing only
   theme = "light",
   customValidators = [],
   ...spacingsProps
@@ -189,12 +191,13 @@ export const FileInput = ({
 
   return (
     <div
-      data-testid={`file-input-${id}-wrapper`}
+      data-testid={`file-input-${id}-root`}
       className={containerClasses}
       style={rootStyles}
     >
       <div className="resoui_fileinput_row">
         <input
+          data-testid="file-input-text-input"
           id={`resoui-file-input-textinput-${id}`}
           type="text"
           value={String(value)}
@@ -206,15 +209,18 @@ export const FileInput = ({
           onFocus={onFocus}
         />
         <label
+          role="input"
           className={fileInputClasses}
           htmlFor={`resoui-file-input-fileinput-${id}`}
         >
           <input
+            data-testid="file-input-input"
             id={`resoui-file-input-fileinput-${id}`}
             name={id}
             type="file"
             value=""
             className="_resoui_fileinput_input"
+            style={_resoui_fileinput_input_styles}
             disabled={disabled}
             accept={filterExtensionsInUsersFileExplorer ? accept : undefined}
             multiple={multiple}
@@ -225,6 +231,7 @@ export const FileInput = ({
           {labelText}
         </label>
         <button
+          data-testid="file-input-reset-button"
           className={resetButtonClasses}
           onClick={() => {
             if (methodHasValue(onReset)) {

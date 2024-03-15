@@ -4,6 +4,14 @@ Home to reusable React components to Reso Applications.
 
 For more information, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/).
 
+## Requirements
+
+1. Node 18 >
+
+2. React ^18.2
+
+3. React Dom ^18.2
+
 ## Install
 
 ```bash
@@ -17,7 +25,7 @@ npm install reso-ui
 ```js
 import "reso-ui/styles";
 
-// your application-specific styles will override reso-ui styles
+// your application-specific styles should override reso-ui styles
 import "./index.css";
 ```
 
@@ -34,6 +42,10 @@ export const SampleApp = () => {
 ```
 
 3. For other usage docs, please see our [Storybook instance](http://reso-ui-storybook.s3-website-ap-southeast-1.amazonaws.com/) for information on import statements and component properties.
+
+# Version Warning
+
+Reso UI now runs on React 18. Since some components (Form Control components especially) use React hooks internally, clients with other versions of React using the latest version of this library will face "Invalid Hook Call" errors, due to conflicting React versions. Therefore, please check peer dependency requirements before updating.
 
 # Authors' Notes
 

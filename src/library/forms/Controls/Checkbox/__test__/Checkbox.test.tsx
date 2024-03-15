@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { Checkbox } from "../Checkbox";
 
 describe("Checkbox Input Component Unit Tests", () => {
@@ -17,9 +17,12 @@ describe("Checkbox Input Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("checkbox-test-input");
-    fireEvent.click(component);
 
-    expect(onChangeFn).toBeCalledWith(true);
+    act(() => {
+      fireEvent.click(component);
+    });
+
+    expect(onChangeFn).toHaveBeenCalledWith(true);
   });
 
   test("should execute onChange with correct value - false", () => {
@@ -30,9 +33,11 @@ describe("Checkbox Input Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("checkbox-test-input");
-    fireEvent.click(component);
+    act(() => {
+      fireEvent.click(component);
+    });
 
-    expect(onChangeFn).toBeCalledWith(false);
+    expect(onChangeFn).toHaveBeenCalledWith(false);
   });
 
   test("Required validation on load", () => {

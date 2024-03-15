@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { Dialog } from "../Dialog";
 
 // import from index does not work for jest.spyOn
@@ -160,7 +160,9 @@ describe("Dialog Modal Component Unit Tests", () => {
       //   debug();
       const buttons = screen.queryAllByTestId("dialog-button-mock");
       const noButton = buttons[0];
-      noButton.click();
+      act(() => {
+        noButton.click();
+      });
 
       expect(onClickMock).toHaveBeenCalled();
     });
@@ -175,7 +177,9 @@ describe("Dialog Modal Component Unit Tests", () => {
       //   debug();
       const buttons = screen.queryAllByTestId("dialog-button-mock");
       const yesButton = buttons[1];
-      yesButton.click();
+      act(() => {
+        yesButton.click();
+      });
 
       expect(onClickMock).toHaveBeenCalled();
     });
@@ -212,7 +216,9 @@ describe("Dialog Modal Component Unit Tests", () => {
       //   debug();
       const buttons = screen.queryAllByTestId("dialog-button-mock");
       const button = buttons[0];
-      button.click();
+      act(() => {
+        button.click();
+      });
 
       expect(onClickMock).toHaveBeenCalled();
     });

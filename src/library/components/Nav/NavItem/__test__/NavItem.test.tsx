@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { NavItem } from "../NavItem";
 
 describe("NavItem Component Unit Tests", () => {
@@ -36,7 +36,9 @@ describe("NavItem Component Unit Tests", () => {
     );
 
     const aTag = screen.getByTestId("navItem-element-a");
-    aTag.click();
+    act(() => {
+      aTag.click();
+    });
 
     expect(onClickMock).toHaveBeenCalled();
   });

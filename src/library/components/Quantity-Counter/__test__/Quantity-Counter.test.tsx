@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { QuantityCounter } from "../Quantity-Counter";
 
 describe("Quantity Counter", () => {
@@ -34,7 +34,9 @@ describe("Quantity Counter", () => {
     render(<QuantityCounter {...testProps} />);
 
     const addButton = screen.queryByTestId("quantity-counter-add");
-    addButton.click();
+    act(() => {
+      addButton.click();
+    });
 
     expect(onCounterChange).toHaveBeenCalled();
     expect(onCounterChange).toHaveBeenCalledWith(6);
@@ -51,7 +53,9 @@ describe("Quantity Counter", () => {
     render(<QuantityCounter {...testProps} />);
 
     const subtractButton = screen.queryByTestId("quantity-counter-subtract");
-    subtractButton.click();
+    act(() => {
+      subtractButton.click();
+    });
 
     expect(onCounterChange).toHaveBeenCalled();
     expect(onCounterChange).toHaveBeenCalledWith(4);
@@ -68,7 +72,9 @@ describe("Quantity Counter", () => {
     render(<QuantityCounter {...testProps} />);
 
     const subtractButton = screen.queryByTestId("quantity-counter-subtract");
-    subtractButton.click();
+    act(() => {
+      subtractButton.click();
+    });
 
     expect(onCounterChange).not.toHaveBeenCalled();
   });

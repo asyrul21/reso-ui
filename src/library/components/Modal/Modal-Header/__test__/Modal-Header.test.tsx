@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { ModalHeader } from "../Modal-Header";
 import * as ButtonModule from "../../../Buttons/Button/Button";
 
@@ -67,7 +67,9 @@ describe("Modal Header Component Unit Tests", () => {
     render(<ModalHeader onClose={onCloseMock} title="sample title" />);
 
     const closeButton = screen.queryByTestId("modal-header-button-mock");
-    closeButton.click();
+    act(() => {
+      closeButton.click();
+    });
 
     expect(onCloseMock).toHaveBeenCalled();
   });

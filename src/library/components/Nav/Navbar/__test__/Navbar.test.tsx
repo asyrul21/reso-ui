@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { Navbar } from "../Navbar";
 
 describe("NavBar Component Unit Tests", () => {
@@ -39,7 +39,9 @@ describe("NavBar Component Unit Tests", () => {
 
     // debug();
     const component = screen.getByTestId("navbar-logo");
-    component.click();
+    act(() => {
+      component.click();
+    });
 
     expect(onClickLogoMock).toHaveBeenCalled();
   });

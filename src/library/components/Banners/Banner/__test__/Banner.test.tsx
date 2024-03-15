@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { Banner } from "../Banner";
 
 // import from index does not work for jest.spyOn
@@ -80,7 +80,10 @@ describe("Banner Component Unit Tests", () => {
 
     // debug();
     const closeButton = screen.queryByTestId("banner-close-button");
-    closeButton.click();
+
+    act(() => {
+      closeButton.click();
+    });
 
     const component = screen.queryByTestId("banner-root");
     expect(component).not.toBeInTheDocument();

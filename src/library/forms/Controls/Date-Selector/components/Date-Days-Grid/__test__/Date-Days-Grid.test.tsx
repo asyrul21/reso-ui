@@ -1,7 +1,10 @@
 import React from "react";
 import classnames from "classnames";
-import { render, screen } from "@testing-library/react";
-import { methodHasValue, stringHasValue } from "../../../../../../utils/validations";
+import { act, render, screen } from "@testing-library/react";
+import {
+  methodHasValue,
+  stringHasValue,
+} from "../../../../../../utils/validations";
 
 // import from index does not work for jest.spyOn
 import { DateDaysGrid } from "../Date-Days-Grid";
@@ -433,7 +436,9 @@ describe("Date Selector Days Grid Component Unit Tests", () => {
       "date-selector-day-number-mock"
     );
 
-    dayNumberComponents[4].click(); // click on 5th June
+    act(() => {
+      dayNumberComponents[4].click(); // click on 5th June
+    });
 
     expect(onClickSpy).toHaveBeenCalledWith(new Date(2020, 5, 5));
   });
@@ -460,7 +465,9 @@ describe("Date Selector Days Grid Component Unit Tests", () => {
     );
     const disabledDay = dayNumberComponents[dayNumberComponents.length - 1]; // 12th JULY - should be disabled
 
-    disabledDay.click();
+    act(() => {
+      disabledDay.click();
+    });
 
     expect(onClickSpy).not.toHaveBeenCalled();
   });

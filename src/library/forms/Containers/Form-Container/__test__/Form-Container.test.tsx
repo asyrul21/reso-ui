@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { FormContainer } from "../Form-Container";
 
 const SampleFormChildComponent = () => {
@@ -71,7 +71,9 @@ describe("Form Container Unit Tests", () => {
 
     // debug();
     const button = screen.queryByTestId("form-submit-button");
-    button.click();
+    act(() => {
+      button.click();
+    });
 
     expect(onSubmitMock).toHaveBeenCalledTimes(1);
   });

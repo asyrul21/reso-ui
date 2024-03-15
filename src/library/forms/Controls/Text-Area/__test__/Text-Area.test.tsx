@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { TextArea } from "../";
 
 describe("Text Area Component Unit Tests", () => {
@@ -21,7 +21,9 @@ describe("Text Area Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("text-area-test-input");
-    fireEvent.change(component, { target: { value: "test input value" } });
+    act(() => {
+      fireEvent.change(component, { target: { value: "test input value" } });
+    });
 
     expect(onChangeFn).toHaveBeenCalledWith("test input value");
   });

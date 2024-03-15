@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { DropdownSelect } from "../";
 import * as DropdownOptionModule from "../../Dropdown-Option/Dropdown-Option";
 
@@ -61,7 +61,9 @@ describe("Dropdown Select Component Unit Tests", () => {
       const component = screen.queryByTestId("dropdown-select-header");
       expect(component).toBeInTheDocument();
 
-      component.click();
+      act(() => {
+        component.click();
+      });
 
       expect(component).toHaveClass("dropdown_header_opened");
 
@@ -76,7 +78,9 @@ describe("Dropdown Select Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("dropdown-select-header");
-      component.click();
+      act(() => {
+        component.click();
+      });
 
       expect(component).not.toHaveClass("dropdown_header_opened");
 
@@ -140,7 +144,9 @@ describe("Dropdown Select Component Unit Tests", () => {
         "dropdown-select-mock-dropdown-option-2"
       );
       expect(option2).toBeInTheDocument();
-      option2.click();
+      act(() => {
+        option2.click();
+      });
 
       expect(onChangeMock).toHaveBeenCalledWith(TestOptions[1].key);
     });
@@ -170,7 +176,9 @@ describe("Dropdown Select Component Unit Tests", () => {
       const component = screen.queryByTestId("dropdown-select-header");
       expect(component).toBeInTheDocument();
 
-      fireEvent.mouseEnter(component);
+      act(() => {
+        fireEvent.mouseEnter(component);
+      });
 
       // we dont want border changes
       expect(component).not.toHaveClass("dropdown_header_opened");

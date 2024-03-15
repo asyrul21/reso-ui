@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { DateSelector } from "../Date-Selector";
 
 import * as DateSelectorHeaderModule from "../components/Date-Selector-Header/Date-Selector-Header";
@@ -158,7 +158,10 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+
+      act(() => {
+        header.click();
+      });
 
       const component = screen.queryByTestId("date-selector-expanded");
       expect(component).toHaveClass("date_selector_grid_container_opened");
@@ -170,7 +173,9 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const component = screen.queryByTestId("date-selector-expanded");
       expect(component).not.toHaveClass("date_selector_grid_container_opened");
@@ -184,7 +189,9 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByTestId(
         "date-selector-component-navigation-mock"
@@ -200,13 +207,17 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByTestId(
         "date-selector-component-navigation-mock-next"
       );
       const yearNavigationNext = components[0];
-      yearNavigationNext.click();
+      act(() => {
+        yearNavigationNext.click();
+      });
 
       const navComponents = screen.queryAllByTestId(
         "date-selector-component-navigation-mock"
@@ -221,13 +232,17 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByTestId(
         "date-selector-component-navigation-mock-prev"
       );
       const yearNavigationNext = components[0];
-      yearNavigationNext.click();
+      act(() => {
+        yearNavigationNext.click();
+      });
 
       const navComponents = screen.queryAllByTestId(
         "date-selector-component-navigation-mock"
@@ -249,7 +264,9 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByTestId(
         "date-selector-component-navigation-mock"
@@ -267,7 +284,9 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByTestId(
         "date-selector-component-navigation-mock"
@@ -283,13 +302,17 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByTestId(
         "date-selector-component-navigation-mock-next"
       );
       const monthNavigationNext = components[1];
-      monthNavigationNext.click();
+      act(() => {
+        monthNavigationNext.click();
+      });
 
       const navComponents = screen.queryAllByTestId(
         "date-selector-component-navigation-mock"
@@ -304,13 +327,17 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByTestId(
         "date-selector-component-navigation-mock-prev"
       );
       const monthNavigationNext = components[1];
-      monthNavigationNext.click();
+      act(() => {
+        monthNavigationNext.click();
+      });
 
       const navComponents = screen.queryAllByTestId(
         "date-selector-component-navigation-mock"
@@ -332,7 +359,9 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByTestId(
         "date-selector-component-navigation-mock"
@@ -349,7 +378,9 @@ describe("Date Selector Overall Component Unit Tests", () => {
       const { debug } = render(<DateSelector value={todayMock} />);
 
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       //   debug();
       const component = screen.queryByTestId("date-selector-grid-root");
@@ -365,11 +396,15 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByText("3");
       const newDay = components[0]; // 3rd of current month
-      newDay.click();
+      act(() => {
+        newDay.click();
+      });
 
       expect(onChangeSpy).toHaveBeenCalledWith(new Date(2020, 5, 3));
     });
@@ -383,11 +418,15 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       const components = screen.queryAllByText("3");
       const newDay = components[1]; // 3rd of next month, should be disabled
-      newDay.click();
+      act(() => {
+        newDay.click();
+      });
 
       expect(onChangeSpy).not.toHaveBeenCalled();
     });
@@ -404,7 +443,9 @@ describe("Date Selector Overall Component Unit Tests", () => {
       );
 
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       //   debug();
       const dayNameComponents = screen.queryAllByText("X");
@@ -424,7 +465,9 @@ describe("Date Selector Overall Component Unit Tests", () => {
 
       //   debug();
       const header = screen.queryByTestId("date-selector-header-mock");
-      header.click();
+      act(() => {
+        header.click();
+      });
 
       //   debug();
       const dayNumberComponents = screen.queryAllByText("X");

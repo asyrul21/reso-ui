@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { Image } from "../Image";
 
 // import from index does not work for jest.spyOn
@@ -57,7 +57,9 @@ describe("Image Component Unit Tests", () => {
     render(<Image {...defaultProps} onClick={onClickMock} />);
 
     const component = screen.queryByTestId("image-component-root");
-    component.click();
+    act(() => {
+      component.click();
+    });
 
     expect(onClickMock).toHaveBeenCalled();
   });
@@ -114,7 +116,9 @@ describe("Image Component Unit Tests", () => {
 
     const imgElement = screen.queryByTestId("image-component-img");
     // trigger img onError
-    fireEvent.error(imgElement);
+    act(() => {
+      fireEvent.error(imgElement);
+    });
 
     const imgElementUpdated = screen.queryByTestId("image-component-img");
     expect(imgElementUpdated).toBeFalsy();
@@ -134,10 +138,13 @@ describe("Image Component Unit Tests", () => {
 
     // debug();
     const imgElement = screen.queryByTestId("image-component-img");
-    // trigger img onError
-    fireEvent.error(imgElement);
-    // trigger img onLoad
-    fireEvent.load(imgElement);
+
+    act(() => {
+      // trigger img onError
+      fireEvent.error(imgElement);
+      // trigger img onLoad
+      fireEvent.load(imgElement);
+    });
 
     // debug();
     const errorMessage = screen.queryByTestId("image-component-error");

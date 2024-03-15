@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { MultiImageViewer } from "../Multi-Image-Viewer";
 
 // import from index does not work for jest.spyOn
@@ -88,7 +88,9 @@ describe("Image Component Unit Tests", () => {
     const scrollbox = screen.queryByTestId("multi-image-viewer-scrollbox");
     const scrollBoxChildren = scrollbox.childNodes;
 
-    fireEvent.click(scrollBoxChildren[2]);
+    act(() => {
+      fireEvent.click(scrollBoxChildren[2]);
+    });
 
     const scrollboxUpdated = screen.queryByTestId(
       "multi-image-viewer-scrollbox"
@@ -119,7 +121,9 @@ describe("Image Component Unit Tests", () => {
     const scrollbox = screen.queryByTestId("multi-image-viewer-scrollbox");
     const scrollBoxChildren = scrollbox.childNodes;
 
-    fireEvent.click(scrollBoxChildren[2]);
+    act(() => {
+      fireEvent.click(scrollBoxChildren[2]);
+    });
 
     const container = screen.queryByTestId("multi-image-viewer-root");
     const mainImageDiv = container.firstChild;
@@ -141,7 +145,9 @@ describe("Image Component Unit Tests", () => {
     const container = screen.queryByTestId("multi-image-viewer-root");
     const mainImageDiv = container.firstChild;
 
-    fireEvent.click(mainImageDiv);
+    act(() => {
+      fireEvent.click(mainImageDiv);
+    });
 
     expect(onClickSpy).toHaveBeenCalled();
   });
@@ -172,7 +178,9 @@ describe("Image Component Unit Tests", () => {
     const scrollbox = screen.queryByTestId("multi-image-viewer-scrollbox");
     const scrollBoxChildren = scrollbox.childNodes;
 
-    fireEvent.click(scrollBoxChildren[2]);
+    act(() => {
+      fireEvent.click(scrollBoxChildren[2]);
+    });
 
     expect(setIndexOverrideSpy).toHaveBeenCalledWith(2);
   });
@@ -270,7 +278,9 @@ describe("Image Component Unit Tests", () => {
     const scrollbox = screen.queryByTestId("multi-image-viewer-scrollbox");
     const scrollBoxChildren = scrollbox.childNodes;
 
-    fireEvent.click(scrollBoxChildren[2]);
+    act(() => {
+      fireEvent.click(scrollBoxChildren[2]);
+    });
 
     const scrollboxUpdated = screen.queryByTestId(
       "multi-image-viewer-scrollbox"
@@ -298,7 +308,9 @@ describe("Image Component Unit Tests", () => {
     const scrollbox = screen.queryByTestId("multi-image-viewer-scrollbox");
     const scrollBoxChildren = scrollbox.childNodes;
 
-    fireEvent.click(scrollBoxChildren[2]);
+    act(() => {
+      fireEvent.click(scrollBoxChildren[2]);
+    });
 
     const scrollboxUpdated = screen.queryByTestId(
       "multi-image-viewer-scrollbox"

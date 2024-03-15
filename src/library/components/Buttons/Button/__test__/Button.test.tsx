@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { Button } from "../Button";
 
 describe("Generic Button Component Unit Tests", () => {
@@ -59,7 +59,9 @@ describe("Generic Button Component Unit Tests", () => {
     render(<Button text="test" onClick={onClickSpy} />);
 
     const component = screen.queryByTestId("button-root");
-    component.click();
+    act(() => {
+      component.click();
+    });
 
     expect(onClickSpy).toHaveBeenCalled();
   });

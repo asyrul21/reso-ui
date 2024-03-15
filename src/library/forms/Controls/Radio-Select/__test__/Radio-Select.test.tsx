@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  fireEvent,
-  render,
-  screen,
-  wait,
-  waitFor,
-} from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { RadioSelect } from "../";
 
 describe("Radio Select Component Unit Tests", () => {
@@ -93,7 +87,9 @@ describe("Radio Select Component Unit Tests", () => {
     const radioComponent1 = screen.queryByTestId(
       `resoui_radioselect_${TestName}_input_1`
     );
-    radioComponent1.click();
+    act(() => {
+      radioComponent1.click();
+    });
 
     expect(onChangeMock).toHaveBeenCalledWith("1");
   });

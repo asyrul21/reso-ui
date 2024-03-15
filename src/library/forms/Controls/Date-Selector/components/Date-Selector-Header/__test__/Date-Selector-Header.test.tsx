@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { DateSelectorHeader } from "../Date-Selector-Header";
 
 describe("Date Selector Header Component Unit Tests", () => {
@@ -83,7 +83,9 @@ describe("Date Selector Header Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("date-selector-header-root");
-    component.click();
+    act(() => {
+      component.click();
+    });
     expect(onClickSpy).toHaveBeenCalled();
   });
 
@@ -95,7 +97,9 @@ describe("Date Selector Header Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("date-selector-header-root");
-    component.click();
+    act(() => {
+      component.click();
+    });
     expect(onClickSpy).not.toHaveBeenCalled();
   });
 });

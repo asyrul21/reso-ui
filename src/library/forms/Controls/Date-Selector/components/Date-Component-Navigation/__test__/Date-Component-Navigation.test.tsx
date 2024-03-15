@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { DateComponentNavigation } from "../Date-Component-Navigation";
 
 describe("Date Component Navigation Component Unit Tests", () => {
@@ -110,7 +110,9 @@ describe("Date Component Navigation Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("date-selector-nav-btn-prev");
-      component.click();
+      act(() => {
+        component.click();
+      });
       expect(onClickSpy).toHaveBeenCalled();
     });
 
@@ -126,7 +128,9 @@ describe("Date Component Navigation Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("date-selector-nav-btn-prev");
-      component.click();
+      act(() => {
+        component.click();
+      });
       expect(onClickSpy).not.toHaveBeenCalled();
     });
 
@@ -206,7 +210,9 @@ describe("Date Component Navigation Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("date-selector-nav-btn-next");
-      component.click();
+      act(() => {
+        component.click();
+      });
       expect(onClickSpy).toHaveBeenCalled();
     });
 
@@ -222,7 +228,9 @@ describe("Date Component Navigation Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("date-selector-nav-btn-next");
-      component.click();
+      act(() => {
+        component.click();
+      });
       expect(onClickSpy).not.toHaveBeenCalled();
     });
 

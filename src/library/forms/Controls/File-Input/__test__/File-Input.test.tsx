@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { FileInput } from "../";
 
 describe("Text Input Component Unit Tests", () => {
@@ -39,8 +39,10 @@ describe("Text Input Component Unit Tests", () => {
     // debug();
     const component = screen.queryByTestId("file-input-input");
 
-    fireEvent.change(component, {
-      target: { files: [FileMock] },
+    act(() => {
+      fireEvent.change(component, {
+        target: { files: [FileMock] },
+      });
     });
 
     expect(onChangeMock).toHaveBeenCalledWith(FileMock);
@@ -60,7 +62,9 @@ describe("Text Input Component Unit Tests", () => {
     // debug();
     const component = screen.queryByTestId("file-input-reset-button");
     expect(component).toBeInTheDocument();
-    component.click();
+    act(() => {
+      component.click();
+    });
 
     expect(onResetMock).not.toHaveBeenCalled();
   });
@@ -80,7 +84,9 @@ describe("Text Input Component Unit Tests", () => {
     // debug();
     const component = screen.queryByTestId("file-input-reset-button");
     expect(component).toBeInTheDocument();
-    component.click();
+    act(() => {
+      component.click();
+    });
 
     expect(onResetMock).toHaveBeenCalled();
   });

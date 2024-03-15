@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { DropdownOption } from "../";
 
 describe("Dropdown Select Component Unit Tests", () => {
@@ -21,7 +21,9 @@ describe("Dropdown Select Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("dropdown-option-root");
-    component.click();
+    act(() => {
+      component.click();
+    });
 
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
@@ -83,7 +85,9 @@ describe("Dropdown Select Component Unit Tests", () => {
     // debug();
     const component = screen.queryByTestId("dropdown-option-test-custom");
     expect(component).toBeInTheDocument();
-    component.click();
+    act(() => {
+      component.click();
+    });
 
     expect(onClickMock).toHaveBeenCalledWith("Option A");
   });

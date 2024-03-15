@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { TextInput } from "../";
 import { FormInputValidator } from "../../../../interfaces";
 
@@ -18,7 +18,9 @@ describe("Text Input Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("text-input-test-input");
-    fireEvent.change(component, { target: { value: "test input value" } });
+    act(() => {
+      fireEvent.change(component, { target: { value: "test input value" } });
+    });
 
     expect(onChangeFn).toBeCalledWith("test input value");
   });
@@ -109,7 +111,9 @@ describe("Text Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
-      fireEvent.change(component, { target: { value: "abc" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "abc" } });
+      });
       expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
@@ -128,7 +132,9 @@ describe("Text Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
-      fireEvent.change(component, { target: { value: "abc@mail.com" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "abc@mail.com" } });
+      });
       expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
     });
 
@@ -147,7 +153,9 @@ describe("Text Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
-      fireEvent.change(component, { target: { value: "abc" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "abc" } });
+      });
       expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
@@ -166,7 +174,9 @@ describe("Text Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
-      fireEvent.change(component, { target: { value: "60120120120" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "60120120120" } });
+      });
       expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
     });
 
@@ -185,7 +195,9 @@ describe("Text Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
-      fireEvent.change(component, { target: { value: "abc" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "abc" } });
+      });
       expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
@@ -204,7 +216,9 @@ describe("Text Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
-      fireEvent.change(component, { target: { value: "abc" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "abc" } });
+      });
       expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
@@ -223,7 +237,9 @@ describe("Text Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
-      fireEvent.change(component, { target: { value: "1234567" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "1234567" } });
+      });
       expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
     });
 
@@ -242,7 +258,9 @@ describe("Text Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("text-input-test-input");
-      fireEvent.change(component, { target: { value: "1234567" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "1234567" } });
+      });
       expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
     });
 
@@ -268,7 +286,9 @@ describe("Text Input Component Unit Tests", () => {
 
         // debug();
         const component = screen.queryByTestId("text-input-test-input");
-        fireEvent.change(component, { target: { value: "test" } });
+        act(() => {
+          fireEvent.change(component, { target: { value: "test" } });
+        });
         expect(mockValidationFn).toBeCalled();
         expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error
       });
@@ -294,7 +314,9 @@ describe("Text Input Component Unit Tests", () => {
 
         // debug();
         const component = screen.queryByTestId("text-input-test-input");
-        fireEvent.change(component, { target: { value: "test" } });
+        act(() => {
+          fireEvent.change(component, { target: { value: "test" } });
+        });
         expect(mockValidationFn).toBeCalled();
         expect(setErrorMock).toHaveBeenCalledTimes(1); // 1 to reset only
       });
@@ -327,7 +349,9 @@ describe("Text Input Component Unit Tests", () => {
 
         // debug();
         const component = screen.queryByTestId("text-input-test-input");
-        fireEvent.change(component, { target: { value: "test" } });
+        act(() => {
+          fireEvent.change(component, { target: { value: "test" } });
+        });
 
         expect(mockValidationFn1).toBeCalled();
         expect(mockValidationFn1).toHaveReturnedWith(true);
@@ -366,7 +390,9 @@ describe("Text Input Component Unit Tests", () => {
 
         // debug();
         const component = screen.queryByTestId("text-input-test-input");
-        fireEvent.change(component, { target: { value: "test" } });
+        act(() => {
+          fireEvent.change(component, { target: { value: "test" } });
+        });
 
         expect(mockValidationFn1).toBeCalled();
         expect(mockValidationFn1).toHaveReturnedWith(true);
@@ -405,8 +431,10 @@ describe("Text Input Component Unit Tests", () => {
 
         // debug();
         const component = screen.queryByTestId("text-input-test-input");
-        fireEvent.change(component, {
-          target: { value: "test-forbidden-value" },
+        act(() => {
+          fireEvent.change(component, {
+            target: { value: "test-forbidden-value" },
+          });
         });
 
         expect(setErrorMock).toHaveBeenCalledTimes(2); // 1 to reset, and 1 to set the error

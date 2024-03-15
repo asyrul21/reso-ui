@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { NumberInput } from "../Number-Input";
 
 describe("Number Input Component Unit Tests", () => {
@@ -17,7 +17,10 @@ describe("Number Input Component Unit Tests", () => {
 
     // debug();
     const component = screen.queryByTestId("number-input-test-input");
-    fireEvent.change(component, { target: { value: 5 } });
+
+    act(() => {
+      fireEvent.change(component, { target: { value: 5 } });
+    });
 
     expect(onChangeFn).toBeCalledWith(5);
   });
@@ -93,7 +96,9 @@ describe("Number Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("number-input-test-input");
-      fireEvent.change(component, { target: { value: 2 } });
+      act(() => {
+        fireEvent.change(component, { target: { value: 2 } });
+      });
       expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
@@ -112,7 +117,9 @@ describe("Number Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("number-input-test-input");
-      fireEvent.change(component, { target: { value: 7 } });
+      act(() => {
+        fireEvent.change(component, { target: { value: 7 } });
+      });
       expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
     });
 
@@ -169,7 +176,9 @@ describe("Number Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("number-input-test-input");
-      fireEvent.change(component, { target: { value: 7 } });
+      act(() => {
+        fireEvent.change(component, { target: { value: 7 } });
+      });
       expect(setErrorMock).toBeCalledTimes(2); // 1 to reset, and 1 to set the error
     });
 
@@ -188,7 +197,9 @@ describe("Number Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("number-input-test-input");
-      fireEvent.change(component, { target: { value: 3 } });
+      act(() => {
+        fireEvent.change(component, { target: { value: 3 } });
+      });
       expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
     });
 
@@ -226,7 +237,9 @@ describe("Number Input Component Unit Tests", () => {
 
       // debug();
       const component = screen.queryByTestId("number-input-test-input");
-      fireEvent.change(component, { target: { value: "3" } });
+      act(() => {
+        fireEvent.change(component, { target: { value: "3" } });
+      });
       expect(setErrorMock).toBeCalledTimes(1); // 1 to reset only
     });
   });

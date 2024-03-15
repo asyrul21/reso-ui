@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn as ComponentStory, Meta as ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
 import { LoadingContainer } from "../";
@@ -42,7 +42,7 @@ export default {
 } as ComponentMeta<typeof LoadingContainer>;
 
 const ComponentTemplateLayer: ComponentStory<typeof LoadingContainer> = (
-  args
+  args,
 ) => (
   <LoadingContainer {...args}>
     <div
@@ -58,7 +58,7 @@ const ComponentTemplateLayer: ComponentStory<typeof LoadingContainer> = (
 );
 
 const ComponentTemplateConditional: ComponentStory<typeof LoadingContainer> = (
-  args
+  args,
 ) => (
   <div style={{ width: "100%", height: "420px" }}>
     <LoadingContainer {...args}>
@@ -97,7 +97,7 @@ LayeringALoadingComponentWithMinHeight.args = {
 };
 
 export const ConditionalLoadingComponent = ComponentTemplateConditional.bind(
-  {}
+  {},
 );
 ConditionalLoadingComponent.args = {
   type: "conditional",
@@ -105,7 +105,7 @@ ConditionalLoadingComponent.args = {
 };
 
 export const ConditionalErronousComponent = ComponentTemplateConditional.bind(
-  {}
+  {},
 );
 ConditionalErronousComponent.args = {
   type: "conditional",

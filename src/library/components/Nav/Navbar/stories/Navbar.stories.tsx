@@ -1,5 +1,8 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import {
+  StoryFn as ComponentStory,
+  Meta as ComponentMeta,
+} from "@storybook/react";
 
 // always import from index to include global styles
 import { Navbar } from "../";
@@ -75,11 +78,11 @@ export const UsingDropdownAsNavItem = () => {
               <DropdownOption
                 renderCustomOption={({ theme, active, option }) => {
                   return (
-                    <a className="dropdown_option_base">Link</a>
                     // or render your ReactRouterDom's <Link /> as below:
                     // <Link to="/" className="dropdown_option_base">
                     //   Link 1
                     // </Link>
+                    <a className="dropdown_option_base">Link</a>
                   );
                 }}
               />

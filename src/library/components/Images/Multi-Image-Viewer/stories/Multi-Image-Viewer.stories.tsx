@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn as ComponentStory, Meta as ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
 import { View } from "../../../Containers/View";
-import {
-  IMultiImageViewerProps,
-  MultiImageViewer,
-} from "../";
+import { IMultiImageViewerProps, MultiImageViewer } from "../";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import {
+  StoryFn as ComponentStory,
+  Meta as ComponentMeta,
+} from "@storybook/react";
 
 // always import from index to include global styles
 import { FormContainer, ControlWrapper } from "../../../../Containers";

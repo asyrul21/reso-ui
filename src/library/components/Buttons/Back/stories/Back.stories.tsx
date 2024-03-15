@@ -1,21 +1,17 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 // always import from index to include global styles
-import { Back } from "../Back";
+import { Back } from "../";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const Meta: Meta<typeof Back> = {
   title: "Components/Buttons/Back",
   component: Back,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    // backgroundColor: { control: "color" },
-  },
   parameters: {
+    controls: { expanded: true },
     docs: {
       description: {
         component: dedent`
@@ -30,45 +26,61 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Back>;
+};
 
-const ComponentTemplate: ComponentStory<typeof Back> = (args) => {
-  const storyProps = {
+export default Meta;
+type Story = StoryObj<typeof Back>;
+
+export const Default: Story = {
+  args: {
     to: "/",
     text: "Back",
-    ...args,
-  };
-  return <Back {...storyProps} />;
-};
-
-export const Default = ComponentTemplate.bind({});
-Default.args = {};
-
-export const WithCustomContainerClassName = ComponentTemplate.bind({});
-WithCustomContainerClassName.args = {
-  rootClassName: "back-stories-sample",
-};
-
-export const WithCustomContainerStyles = ComponentTemplate.bind({});
-WithCustomContainerStyles.args = {
-  rootStyles: {
-    backgroundColor: "red",
+  },
+  render: (args) => {
+    return <Back {...args} />;
   },
 };
 
-export const WithCustomLinkClassName = ComponentTemplate.bind({});
-WithCustomLinkClassName.args = {
-  linkClassName: "back-stories-sample-link",
-};
-
-export const WithCustomLinkStyles = ComponentTemplate.bind({});
-WithCustomLinkStyles.args = {
-  linkStyles: {
-    color: "red",
+export const WithCustomContainerClassName = {
+  ...Default,
+  args: {
+    ...Default.args,
+    rootClassName: "back-stories-sample",
   },
 };
 
-export const Disabled = ComponentTemplate.bind({});
-Disabled.args = {
-  disabled: true,
+export const WithCustomContainerStyles = {
+  ...Default,
+  args: {
+    ...Default.args,
+    rootStyles: {
+      backgroundColor: "red",
+    },
+  },
+};
+
+export const WithCustomLinkClassName = {
+  ...Default,
+  args: {
+    ...Default.args,
+    linkClassName: "back-stories-sample-link",
+  },
+};
+
+export const WithCustomLinkStyles = {
+  ...Default,
+  args: {
+    ...Default.args,
+    linkStyles: {
+      color: "red",
+    },
+  },
+};
+
+export const Disabled = {
+  ...Default,
+  args: {
+    ...Default.args,
+    disabled: true,
+  },
 };

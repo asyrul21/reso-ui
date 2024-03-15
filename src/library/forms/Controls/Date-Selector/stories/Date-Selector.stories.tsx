@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn as ComponentStory, Meta as ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
-import {
-  DateSelector,
-  IDateSelectorProps,
-} from "../";
+import { DateSelector, IDateSelectorProps } from "../";
 import "./storiesStyle.scss";
 
 import dedent from "ts-dedent";

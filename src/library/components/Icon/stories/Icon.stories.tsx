@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn as ComponentStory, Meta as ComponentMeta } from "@storybook/react";
 
 // always import from index to include global styles
 import { Icon } from "../";
@@ -74,7 +74,6 @@ export const PassingSvgIcon = () => {
 };
 
 export const InlineIcon = () => {
-
   // import { Flex, Icon, HomeIcon } from 'reso-ui;
 
   return (

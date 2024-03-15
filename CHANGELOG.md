@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/asyrul21/reso-ui/compare/v1.18.0...v2.0.0) (2024-03-15)
+
+
+* chore!: upgrade library and peer dependencies to React 18 ([ec6a4c2](https://github.com/asyrul21/reso-ui/commit/ec6a4c222f6b1ffb3305941cf181424cb715d254))
+
+
+### BREAKING CHANGES
+
+* Clients of components using React hooks internally will break if not using React 18
+
 # [1.18.0](https://github.com/asyrul21/reso-ui/compare/v1.17.0...v1.18.0) (2024-03-11)
 
 

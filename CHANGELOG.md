@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/asyrul21/reso-ui/compare/v2.0.1...v2.0.2) (2024-03-18)
+
+
+### Bug Fixes
+
+* Checkbox layout fixes ([ba42431](https://github.com/asyrul21/reso-ui/commit/ba42431be8ffbdf9179c632e3e6d23d0fb67048b))
+
 ## [2.0.1](https://github.com/asyrul21/reso-ui/compare/v2.0.0...v2.0.1) (2024-03-18)
 
 

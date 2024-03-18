@@ -1,4 +1,3 @@
-import { TypescriptOptions } from "@storybook/builder-webpack5";
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import { Configuration } from "webpack";
 import webpackConfig from "../webpack.dev";
@@ -9,7 +8,11 @@ const config: StorybookConfig = {
     options: {},
   },
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: ["@storybook/addon-essentials"],
+  addons: [
+    "@storybook/addon-essentials",
+    "@storybook/actions",
+    "@storybook/links",
+  ],
   docs: {
     autodocs: true,
   },
@@ -17,7 +20,7 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {},
-  } as Partial<TypescriptOptions>,
+  } as any,
   webpackFinal: async (config: Configuration) => {
     return {
       ...config,

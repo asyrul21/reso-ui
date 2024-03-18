@@ -140,7 +140,6 @@ export const Checkbox = ({
           </p>
         )}
       </div>
-      {/* <div className="component_checkbox_children">{children}</div> */}
     </div>
   );
 };

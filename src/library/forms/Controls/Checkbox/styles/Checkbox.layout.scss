@@ -1,10 +1,9 @@
 .checkbox_container {
-  //   border: 2px solid red;
+  // border: 2px solid red;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  margin-right: $margin-xxlarge;
 }
 
 .input_checkbox {
@@ -27,19 +26,9 @@
 
 .checkbox_children {
   font-size: $font-size-default;
-  margin-bottom: $margin-xxxsmall;
 }
 
 .checkbox_error {
   margin: 0;
   padding: 0;
-}
-
-.container_auth_tnc {
-  text-decoration: underline;
-  opacity: 0.9;
-  color: $fc-dark;
-  &:hover {
-    opacity: 1;
-  }
 }

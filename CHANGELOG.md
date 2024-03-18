@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/asyrul21/reso-ui/compare/v2.0.0...v2.0.1) (2024-03-18)
+
+
+### Bug Fixes
+
+* downgrade storybook/react 8 to 8.0.0-rc.3 to fix broken code preview ([1fff618](https://github.com/asyrul21/reso-ui/commit/1fff61880f35f8ad3e3f17748d3cad0b91d15320))
+
 # [2.0.0](https://github.com/asyrul21/reso-ui/compare/v1.18.0...v2.0.0) (2024-03-15)
 
 

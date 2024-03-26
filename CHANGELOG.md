@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/asyrul21/reso-ui/compare/v2.0.2...v2.0.3) (2024-03-26)
+
+
+### Bug Fixes
+
+* add more pending components and layout fixes ([91ced02](https://github.com/asyrul21/reso-ui/commit/91ced02ef94c322444ebee7f9fc198784510ea20))
+
 ## [2.0.2](https://github.com/asyrul21/reso-ui/compare/v2.0.1...v2.0.2) (2024-03-18)
 
 

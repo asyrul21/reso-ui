@@ -16,7 +16,10 @@ import {
 
 import { hasValue } from "../../../utils/validations";
 
-export interface IFlexProps extends IComponent, ISpacingsProps {
+export interface IFlexProps
+  extends IComponent,
+    ISpacingsProps,
+    React.HTMLAttributes<HTMLDivElement> {
   direction?: "row" | "column";
   justify?: "space-between" | "start" | "end" | "space-around" | "center";
   align?: "center" | "start" | "end";

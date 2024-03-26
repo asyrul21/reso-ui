@@ -4,6 +4,7 @@ import IThemeProps from "../../../interfaces/Theme";
 import "./styles/Loading-Container.layout.scss";
 export interface ILoadingContainerProps extends IComponent, IThemeProps {
     type: "layer" | "conditional";
+    fullWidth?: boolean;
     loading?: boolean;
     children: React.ReactNode;
     error?: string;
@@ -13,4 +14,4 @@ export interface ILoadingContainerProps extends IComponent, IThemeProps {
     componentErrorClassName?: string;
     componentErrorStyles?: React.CSSProperties;
 }
-export declare const LoadingContainer: ({ type, loading, children, error, minHeight, rootClassName, rootStyles, componentLoaderClassName, componentLoaderStyles, componentErrorClassName, componentErrorStyles, theme, }: ILoadingContainerProps) => React.JSX.Element;
+export declare const LoadingContainer: ({ type, fullWidth, loading, children, error, minHeight, rootClassName, rootStyles, componentLoaderClassName, componentLoaderStyles, componentErrorClassName, componentErrorStyles, theme, }: ILoadingContainerProps) => React.JSX.Element;

@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/asyrul21/reso-ui/compare/v2.0.3...v2.0.4) (2024-03-26)
+
+
+### Bug Fixes
+
+* type fixes ([5de9577](https://github.com/asyrul21/reso-ui/commit/5de9577eaf7b654feead066f8ddd14de68a1268f))
+
 ## [2.0.3](https://github.com/asyrul21/reso-ui/compare/v2.0.2...v2.0.3) (2024-03-26)
 
 

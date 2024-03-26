@@ -1,0 +1,27 @@
+.component_pagination_container {
+  margin: $margin-small 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.component_pagination_button_hidden {
+  visibility: hidden;
+}
+
+.component_pagination_button_prev {
+  margin-right: $margin-xxsmall;
+}
+
+.component_pagination_button {
+  // margin: 0 $margin-xxsmall;
+  color: $fc-dark;
+  border: 1px solid $primary-grey-medium;
+  padding: $padding-xxsmall;
+  border-radius: $border-radius-small;
+  font-size: $font-size-1-5;
+  cursor: pointer;
+  &:hover {
+    background-color: $primary-grey-light;
+  }
+}

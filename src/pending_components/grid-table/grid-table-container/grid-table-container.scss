@@ -1,0 +1,11 @@
+.component_grid_table_container {
+  width: 100%;
+  border: 1px solid $primary-grey-medium-light;
+  border-radius: $border-radius-default;
+  overflow-x: auto;
+  box-shadow: 0px 2px 15px rgba(34, 60, 102, 0.2);
+
+  // fonts
+  font-family: $font-family;
+  color: $fc-dark;
+}

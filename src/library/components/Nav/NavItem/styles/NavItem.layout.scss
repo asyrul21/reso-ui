@@ -8,12 +8,13 @@
 * Public Usable
 */
 .navItem_base {
+  padding: 0 15px;
   font-size: $font-size-default;
   cursor: pointer;
   display: block;
   height: $navbar_height;
   line-height: $navbar_height;
-  width: 90px;
+  min-width: 90px;
   text-align: center;
 }
 

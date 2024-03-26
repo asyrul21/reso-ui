@@ -1,0 +1,105 @@
+.component_reviewlist_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 80px;
+  padding: $padding-small;
+  &:not(:first-child) {
+    margin-top: $margin-xxsmall;
+  }
+  &:not(:last-child) {
+    border-bottom: 1px solid $primary-grey-medium-light;
+  }
+}
+
+.component_reviewlist_container_admin {
+  border-left: 5px solid $success-green;
+}
+
+.component_reviewlist_content {
+  //   border: 2px solid red;
+  flex: 0.8;
+  min-height: inherit;
+}
+
+.component_reviewlist_buttons {
+  //   border: 2px solid blue;
+  flex: 0.2;
+  min-height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.component_reviewlist_button {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid $primary-grey-medium-light;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+  &:not(:last-child) {
+    margin-right: $margin-small;
+  }
+}
+
+.component_reviewlist_name_container {
+  margin-bottom: $margin-xxsmall;
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+.component_reviewlist_name {
+  color: $fc-dark;
+  font-weight: 500;
+}
+
+.component_reviewlist_date {
+  font-size: $font-size-1;
+  margin-bottom: $margin-xxsmall;
+}
+
+.component_reviewlist_adminMarker {
+  margin-right: $margin-xxsmall;
+  text-align: center;
+  width: 84px;
+  height: 24px;
+  line-height: 24px;
+  background-color: $primary-blue;
+  border-radius: $border-radius-small;
+
+  font-size: $font-size-1;
+  color: $fc-light;
+  font-weight: 600;
+}
+
+.component_reviewlist_ownerMarker {
+  margin-right: $margin-xxsmall;
+  text-align: center;
+  width: 42px;
+  height: 24px;
+  line-height: 24px;
+  background-color: $primary-green;
+  border-radius: $border-radius-small;
+
+  font-size: $font-size-1;
+  color: $fc-light;
+  font-weight: 600;
+}
+
+.component_reviewlist_rating {
+  margin-bottom: $margin-xxsmall;
+}
+
+.component_reviewlist_comment {
+  font-weight: normal;
+  font-size: $font-size-default;
+}

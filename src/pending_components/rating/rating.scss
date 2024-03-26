@@ -1,0 +1,21 @@
+.component_rating_container {
+  //   border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.component_rating_stars_container {
+  //   border: 1px solid blue;
+  width: 108px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: $margin-medium;
+}
+
+.component_rating_star {
+  margin: 0;
+}

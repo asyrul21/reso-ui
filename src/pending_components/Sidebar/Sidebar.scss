@@ -1,0 +1,123 @@
+.container_sidebar_container {
+  //   border: green 2px solid;
+  background-color: $bg-sidebar;
+  height: 100vh;
+  width: $sidebar-width;
+  padding-top: $sidebar-padding-top;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  overflow-x: hidden;
+
+  // for small screen set to overlay
+  overflow-y: hidden;
+}
+
+.container_sidebar_container_mobile {
+  transform: translate(-100%);
+  z-index: 50;
+  padding-top: $padding-medium;
+}
+
+.container_sidebar_container_mobile_show {
+  transform: translate(0);
+}
+
+.container_sidebar_mobile_backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-backdrop;
+  z-index: 49;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container_sidebar_mobile_backdrop_show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container_sidebar_content {
+  margin: 0;
+  //   border: 2px solid black;
+  width: 100%;
+}
+
+.container_sidebar_content {
+  width: 100%;
+  //   border: 2px solid red;
+}
+
+.container_sidebar_li {
+  //   background-color: $bg-sidebar-li;
+  width: 100%;
+  height: $sidebar-li-height;
+  //   line-height: $sidebar-li-line-height;
+}
+
+.container_sidebar_li_cart {
+  // border: 2px solid red;
+  position: relative;
+}
+
+.container_sidebar_cart_count {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10%;
+  margin: auto;
+  border-radius: 100%;
+  z-index: 4;
+  color: $fc-light;
+  background-color: $bg-cart-counter;
+  font-size: $font-size-default;
+}
+
+.container_sidebar_ul {
+  margin-top: $margin-medium;
+}
+
+.container_sidebar_link {
+  //   border: 1px solid red;
+  background-color: $bg-sidebar;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: $sidebar-link-padding-left;
+  height: inherit;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color $transition-bg-time $transition-bg-delay;
+  color: $fc-sidebar-link-default;
+
+  &:hover {
+    color: $fc-sidebar-link-hover;
+    background-color: $bg-sidebar-link-hover;
+  }
+}
+
+.container_sidebar_header {
+  color: $fc-nav-link-header;
+  font-size: $font-size-2;
+  &:hover {
+    color: $fc-nav-link-header;
+    background-color: $bg-sidebar-link;
+  }
+}
+
+.container_sidebar_link_active {
+  color: $fc-sidebar-link-active;
+  background-color: $bg-sidebar-link-active;
+  &:hover {
+    color: $fc-sidebar-link-active;
+    background-color: $bg-sidebar-link-active;
+  }
+}

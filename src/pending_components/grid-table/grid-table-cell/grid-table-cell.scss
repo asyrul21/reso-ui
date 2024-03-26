@@ -1,0 +1,66 @@
+.component_grid_table_cell_container {
+  // border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.grid_table_cell_action_button_icon {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid $primary-grey-medium-light;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+  &:not(:last-child) {
+    margin-right: $margin-small;
+  }
+}
+
+.grid_table_cell_action_button_text {
+  border: 1px solid $primary-grey-medium-light;
+  padding: $padding-xxsmall;
+  margin-right: $margin-xsmall;
+  border-radius: $border-radius-small;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $primary-grey-dark;
+    color: $white;
+  }
+}
+
+.grid_table_cell_action_button_noMargin {
+  margin: 0;
+}
+
+.grid_table_cell_content_image {
+  border: 1px solid $primary-grey-medium;
+  border-radius: $border-radius-small;
+  background-color: $white;
+  margin-right: $margin-medium;
+}
+
+.grid_table_cell_content_text_container {
+  // border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.grid_table_cell_content_link {
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+}

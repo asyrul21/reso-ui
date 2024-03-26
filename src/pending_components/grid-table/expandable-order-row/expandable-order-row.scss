@@ -1,0 +1,106 @@
+.component_expandable_row_container {
+  border-left: 5px solid $primary-grey-medium-light;
+  border-bottom: 1px solid $primary-grey-medium-light;
+  // border: 1px solid red;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+  position: relative;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.component_expandable_row_container_expanded {
+  max-height: 620px;
+  opacity: 1;
+}
+
+.component_expandable_row_inner_container {
+  // border: 1px solid red;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+$order_details_max-width: 720px;
+
+.component_expandable_row_overview_container {
+  // border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: $padding-small;
+  max-width: $order_details_max-width;
+}
+
+.component_expandable_row_details_container {
+  // border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  // flex: 1;
+  padding: $padding-small;
+  max-width: $order_details_max-width;
+  min-height: 340px;
+}
+
+.component_expandable_row_actionPanel_container {
+  // border: 1px solid $primary-grey-medium-light;
+  padding: $padding-xsmall;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.component_expandable_row_actionPanel {
+  margin-bottom: $margin-small;
+}
+
+.component_expandable_row_vertical_group {
+  margin-bottom: $margin-medium;
+  margin-right: $margin-small;
+  //   border: 1px solid green;
+}
+
+.component_expandable_row_header {
+  font-size: $font-size-2;
+  font-weight: 600;
+  margin-bottom: $margin-small;
+}
+
+.component_expandable_row_text {
+  //   font-weight: 600;
+  line-height: 20px;
+}
+
+$vertical_group_width: 200px;
+// customer details
+.component_expandable_row_customer_details {
+  width: $vertical_group_width;
+}
+
+// payment details
+.component_expandable_row_payment {
+  width: $vertical_group_width;
+}
+
+// order items
+.component_expandable_row_order_items {
+  width: 320px;
+}
+
+.component_expandable_row_table_container {
+  width: 100%;
+}
+
+.component_expandable_row_table_item_name {
+  text-align: left;
+}

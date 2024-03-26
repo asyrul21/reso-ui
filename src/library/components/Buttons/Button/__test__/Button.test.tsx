@@ -58,7 +58,7 @@ describe("Generic Button Component Unit Tests", () => {
     const onClickSpy = jest.fn();
     render(<Button text="test" onClick={onClickSpy} />);
 
-    const component = screen.queryByTestId("button-root");
+    const component = screen.getByTestId("button-root");
     act(() => {
       component.click();
     });

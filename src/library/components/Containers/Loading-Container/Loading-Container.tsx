@@ -11,10 +11,14 @@ import IThemeProps from "../../../interfaces/Theme";
 import "./styles/Loading-Container.layout.scss";
 
 // utils
-import { createComponentStyles, createLayoutStyles } from "../../../utils/styles";
+import {
+  createComponentStyles,
+  createLayoutStyles,
+} from "../../../utils/styles";
 
 export interface ILoadingContainerProps extends IComponent, IThemeProps {
   type: "layer" | "conditional";
+  fullWidth?: boolean;
   loading?: boolean;
   children: React.ReactNode;
   error?: string;
@@ -27,6 +31,7 @@ export interface ILoadingContainerProps extends IComponent, IThemeProps {
 
 export const LoadingContainer = ({
   type,
+  fullWidth = false,
   loading = false,
   children,
   error,
@@ -43,6 +48,7 @@ export const LoadingContainer = ({
     createLayoutStyles(
       {
         [`loadingContainer_container_${type}`]: true,
+        [`loadingContainer_container_fullWidth`]: fullWidth === true,
       },
       rootClassName,
       { position_relative: true }

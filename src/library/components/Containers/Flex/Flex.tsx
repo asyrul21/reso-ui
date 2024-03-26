@@ -49,7 +49,7 @@ export const Flex = ({
   rootClassName,
   borderColor = null,
   rootStyles = {},
-  ...spacingsProps
+  ...props
 }: IFlexProps) => {
   const containerStyles = createComponentStyles(
     createLayoutStyles(
@@ -64,7 +64,7 @@ export const Flex = ({
           [`flex_no_shrink`]: !shrink,
           [`flex_wrap`]: wrap,
         },
-        spacingsProps
+        props
       ),
       rootClassName,
       {
@@ -86,6 +86,7 @@ export const Flex = ({
         ...rootStyles,
       }}
       className={containerStyles}
+      {...props}
     >
       {children}
     </div>

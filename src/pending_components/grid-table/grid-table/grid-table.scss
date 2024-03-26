@@ -1,0 +1,9 @@
+.component_grid_table_table {
+  // grid styles
+  display: grid;
+  grid-template-columns: 100%; // one column, takes full width
+  grid-auto-rows: auto;
+  // other styles
+  overflow: hidden;
+  overflow-y: auto;
+}

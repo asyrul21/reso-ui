@@ -1,0 +1,69 @@
+.component_addreviewform_container {
+  //   border: 2px solid green;
+  width: 100%;
+  border-radius: $border-radius-default;
+  background-color: $primary-grey-light;
+  padding: 0;
+  color: $fc-dark;
+  margin-bottom: $margin-medium;
+  border: 1px solid $primary-grey-medium-light;
+}
+
+.component_addreviewform_header {
+  margin-bottom: $margin-small;
+  background-color: $primary-grey-medium-light;
+  padding: 0 $padding-medium;
+  border-radius: $border-radius-default $border-radius-default 0 0;
+  height: 48px;
+  line-height: 48px;
+  text-align: left;
+  color: $primary-grey-dark;
+  font-weight: 700;
+  font-size: $font-size-2;
+  border: 1px solid $primary-grey-medium-light;
+  border-bottom: none;
+}
+
+.component_addreviewform_inputgroup {
+  margin-bottom: $margin-small;
+  padding: 0 $padding-medium;
+}
+
+.component_addreviewform_label {
+  width: 182px;
+}
+
+.component_addreviewform_input {
+  height: 76px;
+}
+
+.component_addreviewform_button_container {
+  //   border: 2px solid red;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: $padding-medium;
+  padding-top: 0;
+}
+
+.component_addreviewform_button {
+  background: $primary-grey-dark;
+  width: 144px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.component_addreviewform_fliplink {
+  margin-right: $margin-medium;
+  cursor: pointer;
+  opacity: 0.9;
+  text-decoration: underline;
+  &:hover {
+    opacity: 1;
+  }
+}

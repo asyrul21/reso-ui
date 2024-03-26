@@ -1,0 +1,21 @@
+.component_tabsContainer_container {
+  //   border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: $margin-small;
+}
+
+.component_tabsContainer_tabs {
+  //   border: 1px solid $primary-grey-dark;
+  overflow: hidden;
+  border-radius: $border-radius-default;
+  display: flex;
+  flex-direction: row;
+}
+
+.component_tabsContainer_text {
+  color: $fc-dark;
+  margin-right: $margin-small;
+  min-width: 160px;
+}

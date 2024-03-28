@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/asyrul21/reso-ui/compare/v2.0.4...v2.0.5) (2024-03-28)
+
+
+### Bug Fixes
+
+* CenterContainer and View and _resets layout fixrs ([906fb3a](https://github.com/asyrul21/reso-ui/commit/906fb3ab6fb5237eb60079365d28a58b05bc7781))
+
 ## [2.0.4](https://github.com/asyrul21/reso-ui/compare/v2.0.3...v2.0.4) (2024-03-26)
 
 

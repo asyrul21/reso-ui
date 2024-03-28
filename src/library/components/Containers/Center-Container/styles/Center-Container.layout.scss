@@ -1,5 +1,9 @@
-.component_center_container {
+.resoui_center_container {
   // border: 2px solid red;
   margin: $margin-center;
-  max-width: $max-width-screen-lg; // default
+  max-width: $max-width-screen-lg;
+}
+
+.resoui_center_container_inheritMinWidth {
+  min-width: inherit;
 }

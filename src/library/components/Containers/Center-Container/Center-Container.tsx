@@ -7,24 +7,31 @@ import IComponent from "../../../interfaces/IComponent";
 import "./styles/Center-Container.layout.scss";
 
 // utils
-import { createLayoutStyles } from "../../../utils/styles";
+import { createLayoutStyles, withSpacingsProps } from "../../../utils/styles";
+import { IPaddingProps } from "../../../interfaces";
 
-export interface ICenterContainerProps extends IComponent {
+export interface ICenterContainerProps extends IComponent, IPaddingProps {
   children: React.ReactNode;
   maxWidth?: number;
+  inheritMinWidth?: boolean;
 }
 
-// width and height will follow children
 export const CenterContainer = ({
   children,
   maxWidth,
+  inheritMinWidth = false,
   rootClassName,
   rootStyles = {},
+  ...props
 }: ICenterContainerProps) => {
   const containerStyles = createLayoutStyles(
-    {
-      component_center_container: true,
-    },
+    withSpacingsProps(
+      {
+        resoui_center_container: true,
+        resoui_center_container_inheritMinWidth: inheritMinWidth === true,
+      },
+      props
+    ),
     rootClassName
   );
 

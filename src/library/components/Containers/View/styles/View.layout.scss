@@ -1,5 +1,4 @@
 .viewContainer_container {
-  min-height: calc(100vh - $navbar_height);
-  overflow-x: auto; // just in case
-  overflow-y: hidden;
+  height: 100%;
+  overflow-x: auto;
 }

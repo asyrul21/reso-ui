@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/asyrul21/reso-ui/compare/v2.1.1...v2.1.2) (2025-04-08)
+
+
+### Bug Fixes
+
+* attempt to fix Github action actions/checkout@v3 error ([df4b40e](https://github.com/asyrul21/reso-ui/commit/df4b40eaf5d3566152c92b9a8a035af47a33f19c))
+
 ## [2.1.1](https://github.com/asyrul21/reso-ui/compare/v2.1.0...v2.1.1) (2025-04-08)
 
 

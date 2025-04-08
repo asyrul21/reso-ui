@@ -41,7 +41,7 @@ jobs:
           ls -l
 
       - name: Upload Test Coverage Results to Github
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Test Coverage Results for Node ${{ matrix.node-version }}
           path: coverage

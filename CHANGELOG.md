@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/asyrul21/reso-ui/compare/v2.0.5...v2.1.0) (2025-04-08)
+
+
+### Features
+
+* side sliding drawer component, tests and stories ([0d9bbf1](https://github.com/asyrul21/reso-ui/commit/0d9bbf1149cead8382cb73e357553a36bb55af5c))
+
 ## [2.0.5](https://github.com/asyrul21/reso-ui/compare/v2.0.4...v2.0.5) (2024-03-28)
 
 

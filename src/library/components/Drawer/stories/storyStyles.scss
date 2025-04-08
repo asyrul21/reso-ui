@@ -1,0 +1,18 @@
+.stories_drawer_root_class {
+  background-color: greenyellow;
+}
+
+.stories_drawer_title_class {
+  background-color: #36454f;
+}
+
+.stories_drawer_title_class {
+  button {
+    background-color: unset;
+    color: white;
+    &:hover {
+      background-color: unset;
+      color: grey;
+    }
+  }
+}

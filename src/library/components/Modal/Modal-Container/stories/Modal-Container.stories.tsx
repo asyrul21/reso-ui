@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { StoryFn as ComponentStory, Meta as ComponentMeta } from "@storybook/react";
+import {
+  StoryFn as ComponentStory,
+  Meta as ComponentMeta,
+} from "@storybook/react";
 
 // always import from index to include global styles
 import { ModalContainer } from "../";
@@ -19,6 +22,19 @@ const SampleChildComponent = () => {
 export default {
   title: "Components/Modal/Modal Container",
   component: ModalContainer,
+  decorators: [
+    (storyFn) => (
+      <div
+        style={{
+          width: "100%",
+          height: "500px",
+          position: "relative",
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ],
   parameters: {
     docs: {
       description: {

@@ -9,8 +9,17 @@ import {
   NavItem,
   Text,
   Footer,
+  Button,
+  ModalContainer,
+  ModalBody,
+  ModalHeader,
 } from "./library/components";
-import { Main, View, CenterContainer } from "./library/components/Containers";
+import {
+  Main,
+  View,
+  CenterContainer,
+  Flex,
+} from "./library/components/Containers";
 import { DropdownSelect } from "./library/forms/Controls/Dropdown/Dropdown-Select";
 import { DropdownOption } from "./library/forms/Controls/Dropdown/Dropdown-Option";
 
@@ -28,9 +37,11 @@ import {
   useFileInput,
   useFormInput,
 } from "./library";
+import { Drawer } from "./library/components/Drawer";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showDrawer, setShowDrawer] = useState<boolean>(false);
 
   const Sample = [
     { id: "0", name: "Banana" },
@@ -114,10 +125,37 @@ const App = () => {
           Button
         </NavItem>
       </Navbar>
+      {showModal && (
+        <ModalContainer isOpen={showModal} pa={5}>
+          <ModalHeader title="My Modal" onClose={() => setShowModal(false)} />
+          <ModalBody
+            pa={5}
+            rootStyles={{
+              width: "540px",
+              height: "540px",
+            }}
+          >
+            <p>Test Modal</p>
+          </ModalBody>
+        </ModalContainer>
+      )}
+      <Drawer
+        isOpen={showDrawer}
+        side="right"
+        width={512}
+        onClose={() => setShowDrawer(false)}
+        title="Test Title"
+      >
+        <p>Test</p>
+      </Drawer>
       <Main theme={theme}>
         <View>
           <Banner type="info" text="hello" />
           <CenterContainer maxWidth={720}>
+            <Flex justify="start">
+              <Button text="Show Modal" onClick={() => setShowModal(true)} />
+              <Button text="Show Drawer" onClick={() => setShowDrawer(true)} />
+            </Flex>
             <Example name="john" />
             <FormContainer
               id="test-form-1"

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { StoryFn as ComponentStory, Meta as ComponentMeta } from "@storybook/react";
+import {
+  StoryFn as ComponentStory,
+  Meta as ComponentMeta,
+} from "@storybook/react";
 
 // always import from index to include global styles
 import { ModalContainer } from "../../Modal-Container";
@@ -15,6 +18,18 @@ export default {
   argTypes: {
     // backgroundColor: { control: "color" },
   },
+  decorators: [
+    (storyFn) => (
+      <div
+        style={{
+          height: "500px",
+          position: "relative",
+        }}
+      >
+        {storyFn()}
+      </div>
+    ),
+  ],
   parameters: {
     docs: {
       description: {

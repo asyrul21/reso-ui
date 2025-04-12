@@ -45,7 +45,7 @@ const App = () => {
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
 
   const { isTablet } = useContext(ResponsiveContext);
-  console.log("isTablet:", isTablet);
+  // console.log("isTablet:", isTablet);
 
   const Sample = [
     { id: "0", name: "Banana" },

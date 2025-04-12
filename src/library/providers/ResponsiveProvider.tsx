@@ -3,14 +3,19 @@ import { useWindowSize } from "../hooks/useWindowSize";
 import { ResponsiveContext } from "../context/ResponsiveContext";
 
 export const ResponsiveProvider = ({ children }) => {
-  const [width, _height] = useWindowSize();
-  console.log("width:", width);
+  const [width, height] = useWindowSize();
 
-  const isMobile = useMemo(() => width < 640, [width]); // phones
-  const isTablet = useMemo(() => width >= 640 && width < 768, [width]); // tablets
-  const isMdDesktop = useMemo(() => width >= 768 && width < 1024, [width]); // small laptops
-  const isLgDesktop = useMemo(() => width >= 1024 && width < 1280, [width]); // desktops
-  const isXLgDesktop = useMemo(() => width >= 1280, [width]); // large desktops / 2K+
+  const { isMobile, isTablet, isMdDesktop, isLgDesktop, isXLgDesktop } =
+    useMemo(
+      () => ({
+        isMobile: width < 640, // phones
+        isTablet: width >= 640, // tablets
+        isMdDesktop: width >= 768, // small laptops
+        isLgDesktop: width >= 1024, // desktops
+        isXLgDesktop: width >= 1280, // large desktops / 2K+
+      }),
+      [width]
+    );
 
   return (
     <ResponsiveContext.Provider
@@ -20,6 +25,8 @@ export const ResponsiveProvider = ({ children }) => {
         isMdDesktop,
         isLgDesktop,
         isXLgDesktop,
+        windowWidth: width,
+        windowHeight: height,
       }}
     >
       {children}

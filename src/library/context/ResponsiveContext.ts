@@ -6,6 +6,8 @@ export interface IResponsiveContext {
   isMdDesktop: boolean;
   isLgDesktop: boolean;
   isXLgDesktop: boolean;
+  windowWidth: number;
+  windowHeight: number;
 }
 
 export const ResponsiveContext = createContext<IResponsiveContext>({
@@ -14,4 +16,6 @@ export const ResponsiveContext = createContext<IResponsiveContext>({
   isMdDesktop: false,
   isLgDesktop: false,
   isXLgDesktop: false,
+  windowWidth: 0,
+  windowHeight: 0,
 });

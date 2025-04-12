@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/asyrul21/reso-ui/compare/v2.1.2...v2.2.0) (2025-04-12)
+
+
+### Features
+
+* ResponsiveProvider to get responsive view states ([778813b](https://github.com/asyrul21/reso-ui/commit/778813b04134fa295a047ece2422f72593fdf8ea))
+
 ## [2.1.2](https://github.com/asyrul21/reso-ui/compare/v2.1.1...v2.1.2) (2025-04-08)
 
 

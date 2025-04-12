@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -38,10 +38,14 @@ import {
   useFormInput,
 } from "./library";
 import { Drawer } from "./library/components/Drawer";
+import { ResponsiveContext } from "./library/context/ResponsiveContext";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
+
+  const { isTablet } = useContext(ResponsiveContext);
+  console.log("isTablet:", isTablet);
 
   const Sample = [
     { id: "0", name: "Banana" },

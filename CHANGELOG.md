@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/asyrul21/reso-ui/compare/v2.2.0...v2.2.1) (2025-04-12)
+
+
+### Bug Fixes
+
+* lint errors ([5fc6874](https://github.com/asyrul21/reso-ui/commit/5fc687436dfca8ae890eb767b510f656084d5440))
+
 # [2.2.0](https://github.com/asyrul21/reso-ui/compare/v2.1.2...v2.2.0) (2025-04-12)
 
 

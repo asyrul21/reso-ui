@@ -88,4 +88,21 @@ describe("Banner Component Unit Tests", () => {
     const component = screen.queryByTestId("banner-root");
     expect(component).not.toBeInTheDocument();
   });
+
+  test("should execute onCloseOverride when close button is clicked if provided as prop", () => {
+    const onClose = jest.fn();
+
+    const { debug } = render(
+      <Banner text="banner text test" type="info" onCloseOverride={onClose} />
+    );
+
+    // debug();
+    const closeButton = screen.queryByTestId("banner-close-button");
+
+    act(() => {
+      closeButton.click();
+    });
+
+    expect(onClose).toHaveBeenCalled();
+  });
 });

@@ -9,16 +9,21 @@ import { Button } from "../../Buttons";
 import "./styles/Banner.layout.scss";
 
 // utils
-import { createComponentStyles, createLayoutStyles } from "../../../utils/styles";
+import {
+  createComponentStyles,
+  createLayoutStyles,
+} from "../../../utils/styles";
 
 export interface IBannerProps extends IComponent {
   type: "info" | "warning" | "error" | "success";
   text: string;
+  onCloseOverride?: () => void;
 }
 
 export const Banner = ({
   type,
   text,
+  onCloseOverride,
   rootClassName,
   rootStyles = {},
 }: IBannerProps) => {
@@ -51,7 +56,11 @@ export const Banner = ({
           text="X"
           rootClassName="banner_close_button"
           onClick={() => {
-            setShow(false);
+            if (typeof onCloseOverride === "function") {
+              onCloseOverride();
+            } else {
+              setShow(false);
+            }
           }}
         />
       </div>

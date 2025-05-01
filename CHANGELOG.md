@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/asyrul21/reso-ui/compare/v2.2.1...v2.3.0) (2025-05-01)
+
+
+### Features
+
+* useWindowSize and useDynamicBodyHeight hooks and onCloseOverride prop for banner ([9f62fa0](https://github.com/asyrul21/reso-ui/commit/9f62fa0bf9c912468ecf9a3b2caa8fca018f49dd))
+
 ## [2.2.1](https://github.com/asyrul21/reso-ui/compare/v2.2.0...v2.2.1) (2025-04-12)
 
 

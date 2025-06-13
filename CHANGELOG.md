@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/asyrul21/reso-ui/compare/v2.3.0...v2.3.1) (2025-06-13)
+
+
+### Bug Fixes
+
+* export drawer component ([c4c6935](https://github.com/asyrul21/reso-ui/commit/c4c693515c5831bf35a41ff9b6ee3bee5fba32c9))
+
 # [2.3.0](https://github.com/asyrul21/reso-ui/compare/v2.2.1...v2.3.0) (2025-05-01)
 
 

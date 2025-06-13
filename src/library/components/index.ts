@@ -6,6 +6,7 @@ export * from "./Buttons";
 export * from "./Card";
 export * from "./Containers";
 export * from "./Dialog";
+export * from "./Drawer";
 export * from "./Errors";
 export * from "./Example";
 export * from "./External-Links";

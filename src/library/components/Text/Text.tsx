@@ -94,7 +94,12 @@ export const Text = ({
   );
 
   return (
-    <Element id={id} data-testid="text-root" className={containerStyles}>
+    <Element
+      id={id}
+      data-testid="text-root"
+      className={containerStyles}
+      style={rootStyles}
+    >
       {children}
     </Element>
   );

@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/asyrul21/reso-ui/compare/v2.3.1...v2.3.2) (2025-06-14)
+
+
+### Bug Fixes
+
+* forward rootStyles in Text component ([0564414](https://github.com/asyrul21/reso-ui/commit/056441441d9c7464a4514b43ce852a43b7be01d8))
+
 ## [2.3.1](https://github.com/asyrul21/reso-ui/compare/v2.3.0...v2.3.1) (2025-06-13)
 
 

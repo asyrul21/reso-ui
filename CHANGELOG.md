@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/asyrul21/reso-ui/compare/v2.3.2...v2.4.0) (2025-06-28)
+
+
+### Features
+
+* form text input to revalidate on dependency array ([853db2f](https://github.com/asyrul21/reso-ui/commit/853db2f67ca82ac182496be745f690876bb5f88e))
+
 ## [2.3.2](https://github.com/asyrul21/reso-ui/compare/v2.3.1...v2.3.2) (2025-06-14)
 
 

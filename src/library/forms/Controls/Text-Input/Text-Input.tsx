@@ -43,6 +43,7 @@ export const TextInput = ({
   useHTMLErrorMessage = false,
   noShadowOnFocus = false,
   validateOnLoad,
+  revalidateOnDeps = [],
   error,
   setError,
   disabled = false,
@@ -89,6 +90,12 @@ export const TextInput = ({
       validate(value, inputValidators, setError);
     }
   }, []);
+
+  useEffect(() => {
+    if (revalidateOnDeps.length) {
+      validate(value, inputValidators, setError);
+    }
+  }, [...revalidateOnDeps]);
 
   const handleInputChange = (e) => {
     const val = e.target.value;

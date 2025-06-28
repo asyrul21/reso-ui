@@ -14,4 +14,4 @@ export interface ITextInputProps extends IComponent, IFormInputProps<string>, IT
     maxLength?: number;
     size?: number;
 }
-export declare const TextInput: ({ id, value, onChange, onBlur, onFocus, useHTMLErrorMessage, noShadowOnFocus, validateOnLoad, error, setError, disabled, required, readonly, autofocus, type, autocomplete, placeholder, pattern, minLength, maxLength, size, rootClassName, rootStyles, inputClassName, inputStyles, theme, customValidators, ...spacingsProps }: ITextInputProps) => React.JSX.Element;
+export declare const TextInput: ({ id, value, onChange, onBlur, onFocus, useHTMLErrorMessage, noShadowOnFocus, validateOnLoad, revalidateOnDeps, error, setError, disabled, required, readonly, autofocus, type, autocomplete, placeholder, pattern, minLength, maxLength, size, rootClassName, rootStyles, inputClassName, inputStyles, theme, customValidators, ...spacingsProps }: ITextInputProps) => React.JSX.Element;

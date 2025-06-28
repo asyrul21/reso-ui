@@ -33,6 +33,7 @@ export interface IFormInputProps<T> {
     useHTMLErrorMessage?: boolean;
     noShadowOnFocus?: boolean;
     validateOnLoad?: boolean;
+    revalidateOnDeps?: React.DependencyList;
     onBlur?: () => void;
     onFocus?: () => void;
     disabled?: boolean;

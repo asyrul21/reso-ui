@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/asyrul21/reso-ui/compare/v2.4.0...v2.4.1) (2025-07-05)
+
+
+### Bug Fixes
+
+* file input submits form on reset click ([98b81b2](https://github.com/asyrul21/reso-ui/commit/98b81b2021985fdca711a5bbb2f653acdc049399))
+
 # [2.4.0](https://github.com/asyrul21/reso-ui/compare/v2.3.2...v2.4.0) (2025-06-28)
 
 

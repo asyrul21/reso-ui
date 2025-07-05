@@ -1,3 +1,11 @@
+## [2.4.2](https://github.com/asyrul21/reso-ui/compare/v2.4.1...v2.4.2) (2025-07-05)
+
+
+### Bug Fixes
+
+* export const useDisableBodyScroll ([9c38d54](https://github.com/asyrul21/reso-ui/commit/9c38d542841923771ee8ada2be7416a3c75abe61))
+* export const useDisableBodyScroll ([774216e](https://github.com/asyrul21/reso-ui/commit/774216e58f77bc488b86b1938e68bc3ae464550d))
+
 ## [2.4.1](https://github.com/asyrul21/reso-ui/compare/v2.4.0...v2.4.1) (2025-07-05)
 
 

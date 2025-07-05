@@ -232,8 +232,10 @@ export const FileInput = ({
         </label>
         <button
           data-testid="file-input-reset-button"
+          type="button"
           className={resetButtonClasses}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             if (methodHasValue(onReset)) {
               onReset();
             }

@@ -14,7 +14,7 @@ import {
   createLayoutStyles,
   createThemeStyles,
 } from "../../../utils/styles";
-import useDisableBodyScroll from "../../../hooks/useDisableBodyScroll";
+import { useDisableBodyScroll } from "../../../hooks/useDisableBodyScroll";
 
 export interface IFullScreenErrorProps extends IComponent, IThemeProps {
   text?: string;

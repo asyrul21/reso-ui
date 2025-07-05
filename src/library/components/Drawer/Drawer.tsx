@@ -19,7 +19,7 @@ import {
   createThemeStyles,
   withSpacingsProps,
 } from "../../utils/styles";
-import useDisableBodyScroll from "../../hooks/useDisableBodyScroll";
+import { useDisableBodyScroll } from "../../hooks/useDisableBodyScroll";
 
 export interface IDrawerProps extends IComponent, IThemeProps, IPaddingProps {
   children: React.ReactNode;

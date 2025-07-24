@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/asyrul21/reso-ui/compare/v2.4.2...v2.5.0) (2025-07-24)
+
+
+### Features
+
+* export responsive provider and context ([ad52246](https://github.com/asyrul21/reso-ui/commit/ad52246a07dea354f18ab4784bcbba706d9c196f))
+
 ## [2.4.2](https://github.com/asyrul21/reso-ui/compare/v2.4.1...v2.4.2) (2025-07-05)
 
 

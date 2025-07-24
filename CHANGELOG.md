@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/asyrul21/reso-ui/compare/v2.5.0...v2.6.0) (2025-07-24)
+
+
+### Features
+
+* make required label asterisk only ([08c8098](https://github.com/asyrul21/reso-ui/commit/08c80984d558db5bf12421e50f1921f138095ed9))
+
 # [2.5.0](https://github.com/asyrul21/reso-ui/compare/v2.4.2...v2.5.0) (2025-07-24)
 
 

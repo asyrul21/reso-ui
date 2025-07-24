@@ -90,7 +90,7 @@ export const Label = ({
         <label htmlFor={htmlFor} className={labelClasses} style={labelStyles}>
           {label}
         </label>
-        {required && <span className="label_required">{`(*required)`}</span>}
+        {required && <span className="label_required">{`*`}</span>}
       </div>
       {description &&
         (typeof description === "string" ? (

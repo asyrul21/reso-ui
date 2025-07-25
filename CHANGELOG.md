@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/asyrul21/reso-ui/compare/v2.7.0...v2.8.0) (2025-07-25)
+
+
+### Features
+
+* image shimmering loader implementation ([024181b](https://github.com/asyrul21/reso-ui/commit/024181b1b3f8c2b803faaec2c141ecb260eefbd9))
+
 # [2.7.0](https://github.com/asyrul21/reso-ui/compare/v2.6.0...v2.7.0) (2025-07-25)
 
 

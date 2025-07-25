@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Loader, LoaderSize } from "../../Loaders";
+import { ShimmerLoader } from "../../Loaders";
 
 // import base interface
 import IComponent from "../../../interfaces/IComponent";
@@ -21,7 +21,6 @@ import { methodHasValue } from "../../../utils/validations";
 export interface IImageProps extends IComponent, IMarginProps {
   onClick?: () => void;
   clickable?: ImageClickable;
-  loaderSize?: LoaderSize;
   src: string;
   imgClassName?: string;
   imgStyles?: React.CSSProperties;
@@ -34,7 +33,6 @@ export interface IImageProps extends IComponent, IMarginProps {
 export const Image = ({
   onClick,
   clickable,
-  loaderSize = "small",
   src,
   alt = "RESO Image",
   imgClassName,
@@ -97,36 +95,34 @@ export const Image = ({
         <p data-testid="image-component-error">{`Unable to load ${alt}`}</p>
       ) : (
         <>
-          {!loaded && <Loader size={loaderSize} />}
-          {
-            <img
-              data-testid="image-component-img"
-              style={
-                loaded ? { ...imgStyles } : { ...imgStyles, display: "none" }
-              }
-              alt={alt}
-              src={imgSource}
-              onLoad={() => {
-                setError(false);
-                setLoaded(true);
-              }}
-              onError={() => {
-                if (hasFallbacks) {
-                  setLoaded(false);
-                  if (fallbackIndex < fallbacks.length - 1) {
-                    setFallbackIndex(fallbackIndex + 1);
-                  } else {
-                    setLoaded(true);
-                    setError(true);
-                  }
+          {!loaded && <ShimmerLoader />}
+          <img
+            data-testid="image-component-img"
+            style={
+              loaded ? { ...imgStyles } : { ...imgStyles, display: "none" }
+            }
+            alt={alt}
+            src={imgSource}
+            onLoad={() => {
+              setError(false);
+              setLoaded(true);
+            }}
+            onError={() => {
+              if (hasFallbacks) {
+                setLoaded(false);
+                if (fallbackIndex < fallbacks.length - 1) {
+                  setFallbackIndex(fallbackIndex + 1);
                 } else {
                   setLoaded(true);
                   setError(true);
                 }
-              }}
-              className={imgClasses}
-            />
-          }
+              } else {
+                setLoaded(true);
+                setError(true);
+              }
+            }}
+            className={imgClasses}
+          />
         </>
       )}
     </div>

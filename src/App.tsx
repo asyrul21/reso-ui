@@ -13,6 +13,7 @@ import {
   ModalContainer,
   ModalBody,
   ModalHeader,
+  Image,
 } from "./library/components";
 import {
   Main,
@@ -39,6 +40,7 @@ import {
 } from "./library";
 import { Drawer } from "./library/components/Drawer";
 import { ResponsiveContext } from "./library/context/ResponsiveContext";
+import { ShimmerLoader } from "./library/components/Loaders/ShimmerLoader/ShimmerLoader";
 
 const App = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -161,6 +163,12 @@ const App = () => {
               <Button text="Show Drawer" onClick={() => setShowDrawer(true)} />
             </Flex>
             <Example name="john" />
+
+            <Image
+              mv={5}
+              src="https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            />
+
             <FormContainer
               id="test-form-1"
               onSubmit={() => {

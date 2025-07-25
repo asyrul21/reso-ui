@@ -1,3 +1,3 @@
 /* istanbul ignore file */
-export * from "./Loader";
+import "../../../styles/global.scss";
 export * from "./ShimmerLoader";

@@ -1,5 +1,4 @@
 import React from "react";
-import { LoaderSize } from "../../Loaders";
 import IComponent from "../../../interfaces/IComponent";
 import { IMarginProps } from "../../../interfaces/ISpacingsProps";
 import ImageClickable from "../../../interfaces/ImageClickable";
@@ -7,7 +6,6 @@ import "./styles/Image.layout.scss";
 export interface IImageProps extends IComponent, IMarginProps {
     onClick?: () => void;
     clickable?: ImageClickable;
-    loaderSize?: LoaderSize;
     src: string;
     imgClassName?: string;
     imgStyles?: React.CSSProperties;
@@ -16,4 +14,4 @@ export interface IImageProps extends IComponent, IMarginProps {
     alt?: string;
     fallbacks?: string[];
 }
-export declare const Image: ({ onClick, clickable, loaderSize, src, alt, imgClassName, objectFit, rootClassName, rootStyles, fallbacks, imgStyles, inheritWidth, ...spacingsProps }: IImageProps) => React.JSX.Element;
+export declare const Image: ({ onClick, clickable, src, alt, imgClassName, objectFit, rootClassName, rootStyles, fallbacks, imgStyles, inheritWidth, ...spacingsProps }: IImageProps) => React.JSX.Element;

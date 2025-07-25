@@ -1,3 +1,11 @@
+# [2.7.0](https://github.com/asyrul21/reso-ui/compare/v2.6.0...v2.7.0) (2025-07-25)
+
+
+### Features
+
+* ControlWrapper to have layout prop ([4283b2b](https://github.com/asyrul21/reso-ui/commit/4283b2b9bea291f26d92ada4863453b57d13706c))
+* export responsive provider and context ([168c1ff](https://github.com/asyrul21/reso-ui/commit/168c1ffcfad4c6da625f735fc1fe2660de98eae9))
+
 # [2.6.0](https://github.com/asyrul21/reso-ui/compare/v2.5.0...v2.6.0) (2025-07-24)
 
 

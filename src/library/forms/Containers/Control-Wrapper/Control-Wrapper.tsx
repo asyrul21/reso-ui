@@ -23,10 +23,12 @@ export interface IControlWrapperProps
   extends IComponent,
     IThemeProps,
     IMarginProps {
+  layout?: "row" | "column";
   children: React.ReactNode;
 }
 
 export const ControlWrapper = ({
+  layout = "row",
   rootClassName,
   rootStyles = {},
   children,
@@ -47,7 +49,7 @@ export const ControlWrapper = ({
   return (
     <Flex
       // rootStyles={{ border: "1px solid blue" }}
-      direction="row"
+      direction={layout === "row" ? "row" : "column"}
       align="start"
       justify="start"
       rootClassName={containerClasses}

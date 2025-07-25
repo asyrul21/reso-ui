@@ -2,7 +2,10 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import * as FlexModule from "../../../../components/Containers/Flex/Flex";
 import { ControlWrapper } from "../Control-Wrapper";
-import { createComponentStyles, withSpacingsProps } from "../../../../utils/styles";
+import {
+  createComponentStyles,
+  withSpacingsProps,
+} from "../../../../utils/styles";
 
 const SampleChildComponent = () => {
   return (
@@ -16,11 +19,12 @@ const SampleChildComponent = () => {
 describe("Form Input Container Unit Tests", () => {
   beforeEach(() => {
     jest.spyOn(FlexModule, "Flex").mockImplementation((props) => {
-      const { rootClassName, rootStyles, children, mb } = props;
+      const { rootClassName, rootStyles, children, mb, direction } = props;
       const flexMockClasses = createComponentStyles(
         withSpacingsProps(
           {
             [rootClassName]: true,
+            [`test-flex-direction-${direction}`]: true,
           },
           { mb }
         )
@@ -93,5 +97,17 @@ describe("Form Input Container Unit Tests", () => {
     // debug();
     const component = screen.queryByTestId("form-input-container-root");
     expect(component).toHaveClass("spacing-mb-4");
+  });
+
+  test("should apply Flex direction prop when layout is column", () => {
+    const { debug } = render(
+      <ControlWrapper layout="column">
+        <SampleChildComponent />
+      </ControlWrapper>
+    );
+
+    // debug();
+    const component = screen.queryByTestId("form-input-container-root");
+    expect(component).toHaveClass("test-flex-direction-column");
   });
 });

@@ -24,6 +24,8 @@ export interface ISubFormContainerProps
   title: string;
   headerClassName?: string;
   headerStyles?: React.CSSProperties;
+  contentClassName?: string;
+  contentStyles?: React.CSSProperties;
   children: React.ReactNode;
 }
 
@@ -31,6 +33,8 @@ export const SubFormContainer = ({
   title,
   rootClassName,
   rootStyles = {},
+  contentClassName,
+  contentStyles = {},
   headerClassName,
   headerStyles = {},
   children,
@@ -64,6 +68,18 @@ export const SubFormContainer = ({
     createThemeStyles("subForm_header_theme_", theme)
   );
 
+  const contentClasses = createComponentStyles(
+    createLayoutStyles(
+      {
+        subForm_content: true,
+      },
+      contentClassName,
+      {
+        no_select: true,
+      }
+    )
+  );
+
   return (
     <div
       data-testid="subForm-root"
@@ -77,7 +93,9 @@ export const SubFormContainer = ({
       >
         {title}
       </div>
-      <div className="subForm_content">{children}</div>
+      <div className={contentClassName} style={contentStyles}>
+        {children}
+      </div>
     </div>
   );
 };

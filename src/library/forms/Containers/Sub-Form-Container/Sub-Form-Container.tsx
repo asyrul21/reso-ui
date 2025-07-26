@@ -93,7 +93,7 @@ export const SubFormContainer = ({
       >
         {title}
       </div>
-      <div className={contentClassName} style={contentStyles}>
+      <div className={contentClasses} style={contentStyles}>
         {children}
       </div>
     </div>

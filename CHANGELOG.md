@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/asyrul21/reso-ui/compare/v2.8.0...v2.9.0) (2025-07-26)
+
+
+### Features
+
+* sub form container content class name and style ([bb15934](https://github.com/asyrul21/reso-ui/commit/bb159348ca2c2b631e2670391ecd8b66024e29fd))
+
 # [2.8.0](https://github.com/asyrul21/reso-ui/compare/v2.7.0...v2.8.0) (2025-07-25)
 
 

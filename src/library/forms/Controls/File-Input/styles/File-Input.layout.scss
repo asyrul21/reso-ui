@@ -50,3 +50,8 @@
   border-style: solid;
   border-radius: $border-radius-default;
 }
+
+.fileinput_noTextField {
+  flex: 1;
+  margin: 0 5px;
+}

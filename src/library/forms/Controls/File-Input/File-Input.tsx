@@ -46,6 +46,7 @@ export interface IFileInputProps
   selectedFile?: File;
   accept?: string;
   multiple?: boolean;
+  hideTextInputField?: boolean;
   onReset?: () => void;
   filterExtensionsInUsersFileExplorer?: boolean;
   labelText?: string;
@@ -75,6 +76,7 @@ export const FileInput = ({
   value = "",
   onChange,
   accept,
+  hideTextInputField = false,
   /**
    * accepteable values:
    *
@@ -165,6 +167,7 @@ export const FileInput = ({
     createLayoutStyles(
       {
         fileinput_fileinput: true,
+        fileinput_noTextField: hideTextInputField,
       },
       fileInputClassName,
       {
@@ -179,6 +182,7 @@ export const FileInput = ({
     createLayoutStyles(
       {
         fileinput_reset_button: true,
+        fileinput_noTextField: hideTextInputField,
       },
       resetButtonClassName,
       {
@@ -196,18 +200,20 @@ export const FileInput = ({
       style={rootStyles}
     >
       <div className="resoui_fileinput_row">
-        <input
-          data-testid="file-input-text-input"
-          id={`resoui-file-input-textinput-${id}`}
-          type="text"
-          value={String(value)}
-          readOnly
-          className={textInputClasses}
-          placeholder={placeholder}
-          disabled
-          onBlur={onBlur}
-          onFocus={onFocus}
-        />
+        {!hideTextInputField && (
+          <input
+            data-testid="file-input-text-input"
+            id={`resoui-file-input-textinput-${id}`}
+            type="text"
+            value={String(value)}
+            readOnly
+            className={textInputClasses}
+            placeholder={placeholder}
+            disabled
+            onBlur={onBlur}
+            onFocus={onFocus}
+          />
+        )}
         <label
           role="input"
           className={fileInputClasses}

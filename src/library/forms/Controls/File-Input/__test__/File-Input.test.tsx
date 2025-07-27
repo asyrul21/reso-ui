@@ -21,6 +21,21 @@ describe("Text Input Component Unit Tests", () => {
     expect(component).toHaveValue("test/value.png");
   });
 
+  test("should not show text input if hideTextInputField is true", () => {
+    const { debug } = render(
+      <FileInput
+        id="test"
+        onChange={jest.fn()}
+        value="test/value.png"
+        hideTextInputField
+      />
+    );
+
+    // debug();
+    const component = screen.queryByTestId("file-input-text-input");
+    expect(component).not.toBeTruthy();
+  });
+
   test("should execute onChange when a file has been selected", () => {
     const onChangeMock = jest.fn();
     const FileMock = new File(["test content"], "testfile.png", {

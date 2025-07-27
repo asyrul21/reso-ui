@@ -8,6 +8,8 @@ export interface ISubFormContainerProps extends IComponent, IThemeProps, IMargin
     title: string;
     headerClassName?: string;
     headerStyles?: React.CSSProperties;
+    contentClassName?: string;
+    contentStyles?: React.CSSProperties;
     children: React.ReactNode;
 }
-export declare const SubFormContainer: ({ title, rootClassName, rootStyles, headerClassName, headerStyles, children, theme, ...spacingsProps }: ISubFormContainerProps) => React.JSX.Element;
+export declare const SubFormContainer: ({ title, rootClassName, rootStyles, contentClassName, contentStyles, headerClassName, headerStyles, children, theme, ...spacingsProps }: ISubFormContainerProps) => React.JSX.Element;

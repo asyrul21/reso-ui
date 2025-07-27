@@ -1,3 +1,10 @@
+# [2.11.0](https://github.com/asyrul21/reso-ui/compare/v2.10.0...v2.11.0) (2025-07-27)
+
+
+### Features
+
+* hide text field on file input ([7114896](https://github.com/asyrul21/reso-ui/commit/7114896329b4df75b93a3a4990fd770720fc556a))
+
 # [2.10.0](https://github.com/asyrul21/reso-ui/compare/v2.9.0...v2.10.0) (2025-07-26)
 
 

@@ -1,3 +1,10 @@
+## [2.11.2](https://github.com/asyrul21/reso-ui/compare/v2.11.1...v2.11.2) (2025-07-28)
+
+
+### Bug Fixes
+
+* QuantityCounter buttons to support onAdd and onSubtract ([5551625](https://github.com/asyrul21/reso-ui/commit/5551625c106a7ce80b635dc474bc46541d30a5a4))
+
 ## [2.11.1](https://github.com/asyrul21/reso-ui/compare/v2.11.0...v2.11.1) (2025-07-28)
 
 

@@ -45,7 +45,9 @@ export const QuantityCounter = ({
     >
       <div
         className="quantityCounter_counterBox"
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
           if (value > 1) {
             onChange(value - 1);
           }
@@ -58,7 +60,9 @@ export const QuantityCounter = ({
       <span data-testid="quantity-counter-value">{value}</span>
       <div
         className="quantityCounter_counterBox"
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
           onChange(value + 1);
         }}
         role="button"

@@ -1,3 +1,10 @@
+## [2.12.3](https://github.com/asyrul21/reso-ui/compare/v2.12.2...v2.12.3) (2025-07-28)
+
+
+### Bug Fixes
+
+* safari and browser issue fixes ([56b3888](https://github.com/asyrul21/reso-ui/commit/56b3888b173c6b05f43652187d53543284797072))
+
 ## [2.12.2](https://github.com/asyrul21/reso-ui/compare/v2.12.1...v2.12.2) (2025-07-28)
 
 

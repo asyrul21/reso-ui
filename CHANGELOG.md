@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/asyrul21/reso-ui/compare/v2.11.2...v2.12.0) (2025-07-28)
+
+
+### Features
+
+* quantity counter to have min max props ([45c3f32](https://github.com/asyrul21/reso-ui/commit/45c3f32c1ffe4a253762ec8d23097994a50ed683))
+
 ## [2.11.2](https://github.com/asyrul21/reso-ui/compare/v2.11.1...v2.11.2) (2025-07-28)
 
 

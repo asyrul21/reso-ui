@@ -1,3 +1,10 @@
+## [2.11.1](https://github.com/asyrul21/reso-ui/compare/v2.11.0...v2.11.1) (2025-07-28)
+
+
+### Bug Fixes
+
+* QuantityCounter buttons prevent default and stop propagation ([3a36c76](https://github.com/asyrul21/reso-ui/commit/3a36c7696d120e566cd29ceedd73b79543bc8272))
+
 # [2.11.0](https://github.com/asyrul21/reso-ui/compare/v2.10.0...v2.11.0) (2025-07-27)
 
 

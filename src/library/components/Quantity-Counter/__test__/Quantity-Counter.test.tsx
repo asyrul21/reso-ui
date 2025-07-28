@@ -42,6 +42,45 @@ describe("Quantity Counter", () => {
     expect(onCounterChange).toHaveBeenCalledWith(6);
   });
 
+  it("should not call onChange if reached min", () => {
+    const onCounterChange = jest.fn();
+
+    const testProps = {
+      ...defaultProps,
+      value: 1,
+      min: 1,
+      onChange: onCounterChange,
+    };
+
+    render(<QuantityCounter {...testProps} />);
+
+    const addButton = screen.queryByTestId("quantity-counter-subtract");
+    act(() => {
+      addButton.click();
+    });
+
+    expect(onCounterChange).not.toHaveBeenCalled();
+  });
+
+  it("should not call onChange if reached max", () => {
+    const onCounterChange = jest.fn();
+
+    const testProps = {
+      ...defaultProps,
+      max: 5,
+      onChange: onCounterChange,
+    };
+
+    render(<QuantityCounter {...testProps} />);
+
+    const addButton = screen.queryByTestId("quantity-counter-add");
+    act(() => {
+      addButton.click();
+    });
+
+    expect(onCounterChange).not.toHaveBeenCalled();
+  });
+
   it("should call onAdd if provided as prop", () => {
     const onAddMock = jest.fn();
 

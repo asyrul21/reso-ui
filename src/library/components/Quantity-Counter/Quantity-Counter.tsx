@@ -20,6 +20,8 @@ export interface IQuantityCounter extends IComponent, IThemeProps {
   onChange?: (val: number) => void;
   onAdd?: () => void;
   onSubtract?: () => void;
+  min?: number;
+  max?: number;
 }
 
 export const QuantityCounter = ({
@@ -27,6 +29,8 @@ export const QuantityCounter = ({
   onAdd,
   onSubtract,
   onChange,
+  min = 1,
+  max,
   rootClassName,
   rootStyles = {},
   theme,
@@ -52,7 +56,7 @@ export const QuantityCounter = ({
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
-          if (value > 1) {
+          if (value > min) {
             if (typeof onChange === "function") {
               onChange(value - 1);
             }
@@ -72,11 +76,13 @@ export const QuantityCounter = ({
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
-          if (typeof onChange === "function") {
-            onChange(value + 1);
-          }
-          if (typeof onAdd === "function") {
-            onAdd();
+          if (typeof max === "number" ? value <= min : true) {
+            if (typeof onChange === "function") {
+              onChange(value + 1);
+            }
+            if (typeof onAdd === "function") {
+              onAdd();
+            }
           }
         }}
         role="button"

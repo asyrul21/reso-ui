@@ -1,3 +1,10 @@
+## [2.12.2](https://github.com/asyrul21/reso-ui/compare/v2.12.1...v2.12.2) (2025-07-28)
+
+
+### Bug Fixes
+
+* quantity Counter no select ([b94bbeb](https://github.com/asyrul21/reso-ui/commit/b94bbeb65bd1c7d54330dfbf81c9e17f070a12ed))
+
 ## [2.12.1](https://github.com/asyrul21/reso-ui/compare/v2.12.0...v2.12.1) (2025-07-28)
 
 

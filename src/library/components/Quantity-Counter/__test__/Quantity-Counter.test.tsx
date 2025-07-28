@@ -81,6 +81,26 @@ describe("Quantity Counter", () => {
     expect(onCounterChange).not.toHaveBeenCalled();
   });
 
+  it("should call onChange if max is provided and within max", () => {
+    const onCounterChange = jest.fn();
+
+    const testProps = {
+      ...defaultProps,
+      max: 10,
+      onChange: onCounterChange,
+    };
+
+    render(<QuantityCounter {...testProps} />);
+
+    const addButton = screen.queryByTestId("quantity-counter-add");
+    act(() => {
+      addButton.click();
+    });
+
+    expect(onCounterChange).toHaveBeenCalled();
+    expect(onCounterChange).toHaveBeenCalledWith(6);
+  });
+
   it("should call onAdd if provided as prop", () => {
     const onAddMock = jest.fn();
 

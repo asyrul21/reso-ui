@@ -76,7 +76,7 @@ export const QuantityCounter = ({
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
-          if (typeof max === "number" ? value <= min : true) {
+          if (typeof max === "number" ? value < max : true) {
             if (typeof onChange === "function") {
               onChange(value + 1);
             }

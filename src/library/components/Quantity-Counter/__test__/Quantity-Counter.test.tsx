@@ -42,6 +42,42 @@ describe("Quantity Counter", () => {
     expect(onCounterChange).toHaveBeenCalledWith(6);
   });
 
+  it("should call onAdd if provided as prop", () => {
+    const onAddMock = jest.fn();
+
+    const testProps = {
+      ...defaultProps,
+      onAdd: onAddMock,
+    };
+
+    render(<QuantityCounter {...testProps} />);
+
+    const addButton = screen.queryByTestId("quantity-counter-add");
+    act(() => {
+      addButton.click();
+    });
+
+    expect(onAddMock).toHaveBeenCalled();
+  });
+
+  it("should call onSubtract if provided as prop", () => {
+    const onSubtractMock = jest.fn();
+
+    const testProps = {
+      ...defaultProps,
+      onSubtract: onSubtractMock,
+    };
+
+    render(<QuantityCounter {...testProps} />);
+
+    const addButton = screen.queryByTestId("quantity-counter-subtract");
+    act(() => {
+      addButton.click();
+    });
+
+    expect(onSubtractMock).toHaveBeenCalled();
+  });
+
   it("should call onChange with correct value when subtracting", () => {
     const onCounterChange = jest.fn();
 

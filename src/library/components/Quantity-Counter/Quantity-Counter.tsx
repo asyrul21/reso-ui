@@ -17,11 +17,15 @@ import "./styles/Quantity-Counter.theme.scss";
 
 export interface IQuantityCounter extends IComponent, IThemeProps {
   value: number;
-  onChange: (val: number) => void;
+  onChange?: (val: number) => void;
+  onAdd?: () => void;
+  onSubtract?: () => void;
 }
 
 export const QuantityCounter = ({
   value = 1,
+  onAdd,
+  onSubtract,
   onChange,
   rootClassName,
   rootStyles = {},
@@ -49,7 +53,12 @@ export const QuantityCounter = ({
           e.preventDefault();
           e.stopPropagation();
           if (value > 1) {
-            onChange(value - 1);
+            if (typeof onChange === "function") {
+              onChange(value - 1);
+            }
+            if (typeof onSubtract === "function") {
+              onSubtract();
+            }
           }
         }}
         role="button"
@@ -63,7 +72,12 @@ export const QuantityCounter = ({
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
-          onChange(value + 1);
+          if (typeof onChange === "function") {
+            onChange(value + 1);
+          }
+          if (typeof onAdd === "function") {
+            onAdd();
+          }
         }}
         role="button"
         data-testid="quantity-counter-add"

@@ -172,6 +172,7 @@ const App = () => {
             <div style={{ width: "260px" }}>
               <FileInput
                 id="123"
+                // tslint:disable-next-line:no-console
                 onChange={(file) => console.log(file)}
                 hideTextInputField
                 labelText="Select File"

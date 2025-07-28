@@ -52,7 +52,7 @@ export const QuantityCounter = ({
       style={rootStyles}
     >
       <div
-        className="quantityCounter_counterBox"
+        className="quantityCounter_counterBox no_select"
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
@@ -72,7 +72,7 @@ export const QuantityCounter = ({
       </div>
       <span data-testid="quantity-counter-value">{value}</span>
       <div
-        className="quantityCounter_counterBox"
+        className="quantityCounter_counterBox no_select"
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();

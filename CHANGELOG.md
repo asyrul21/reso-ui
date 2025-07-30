@@ -1,3 +1,10 @@
+# [2.13.0](https://github.com/asyrul21/reso-ui/compare/v2.12.3...v2.13.0) (2025-07-30)
+
+
+### Features
+
+* Navbar showHamburgerButtonOnMobileView prop, Drawer overflow fixes ([fc1055f](https://github.com/asyrul21/reso-ui/commit/fc1055fc922109314c4decc04bdc581a0099e4c8))
+
 ## [2.12.3](https://github.com/asyrul21/reso-ui/compare/v2.12.2...v2.12.3) (2025-07-28)
 
 

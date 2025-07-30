@@ -7,13 +7,13 @@ import * as ButtonModule from "../../Buttons/Button/Button";
 describe("Drawer Component Unit Tests", () => {
   beforeEach(() => {
     jest.spyOn(FlexModule, "Flex").mockImplementation((props) => {
-      const { children, rootClassName, rootStyles } = props;
+      const { children, rootClassName, rootStyles, dataTestId } =
+        props as FlexModule.IFlexProps & { dataTestId: string };
+
+      const testId =
+        typeof dataTestId === "string" ? dataTestId : "drawer-flex-mock";
       return (
-        <div
-          data-testid="drawer-flex-mock"
-          className={rootClassName}
-          style={rootStyles}
-        >
+        <div data-testid={testId} className={rootClassName} style={rootStyles}>
           {children}
         </div>
       );

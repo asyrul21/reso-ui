@@ -32,6 +32,8 @@ export interface IDrawerProps extends IComponent, IThemeProps, IPaddingProps {
   layer?: number;
   titleClassName?: string;
   titleStyles?: CSSProperties;
+  contentClassName?: string;
+  contentStyles?: CSSProperties;
 }
 
 export const Drawer = ({
@@ -45,6 +47,8 @@ export const Drawer = ({
   fullWidth = false,
   titleClassName,
   titleStyles = {},
+  contentClassName,
+  contentStyles = {},
   rootClassName,
   rootStyles = {},
   theme = "light",
@@ -92,6 +96,15 @@ export const Drawer = ({
     createThemeStyles("drawer_title_theme_", theme)
   );
 
+  const contentClasses = createComponentStyles(
+    createLayoutStyles(
+      {
+        drawer_content: true,
+      },
+      contentClassName
+    )
+  );
+
   const computedZIndex = layer + 10;
 
   const getIsOpen = () => (isOpen ? isOpen : _isOpen);
@@ -106,14 +119,19 @@ export const Drawer = ({
         }}
         data-testid="drawer-backdrop"
       >
-        <div
-          className={containerStyles}
-          style={{
+        <Flex
+          direction="column"
+          justify="start"
+          align="start"
+          rootClassName={containerStyles}
+          rootStyles={{
             zIndex: computedZIndex + 1,
             width: fullWidth ? "100%" : `${width}px`,
             ...rootStyles,
           }}
-          data-testid="drawer-container-root"
+          {...{
+            dataTestId: "drawer-container-root",
+          }}
         >
           <Flex rootClassName={titleClasses} rootStyles={titleStyles}>
             {title && title !== "" ? title : <div />}
@@ -126,8 +144,19 @@ export const Drawer = ({
               rootClassName="drawer_title_close"
             />
           </Flex>
-          {children}
-        </div>
+          <Flex
+            direction="column"
+            justify="start"
+            align="start"
+            rootClassName={contentClasses}
+            rootStyles={contentStyles}
+            {...{
+              dataTestId: "drawer-content",
+            }}
+          >
+            {children}
+          </Flex>
+        </Flex>
       </div>
     )
   );

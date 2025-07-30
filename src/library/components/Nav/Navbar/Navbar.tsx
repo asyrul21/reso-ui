@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import clasnames from "classnames";
 
 import { Text } from "../../Text";
@@ -21,6 +21,7 @@ import {
   createThemeStyles,
   withSpacingsProps,
 } from "../../../utils/styles";
+import { ResponsiveContext } from "../../../context";
 
 export interface INavbarProps extends IComponent, IThemeProps, IPaddingProps {
   LogoWrapperElement?: "a" | "div";
@@ -28,6 +29,8 @@ export interface INavbarProps extends IComponent, IThemeProps, IPaddingProps {
   textLogo?: string;
   renderCustomLogo?: () => React.ReactNode;
   onClickLogo?: () => void;
+  onClickHamburgerButton?: () => void;
+  showHamburgerButtonOnMobileView?: boolean;
   children: React.ReactNode;
   maxWidth?: number;
   position?: "absolute" | "fixed";
@@ -41,6 +44,8 @@ export const Navbar = ({
   textLogo = "Logo",
   renderCustomLogo,
   onClickLogo,
+  showHamburgerButtonOnMobileView = false,
+  onClickHamburgerButton,
   maxWidth,
   children,
   position = "fixed",
@@ -52,6 +57,8 @@ export const Navbar = ({
   ph = 5,
   ...spacingsProps
 }: INavbarProps) => {
+  const { isMobile } = useContext(ResponsiveContext);
+
   const containerStyles = createComponentStyles(
     createLayoutStyles(
       withSpacingsProps(
@@ -101,6 +108,24 @@ export const Navbar = ({
           ...navStyles,
         }}
       >
+        {showHamburgerButtonOnMobileView && isMobile && (
+          <div
+            role="button"
+            data-testid="navbar-hamburger"
+            className="navbar_nav_hamburger_container"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              if (typeof onClickHamburgerButton === "function") {
+                onClickHamburgerButton();
+              }
+            }}
+          >
+            <div className="navbar_nav_hamburger_line" />
+            <div className="navbar_nav_hamburger_line" />
+            <div className="navbar_nav_hamburger_line" />
+          </div>
+        )}
         <LogoWrapperElement
           data-testid="navbar-logo"
           className={logoContainerClasses}

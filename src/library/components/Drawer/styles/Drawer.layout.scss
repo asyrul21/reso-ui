@@ -30,6 +30,7 @@
 
 .drawer_title {
   //   border: 2px solid red;
+  border-bottom: 1px solid $primary-grey-medium;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -39,7 +40,6 @@
   padding-left: 24px;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-bottom: 16px;
 }
 
 .drawer_title_close {
@@ -52,4 +52,10 @@
     background: unset;
     color: $primary-grey-medium;
   }
+}
+
+.drawer_content {
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
 }

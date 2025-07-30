@@ -93,7 +93,7 @@ const App = () => {
   const theme = "light";
   return (
     <>
-      <Navbar theme={theme} maxWidth={1280}>
+      <Navbar theme={theme} maxWidth={1280} showHamburgerButtonOnMobileView>
         <NavItem
           renderCustomNavItem={() => {
             return (
@@ -118,7 +118,7 @@ const App = () => {
             );
           }}
         />
-        <NavItem theme={theme} href="#">
+        {/* <NavItem theme={theme} href="#">
           Link
         </NavItem>
         <NavItem theme={theme} href="#" active>
@@ -126,7 +126,7 @@ const App = () => {
         </NavItem>
         <NavItem theme={theme} Implementation="button">
           Button
-        </NavItem>
+        </NavItem> */}
         <NavItem theme={theme} Implementation="button" active>
           Button
         </NavItem>
@@ -148,11 +148,38 @@ const App = () => {
       <Drawer
         isOpen={showDrawer}
         side="right"
-        width={512}
+        width={360}
         onClose={() => setShowDrawer(false)}
         title="Test Title"
       >
-        <p>Test</p>
+        <div
+          style={{
+            border: "2px solid blue",
+          }}
+        >
+          <div
+            style={{
+              border: "2px solid red",
+              width: "100%",
+              padding: "20px",
+              marginBottom: "25px",
+            }}
+          >
+            <p>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here,
+              content here', making it look like readable English. Many desktop
+              publishing packages and web page editors now use Lorem Ipsum as
+              their default model text, and a search for 'lorem ipsum' will
+              uncover many web sites still in their infancy. Various versions
+              have evolved over the years, sometimes by accident, sometimes on
+              purpose (injected humour and the like).
+            </p>
+          </div>
+          <Button inheritWidth text="Sample Button" />
+        </div>
       </Drawer>
       <Main theme={theme}>
         <View>

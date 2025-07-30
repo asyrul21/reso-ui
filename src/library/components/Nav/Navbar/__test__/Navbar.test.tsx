@@ -1,6 +1,7 @@
 import React from "react";
 import { act, render, screen } from "@testing-library/react";
 import { Navbar } from "../Navbar";
+import { ResponsiveContext } from "../../../../context";
 
 describe("NavBar Component Unit Tests", () => {
   test("should render without error", () => {
@@ -81,5 +82,30 @@ describe("NavBar Component Unit Tests", () => {
 
     const child3 = screen.getByTestId("navbar-child-3");
     expect(child3).toBeInTheDocument();
+  });
+
+  test("should render hamburger button in mobile view", () => {
+    const text = "logo-test";
+    const { debug } = render(
+      <ResponsiveContext.Provider
+        value={{
+          isMobile: true,
+          isTablet: false,
+          isMdDesktop: false,
+          isLgDesktop: false,
+          isXLgDesktop: false,
+          windowHeight: 520,
+          windowWidth: 400,
+        }}
+      >
+        <Navbar textLogo={text} showHamburgerButtonOnMobileView>
+          <p>test</p>
+        </Navbar>
+      </ResponsiveContext.Provider>
+    );
+
+    // debug();
+    const component = screen.getByTestId("navbar-hamburger");
+    expect(component).toBeInTheDocument();
   });
 });

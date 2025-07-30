@@ -15,5 +15,7 @@ export interface IDrawerProps extends IComponent, IThemeProps, IPaddingProps {
     layer?: number;
     titleClassName?: string;
     titleStyles?: CSSProperties;
+    contentClassName?: string;
+    contentStyles?: CSSProperties;
 }
-export declare const Drawer: ({ children, isOpen, onClose, title, layer, width, side, fullWidth, titleClassName, titleStyles, rootClassName, rootStyles, theme, ...paddingProps }: IDrawerProps) => React.JSX.Element;
+export declare const Drawer: ({ children, isOpen, onClose, title, layer, width, side, fullWidth, titleClassName, titleStyles, contentClassName, contentStyles, rootClassName, rootStyles, theme, ...paddingProps }: IDrawerProps) => React.JSX.Element;

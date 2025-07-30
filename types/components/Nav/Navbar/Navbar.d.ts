@@ -10,10 +10,12 @@ export interface INavbarProps extends IComponent, IThemeProps, IPaddingProps {
     textLogo?: string;
     renderCustomLogo?: () => React.ReactNode;
     onClickLogo?: () => void;
+    onClickHamburgerButton?: () => void;
+    showHamburgerButtonOnMobileView?: boolean;
     children: React.ReactNode;
     maxWidth?: number;
     position?: "absolute" | "fixed";
     navClassName?: string;
     navStyles?: React.CSSProperties;
 }
-export declare const Navbar: ({ LogoWrapperElement, logoHref, textLogo, renderCustomLogo, onClickLogo, maxWidth, children, position, navClassName, navStyles, rootClassName, rootStyles, theme, ph, ...spacingsProps }: INavbarProps) => React.JSX.Element;
+export declare const Navbar: ({ LogoWrapperElement, logoHref, textLogo, renderCustomLogo, onClickLogo, showHamburgerButtonOnMobileView, onClickHamburgerButton, maxWidth, children, position, navClassName, navStyles, rootClassName, rootStyles, theme, ph, ...spacingsProps }: INavbarProps) => React.JSX.Element;

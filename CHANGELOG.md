@@ -1,3 +1,10 @@
+## [2.13.1](https://github.com/asyrul21/reso-ui/compare/v2.13.0...v2.13.1) (2025-07-31)
+
+
+### Bug Fixes
+
+* Main and View components layout issues ([95a7365](https://github.com/asyrul21/reso-ui/commit/95a7365c1b63e7e69ffd23381813c29524fba06c))
+
 # [2.13.0](https://github.com/asyrul21/reso-ui/compare/v2.12.3...v2.13.0) (2025-07-30)
 
 

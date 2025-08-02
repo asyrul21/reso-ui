@@ -22,6 +22,7 @@ import {
   withSpacingsProps,
 } from "../../../utils/styles";
 import { ResponsiveContext } from "../../../context";
+import { Flex } from "../../Containers";
 
 export interface INavbarProps extends IComponent, IThemeProps, IPaddingProps {
   LogoWrapperElement?: "a" | "div";
@@ -108,47 +109,49 @@ export const Navbar = ({
           ...navStyles,
         }}
       >
-        {showHamburgerButtonOnMobileView && isMobile && (
-          <div
-            role="button"
-            data-testid="navbar-hamburger"
-            className="navbar_nav_hamburger_container"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              if (typeof onClickHamburgerButton === "function") {
-                onClickHamburgerButton();
+        <Flex>
+          {showHamburgerButtonOnMobileView && isMobile && (
+            <div
+              role="button"
+              data-testid="navbar-hamburger"
+              className="navbar_nav_hamburger_container"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (typeof onClickHamburgerButton === "function") {
+                  onClickHamburgerButton();
+                }
+              }}
+            >
+              <div className="navbar_nav_hamburger_line" />
+              <div className="navbar_nav_hamburger_line" />
+              <div className="navbar_nav_hamburger_line" />
+            </div>
+          )}
+          <LogoWrapperElement
+            data-testid="navbar-logo"
+            className={logoContainerClasses}
+            onClick={() => {
+              if (methodHasValue(onClickLogo)) {
+                onClickLogo();
               }
             }}
+            href={LogoWrapperElement === "a" ? logoHref : undefined}
           >
-            <div className="navbar_nav_hamburger_line" />
-            <div className="navbar_nav_hamburger_line" />
-            <div className="navbar_nav_hamburger_line" />
-          </div>
-        )}
-        <LogoWrapperElement
-          data-testid="navbar-logo"
-          className={logoContainerClasses}
-          onClick={() => {
-            if (methodHasValue(onClickLogo)) {
-              onClickLogo();
-            }
-          }}
-          href={LogoWrapperElement === "a" ? logoHref : undefined}
-        >
-          {typeof renderCustomLogo === "function" ? (
-            renderCustomLogo()
-          ) : (
-            <Text
-              theme={theme}
-              Element="span"
-              rootClassName="navbar_nav_logo_text"
-              size={9}
-            >
-              {textLogo}
-            </Text>
-          )}
-        </LogoWrapperElement>
+            {typeof renderCustomLogo === "function" ? (
+              renderCustomLogo()
+            ) : (
+              <Text
+                theme={theme}
+                Element="span"
+                rootClassName="navbar_nav_logo_text"
+                size={9}
+              >
+                {textLogo}
+              </Text>
+            )}
+          </LogoWrapperElement>
+        </Flex>
         <div className="navbar_nav_children_container">{children}</div>
       </nav>
     </header>

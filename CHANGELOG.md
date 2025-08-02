@@ -1,3 +1,10 @@
+## [2.13.3](https://github.com/asyrul21/reso-ui/compare/v2.13.2...v2.13.3) (2025-08-02)
+
+
+### Bug Fixes
+
+* Flex data-testid prop name issue ([8f5d797](https://github.com/asyrul21/reso-ui/commit/8f5d797a54ea1ac8bb82ed2ebd913986238da7cc))
+
 ## [2.13.2](https://github.com/asyrul21/reso-ui/compare/v2.13.1...v2.13.2) (2025-08-02)
 
 

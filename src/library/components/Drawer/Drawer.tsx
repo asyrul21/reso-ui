@@ -32,6 +32,8 @@ export interface IDrawerProps extends IComponent, IThemeProps, IPaddingProps {
   layer?: number;
   titleClassName?: string;
   titleStyles?: CSSProperties;
+  cloeButtonClassName?: string;
+  closeButtonStyles?: CSSProperties;
   contentClassName?: string;
   contentStyles?: CSSProperties;
 }
@@ -47,6 +49,8 @@ export const Drawer = ({
   fullWidth = false,
   titleClassName,
   titleStyles = {},
+  cloeButtonClassName,
+  closeButtonStyles = {},
   contentClassName,
   contentStyles = {},
   rootClassName,
@@ -105,6 +109,15 @@ export const Drawer = ({
     )
   );
 
+  const closeButtonClasses = createComponentStyles(
+    createLayoutStyles(
+      {
+        drawer_title_close: true,
+      },
+      cloeButtonClassName
+    )
+  );
+
   const computedZIndex = layer + 10;
 
   const getIsOpen = () => (isOpen ? isOpen : _isOpen);
@@ -141,7 +154,8 @@ export const Drawer = ({
                 _setIsOpen(false);
                 setTimeout(() => onClose(), 250);
               }}
-              rootClassName="drawer_title_close"
+              rootClassName={closeButtonClasses}
+              rootStyles={closeButtonStyles}
             />
           </Flex>
           <Flex

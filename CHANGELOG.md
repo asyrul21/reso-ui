@@ -1,3 +1,10 @@
+## [2.13.2](https://github.com/asyrul21/reso-ui/compare/v2.13.1...v2.13.2) (2025-08-02)
+
+
+### Bug Fixes
+
+* navbar hamburger button fixes ([a0379a7](https://github.com/asyrul21/reso-ui/commit/a0379a757c62e5b9d038568421c4e7d18fce7536))
+
 ## [2.13.1](https://github.com/asyrul21/reso-ui/compare/v2.13.0...v2.13.1) (2025-07-31)
 
 

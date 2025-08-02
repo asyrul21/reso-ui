@@ -1,3 +1,10 @@
+# [2.14.0](https://github.com/asyrul21/reso-ui/compare/v2.13.3...v2.14.0) (2025-08-02)
+
+
+### Features
+
+* allow client to modify drawer close button styles ([d675681](https://github.com/asyrul21/reso-ui/commit/d675681dcda18d0b074608d51359145454599cbb))
+
 ## [2.13.3](https://github.com/asyrul21/reso-ui/compare/v2.13.2...v2.13.3) (2025-08-02)
 
 

@@ -130,7 +130,7 @@ export const Drawer = ({
             ...rootStyles,
           }}
           {...{
-            dataTestId: "drawer-container-root",
+            datatestid: "drawer-container-root",
           }}
         >
           <Flex rootClassName={titleClasses} rootStyles={titleStyles}>
@@ -151,7 +151,7 @@ export const Drawer = ({
             rootClassName={contentClasses}
             rootStyles={contentStyles}
             {...{
-              dataTestId: "drawer-content",
+              datatestid: "drawer-content",
             }}
           >
             {children}
